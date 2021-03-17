@@ -80,7 +80,7 @@ In order to achieve this goal, the development will follow the following methodo
 ## Contributing
 
 Please follow this documentation in order to fork your copy of the project and to push your pull requests:
-[git-fork-update](docs/git-fork-update/gistfile1.md)
+[git-fork-update](Docs/git-fork-update/gistfile1.md)
 
 ## Contributors
 
