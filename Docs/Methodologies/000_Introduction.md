@@ -10,7 +10,7 @@ The aim of this project is to lean and train ourself to create a codebase with t
 
 For this reason we'll follow:
 
-- Behaviour Driven Development (BDD)
+- [Behaviour Driven Development (BDD)](001_BDD.md)
 - Test Driven Development (TDD)
 
 
