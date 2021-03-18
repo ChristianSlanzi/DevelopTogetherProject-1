@@ -70,6 +70,13 @@ In order to achieve this goal, the development will follow the following methodo
 
 ## Useful Tools and Resources
 
+- Diagrams:
+  - draw.io
+- Video Conference:
+  - Google Meet
+
+
+
 ## Recommended Design Resources
 
 ## Recommended Libraries
