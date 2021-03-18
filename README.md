@@ -21,6 +21,7 @@ In order to achieve this goal, the development will follow the following methodo
 
 ## Table of Contents
 
+- [Aim of the project](Methodologies/Introduction.md)
 - [](#)
 
 ## Who We Are
