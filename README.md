@@ -44,6 +44,18 @@ In order to achieve this goal, the development will follow the following methodo
 
 * Project explanation
 
+  First goal of the project is to create a modular architecture with which is possible to create different kinds of apps in a easy and composable way. To achieve this goal, we need to identify the features and the modules of this architecture. Being flexible there will be three kind of module categories/layers: 
+
+  - core modules 
+  - common modules 
+  - specific modules
+
+* Core modules
+
+* Common modules (also called shared modules)
+
+* Specific modules (also called feature modules)
+
 ## Prerequisites
 
 ## Getting Started
