@@ -3,25 +3,19 @@ The DevelopTogetherProject is an open source project with the aim to develop tog
 
 In order to achieve this goal, the development will follow the following methodologies, practices and principles:
 
-- BDD (Behaviour Driven Development) 
-
-- TDD (Test Driven Development)
-
-- Modular architecture
-
-- clean code principles
-
-- SOLID principles
-
-- design patterns
-
-- collaboration using Git and Pull Requests.   
-
-  
+- [BDD (Behaviour Driven Development)](Docs/Methodologies/001_BDD.md) 
+- [TDD (Test Driven Development)](Docs/Methodologies/002_TDD.md) 
+- [Modular architecture](Docs/Methodologies/006_ModularArchitecture.md) 
+- [Clean code principles](Docs/Methodologies/003_CleanCode.md) 
+- [SOLID principles](Docs/Methodologies/004_Solid.md) 
+- [Design patterns](Docs/Methodologies/005_DesignPatterns.md) 
+- [Collaboration using Git and Pull Requests](Docs/git-fork-update/000_PullRequest.md) 
 
 ## Table of Contents
 
 - [Aim of the project](Docs/Methodologies/000_Introduction.md)
+- [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
+- [KATAs](Docs/Katas/000_Katas.md)
 - [](#)
 
 ## Who We Are
@@ -70,12 +64,12 @@ In order to achieve this goal, the development will follow the following methodo
 
 ## Useful Tools and Resources
 
+- Documentation
+  - Typora (Markdown Editor)
 - Diagrams:
   - draw.io
 - Video Conference:
   - Google Meet
-
-
 
 ## Recommended Design Resources
 
