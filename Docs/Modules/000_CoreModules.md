@@ -4,6 +4,9 @@ Core modules in an architecture are the most important ones. They are responsibl
 
 - Database
 - Networking
+- Storage
+- Resource Management
+- Localization
 - ...
 
 A core module may talk to other core modules, through an interface (boundaries), but won't direct talk or have any dependencies from modules beloging to the above layers.
