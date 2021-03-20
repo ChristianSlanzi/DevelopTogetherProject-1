@@ -6,8 +6,8 @@ Every brainstorming will be listed in the following table:
 
 ### List of Brainstormings
 
-| Title                                                        | Description                                                | Started    |
-| ------------------------------------------------------------ | ---------------------------------------------------------- | ---------- |
-| [App Categories & Modules](000_AppCategories&Modules/000_AppCategories&Modules.md) | List of different kinds of apps and modules we could build | 2021-03-20 |
+| #    | Title                                                        | Description                                                | Started    |
+| ---- | ------------------------------------------------------------ | ---------------------------------------------------------- | ---------- |
+| 000  | [App Categories & Modules](000_AppCategories&Modules/000_AppCategories&Modules.md) | List of different kinds of apps and modules we could build | 2021-03-20 |
 
 ## 
