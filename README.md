@@ -15,6 +15,7 @@ In order to achieve this goal, the development will follow the following methodo
 
 - [Aim of the project](Docs/Methodologies/000_Introduction.md)
 - [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
+- [Brainstormings](Docs/Brainstormings/000_Brainstormings.md)
 - [KATAs](Docs/Katas/000_Katas.md)
 - [](#)
 
