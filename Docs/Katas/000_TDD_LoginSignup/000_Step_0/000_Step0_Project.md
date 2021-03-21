@@ -14,7 +14,10 @@
   - Stubs
   - Mocks 
 
-
-Now you project should look like this:
+Now your project should look like this:
 [Step_0_FinalCode](Code/)
+
+Next step we'll add the UI:
+
+[Step 1](../000_Step_1/000_Step1_UserInterfaceLayer.md)
 

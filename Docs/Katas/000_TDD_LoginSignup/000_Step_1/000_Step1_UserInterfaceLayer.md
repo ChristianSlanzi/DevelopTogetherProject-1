@@ -11,3 +11,13 @@
 
 The two classes ATM just connect the UI Elements and their actions to the code, without functionality implementation.
 We will implement the functionalities with a MVVM Architecture and following TDD.
+
+Now your project should look like this:
+[Step_1_FinalCode](FinalCode/)
+
+Next step we'll add the UI:
+
+[Step 2](../000_Step_2/000_Step2_ModelLayer.md)
+
+
+

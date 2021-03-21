@@ -10,8 +10,12 @@ Every Step will be listed in the following table:
 
 ### List of Steps
 
-| #    | Title                                     | Description       | Started    |
-| ---- | ----------------------------------------- | ----------------- | ---------- |
-| 000  | [Step 0](000_Step_0/000_Step0_Project.md) | Setup the project | 2021-03-20 |
+| #    | Title                                                | Description                                        | Started    |
+| ---- | ---------------------------------------------------- | -------------------------------------------------- | ---------- |
+| 000  | [Step 0](000_Step_0/000_Step0_Project.md)            | Setup the project                                  | 2021-03-20 |
+| 001  | [Step 1](000_Step_1/000_Step1_UserInterfaceLayer.md) | Implement the barebone of the User Interface Layer | 2021-03-20 |
+| 002  | [Step 2](000_Step_2/000_Step2_ModelLayer.md)         | Building the Model Layer                           | 2021-03-20 |
+| 003  | [Step 3](000_Step_3/000_Step3_Validators.md)         | Validators                                         | 2021-03-20 |
 
 ## 
+
