@@ -87,3 +87,10 @@
 
 - we need to TDD the UserNameValidator class!
 
+Now your project should look like this:
+[Step_2_FinalCode](FinalCode/)
+
+Next step we'll add the Validators:
+
+[Step 3](../000_Step_3/000_Step3_Validators.md)
+
