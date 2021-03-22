@@ -78,5 +78,7 @@ Now your project should look like this:
 
 Next step we'll bind the ViewModel to the ViewController:
 
-[Step 6]
+[Step 6](../000_Step_6/000_Step6_Binding1.md)
+
+
 
