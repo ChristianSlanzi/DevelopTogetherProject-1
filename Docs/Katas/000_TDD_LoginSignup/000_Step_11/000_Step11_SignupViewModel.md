@@ -7,32 +7,31 @@
   
 
 - The tests won't compile. We need first the mocked MockSignupViewController. Add it under Tests/Mocks:
-  
+  [MockSignupViewController](FilesToAdd/MockSignupViewController.swift)
 
 - The mocked view controller requires its SignupViewControllerProtocol: Add it under Production/Protocols:
-  
+  [SignupViewControllerProtocol](FilesToAdd/SignupViewControllerProtocol.swift)
 
 - Finally add the SignupViewModel class:
-  SignupViewModel
+  [SignupViewModel](FilesToAdd/SignupViewModel.swift)
 
 - The ViewModel requires its Controller class:
-  
+  [SignupController](FilesToAdd/SignupController.swift)
 
 - Build and run the tests. We still miss a couple of mocks:
-  MockEmailAddressValidator
-
-  MockSignupController
-
+  [MockEmailAddressValidator](FilesToAdd/MockEmailAddressValidator.swift)
+[MockSignupController](FilesToAdd/MockSignupController.swift)
+  
 - Run the tests again, they should now go green!
 
   
 
 Now your project should look like this:
-[Step_10_FinalCode](FinalCode/)
+[Step_11_FinalCode](FinalCode/)
 
-Next step we'll implement the SignupViewModel class.
+Next step we'll bind the ViewController to the ViewModel.
 
-[Step 11](../000_Step_11/000_Step11_SignupViewModel.md)
+[Step 12](../000_Step_11/000_Step11_SignupViewModel.md)
 
 
 
