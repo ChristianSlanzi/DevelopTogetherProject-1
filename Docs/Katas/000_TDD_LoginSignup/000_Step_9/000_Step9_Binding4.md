@@ -1,4 +1,4 @@
-## The passwordUpdated Method
+## Step 9: The passwordUpdated Method
 
 - It is called when the user updates the content of the password field.
 - When this method is called, the view model checks to see if the text entered represents a valid password.

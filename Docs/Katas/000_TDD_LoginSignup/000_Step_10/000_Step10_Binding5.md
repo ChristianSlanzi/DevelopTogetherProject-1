@@ -1,4 +1,4 @@
-## The login Method
+## Step 10: The login Method
 
 - It is called when the user taps on the Login button.
 - When this method is called, the view model gather the entered username and password to create a LoginModel object.

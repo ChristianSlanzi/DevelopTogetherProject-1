@@ -1,4 +1,4 @@
-## Binding the ViewController to the ViewModel
+## Step 12: Binding the ViewController to the ViewModel
 
 - Let's start with the Login. Create a UnitTest with the name LoginViewControllerTests under Tests/View group. Import the production code.
 

@@ -1,4 +1,4 @@
-## Binding the ViewController events
+## Step 13: Binding the ViewController events
 
 - The next step is to test that the view model's events are respectively called by view controller events. The first case will be to test the userNameDidEndOnExit method:
 

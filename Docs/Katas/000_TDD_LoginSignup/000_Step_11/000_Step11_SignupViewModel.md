@@ -1,4 +1,4 @@
-## The SignupViewModel
+## Step 11: The SignupViewModel
 
 - The process of building the SignupViewModel with TDD is equivalent of what we have done with the LoginViewModel. All the files are then provided for integration.
 

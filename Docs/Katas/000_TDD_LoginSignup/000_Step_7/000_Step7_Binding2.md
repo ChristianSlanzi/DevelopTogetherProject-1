@@ -1,4 +1,4 @@
-## The userNameDidEndOnExit Method
+## Step 7: The userNameDidEndOnExit Method
 
 - Should be called when the didEndOnExit event is received from the username text field.  When this method is called, the view model asks the view controller to dismiss the keyboard if it was visible.
 
