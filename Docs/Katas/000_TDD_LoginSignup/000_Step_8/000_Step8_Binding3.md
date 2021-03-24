@@ -1,4 +1,4 @@
-## The userNameUpdated Method
+## Step 8: The userNameUpdated Method
 
 - It is called when the user updates the content of the username field.
 - When this method is called, the view model checks to see if the text entered represents a valid username.
