@@ -16,23 +16,23 @@ Every Step will be listed in the following table:
 
 ### List of Steps
 
-| #    | Title                                         | Description        | Started    |
-| ---- | --------------------------------------------- | ------------------ | ---------- |
-| 000  | [Step 0](001_Step_0/001_Step0_Project.md)     | Review the project | 2021-03-27 |
-| 001  | [Step 1](001_Step_1/001_Step1_LoginResult.md) | Login result       | 2021-03-27 |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
-|      |                                               |                    |            |
+| #    | Title                                         | Description           | Started    |
+| ---- | --------------------------------------------- | --------------------- | ---------- |
+| 000  | [Step 0](001_Step_0/001_Step0_Project.md)     | Review the project    | 2021-03-27 |
+| 001  | [Step 1](001_Step_1/001_Step1_LoginResult.md) | Login result          | 2021-03-27 |
+| 002  | [Step 2](001_Step_2/001_Step2_NSObject.md)    | Remove Obj-c NSObject | 2021-03-27 |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
+|      |                                               |                       |            |
 
