@@ -15,6 +15,14 @@
 		24C3F2EC2611B94100A29E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C3F2EA2611B94100A29E0A /* LaunchScreen.storyboard */; };
 		24C3F2F72611B94100A29E0A /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F2F62611B94100A29E0A /* AppTests.swift */; };
 		24C3F3022611B94100A29E0A /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F3012611B94100A29E0A /* AppUITests.swift */; };
+		24C3F3152611BC0200A29E0A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F3132611BC0200A29E0A /* LoginViewController.swift */; };
+		24C3F3162611BC0200A29E0A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F3142611BC0200A29E0A /* SignupViewController.swift */; };
+		24C3F31F2611BCC300A29E0A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F31D2611BCC300A29E0A /* LoginViewModel.swift */; };
+		24C3F3202611BCC300A29E0A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F31E2611BCC300A29E0A /* SignupViewModel.swift */; };
+		24C3F3262611BCCC00A29E0A /* SignupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F3242611BCCB00A29E0A /* SignupViewControllerProtocol.swift */; };
+		24C3F3272611BCCC00A29E0A /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3F3252611BCCC00A29E0A /* LoginViewControllerProtocol.swift */; };
+		24C3F37C2611C15700A29E0A /* LoginSignupModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C3F37B2611C15700A29E0A /* LoginSignupModule.framework */; };
+		24C3F37D2611C15700A29E0A /* LoginSignupModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C3F37B2611C15700A29E0A /* LoginSignupModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24C3F37E2611C15700A29E0A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24C3F37D2611C15700A29E0A /* LoginSignupModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24C3F2DC2611B93F00A29E0A /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C3F2DF2611B93F00A29E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +71,13 @@
 		24C3F2FD2611B94100A29E0A /* AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C3F3012611B94100A29E0A /* AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITests.swift; sourceTree = "<group>"; };
 		24C3F3032611B94100A29E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C3F3132611BC0200A29E0A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		24C3F3142611BC0200A29E0A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		24C3F31D2611BCC300A29E0A /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		24C3F31E2611BCC300A29E0A /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		24C3F3242611BCCB00A29E0A /* SignupViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewControllerProtocol.swift; sourceTree = "<group>"; };
+		24C3F3252611BCCC00A29E0A /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
+		24C3F37B2611C15700A29E0A /* LoginSignupModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoginSignupModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C3F37C2611C15700A29E0A /* LoginSignupModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +113,7 @@
 				24C3F2F52611B94100A29E0A /* AppTests */,
 				24C3F3002611B94100A29E0A /* AppUITests */,
 				24C3F2DD2611B93F00A29E0A /* Products */,
+				24C3F37A2611C15700A29E0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +130,9 @@
 		24C3F2DE2611B93F00A29E0A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				24C3F31C2611BCC300A29E0A /* ViewModel */,
+				24C3F31A2611BC5B00A29E0A /* Protocols */,
+				24C3F3122611BBCC00A29E0A /* View */,
 				24C3F2DF2611B93F00A29E0A /* AppDelegate.swift */,
 				24C3F2E12611B93F00A29E0A /* SceneDelegate.swift */,
 				24C3F2E32611B93F00A29E0A /* ViewController.swift */,
@@ -128,6 +162,41 @@
 			path = AppUITests;
 			sourceTree = "<group>";
 		};
+		24C3F3122611BBCC00A29E0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24C3F3132611BC0200A29E0A /* LoginViewController.swift */,
+				24C3F3142611BC0200A29E0A /* SignupViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24C3F31A2611BC5B00A29E0A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24C3F3252611BCCC00A29E0A /* LoginViewControllerProtocol.swift */,
+				24C3F3242611BCCB00A29E0A /* SignupViewControllerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		24C3F31C2611BCC300A29E0A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				24C3F31D2611BCC300A29E0A /* LoginViewModel.swift */,
+				24C3F31E2611BCC300A29E0A /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24C3F37A2611C15700A29E0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24C3F37B2611C15700A29E0A /* LoginSignupModule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +207,7 @@
 				24C3F2D82611B93F00A29E0A /* Sources */,
 				24C3F2D92611B93F00A29E0A /* Frameworks */,
 				24C3F2DA2611B93F00A29E0A /* Resources */,
+				24C3F37E2611C15700A29E0A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,7 +328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C3F3272611BCCC00A29E0A /* LoginViewControllerProtocol.swift in Sources */,
+				24C3F3152611BC0200A29E0A /* LoginViewController.swift in Sources */,
 				24C3F2E42611B93F00A29E0A /* ViewController.swift in Sources */,
+				24C3F31F2611BCC300A29E0A /* LoginViewModel.swift in Sources */,
+				24C3F3202611BCC300A29E0A /* SignupViewModel.swift in Sources */,
+				24C3F3262611BCCC00A29E0A /* SignupViewControllerProtocol.swift in Sources */,
+				24C3F3162611BC0200A29E0A /* SignupViewController.swift in Sources */,
 				24C3F2E02611B93F00A29E0A /* AppDelegate.swift in Sources */,
 				24C3F2E22611B93F00A29E0A /* SceneDelegate.swift in Sources */,
 			);
