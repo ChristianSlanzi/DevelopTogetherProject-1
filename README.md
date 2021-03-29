@@ -17,6 +17,7 @@ In order to achieve this goal, the development will follow the following methodo
 - [Project plan](Docs/ProjectPlan/000_ProjectPlan.md)
 - [Brainstormings](Docs/Brainstormings/000_Brainstormings.md)
 - [KATAs](Docs/Katas/000_Katas.md)
+- [Architecture](Docs/Architecture/000_Architecture.md)
 - [](#)
 
 ## Who We Are
