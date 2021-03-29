@@ -139,7 +139,7 @@
     }
   
     func enableCreateAccountButton(_ status:Bool) {
-      self.loginButton.isEnabled = status
+      self.createAccountButton.isEnabled = status
     }
   
     func hideKeyboard() {
