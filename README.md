@@ -94,6 +94,10 @@ Please follow this documentation in order to fork your copy of the project and t
 
 ## Contributors
 
+## Code of Conduct
+
+[Code of Conduct](./CODE_OF_CONDUCT.md)
+
 ## Changelog
 
 ## License  
