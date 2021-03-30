@@ -36,9 +36,9 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 - 
 
 Now your project should look like this:
-[Step_0_FinalCode](Code/)
+[Step_0_FinalCode](FinalCode/)
 
-Next step we'll add the CompositionRoot class:
+Next step we'll add the AppDependencies class (our composition root):
 
-[Step 1](../000_Step_1/000_Step1_UserInterfaceLayer.md)
+[Step 1](../002_Step_1/002_Step1_AppDependencies.md)
 

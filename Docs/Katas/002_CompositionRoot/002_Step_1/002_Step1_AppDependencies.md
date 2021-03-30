@@ -122,9 +122,9 @@ private func createLoginViewController() -> LoginViewController {
 - We are creating a login view model externally and injecting it in the view controller. We could have for example different versions of the view model and inject one version of them with a run time choice.
 
 Now your project should look like this:
-[Step_0_FinalCode](Code/)
+[Step_1_FinalCode](FinalCode/)
 
 Next step we'll extract the SignupViewController creation and routing:
 
-[Step 3](../002_Step_2/002_Step2_SignupViewController.md)
+[Step 2](../002_Step_2/002_Step2_SignupViewController.md)
 
