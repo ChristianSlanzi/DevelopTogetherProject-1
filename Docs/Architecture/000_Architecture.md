@@ -1,6 +1,6 @@
 # Architecture
 
-![](/Users/christianslanzi/Documents/CHRISTIAN/Development/Git/DevelopTogetherProject-1/Docs/Architecture/architecture.png)
+![](./architecture.png)
 
 [ModularArchitecture.drawio](./ModularArchitecture.drawio)
 
