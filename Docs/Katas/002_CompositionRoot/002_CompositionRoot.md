@@ -9,6 +9,8 @@ Composition Root is a place where components from different layers of the applic
 | #    | Title                                                        | Description                                       | Started    |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------- | ---------- |
 | 000  | [Removing fixed XCode composition](002_Step_0/002_Step0_XCodeComposition.md) | How to bypass the XCode default fixed composition | 2021-03-29 |
+| 001  | [App Dependencies](002_Step_1/002_Step1_AppDependencies.md)  | Let's add our composition root                    | 2021-03-29 |
+| 002  | [Composing the SignupViewController](002_Step_2/002_Step2_ComposingSignup.md) | Compose the second scene                          | 2021-03-29 |
 
 ## 
 
