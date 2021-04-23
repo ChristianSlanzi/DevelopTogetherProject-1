@@ -66,19 +66,27 @@ public class URLSessionHTTPClient: HTTPClient {
         return url
     }
     
-    private func prepareRequest(withURL url: URL?, httpMethod: HTTPMethod) -> URLRequest? {
+    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HTTPMethod) -> URLRequest? {
         
         guard let url = url else { return nil }
-        
+            
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
+        for (header, value) in requestHttpHeaders.allValues() {
+            request.setValue(value, forHTTPHeaderField: header)
+        }
+        
+        request.httpBody = httpBody
         return request
     }
     
     public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
         
-        guard let request = prepareRequest(withURL: url, httpMethod: httpMethod) else {
+        let targetURL = addURLQueryParameters(toURL: url)
+        let httpBody = getHttpBody()
+        
+        guard let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
             //TODO: we should completed with an error, before we return
             return
         }
