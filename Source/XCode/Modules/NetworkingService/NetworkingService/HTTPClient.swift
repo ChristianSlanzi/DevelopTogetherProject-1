@@ -68,5 +68,19 @@ public struct HTTPClientEntity {
 }
 
 public struct HTTPClientResponse {
+    var response: URLResponse?
+    public var statusCode: Int = 0
+    public var headers = HTTPClientEntity()
     
+    public init(fromURLResponse response: URLResponse?) {
+        guard let response = response else { return }
+        self.response = response
+        statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+    
+        if let headerFields = (response as? HTTPURLResponse)?.allHeaderFields {
+            for (key, value) in headerFields {
+                headers.add(value: "\(value)", forKey: "\(key)")
+            }
+        }
+    }
 }
