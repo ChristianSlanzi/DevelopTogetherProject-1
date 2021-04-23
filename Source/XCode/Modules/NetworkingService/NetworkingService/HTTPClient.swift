@@ -7,6 +7,10 @@
 
 import Foundation
 
+public protocol HTTPClientTask {
+    func cancel()
+}
+
 public protocol HTTPClient {
     
     var requestHttpHeaders: HTTPClientEntity { get set }
