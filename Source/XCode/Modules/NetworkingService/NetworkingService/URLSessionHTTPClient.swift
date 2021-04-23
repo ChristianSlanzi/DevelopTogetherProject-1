@@ -87,7 +87,7 @@ public class URLSessionHTTPClient: HTTPClient {
         let httpBody = getHttpBody()
         
         guard let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
-            //TODO: we should completed with an error, before we return
+            completion(HTTPClientResult(withError: HTTPClientCustomError.failedToCreateRequest))
             return
         }
         
