@@ -20,6 +20,27 @@ public class URLSessionHTTPClient: HTTPClient {
     public var urlQueryParameters: HTTPClientEntity
     public var httpBodyParameters: HTTPClientEntity
     
+    private func addURLQueryParameters(toURL url: URL) -> URL {
+        
+        if urlQueryParameters.totalItems() > 0 {
+            guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return url }
+
+            var queryItems = [URLQueryItem]()
+            for (key, value) in urlQueryParameters.allValues() {
+                let item = URLQueryItem(name: key, value: value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
+             
+                queryItems.append(item)
+            }
+            
+            urlComponents.queryItems = queryItems
+             
+            guard let updatedURL = urlComponents.url else { return url }
+            return updatedURL
+        }
+        
+        return url
+    }
+    
     private func prepareRequest(withURL url: URL?, httpMethod: HTTPMethod) -> URLRequest? {
         
         guard let url = url else { return nil }
