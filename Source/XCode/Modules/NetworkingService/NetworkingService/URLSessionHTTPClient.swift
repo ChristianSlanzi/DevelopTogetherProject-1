@@ -83,22 +83,32 @@ public class URLSessionHTTPClient: HTTPClient {
     
     public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
         
-        let targetURL = addURLQueryParameters(toURL: url)
-        let httpBody = getHttpBody()
-        
-        guard let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
-            completion(HTTPClientResult(withError: HTTPClientCustomError.failedToCreateRequest))
-            return
-        }
-        
-        let task = self.session.dataTask(with: request) { (data, response, error) in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
-            completion(HTTPClientResult(withData: data,
-                                        response: HTTPClientResponse(fromURLResponse: response),
-                                        error: error))
+            guard let strongSelf = self else { return }
+            
+            let targetURL = self?.addURLQueryParameters(toURL: url)
+            let httpBody = self?.getHttpBody()
+            
+            print("targetURL: " + targetURL!.absoluteString)
+            
+            guard let request = self?.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else
+            {
+                completion(HTTPClientResult(withError: HTTPClientCustomError.failedToCreateRequest))
+                return
+            }
+            
+            print("request: " + request.description)
+
+            let task = strongSelf.session.dataTask(with: request) { (data, response, error) in
+                
+                completion(HTTPClientResult(withData: data,
+                                   response: HTTPClientResponse(fromURLResponse: response),
+                                   error: error))
+            }
+            
+            task.resume()
         }
-        
-        task.resume()
     }
     
     public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
