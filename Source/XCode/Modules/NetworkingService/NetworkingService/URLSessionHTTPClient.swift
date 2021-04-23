@@ -20,13 +20,24 @@ public class URLSessionHTTPClient: HTTPClient {
     public var urlQueryParameters: HTTPClientEntity
     public var httpBodyParameters: HTTPClientEntity
     
-    public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
+    private func prepareRequest(withURL url: URL?, httpMethod: HTTPMethod) -> URLRequest? {
         
+        guard let url = url else { return nil }
         
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        return request
+    }
+    
+    public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
+        
+        guard let request = prepareRequest(withURL: url, httpMethod: httpMethod) else {
+            //TODO: we should completed with an error, before we return
+            return
+        }
+        
+        let task = self.session.dataTask(with: request) { (data, response, error) in
             
             completion(HTTPClientResult(withData: data,
                                         response: HTTPClientResponse(fromURLResponse: response),
