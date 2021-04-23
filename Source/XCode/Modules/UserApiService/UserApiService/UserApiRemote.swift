@@ -37,7 +37,14 @@ class UserApiRemote: UserApiService {
             print("\n\nResponse HTTP Headers:\n")
              
             if let response = result.response {
-
+                for (key, value) in response.headers.allValues() {
+                    print(key, value)
+                }
+                
+                if response.statusCode != 200 {
+                    completion(.failure(.invalidData))
+                    return
+                }
             } else {
                 completion(.failure(.connectivity))
                 return

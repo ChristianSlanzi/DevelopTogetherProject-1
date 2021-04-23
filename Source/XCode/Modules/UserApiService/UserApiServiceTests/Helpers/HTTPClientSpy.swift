@@ -36,4 +36,19 @@ class HTTPClientSpy: HTTPClient {
         messages[index].completion(HTTPClientResult(withError: error))
     }
     
+    func complete(withStatusCode code: Int, data: Data, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
+        guard requestedURLs.count > index else {
+            return XCTFail("Can't complete request never made", file: file, line: line)
+        }
+        
+        let response = HTTPURLResponse(
+            url: requestedURLs[index],
+            statusCode: code,
+            httpVersion: nil,
+            headerFields: nil
+        )!
+        
+        messages[index].completion(HTTPClientResult(withData: data, response: HTTPClientResponse(fromURLResponse: response), error: nil))
+    }
+    
 }
