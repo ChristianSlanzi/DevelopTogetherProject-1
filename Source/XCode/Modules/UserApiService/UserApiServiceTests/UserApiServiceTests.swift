@@ -31,3 +31,27 @@ class UserApiServiceTests: XCTestCase {
     }
 
 }
+
+extension UserApiServiceTests {
+    
+    // MARK: - Tests
+    
+    func test_init_doesNotRequestDataFromURL() {
+        let (_, client) = makeSUT()
+        
+        XCTAssertTrue(client.requestedURLs.isEmpty)
+    }
+}
+
+extension UserApiServiceTests {
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: UserApiRemote, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = UserApiRemote(url: url, client: client)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(client, file: file, line: line)
+        return (sut, client)
+    }
+}
