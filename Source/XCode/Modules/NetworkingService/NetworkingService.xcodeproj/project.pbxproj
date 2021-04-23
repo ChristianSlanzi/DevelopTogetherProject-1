@@ -10,6 +10,7 @@
 		24C8D9DB2632DE2E00887D44 /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8D9D12632DE2E00887D44 /* NetworkingService.framework */; };
 		24C8D9E02632DE2E00887D44 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8D9DF2632DE2E00887D44 /* NetworkingServiceTests.swift */; };
 		24C8D9E22632DE2E00887D44 /* NetworkingService.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8D9D42632DE2E00887D44 /* NetworkingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8DA172632E5DC00887D44 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8DA162632E5DC00887D44 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		24C8D9DA2632DE2E00887D44 /* NetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C8D9DF2632DE2E00887D44 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 		24C8D9E12632DE2E00887D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C8DA162632E5DC00887D44 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				24C8D9D42632DE2E00887D44 /* NetworkingService.h */,
 				24C8D9D52632DE2E00887D44 /* Info.plist */,
+				24C8DA162632E5DC00887D44 /* HTTPClient.swift */,
 			);
 			path = NetworkingService;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					24C8D9D02632DE2E00887D44 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					24C8D9D92632DE2E00887D44 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C8DA172632E5DC00887D44 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		24C8D9E62632DE2E00887D44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.test.NetworkingService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		24C8D9E72632DE2E00887D44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,6 +395,7 @@
 		24C8D9E92632DE2E00887D44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetworkingServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +413,7 @@
 		24C8D9EA2632DE2E00887D44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetworkingServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
