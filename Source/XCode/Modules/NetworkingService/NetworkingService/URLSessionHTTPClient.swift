@@ -106,3 +106,16 @@ public class URLSessionHTTPClient: HTTPClient {
     }
     
 }
+
+enum HTTPClientCustomError: Error {
+    case failedToCreateRequest
+}
+
+extension HTTPClientCustomError: LocalizedError {
+    
+    public var localizedDescription: String {
+        switch self {
+            case .failedToCreateRequest: return NSLocalizedString("Unable to create the URLRequest", comment: "")
+        }
+    }
+}
