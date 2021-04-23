@@ -113,6 +113,18 @@ public class URLSessionHTTPClient: HTTPClient {
     
     public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
         
+        DispatchQueue.global(qos: .userInitiated).async {  [weak self] in
+        
+            guard let strongSelf = self else { return }
+            
+            let task = strongSelf.session.dataTask(with: url, completionHandler: { (data, response, error) in
+                
+                guard let data = data else { completion(nil); return }
+                completion(data)
+            })
+            
+            task.resume()
+        }
     }
     
 }
