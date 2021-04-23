@@ -29,9 +29,25 @@ public enum HTTPMethod: String {
 }
 
 public struct HTTPClientResult {
+    public var data: Data?
+    public var response: HTTPClientResponse?
+    public var error: Error?
+
+    public init(withData data: Data?, response: HTTPClientResponse?, error: Error?) {
+        self.data = data
+        self.response = response
+        self.error = error
+    }
     
+    public init(withError error: Error) {
+        self.error = error
+    }
 }
 
 public struct HTTPClientEntity {
+    
+}
+
+public struct HTTPClientResponse {
     
 }
