@@ -21,7 +21,7 @@ class HTTPClientSpy: HTTPClient {
     var httpBodyParameters: HTTPClientEntity = HTTPClientEntity()
     
     func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
-        
+        messages.append((url, completion))
     }
     
     func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {

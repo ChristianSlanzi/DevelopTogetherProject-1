@@ -41,6 +41,16 @@ extension UserApiServiceTests {
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
+    
+    func test_getUsersListTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.getUsersList { _ in }
+        sut.getUsersList { _ in }
+
+        XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("users"), url.appendingPathComponent("users")])
+    }
 }
 
 extension UserApiServiceTests {

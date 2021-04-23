@@ -16,6 +16,7 @@
 		2436A9E926335FAD002282CE /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9E826335FAD002282CE /* UserApiService.swift */; };
 		2436A9EE26335FF1002282CE /* UserApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9ED26335FF1002282CE /* UserApiRemote.swift */; };
 		2436A9F126336032002282CE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */; };
+		2436A9FE26336456002282CE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9FD26336456002282CE /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		2436A9E826335FAD002282CE /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		2436A9ED26335FF1002282CE /* UserApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiRemote.swift; sourceTree = "<group>"; };
 		2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		2436A9FD26336456002282CE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		2436A9B226335697002282CE /* UserApiService */ = {
 			isa = PBXGroup;
 			children = (
+				2436A9FA26336423002282CE /* Model */,
 				2436A9B326335697002282CE /* UserApiService.h */,
 				2436A9B426335697002282CE /* Info.plist */,
 				2436A9E826335FAD002282CE /* UserApiService.swift */,
@@ -154,6 +157,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2436A9FA26336423002282CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2436A9FD26336456002282CE /* Models.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2436A9FE26336456002282CE /* Models.swift in Sources */,
 				2436A9E926335FAD002282CE /* UserApiService.swift in Sources */,
 				2436A9EE26335FF1002282CE /* UserApiRemote.swift in Sources */,
 			);
