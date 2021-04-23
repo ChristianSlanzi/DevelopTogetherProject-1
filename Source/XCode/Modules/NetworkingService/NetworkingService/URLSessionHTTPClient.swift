@@ -20,6 +20,31 @@ public class URLSessionHTTPClient: HTTPClient {
     public var urlQueryParameters: HTTPClientEntity
     public var httpBodyParameters: HTTPClientEntity
     
+    var httpBody: Data?
+    
+    private func getHttpBody() -> Data? {
+        
+        guard let contentType = requestHttpHeaders.value(forKey: "Content-Type") else { return nil }
+        
+        if contentType.contains("application/json") {
+            
+            return try? JSONSerialization.data(withJSONObject: httpBodyParameters.allValues(), options: [.prettyPrinted, .sortedKeys])
+            
+        } else if contentType.contains("application/x-www-form-urlencoded") {
+            
+            let bodyString = httpBodyParameters
+                .allValues()
+                .map { "\($0)=\(String(describing: $1.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)))" }
+                .joined(separator: "&")
+            return bodyString.data(using: .utf8)
+            
+        } else {
+     
+            return httpBody
+            
+        }
+    }
+    
     private func addURLQueryParameters(toURL url: URL) -> URL {
         
         if urlQueryParameters.totalItems() > 0 {
