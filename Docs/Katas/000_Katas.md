@@ -13,6 +13,7 @@ Every Kata will be listed in the following table:
 | 000  | [TDD Login/Signup](000_TDD_LoginSignup/000_TDD_LoginSignup.md) | Login/Signup following TDD Methodology                       | 2021-03-20 |
 | 001  | [Refactoring in modules](001_Refactoring_LoginSignup/001_Refactoring_LoginSignup.md) | Splitting App and Features by moving Login/Signup logic in a separate framework | 2021-03-27 |
 | 002  | [CompositionRoot](002_CompositionRoot/002_CompositionRoot.md) | The use of CompositionRoot allows a better modularity by composing the application in the main modules. | 2021-03-29 |
+| 003  | [Networking](003_Networking/003_Networking.md)               | Implementing a networking layer. The Http Client             | 2021-04-18 |
 
 ## 
 
