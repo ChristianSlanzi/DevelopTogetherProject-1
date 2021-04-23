@@ -17,6 +17,7 @@
 		2436A9EE26335FF1002282CE /* UserApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9ED26335FF1002282CE /* UserApiRemote.swift */; };
 		2436A9F126336032002282CE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */; };
 		2436A9FE26336456002282CE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9FD26336456002282CE /* Models.swift */; };
+		2436AA02263368D0002282CE /* UserApiServiceTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		2436A9ED26335FF1002282CE /* UserApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiRemote.swift; sourceTree = "<group>"; };
 		2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2436A9FD26336456002282CE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserApiServiceTests+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				2436A9CD26335D06002282CE /* HTTPClientSpy.swift */,
 				2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */,
+				2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2436A9BF26335698002282CE /* UserApiServiceTests.swift in Sources */,
+				2436AA02263368D0002282CE /* UserApiServiceTests+Helpers.swift in Sources */,
 				2436A9CE26335D06002282CE /* HTTPClientSpy.swift in Sources */,
 				2436A9F126336032002282CE /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);

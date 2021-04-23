@@ -34,6 +34,15 @@ class UserApiRemote: UserApiService {
         
         client.makeRequest(toURL: url.appendingPathComponent("users"), withHttpMethod: .get) { [weak self] result in
             
+            print("\n\nResponse HTTP Headers:\n")
+             
+            if let response = result.response {
+
+            } else {
+                completion(.failure(.connectivity))
+                return
+            }
+            
         }
         
     }

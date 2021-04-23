@@ -51,6 +51,15 @@ extension UserApiServiceTests {
 
         XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("users"), url.appendingPathComponent("users")])
     }
+    
+    func test_getUsersList_deliversConnectivityErrorOnClientError() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .failure(.connectivity), when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
 }
 
 extension UserApiServiceTests {

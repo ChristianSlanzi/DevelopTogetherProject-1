@@ -28,4 +28,12 @@ class HTTPClientSpy: HTTPClient {
         
     }
     
+    func complete(with error: Error, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
+        guard messages.count > index else {
+            return XCTFail("Can't complete request never made", file: file, line: line)
+        }
+
+        messages[index].completion(HTTPClientResult(withError: error))
+    }
+    
 }
