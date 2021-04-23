@@ -22,6 +22,18 @@ public class URLSessionHTTPClient: HTTPClient {
     
     public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
         
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod.rawValue
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            completion(HTTPClientResult(withData: data,
+                                        response: HTTPClientResponse(fromURLResponse: response),
+                                        error: error))
+        }
+        
+        task.resume()
     }
     
     public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
