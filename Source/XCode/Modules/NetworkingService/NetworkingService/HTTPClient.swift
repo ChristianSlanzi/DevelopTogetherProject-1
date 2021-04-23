@@ -45,7 +45,26 @@ public struct HTTPClientResult {
 }
 
 public struct HTTPClientEntity {
+
+    private var values: [String: String] = [:]
     
+    public init() {}
+    
+    public mutating func add(value: String, forKey key: String) {
+        values[key] = value
+    }
+    
+    public func value(forKey key: String) -> String? {
+        return values[key]
+    }
+    
+    public func allValues() -> [String: String] {
+        return values
+    }
+    
+    public func totalItems() -> Int {
+        return values.count
+    }
 }
 
 public struct HTTPClientResponse {
