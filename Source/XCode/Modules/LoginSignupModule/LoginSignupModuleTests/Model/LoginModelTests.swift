@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import LoginSignupModule
 
 class LoginModelTests: XCTestCase {
     
@@ -40,7 +41,9 @@ class LoginModelTests: XCTestCase {
 extension LoginModelTests: LoginModelSpecs {
     
     func testLoginModel_ValidUserName_ValidPassword_CanBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: validDummyUserName,
+                                    password: validDummyPassword)
+        XCTAssertNotNil(loginModel)
     }
     
     func testLoginModel_InvalidUserName_ValidPassword_CanNotBeInstantiated() throws {

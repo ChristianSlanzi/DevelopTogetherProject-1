@@ -12,6 +12,7 @@
 		2471EF96263488EF00E35A11 /* LoginSignupModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 2471EF88263488EF00E35A11 /* LoginSignupModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2471EFA626348AE200E35A11 /* LoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFA526348AE200E35A11 /* LoginModelTests.swift */; };
 		2471EFAF26348D4400E35A11 /* LoginModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFAE26348D4400E35A11 /* LoginModelSpecs.swift */; };
+		2471EFB52634A1D000E35A11 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFB42634A1D000E35A11 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		2471EF95263488EF00E35A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2471EFA526348AE200E35A11 /* LoginModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelTests.swift; sourceTree = "<group>"; };
 		2471EFAE26348D4400E35A11 /* LoginModelSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelSpecs.swift; sourceTree = "<group>"; };
+		2471EFB42634A1D000E35A11 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		2471EFA126348A1800E35A11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2471EFB42634A1D000E35A11 /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					2471EF84263488EF00E35A11 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					2471EF8D263488EF00E35A11 = {
 						CreatedOnToolsVersion = 12.4;
@@ -240,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2471EFB52634A1D000E35A11 /* LoginModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +394,7 @@
 		2471EF9A263488EF00E35A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -404,6 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.test.LoginSignupModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -412,6 +419,7 @@
 		2471EF9B263488EF00E35A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -435,6 +443,7 @@
 		2471EF9D263488EF00E35A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginSignupModuleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,6 +461,7 @@
 		2471EF9E263488EF00E35A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginSignupModuleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
