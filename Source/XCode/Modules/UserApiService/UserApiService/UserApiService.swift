@@ -31,3 +31,15 @@ public protocol UserApiService {
     func login(email: String, password: String, completion: @escaping (LoginDataResult) -> Void)
     func register(email: String, password: String, completion: @escaping (RegisterDataResult) -> Void)
 }
+
+public class UserApiServiceFactory {
+    private let url: URL
+    private var client: HTTPClient
+    public init(url: URL, client: HTTPClient) {
+        self.url = url
+        self.client = client
+    }
+    public func getUserApiService() -> UserApiService {
+        return UserApiRemote(url: url, client: client)
+    }
+}
