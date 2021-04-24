@@ -216,6 +216,71 @@ extension UserApiServiceTests {
             client.complete(withStatusCode: 201, data: invalidJSON)
         })
     }
+    
+    func test_createUserTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.createUser { _ in }
+        sut.createUser { _ in }
+
+        XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("users"), url.appendingPathComponent("users")])
+    }
+    
+    func test_createUser_deliversConnectivityErrorOnClientError() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteCreateUserWith: .failure(.connectivity), when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
+    
+    func test_createUser_deliversInvalidDataErrorOnNon201HTTPResponse() {
+        let (sut, client) = makeSUT()
+
+        let samples = [199, 200, 300, 400, 500]
+
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteCreateUserWith: .failure(.invalidData), when: {
+                let json = makeItemsJSON([])
+                client.complete(withStatusCode: code, data: json, at: index)
+            })
+        }
+    }
+
+    func test_createUser_deliversSuccessWithNoItemsOn201HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteCreateUserWith: .failure(.invalidData), when: {
+            let emptyListJSON = makeItemsJSON([])
+            client.complete(withStatusCode: 201, data: emptyListJSON)
+        })
+    }
+
+    func test_createUser_deliversSuccessWithItemsOn201HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let user1 = makeJobUser(id: "0", name: "John", job: "Developer", createdAt: "11-10-2020")
+
+        expect(sut, toCompleteCreateUserWith: .success(user1.model), when: {
+            client.complete(withStatusCode: 201, data: makeJobUserData(user: user1.json))
+        })
+    }
+
+    func test_createUser_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "http://any-url.com")!
+        let client = HTTPClientSpy()
+        var sut: UserApiRemote? = UserApiRemote(url: url, client: client)
+
+        var capturedResults = [UserApiService.JobUserResult]()
+        sut?.createUser { capturedResults.append($0) }
+
+        sut = nil
+        client.complete(withStatusCode: 201, data: makeItemsJSON([]))
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
 }
 
 extension UserApiServiceTests {
@@ -260,5 +325,22 @@ extension UserApiServiceTests {
     private func makeSingleUserDataJSON(user: [String: Any]) -> Data {
         let json: [String: Any] = ["data": user]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makeJobUser(id: String, name: String? = nil, job: String? = nil, createdAt: String? = nil) -> (model: JobUser, json: [String: Any]) {
+        let item = JobUser(id: id, name: name, job: job, createdAt: createdAt!)
+        
+        let json = [
+            "id": id,
+            "name": name as Any,
+            "job": job as Any,
+            "created_at": createdAt as Any
+        ].compactMapValues { $0 }
+        
+        return (item, json)
+    }
+    
+    private func makeJobUserData(user: [String: Any]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: user)
     }
 }
