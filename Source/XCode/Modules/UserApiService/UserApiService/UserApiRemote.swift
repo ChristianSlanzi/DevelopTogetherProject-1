@@ -142,4 +142,74 @@ class UserApiRemote: UserApiService {
             }
         }
     }
+    
+    // MARK: - login
+    
+    func login(email: String, password: String, completion: @escaping (LoginDataResult) -> Void) {
+        
+        client.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
+        client.httpBodyParameters.add(value: "eve.holt@reqres.in", forKey: "email")
+        client.httpBodyParameters.add(value: "cityslicka", forKey: "password")
+     
+        client.makeRequest(toURL: url.appendingPathComponent("login"), withHttpMethod: .post) {  [weak self] result in
+            guard self != nil else { return }
+            
+            guard let response = result.response else {
+                completion(.failure(.connectivity))
+                return
+            }
+            if response.statusCode == 200 {
+                guard let data = result.data else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let loginData = try? decoder.decode(LoginData.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                print(loginData.description)
+                completion(.success(loginData))
+            }
+            else {
+                completion(.failure(.invalidData))
+            }
+        }
+    }
+    
+    // MARK: - register
+    
+    func register(email: String, password: String, completion: @escaping (RegisterDataResult) -> Void) {
+        
+        client.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
+        client.httpBodyParameters.add(value: "eve.holt@reqres.in", forKey: "email")
+        client.httpBodyParameters.add(value: "pistol", forKey: "password")
+     
+        client.makeRequest(toURL: url.appendingPathComponent("register"), withHttpMethod: .post) {  [weak self] result in
+            guard self != nil else { return }
+            
+            guard let response = result.response else {
+                completion(.failure(.connectivity))
+                return
+            }
+            if response.statusCode == 200 {
+                guard let data = result.data else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let registerData = try? decoder.decode(RegisterData.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                print(registerData.description)
+                completion(.success(registerData))
+            }
+            else {
+                completion(.failure(.invalidData))
+            }
+        }
+    }
 }

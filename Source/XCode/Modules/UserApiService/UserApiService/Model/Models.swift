@@ -10,6 +10,33 @@ import Foundation
 var defString = String(stringLiteral: "")
 var defInt = -1
 
+public struct LoginData: Codable, CustomStringConvertible, Hashable {
+    
+    public var token: String?
+
+    public var description: String {
+        return """
+        ------------
+        token = \(token ?? defString)
+        ------------
+        """
+    }
+}
+
+public struct RegisterData: Codable, CustomStringConvertible, Hashable {
+    
+    public var id: Int
+    public var token: String?
+
+    public var description: String {
+        return """
+        ------------
+        token = \(token ?? defString)
+        ------------
+        """
+    }
+}
+
 public struct UserData: Codable,
                         CustomStringConvertible,
                         Hashable {

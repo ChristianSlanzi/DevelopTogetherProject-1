@@ -10,11 +10,16 @@ import NetworkingService
 public protocol UserApiService {
     
     typealias ServiceError = UserApiServiceError
+    typealias ServiceLoginData = LoginData
+    typealias ServiceRegisterData = RegisterData
     
     typealias UserDataResult = Swift.Result<UserData, ServiceError>
     typealias SingleUserDataResult = Swift.Result<SingleUserData, ServiceError>
     typealias DataResult = Swift.Result<Data, ServiceError>
     typealias JobUserResult = Swift.Result<JobUser, ServiceError>
+    
+    typealias LoginDataResult = Swift.Result<LoginData, ServiceError>
+    typealias RegisterDataResult = Swift.Result<RegisterData, ServiceError>
     
     func getUsersList(completion: @escaping (UserDataResult) -> Void)
     func getUsersList(page: Int?, completion: @escaping (UserDataResult) -> Void)
@@ -22,4 +27,7 @@ public protocol UserApiService {
     func getSingleUser(id: Int, completion: @escaping (SingleUserDataResult) -> Void)
     
     func createUser(completion: @escaping (JobUserResult) -> Void)
+    
+    func login(email: String, password: String, completion: @escaping (LoginDataResult) -> Void)
+    func register(email: String, password: String, completion: @escaping (RegisterDataResult) -> Void)
 }
