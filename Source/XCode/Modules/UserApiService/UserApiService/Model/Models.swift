@@ -56,6 +56,10 @@ public struct User: Codable, CustomStringConvertible, Hashable {
     }
 }
 
+public struct SingleUserData: Codable, Hashable {
+    var data: User?
+}
+
 public struct JobUser: Codable, CustomStringConvertible, Hashable {
     var id: String
     var name: String?

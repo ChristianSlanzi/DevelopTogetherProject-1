@@ -129,6 +129,85 @@ extension UserApiServiceTests {
     
     // -----------------------------------------
     
+    func test_getSingleUserTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.getSingleUser(id: 1) { _ in }
+        sut.getSingleUser(id: 1) { _ in }
+
+        XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("users/1"), url.appendingPathComponent("users/1")])
+    }
+    
+    func test_getSingleUser_deliversConnectivityErrorOnClientError() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteGetSingleUserWith: .failure(.connectivity), when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
+    
+    func test_getSingleUser_deliversInvalidDataErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+
+        let samples = [199, 201, 300, 400, 500]
+
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteGetSingleUserWith: .failure(.invalidData), when: {
+                let json = makeItemsJSON([])
+                client.complete(withStatusCode: code, data: json, at: index)
+            })
+        }
+    }
+    
+    func test_getSingleUser_deliversInvalidDataErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteGetSingleUserWith: .failure(.invalidData), when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
+    
+    func test_getSingleUser_deliversSuccessWithNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteGetSingleUserWith: .success(SingleUserData()), when: {
+            let emptyListJSON = makeItemsJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJSON)
+        })
+    }
+    
+    func test_getSingleUser_deliversSuccessWithItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let user1 = makeItem(id: 0, firstName: "John", lastName: "Doe", avatar: "")
+
+        let userData = SingleUserData(data: user1.model)
+
+        expect(sut, toCompleteGetSingleUserWith: .success(userData), when: {
+            let json = makeSingleUserDataJSON(user: user1.json)
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
+    func test_getSingleUser_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "http://any-url.com")!
+        let client = HTTPClientSpy()
+        var sut: UserApiRemote? = UserApiRemote(url: url, client: client)
+
+        var capturedResults = [UserApiService.SingleUserDataResult]()
+        sut?.getSingleUser(id: 1) { capturedResults.append($0) }
+
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeItemsJSON([]))
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
+    // ----------------------------------------
+    
     func test_createUser_deliversInvalidDataErrorOn201HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
@@ -175,6 +254,11 @@ extension UserApiServiceTests {
                                    "total": total as Any,
                                    "total_pages": totalPages as Any,
                                    "data": users]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makeSingleUserDataJSON(user: [String: Any]) -> Data {
+        let json: [String: Any] = ["data": user]
         return try! JSONSerialization.data(withJSONObject: json)
     }
 }

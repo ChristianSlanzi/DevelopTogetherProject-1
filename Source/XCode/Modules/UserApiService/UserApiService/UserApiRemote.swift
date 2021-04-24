@@ -20,6 +20,8 @@ class UserApiRemote: UserApiService {
         self.client = client
     }
     
+    // MARK: - getUsersList
+    
     func getUsersList(completion: @escaping (UserDataResult) -> Void) {
         getUsersList(page: nil) { (result) in
             completion(result)
@@ -66,6 +68,48 @@ class UserApiRemote: UserApiService {
         }
         
     }
+    
+    // MARK: - getSingleUser
+    
+    func getSingleUser(id: Int, completion: @escaping (SingleUserDataResult) -> Void) {
+        var singleUserURL = url.appendingPathComponent("users")
+        singleUserURL.appendPathComponent("\(id)")
+             
+        client.makeRequest(toURL: singleUserURL, withHttpMethod: .get) {  [weak self] result in
+            guard self != nil else { return }
+            
+            print("\n\nResponse HTTP Headers:\n")
+            
+            if let response = result.response {
+                for (key, value) in response.headers.allValues() {
+                    print(key, value)
+                }
+                
+                if response.statusCode != 200 {
+                    completion(.failure(.invalidData))
+                    return
+                }
+            } else {
+                completion(.failure(.connectivity))
+                return
+            }
+            
+            if let data = result.data {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let singleUserData = try? decoder.decode(SingleUserData.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return }
+     
+                completion(.success(singleUserData))
+     
+            } else {
+                completion(.failure(.invalidData))
+            }
+        }
+    }
+    
+    // MARK: - createUser
     
     func createUser(completion: @escaping (JobUserResult) -> Void) {
         client.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")

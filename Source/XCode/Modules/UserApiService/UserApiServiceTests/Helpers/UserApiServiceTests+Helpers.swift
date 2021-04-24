@@ -33,6 +33,29 @@ extension UserApiServiceTests {
         waitForExpectations(timeout: 0.1)
     }
     
+    func expect(_ sut: UserApiService, toCompleteGetSingleUserWith expectedResult: Result<SingleUserData, UserApiServiceError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for call completion")
+        
+        sut.getSingleUser(id: 1) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedUserData), .success(expectedUserData)):
+                XCTAssertEqual(receivedUserData, expectedUserData, file: file, line: line)
+                
+            case let (.failure(receivedError as UserApiServiceError), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+                
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+            
+            exp.fulfill()
+        }
+        
+        action()
+        
+        waitForExpectations(timeout: 0.1)
+    }
+    
     func expect(_ sut: UserApiService, toCompleteCreateUserWith expectedResult: Result<JobUser, UserApiServiceError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for call completion")
         
