@@ -71,6 +71,9 @@
 		2471EF87263488EF00E35A11 /* LoginSignupModule */ = {
 			isa = PBXGroup;
 			children = (
+				2471EFA326348A2C00E35A11 /* Protocols */,
+				2471EFA226348A2200E35A11 /* Controllers */,
+				2471EFA126348A1800E35A11 /* Model */,
 				2471EF88263488EF00E35A11 /* LoginSignupModule.h */,
 				2471EF89263488EF00E35A11 /* Info.plist */,
 			);
@@ -80,10 +83,39 @@
 		2471EF92263488EF00E35A11 /* LoginSignupModuleTests */ = {
 			isa = PBXGroup;
 			children = (
+				2471EFA426348A4800E35A11 /* Model */,
 				2471EF93263488EF00E35A11 /* LoginSignupModuleTests.swift */,
 				2471EF95263488EF00E35A11 /* Info.plist */,
 			);
 			path = LoginSignupModuleTests;
+			sourceTree = "<group>";
+		};
+		2471EFA126348A1800E35A11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2471EFA226348A2200E35A11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2471EFA326348A2C00E35A11 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2471EFA426348A4800E35A11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
