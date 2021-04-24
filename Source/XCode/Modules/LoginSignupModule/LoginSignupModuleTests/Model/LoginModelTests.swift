@@ -8,6 +8,13 @@
 import XCTest
 
 class LoginModelTests: XCTestCase {
+    
+    private let validDummyUserName: String = "username"
+    private let validDummyPassword: String = "Aryb4N79"
+    private let invalidDummyUserName: String = "u%"
+    private let invalidDummyPassword: String = "abc"
+    private let emptyDummyUserName: String = ""
+    private let emptyDummyPassword: String = ""
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,5 +35,43 @@ class LoginModelTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+}
 
+extension LoginModelTests: LoginModelSpecs {
+    
+    func testLoginModel_ValidUserName_ValidPassword_CanBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_InvalidUserName_ValidPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_ValidUserName_InvalidPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_InvalidUserName_InvalidPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_EmptyUserName_ValidPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_EmptyUserName_InvalidPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_EmptyUserName_EmptyPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_ValidUserName_EmptyPassword_CanNotBeInstantiated() throws {
+        
+    }
+    
+    func testLoginModel_InvalidUserName_EmptyPassword_CanNotBeInstantiated() throws {
+        
+    }
 }

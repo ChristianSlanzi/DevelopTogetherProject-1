@@ -11,6 +11,7 @@
 		2471EF94263488EF00E35A11 /* LoginSignupModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EF93263488EF00E35A11 /* LoginSignupModuleTests.swift */; };
 		2471EF96263488EF00E35A11 /* LoginSignupModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 2471EF88263488EF00E35A11 /* LoginSignupModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2471EFA626348AE200E35A11 /* LoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFA526348AE200E35A11 /* LoginModelTests.swift */; };
+		2471EFAF26348D4400E35A11 /* LoginModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFAE26348D4400E35A11 /* LoginModelSpecs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		2471EF93263488EF00E35A11 /* LoginSignupModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupModuleTests.swift; sourceTree = "<group>"; };
 		2471EF95263488EF00E35A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2471EFA526348AE200E35A11 /* LoginModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelTests.swift; sourceTree = "<group>"; };
+		2471EFAE26348D4400E35A11 /* LoginModelSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelSpecs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +118,18 @@
 		2471EFA426348A4800E35A11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2471EFAB26348C4300E35A11 /* Specs */,
 				2471EFA526348AE200E35A11 /* LoginModelTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2471EFAB26348C4300E35A11 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				2471EFAE26348D4400E35A11 /* LoginModelSpecs.swift */,
+			);
+			path = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2471EFAF26348D4400E35A11 /* LoginModelSpecs.swift in Sources */,
 				2471EF94263488EF00E35A11 /* LoginSignupModuleTests.swift in Sources */,
 				2471EFA626348AE200E35A11 /* LoginModelTests.swift in Sources */,
 			);
