@@ -7,6 +7,7 @@
 
 import UIKit
 import NetworkingService
+import UserApiService
 
 class ViewController: UIViewController {
 
