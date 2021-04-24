@@ -73,6 +73,70 @@ extension UserApiServiceTests {
             })
         }
     }
+    
+    func test_getUsersList_deliversInvalidDataErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .failure(.invalidData), when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
+    
+    func test_getUsersList_deliversSuccessWithNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .success(UserData()), when: {
+            let emptyListJSON = makeItemsJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJSON)
+        })
+    }
+    
+    func test_getUsersList_deliversSuccessWithItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let user1 = makeItem(id: 0, firstName: "John", lastName: "Doe", avatar: "")
+
+        let user2 = makeItem(id: 1, firstName: "Donald", lastName: "Duck", avatar: "")
+
+        let users = [user1.model, user2.model]
+        
+        let userData = UserData(page: 0,
+                                perPage: 2,
+                                total: 2,
+                                totalPages: 1,
+                                data: users)
+
+        expect(sut, toCompleteWith: .success(userData), when: {
+            let json = makeUserDataJSON(page: 0, perPage: 2, total: 2, totalPages: 1, users: [user1.json, user2.json])
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
+    func test_getUsersList_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "http://any-url.com")!
+        let client = HTTPClientSpy()
+        var sut: UserApiRemote? = UserApiRemote(url: url, client: client)
+
+        var capturedResults = [UserApiService.UserDataResult]()
+        sut?.getUsersList { capturedResults.append($0) }
+
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeItemsJSON([]))
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
+    // -----------------------------------------
+    
+    func test_createUser_deliversInvalidDataErrorOn201HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteCreateUserWith: .failure(.invalidData), when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 201, data: invalidJSON)
+        })
+    }
 }
 
 extension UserApiServiceTests {
@@ -87,8 +151,30 @@ extension UserApiServiceTests {
         return (sut, client)
     }
     
+    private func makeItem(id: Int, firstName: String? = nil, lastName: String? = nil, avatar: String? = nil) -> (model: User, json: [String: Any]) {
+        let item = User(id: id, firstName: firstName, lastName: lastName, avatar: avatar)
+        
+        let json = [
+            "id": id,
+            "first_name": firstName as Any,
+            "last_name": lastName as Any,
+            "avatar": avatar as Any
+        ].compactMapValues { $0 }
+        
+        return (item, json)
+    }
+    
     private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
         let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makeUserDataJSON(page: Int?, perPage: Int?, total: Int?, totalPages: Int?, users: [[String: Any]]) -> Data {
+        let json: [String: Any] = ["page": page as Any,
+                                   "per_page": perPage as Any,
+                                   "total": total as Any,
+                                   "total_pages": totalPages as Any,
+                                   "data": users]
         return try! JSONSerialization.data(withJSONObject: json)
     }
 }

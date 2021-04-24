@@ -9,7 +9,7 @@ import NetworkingService
 
 
 class UserApiRemote: UserApiService {
-
+    
     private var url: URL
     private var client: HTTPClient
     // Inject the Networking service in the init through a protocol
@@ -33,6 +33,7 @@ class UserApiRemote: UserApiService {
         }
         
         client.makeRequest(toURL: url.appendingPathComponent("users"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
             
             print("\n\nResponse HTTP Headers:\n")
              
@@ -50,7 +51,51 @@ class UserApiRemote: UserApiService {
                 return
             }
             
+            if let data = result.data {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let userData = try? decoder.decode(UserData.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                print(userData.description)
+                completion(.success(userData))
+            } else {
+                completion(.failure(.invalidData))
+            }
         }
         
+    }
+    
+    func createUser(completion: @escaping (JobUserResult) -> Void) {
+        client.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
+        client.httpBodyParameters.add(value: "John", forKey: "name")
+        client.httpBodyParameters.add(value: "Developer", forKey: "job")
+     
+        client.makeRequest(toURL: url.appendingPathComponent("users"), withHttpMethod: .post) {  [weak self] result in
+            guard self != nil else { return }
+            
+            guard let response = result.response else {
+                completion(.failure(.connectivity))
+                return
+            }
+            if response.statusCode == 201 {
+                guard let data = result.data else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let jobUser = try? decoder.decode(JobUser.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                print(jobUser.description)
+                completion(.success(jobUser))
+            }
+            else {
+                completion(.failure(.invalidData))
+            }
+        }
     }
 }
