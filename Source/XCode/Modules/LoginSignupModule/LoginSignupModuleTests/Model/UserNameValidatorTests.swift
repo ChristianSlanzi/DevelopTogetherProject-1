@@ -116,3 +116,22 @@ extension UserNameValidatorTests {
         XCTAssertTrue(validator.validate(tenCharacterName), "/(tenCharacterName) should have been valid.")
     }
 }
+
+// MARK: special character validation
+extension UserNameValidatorTests {
+    
+ func testValidate_StringWithSpecialCharacters1_ReturnsFalse() {
+  let validator = UserNameValidator()
+   XCTAssertFalse(validator.validate(nameWithUnsupportedSpecialCharacters1), "/(nameWithUnsupportedSpecialCharacters1) should not have been valid.")
+ }
+ 
+ func testValidate_StringWithSpecialCharacters2_ReturnsFalse() {
+  let validator = UserNameValidator()
+  XCTAssertFalse(validator.validate(nameWithUnsupportedSpecialCharacters2), "/(nameWithUnsupportedSpecialCharacters2) should not have been valid.")
+ }
+    
+ func testValidate_StringWithSpecialCharacters3_ReturnsFalse() {
+  let validator = UserNameValidator()
+  XCTAssertFalse(validator.validate(nameWithUnsupportedSpecialCharacters3), "/(nameWithUnsupportedSpecialCharacters3) should not have been valid.")
+ }
+}

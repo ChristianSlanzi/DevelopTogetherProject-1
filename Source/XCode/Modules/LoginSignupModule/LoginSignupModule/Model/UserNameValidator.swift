@@ -22,6 +22,11 @@ public class UserNameValidator {
             return false
         }
         
+        let specialCharacters = Set("+-.,!@#$%^&*();\\/|<>\"")
+        if (value.filter {specialCharacters.contains($0)}).count > 0 {
+            return false
+        }
+        
         return true
     }
 }
