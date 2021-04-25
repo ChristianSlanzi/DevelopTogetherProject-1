@@ -27,6 +27,15 @@ public class UserNameValidator {
             return false
         }
         
-        return true
+        guard let regexValidator = try? NSRegularExpression(pattern: "([A-Za-z0-9'])",
+                                                            options: .caseInsensitive) else { return false }
+        
+        if regexValidator.numberOfMatches(in: value,
+                                          options: NSRegularExpression.MatchingOptions.reportCompletion,
+                                          range: NSMakeRange(0, value.count)) > 0 {
+            return true
+        }
+        
+        return false
     }
 }

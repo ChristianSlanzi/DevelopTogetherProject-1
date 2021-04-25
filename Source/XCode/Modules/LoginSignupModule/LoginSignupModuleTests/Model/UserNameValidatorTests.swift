@@ -135,3 +135,101 @@ extension UserNameValidatorTests {
   XCTAssertFalse(validator.validate(nameWithUnsupportedSpecialCharacters3), "/(nameWithUnsupportedSpecialCharacters3) should not have been valid.")
  }
 }
+
+// MARK: alphanumeric validation
+extension UserNameValidatorTests {
+    
+  func testValidate_StringWithAlphanumericCharacters1_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets1), "/(nameWithAlphabets1) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters2_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets2), "/(nameWithAlphabets2) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters3_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets3), "/(nameWithAlphabets3) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters4_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets4), "/(nameWithAlphabets4) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters5_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets5), "/(nameWithAlphabets5) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters6_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets6), "/(nameWithAlphabets6) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters7_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets7), "/(nameWithAlphabets7) should have been valid.")
+  }
+
+  func testValidate_StringWithAlphanumericCharacters8_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithAlphabets8), "/(nameWithAlphabets8) should have been valid.")
+  }
+}
+
+// MARK: Numeric validation
+extension UserNameValidatorTests {
+    
+  func testValidate_StringWithDigit0_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit0), "/(nameWithDigit0) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit1_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit1), "/(nameWithDigit1) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit2_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit2), "/(nameWithDigit2) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit3_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit3), "/(nameWithDigit3) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit4_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit4), "/(nameWithDigit4) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit5_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit5), "/(nameWithDigit5) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit6_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit6), "/(nameWithDigit6) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit7_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit7), "/(nameWithDigit7) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit8_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit8), "/(nameWithDigit8) should have been valid.")
+  }
+
+  func testValidate_StringWithDigit9_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithDigit9), "/(nameWithDigit9) should have been valid.")
+  }
+}
