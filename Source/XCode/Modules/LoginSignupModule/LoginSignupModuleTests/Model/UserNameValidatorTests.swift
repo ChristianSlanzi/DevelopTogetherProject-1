@@ -74,3 +74,21 @@ extension UserNameValidatorTests {
   XCTAssertFalse(validator.validate(emptyString), "string can not be empty.")
  }
 }
+
+// MARK: whitespace validation
+extension UserNameValidatorTests {
+    
+  func testValidate_StringWithWhitespace_ReturnsFalse() {
+    let validator = UserNameValidator()
+    XCTAssertFalse(validator.validate(nameWithWhitespace), "string can not be have whitespace.")
+     }
+}
+
+// MARK: underscore validation
+extension UserNameValidatorTests {
+    
+  func testValidate_StringWithUnderscore_ReturnsTrue() {
+    let validator = UserNameValidator()
+    XCTAssertTrue(validator.validate(nameWithUnderscore), "/(nameWithUnderscore) should have been valid.")
+  }
+}
