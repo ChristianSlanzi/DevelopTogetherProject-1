@@ -57,3 +57,43 @@ extension PasswordValidatorTests {
     }
     
 }
+
+// MARK: invalid passwords
+extension PasswordValidatorTests {
+    
+    func testValidate_InputLessThanSixChar_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword1), "/(invalidPassword1) is not a valid password.")
+    }
+    
+    func testValidate_InputSixCharAllLowercase_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword2), "/(invalidPassword2) is not a valid password.")
+    }
+    
+    func testValidate_InputSixCharAllUppercase_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword3), "/(invalidPassword3) is not a valid password")
+    }
+    
+    func testValidate_InputSixChar_WithOneUppercase_NoNumbers_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword4), "/(invalidPassword4) is not a valid password")
+    }
+    
+    func testValidate_InputSixChar_WithOneNumber_NoUppercase_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword5), "/(invalidPassword5) is not a valid password.")
+    }
+    
+    func testValidate_InputSixChar_Nolowercase_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword6), "/(invalidPassword6) is not a valid password.")
+    }
+    
+    func testValidate_InputMoreThanTenChar_ReturnsFalse() {
+        let validator = PasswordValidator()
+        XCTAssertFalse(validator.validate(invalidPassword7), "/(invalidPassword7) is not a valid password.")
+    }
+    
+}
