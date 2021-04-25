@@ -10,7 +10,8 @@ import Foundation
 public class LoginModel {
     
     public init?(userName: String,
-          password: String) {
+          password: String,
+          userNameValidator: UserNameValidator? = nil) {
 
     }
 }
