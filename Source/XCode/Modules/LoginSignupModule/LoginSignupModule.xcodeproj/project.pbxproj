@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		240E292D26356AFB00EFC4D8 /* UserNameValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E292C26356AFB00EFC4D8 /* UserNameValidatorTests.swift */; };
 		240E293126356B8500EFC4D8 /* UserNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E293026356B8500EFC4D8 /* UserNameValidator.swift */; };
+		240E2935263583D500EFC4D8 /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E2934263583D500EFC4D8 /* PasswordValidatorTests.swift */; };
+		240E29392635842B00EFC4D8 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E29382635842B00EFC4D8 /* PasswordValidator.swift */; };
 		2471EF8F263488EF00E35A11 /* LoginSignupModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2471EF85263488EF00E35A11 /* LoginSignupModule.framework */; };
 		2471EF94263488EF00E35A11 /* LoginSignupModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EF93263488EF00E35A11 /* LoginSignupModuleTests.swift */; };
 		2471EF96263488EF00E35A11 /* LoginSignupModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 2471EF88263488EF00E35A11 /* LoginSignupModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		240E292C26356AFB00EFC4D8 /* UserNameValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidatorTests.swift; sourceTree = "<group>"; };
 		240E293026356B8500EFC4D8 /* UserNameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidator.swift; sourceTree = "<group>"; };
+		240E2934263583D500EFC4D8 /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
+		240E29382635842B00EFC4D8 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		2471EF85263488EF00E35A11 /* LoginSignupModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoginSignupModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2471EF88263488EF00E35A11 /* LoginSignupModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginSignupModule.h; sourceTree = "<group>"; };
 		2471EF89263488EF00E35A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				2471EFB42634A1D000E35A11 /* LoginModel.swift */,
 				240E293026356B8500EFC4D8 /* UserNameValidator.swift */,
+				240E29382635842B00EFC4D8 /* PasswordValidator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				2471EFAB26348C4300E35A11 /* Specs */,
 				2471EFA526348AE200E35A11 /* LoginModelTests.swift */,
 				240E292C26356AFB00EFC4D8 /* UserNameValidatorTests.swift */,
+				240E2934263583D500EFC4D8 /* PasswordValidatorTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				240E293126356B8500EFC4D8 /* UserNameValidator.swift in Sources */,
+				240E29392635842B00EFC4D8 /* PasswordValidator.swift in Sources */,
 				2471EFB52634A1D000E35A11 /* LoginModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240E2935263583D500EFC4D8 /* PasswordValidatorTests.swift in Sources */,
 				240E292D26356AFB00EFC4D8 /* UserNameValidatorTests.swift in Sources */,
 				2471EFAF26348D4400E35A11 /* LoginModelSpecs.swift in Sources */,
 				2471EF94263488EF00E35A11 /* LoginSignupModuleTests.swift in Sources */,

@@ -53,7 +53,9 @@ extension LoginModelTests: LoginModelSpecs {
     }
     
     func testLoginModel_ValidUserName_InvalidPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: validDummyUserName,
+                                    password: invalidDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_InvalidUserName_InvalidPassword_CanNotBeInstantiated() throws {
