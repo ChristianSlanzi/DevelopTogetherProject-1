@@ -9,6 +9,9 @@ import Foundation
 
 public class LoginModel {
     
+    var userName: String
+    var password: String
+    
     public init?(userName: String,
           password: String,
           userNameValidator: UserNameValidator? = nil,
@@ -23,5 +26,8 @@ public class LoginModel {
         if validator2.validate(password) == false {
             return nil
         }
+        
+        self.userName = userName
+        self.password = password
     }
 }

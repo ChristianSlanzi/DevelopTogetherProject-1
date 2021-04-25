@@ -59,26 +59,38 @@ extension LoginModelTests: LoginModelSpecs {
     }
     
     func testLoginModel_InvalidUserName_InvalidPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: invalidDummyUserName,
+                                    password: invalidDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_EmptyUserName_ValidPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: emptyDummyUserName,
+                                    password: validDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_EmptyUserName_InvalidPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: emptyDummyUserName,
+                                    password: invalidDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_EmptyUserName_EmptyPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: emptyDummyUserName,
+                                    password: emptyDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_ValidUserName_EmptyPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: validDummyUserName,
+                                    password: emptyDummyPassword)
+        XCTAssertNil(loginModel)
     }
     
     func testLoginModel_InvalidUserName_EmptyPassword_CanNotBeInstantiated() throws {
-        
+        let loginModel = LoginModel(userName: invalidDummyUserName,
+                                    password: emptyDummyPassword)
+        XCTAssertNil(loginModel)
     }
 }
