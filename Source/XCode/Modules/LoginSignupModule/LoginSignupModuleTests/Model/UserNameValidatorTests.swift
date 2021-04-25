@@ -92,3 +92,27 @@ extension UserNameValidatorTests {
     XCTAssertTrue(validator.validate(nameWithUnderscore), "/(nameWithUnderscore) should have been valid.")
   }
 }
+
+// MARK: String length validation
+extension UserNameValidatorTests {
+    
+    func testValidate_InputLessThanTwoCharachtersInLength_ReturnsFalse() {
+        let validator = UserNameValidator()
+        XCTAssertFalse(validator.validate(singleCharacterName), "/(twoCharacterName) should not have been valid.")
+    }
+    
+    func testValidate_InputGreaterThanTenCharachtersInLength_ReturnsFalse() {
+        let validator = UserNameValidator()
+        XCTAssertFalse(validator.validate(elevenCharacterName), "/(elevenCharacterName) should not have been valid.")
+    }
+    
+    func testValidate_InputTwoCharachtersInLength_ReturnsTrue() {
+        let validator = UserNameValidator()
+        XCTAssertTrue(validator.validate(twoCharacterName), "/(twoCharacterName) should have been valid.")
+    }
+    
+    func testValidate_InputTenCharachtersInLength_ReturnsTrue() {
+        let validator = UserNameValidator()
+        XCTAssertTrue(validator.validate(tenCharacterName), "/(tenCharacterName) should have been valid.")
+    }
+}
