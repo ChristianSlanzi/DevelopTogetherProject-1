@@ -97,3 +97,33 @@ extension PasswordValidatorTests {
     }
     
 }
+
+// MARK: valid passwords
+extension PasswordValidatorTests {
+    
+    func testValidate_InputSixChar_OneUpperCase_OneLowercase_OneNumber_ReturnsTrue() {
+        let validator = PasswordValidator()
+        XCTAssertTrue(validator.validate(validPassword1), "/(validPassword1) is a valid password.")
+    }
+    
+    func testValidate_InputSevenChar_OneUpperCase_OneLowercase_OneNumber_ReturnsTrue() {
+        let validator = PasswordValidator()
+        XCTAssertTrue(validator.validate(validPassword2), "/(validPassword2) is a valid password.")
+    }
+    
+    func testValidate_InputEightChar_OneUpperCase_OneLowercase_OneNumber_ReturnsTrue() {
+        let validator = PasswordValidator()
+        XCTAssertTrue(validator.validate(validPassword3), "/(validPassword3) is a valid password.")
+    }
+    
+    func testValidate_InputNineChar_OneUpperCase_OneLowercase_OneNumber_ReturnsTrue() {
+        let validator = PasswordValidator()
+        XCTAssertTrue(validator.validate(validPassword4), "/(validPassword4) is a valid password.")
+    }
+    
+    func testValidate_InputTenChar_OneUpperCase_OneLowercase_OneNumber_ReturnsTrue() {
+        let validator = PasswordValidator()
+        XCTAssertTrue(validator.validate(validPassword5), "/(validPassword5) is a valid password.")
+    }
+    
+}
