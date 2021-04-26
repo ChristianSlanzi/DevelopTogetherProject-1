@@ -8,6 +8,7 @@
 import UIKit
 import NetworkingService
 import UserApiService
+import LoginSignupModule
 
 class ViewController: UIViewController {
 

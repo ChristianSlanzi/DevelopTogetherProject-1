@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2436A9F826336168002282CE /* UserApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2436A9F726336168002282CE /* UserApiService.framework */; };
 		2436A9F926336168002282CE /* UserApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2436A9F726336168002282CE /* UserApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		249FA3B82636ADE700E0A7D5 /* LoginSignupModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249FA3B72636ADE700E0A7D5 /* LoginSignupModule.framework */; };
+		249FA3B92636ADE700E0A7D5 /* LoginSignupModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 249FA3B72636ADE700E0A7D5 /* LoginSignupModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C8D9FA2632E23B00887D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8D9F92632E23B00887D44 /* AppDelegate.swift */; };
 		24C8D9FC2632E23B00887D44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8D9FB2632E23B00887D44 /* SceneDelegate.swift */; };
 		24C8D9FE2632E23B00887D44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8D9FD2632E23B00887D44 /* ViewController.swift */; };
@@ -26,6 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				249FA3B92636ADE700E0A7D5 /* LoginSignupModule.framework in Embed Frameworks */,
 				2436A9F926336168002282CE /* UserApiService.framework in Embed Frameworks */,
 				24C8DA142632E33900887D44 /* NetworkingService.framework in Embed Frameworks */,
 			);
@@ -36,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		2436A9F726336168002282CE /* UserApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		249FA3B72636ADE700E0A7D5 /* LoginSignupModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoginSignupModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C8D9F62632E23B00887D44 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C8D9F92632E23B00887D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C8D9FB2632E23B00887D44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249FA3B82636ADE700E0A7D5 /* LoginSignupModule.framework in Frameworks */,
 				2436A9F826336168002282CE /* UserApiService.framework in Frameworks */,
 				24C8DA132632E33900887D44 /* NetworkingService.framework in Frameworks */,
 			);
@@ -94,6 +99,7 @@
 		24C8DA112632E33900887D44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				249FA3B72636ADE700E0A7D5 /* LoginSignupModule.framework */,
 				2436A9F726336168002282CE /* UserApiService.framework */,
 				24C8DA122632E33900887D44 /* NetworkingService.framework */,
 			);
