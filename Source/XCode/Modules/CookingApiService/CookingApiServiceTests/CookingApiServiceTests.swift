@@ -44,3 +44,13 @@ extension CookingApiServiceTests {
         return (sut, client)
     }
 }
+
+extension CookingApiServiceTests {
+    // MARK: - Tests
+    
+    func test_init_doesNotRequestDataFromURL() {
+        let (_, client) = makeSUT()
+        
+        XCTAssertTrue(client.requestedURLs.isEmpty)
+    }
+}
