@@ -8,4 +8,8 @@
 import Foundation
 
 public protocol CookingApiService {
+    typealias ServiceError = CookingApiServiceError
+    typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
+    
+    func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void)
 }

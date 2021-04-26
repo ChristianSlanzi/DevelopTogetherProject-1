@@ -16,4 +16,10 @@ class CookingApiRemote: CookingApiService {
         self.url = url
         self.client = client
     }
+    
+    func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void) {
+        
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { _ in
+        }
+    }
 }

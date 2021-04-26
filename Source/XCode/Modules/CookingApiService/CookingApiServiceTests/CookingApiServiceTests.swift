@@ -53,4 +53,14 @@ extension CookingApiServiceTests {
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
+    
+    func test_searchRecipesTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.searchRecipes { _ in }
+        sut.searchRecipes { _ in }
+
+        XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("recipes/complexSearch"), url.appendingPathComponent("recipes/complexSearch")])
+    }
 }
