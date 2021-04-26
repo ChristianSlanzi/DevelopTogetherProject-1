@@ -8,27 +8,29 @@
 import XCTest
 import NetworkingService
 
-class HTTPClientSpy: HTTPClient {
+public class HTTPClientSpy: HTTPClient {
+    
+    public init() {}
     
     private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
     
-    var requestedURLs: [URL] {
+    public var requestedURLs: [URL] {
         return messages.map { $0.url }
     }
     
-    var requestHttpHeaders: HTTPClientEntity = HTTPClientEntity()
-    var urlQueryParameters: HTTPClientEntity = HTTPClientEntity()
-    var httpBodyParameters: HTTPClientEntity = HTTPClientEntity()
+    public var requestHttpHeaders: HTTPClientEntity = HTTPClientEntity()
+    public var urlQueryParameters: HTTPClientEntity = HTTPClientEntity()
+    public var httpBodyParameters: HTTPClientEntity = HTTPClientEntity()
     
-    func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
+    public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
         messages.append((url, completion))
     }
     
-    func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
+    public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
         
     }
     
-    func complete(with error: Error, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
+    public func complete(with error: Error, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
         guard messages.count > index else {
             return XCTFail("Can't complete request never made", file: file, line: line)
         }
@@ -36,7 +38,7 @@ class HTTPClientSpy: HTTPClient {
         messages[index].completion(HTTPClientResult(withError: error))
     }
     
-    func complete(withStatusCode code: Int, data: Data, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
+    public func complete(withStatusCode code: Int, data: Data, at index: Int = 0, file: StaticString = #file, line: UInt = #line) {
         guard requestedURLs.count > index else {
             return XCTFail("Can't complete request never made", file: file, line: line)
         }
