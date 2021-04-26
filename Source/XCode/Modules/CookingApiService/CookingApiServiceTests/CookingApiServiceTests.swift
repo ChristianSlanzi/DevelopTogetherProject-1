@@ -72,4 +72,25 @@ extension CookingApiServiceTests {
             client.complete(with: clientError)
         })
     }
+    
+    func test_searchRecipes_deliversInvalidDataErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+
+        let samples = [199, 201, 300, 400, 500]
+
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: .failure(.invalidData), when: {
+                let json = makeRecipesJSON([])
+                client.complete(withStatusCode: code, data: json, at: index)
+            })
+        }
+    }
+}
+
+extension CookingApiServiceTests {
+    
+    private func makeRecipesJSON(_ items: [[String: Any]]) -> Data {
+        let json = ["results": items]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
 }

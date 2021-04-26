@@ -25,6 +25,13 @@ class CookingApiRemote: CookingApiService {
             
             if let response = result.response {
                 
+                if response.statusCode != 200 {
+                    
+                    completion(.failure(.invalidData))
+                    
+                    return
+                }
+                
             }  else {
                 completion(.failure(.connectivity))
                 return
