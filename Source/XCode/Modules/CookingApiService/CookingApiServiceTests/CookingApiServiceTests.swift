@@ -134,6 +134,20 @@ extension CookingApiServiceTests {
             client.complete(withStatusCode: 200, data: makeRecipeSearchResultData(user: user1.json))
         })
     }
+    
+    func test_searchRecipes_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "http://any-url.com")!
+        let client = HTTPClientSpy()
+        var sut: CookingApiRemote? = CookingApiRemote(url: url, client: client)
+
+        var capturedResults = [CookingApiRemote.RecipesSearchResult]()
+        sut?.searchRecipes { capturedResults.append($0) }
+
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeRecipesJSON([]))
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
 }
 
 extension CookingApiServiceTests {

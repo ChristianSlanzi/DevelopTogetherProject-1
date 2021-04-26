@@ -19,7 +19,8 @@ class CookingApiRemote: CookingApiService {
     
     func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void) {
         
-        client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { result in
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
             
             print("\n\nResponse HTTP Headers:\n")
             
