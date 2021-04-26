@@ -19,6 +19,7 @@
 		2471EFB52634A1D000E35A11 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471EFB42634A1D000E35A11 /* LoginModel.swift */; };
 		249FA3A92636AC4400E0A7D5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FA3A82636AC4400E0A7D5 /* LoginController.swift */; };
 		249FA3AD2636AC6C00E0A7D5 /* LoginSignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FA3AC2636AC6C00E0A7D5 /* LoginSignupService.swift */; };
+		249FA3B12636AD1E00E0A7D5 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FA3B02636AD1E00E0A7D5 /* SignupController.swift */; };
 		24C270F12635B82B0064E8C1 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C270F02635B82B0064E8C1 /* SignupModel.swift */; };
 		24C270F52635B85C0064E8C1 /* EmailAddressValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C270F42635B85C0064E8C1 /* EmailAddressValidatorTests.swift */; };
 		24C270F92635B8A40064E8C1 /* EmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C270F82635B8A40064E8C1 /* EmailAddressValidator.swift */; };
@@ -50,6 +51,7 @@
 		2471EFB42634A1D000E35A11 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		249FA3A82636AC4400E0A7D5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		249FA3AC2636AC6C00E0A7D5 /* LoginSignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupService.swift; sourceTree = "<group>"; };
+		249FA3B02636AD1E00E0A7D5 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		24C270F02635B82B0064E8C1 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		24C270F42635B85C0064E8C1 /* EmailAddressValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressValidatorTests.swift; sourceTree = "<group>"; };
 		24C270F82635B8A40064E8C1 /* EmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressValidator.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				249FA3A82636AC4400E0A7D5 /* LoginController.swift */,
+				249FA3B02636AD1E00E0A7D5 /* SignupController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				240E293126356B8500EFC4D8 /* UserNameValidator.swift in Sources */,
 				249FA3AD2636AC6C00E0A7D5 /* LoginSignupService.swift in Sources */,
 				249FA3A92636AC4400E0A7D5 /* LoginController.swift in Sources */,
+				249FA3B12636AD1E00E0A7D5 /* SignupController.swift in Sources */,
 				240E29392635842B00EFC4D8 /* PasswordValidator.swift in Sources */,
 				24C270F92635B8A40064E8C1 /* EmailAddressValidator.swift in Sources */,
 				2471EFB52634A1D000E35A11 /* LoginModel.swift in Sources */,
