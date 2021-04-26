@@ -63,4 +63,13 @@ extension CookingApiServiceTests {
 
         XCTAssertEqual(client.requestedURLs, [url.appendingPathComponent("recipes/complexSearch"), url.appendingPathComponent("recipes/complexSearch")])
     }
+    
+    func test_searchRecipes_deliversConnectivityErrorOnClientError() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .failure(.connectivity), when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
 }
