@@ -36,6 +36,18 @@ class CookingApiRemote: CookingApiService {
                 completion(.failure(.connectivity))
                 return
             }
+            
+            if let data = result.data {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let userData = try? decoder.decode(RecipesSearchResultDTO.self, from: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                
+            } else {
+                completion(.failure(.invalidData))
+            }
         }
     }
 }
