@@ -94,12 +94,116 @@ extension CookingApiServiceTests {
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
+    
+    func test_searchRecipes_deliversSuccessWithNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .failure(.invalidData), when: {
+            let emptyListJSON = makeRecipesJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJSON)
+        })
+    }
+    
+    func test_searchRecipes_deliversSuccessWithItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+        
+        let recipe1 = makeRecipe(id: 716429,
+                                 calories: 584,
+                                 carbs: "84g",
+                                 fat: "20g",
+                                 image: "https://spoonacular.com/recipeImages/716429-312x231.jpg",
+                                 imageType: "jpg",
+                                 protein: "19g",
+                                 title: "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs")
+        
+        let recipe2 = makeRecipe(id: 715538,
+                                 calories: 521,
+                                 carbs: "69g",
+                                 fat: "10g",
+                                 image: "https://spoonacular.com/recipeImages/715538-312x231.jpg",
+                                 imageType: "jpg",
+                                 protein: "35g",
+                                 title: "What to make for dinner tonight?? Bruschetta Style Pork & Pasta")
+
+        let user1 = makeRecipeSearchResult(offset: 0,
+                                           number: 2,
+                                           recipes: [recipe1.model, recipe2.model],
+                                           totalResults: 86)
+
+        expect(sut, toCompleteWith: .success(user1.model), when: {
+            client.complete(withStatusCode: 200, data: makeRecipeSearchResultData(user: user1.json))
+        })
+    }
 }
 
 extension CookingApiServiceTests {
     
+    private func makeRecipe(id: Int,
+                            calories: Int,
+                            carbs: String,
+                            fat: String,
+                            image: String,
+                            imageType: String,
+                            protein: String,
+                            title: String) -> (model: RecipeDTO, json: [String: Any]) {
+        
+        let item = RecipeDTO(id: id,
+                             calories: calories,
+                             carbs: carbs,
+                             fat: fat,
+                             image: image,
+                             imageType: imageType,
+                             protein: protein,
+                             title: title)
+        
+        let json = makeRecipeJSON(recipe: item)
+        
+        return (item, json)
+    }
+    
+    private func makeRecipeJSON(recipe: RecipeDTO) -> [String: Any] {
+        
+        let json = [
+            "id": recipe.id,
+            "calories": recipe.calories as Any,
+            "carbs": recipe.carbs as Any,
+            "fat": recipe.fat as Any,
+            "image": recipe.image as Any,
+            "imageType": recipe.imageType as Any,
+            "protein": recipe.protein as Any,
+            "title": recipe.title as Any
+        ].compactMapValues { $0 }
+        
+        return json
+    }
+    
     private func makeRecipesJSON(_ items: [[String: Any]]) -> Data {
         let json = ["results": items]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makeRecipeSearchResult(offset: Int,
+                                        number: Int,
+                                        recipes: [RecipeDTO],
+                                        totalResults: Int) -> (model: RecipesSearchResultDTO, json: [String: Any]) {
+        
+        let searchResult = RecipesSearchResultDTO(offset: offset,
+                                                  number: number,
+                                                  results: recipes,
+                                                  totalResults: totalResults)
+        let recipesJson: [[String: Any]] = recipes.map { makeRecipeJSON(recipe: $0) }
+        
+        let json = [
+            "offset": offset as Any,
+            "number": number as Any,
+            "results": recipesJson as Any,
+            "totalResults": totalResults as Any
+        ].compactMapValues { $0 }
+        
+        return (searchResult, json)
+    }
+    
+    private func makeRecipeSearchResultData(user: [String: Any]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: user)
     }
 }

@@ -45,6 +45,9 @@ class CookingApiRemote: CookingApiService {
                     return
                 }
                 
+                print(userData.description)
+                completion(.success(userData))
+                
             } else {
                 completion(.failure(.invalidData))
             }
