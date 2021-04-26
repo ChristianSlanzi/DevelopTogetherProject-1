@@ -10,14 +10,13 @@
 		2436A9BA26335698002282CE /* UserApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2436A9B026335697002282CE /* UserApiService.framework */; };
 		2436A9BF26335698002282CE /* UserApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9BE26335698002282CE /* UserApiServiceTests.swift */; };
 		2436A9C126335698002282CE /* UserApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 2436A9B326335697002282CE /* UserApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2436A9CE26335D06002282CE /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9CD26335D06002282CE /* HTTPClientSpy.swift */; };
 		2436A9E126335DC2002282CE /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2436A9D926335DB7002282CE /* NetworkingService.framework */; };
 		2436A9E226335DC2002282CE /* NetworkingService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2436A9D926335DB7002282CE /* NetworkingService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2436A9E926335FAD002282CE /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9E826335FAD002282CE /* UserApiService.swift */; };
 		2436A9EE26335FF1002282CE /* UserApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9ED26335FF1002282CE /* UserApiRemote.swift */; };
-		2436A9F126336032002282CE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */; };
 		2436A9FE26336456002282CE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436A9FD26336456002282CE /* Models.swift */; };
 		2436AA02263368D0002282CE /* UserApiServiceTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */; };
+		24D650922636E2E400D81CC6 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D6508D2636E28800D81CC6 /* TestHelpers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +41,20 @@
 			remoteGlobalIDString = 24C8D9DA2632DE2E00887D44;
 			remoteInfo = NetworkingServiceTests;
 		};
+		24D6508C2636E28800D81CC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24D650852636E28800D81CC6 /* TestHelpers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 249FA3D02636DCBF00E0A7D5;
+			remoteInfo = TestHelpers;
+		};
+		24D6508F2636E2C800D81CC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24D650852636E28800D81CC6 /* TestHelpers.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 249FA3CF2636DCBF00E0A7D5;
+			remoteInfo = TestHelpers;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,13 +78,12 @@
 		2436A9B926335698002282CE /* UserApiServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserApiServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2436A9BE26335698002282CE /* UserApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiServiceTests.swift; sourceTree = "<group>"; };
 		2436A9C026335698002282CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2436A9CD26335D06002282CE /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		2436A9D326335DB7002282CE /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		2436A9E826335FAD002282CE /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		2436A9ED26335FF1002282CE /* UserApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiRemote.swift; sourceTree = "<group>"; };
-		2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2436A9FD26336456002282CE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserApiServiceTests+Helpers.swift"; sourceTree = "<group>"; };
+		24D650852636E28800D81CC6 /* TestHelpers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TestHelpers.xcodeproj; path = ../TestHelpers/TestHelpers.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D650922636E2E400D81CC6 /* TestHelpers.framework in Frameworks */,
 				2436A9BA26335698002282CE /* UserApiService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +110,7 @@
 		2436A9A626335697002282CE = {
 			isa = PBXGroup;
 			children = (
+				24D650852636E28800D81CC6 /* TestHelpers.xcodeproj */,
 				2436A9D326335DB7002282CE /* NetworkingService.xcodeproj */,
 				2436A9B226335697002282CE /* UserApiService */,
 				2436A9BD26335698002282CE /* UserApiServiceTests */,
@@ -139,8 +153,6 @@
 		2436A9CC26335CE4002282CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2436A9CD26335D06002282CE /* HTTPClientSpy.swift */,
-				2436A9F026336032002282CE /* XCTestCase+MemoryLeakTracking.swift */,
 				2436AA01263368D0002282CE /* UserApiServiceTests+Helpers.swift */,
 			);
 			path = Helpers;
@@ -168,6 +180,14 @@
 				2436A9FD26336456002282CE /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		24D650862636E28800D81CC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24D6508D2636E28800D81CC6 /* TestHelpers.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +234,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				24D650902636E2C800D81CC6 /* PBXTargetDependency */,
 				2436A9BC26335698002282CE /* PBXTargetDependency */,
 			);
 			name = UserApiServiceTests;
@@ -255,6 +276,10 @@
 					ProductGroup = 2436A9D426335DB7002282CE /* Products */;
 					ProjectRef = 2436A9D326335DB7002282CE /* NetworkingService.xcodeproj */;
 				},
+				{
+					ProductGroup = 24D650862636E28800D81CC6 /* Products */;
+					ProjectRef = 24D650852636E28800D81CC6 /* TestHelpers.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -277,6 +302,13 @@
 			fileType = wrapper.cfbundle;
 			path = NetworkingServiceTests.xctest;
 			remoteRef = 2436A9DA26335DB7002282CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24D6508D2636E28800D81CC6 /* TestHelpers.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TestHelpers.framework;
+			remoteRef = 24D6508C2636E28800D81CC6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -315,8 +347,6 @@
 			files = (
 				2436A9BF26335698002282CE /* UserApiServiceTests.swift in Sources */,
 				2436AA02263368D0002282CE /* UserApiServiceTests+Helpers.swift in Sources */,
-				2436A9CE26335D06002282CE /* HTTPClientSpy.swift in Sources */,
-				2436A9F126336032002282CE /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +357,11 @@
 			isa = PBXTargetDependency;
 			target = 2436A9AF26335697002282CE /* UserApiService */;
 			targetProxy = 2436A9BB26335698002282CE /* PBXContainerItemProxy */;
+		};
+		24D650902636E2C800D81CC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TestHelpers;
+			targetProxy = 24D6508F2636E2C800D81CC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
