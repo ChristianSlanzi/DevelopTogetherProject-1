@@ -11,13 +11,19 @@ class CookingApiRemote: CookingApiService {
     
     private var url: URL
     private var client: HTTPClient
+    private var apiKey: String?
 
     public init(url: URL, client: HTTPClient, apiKey: String? = nil) {
         self.url = url
         self.client = client
+        self.apiKey = apiKey
     }
     
     func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void) {
+        
+        if let key = apiKey {
+            client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
+        }
         
         client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }
