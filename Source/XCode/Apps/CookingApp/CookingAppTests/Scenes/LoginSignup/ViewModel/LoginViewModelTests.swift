@@ -152,4 +152,15 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testUserNameUpdated_ValidUserName_PasswordValidated_EnablesLoginButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableLogin(true) to be called")
+        mockLoginViewController!.expectationForEnableLoginButton = (expectation, true)
+        
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        viewModel.passwordValidated = true
+        viewModel.userNameUpdated(validUserName)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }

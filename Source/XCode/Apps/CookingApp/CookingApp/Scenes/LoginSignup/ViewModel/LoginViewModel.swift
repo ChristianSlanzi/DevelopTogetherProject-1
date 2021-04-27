@@ -15,9 +15,11 @@ class LoginViewModel {
     var userNameValidator: UserNameValidator?
     
     var userNameValidated: Bool
+    var passwordValidated: Bool
     
     init(view: LoginViewControllerProtocol) {
         self.userNameValidated = false
+        self.passwordValidated = false
         self.view = view
     }
     
@@ -45,5 +47,12 @@ class LoginViewModel {
         
         let validator = self.userNameValidator ?? UserNameValidator()
         userNameValidated = validator.validate(value)
+        
+        if passwordValidated == false {
+            view?.enableLoginButton(false)
+            return
+        }
+        
+        view?.enableLoginButton(true)
     }
 }
