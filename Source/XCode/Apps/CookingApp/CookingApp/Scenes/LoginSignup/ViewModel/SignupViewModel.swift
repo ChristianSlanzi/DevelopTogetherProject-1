@@ -26,6 +26,8 @@ class SignupViewModel {
     var password2: String?
     var passwordsAreIdentical: Bool
     
+    var signupController: SignupController?
+    
     init(view: SignupViewControllerProtocol) {
  
         self.userNameValidated = false
@@ -188,4 +190,30 @@ class SignupViewModel {
         
         view?.enableCreateButton(false)
     }
+    
+    func signup(userName: String?, password: String?, emailAddress: String?) {
+        
+        let controller = self.signupController ?? SignupController(delegate: self)
+        
+        if let userName = userName,
+            let password = password,
+            let emailAddress = emailAddress,
+            let model = SignupModel(userName: userName, password: password, emailAddress: emailAddress) {
+            controller.doSignup(model: model)
+        }
+    }
+}
+
+extension SignupViewModel: SignupControllerDelegate {
+    
+    func signupResult(result: Bool, error: String?) {
+        // do someting with the result,
+        // perhaps segue to a different screen of the app.
+        
+        // we show an alert as a dummy implementation
+        //view?.showSignupResult(result)
+        
+        
+    }
+    
 }

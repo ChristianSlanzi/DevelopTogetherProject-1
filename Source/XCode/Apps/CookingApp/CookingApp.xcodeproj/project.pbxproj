@@ -30,6 +30,7 @@
 		24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */; };
 		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
+		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerProtocol.swift; sourceTree = "<group>"; };
 		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
+		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 				24567C3526387C260010BE25 /* MockLoginController.swift */,
 				24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */,
 				24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */,
+				24567C4D263894630010BE25 /* MockSignupController.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */,
 				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
 				24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */,
+				24567C4E263894630010BE25 /* MockSignupController.swift in Sources */,
 				24567C3626387C260010BE25 /* MockLoginController.swift in Sources */,
 				24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */,
 				24567C3A26388C660010BE25 /* SignupViewModelTests.swift in Sources */,

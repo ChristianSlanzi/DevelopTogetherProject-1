@@ -579,3 +579,83 @@ extension SignupViewModelTests {
     }
     
 }
+
+// MARK: signup tests
+extension SignupViewModelTests {
+    
+    func testSignup_ValidParameters_Calls_doSignup_OnLoginController() {
+        let expectation = self.expectation(description: "expected doSignup() to be called")
+        
+        let mockSignupController = MockSignupController(expectation,
+                                                        expectedUserName: validUserName,
+                                                        expectedPassword: validPassword,
+                                                        expectedEmailAddress: validEmailAddress)
+        mockSignupController.shouldReturnTrueOnSignup = true
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.signupController = mockSignupController
+        mockSignupController.signupControllerDelegate = viewModel
+        
+        viewModel.signup(userName: validUserName, password: validPassword, emailAddress:validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testSignup_ValidParameters_Calls_doSignupWithExpectedUserName_OnLoginController() {
+        let expectation = self.expectation(description: "expected doSignup() to be called")
+        
+        let mockSignupController = MockSignupController(expectation,
+                                                        expectedUserName: validUserName,
+                                                        expectedPassword: validPassword,
+                                                        expectedEmailAddress: validEmailAddress)
+        mockSignupController.shouldReturnTrueOnSignup = true
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.signupController = mockSignupController
+        mockSignupController.signupControllerDelegate = viewModel
+        
+        viewModel.signup(userName: validUserName, password: validPassword, emailAddress: validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testSignup_ValidParameters_Calls_doSignupWithExpectedPassword_OnLoginController() {
+        let expectation = self.expectation(description: "expected doSignup() to be called")
+        
+        let mockSignupController = MockSignupController(expectation,
+                                                        expectedUserName: validUserName,
+                                                        expectedPassword: validPassword,
+                                                        expectedEmailAddress: validEmailAddress)
+        mockSignupController.shouldReturnTrueOnSignup = true
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.signupController = mockSignupController
+        mockSignupController.signupControllerDelegate = viewModel
+        
+        viewModel.signup(userName: validUserName, password: validPassword, emailAddress: validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testSignup_ValidParameters_Calls_doSignupWithExpectedEmailAddress_OnLoginController() {
+        let expectation = self.expectation(description: "expected doSignup() to be called")
+        
+        let mockSignupController = MockSignupController(expectation,
+                                                        expectedUserName: validUserName,
+                                                        expectedPassword: validPassword,
+                                                        expectedEmailAddress: validEmailAddress)
+        mockSignupController.shouldReturnTrueOnSignup = true
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.signupController = mockSignupController
+        mockSignupController.signupControllerDelegate = viewModel
+        
+        viewModel.signup(userName: validUserName, password: validPassword, emailAddress: validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+}
