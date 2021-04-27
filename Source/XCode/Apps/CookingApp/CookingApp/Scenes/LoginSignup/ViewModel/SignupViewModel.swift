@@ -14,6 +14,7 @@ class SignupViewModel {
     
     var userNameValidator: UserNameValidator?
     var emailAddressValidator: EmailAddressValidator?
+    var passwordValidator: PasswordValidator?
     
     var userNameValidated: Bool
     var emailAddressValidated: Bool
@@ -21,6 +22,8 @@ class SignupViewModel {
     var password1Validated: Bool
     var password2Validated: Bool
     
+    var password1: String?
+    var password2: String?
     var passwordsAreIdentical: Bool
     
     init(view: SignupViewControllerProtocol) {
@@ -97,6 +100,42 @@ class SignupViewModel {
         emailAddressValidated = validator.validate(value)
         
         if emailAddressValidated == false {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if password1Validated == true &&
+            password2Validated == true &&
+            passwordsAreIdentical == true &&
+            userNameValidated == true &&
+            emailAddressValidated == true {
+            
+            view?.enableCreateButton(true)
+            return
+        }
+        
+        view?.enableCreateButton(false)
+    }
+    
+    func passwordUpdated(_ value: String?) {
+        
+        self.password1 = value
+        
+        guard let password1 = self.password1 else {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if let password2 = password2 {
+            passwordsAreIdentical = password1.compare(password2) == .orderedSame
+        } else {
+            passwordsAreIdentical = false
+        }
+        
+        let validator = self.passwordValidator ?? PasswordValidator()
+        password1Validated = validator.validate(password1)
+        
+        if userNameValidated == false {
             view?.enableCreateButton(false)
             return
         }
