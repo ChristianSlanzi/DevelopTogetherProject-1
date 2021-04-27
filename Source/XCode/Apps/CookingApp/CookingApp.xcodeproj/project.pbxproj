@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BAB2637F9C20010BE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24567BAD2637F9C20010BE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		24567BF5263826AB0010BE25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			files = (
 				24567C3E26388C8C0010BE25 /* MockSignupViewController.swift in Sources */,
 				24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */,
+				2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */,
 				24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */,
 				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
 				24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */,
