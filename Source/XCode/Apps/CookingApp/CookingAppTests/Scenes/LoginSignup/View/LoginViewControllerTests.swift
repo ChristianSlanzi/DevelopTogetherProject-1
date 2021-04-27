@@ -33,3 +33,16 @@ class LoginViewControllerTests: XCTestCase {
         }
     }
 }
+
+extension LoginViewControllerTests {
+    
+    func testViewDidLoad_Calls_PerformInitialSetup_OnViewModel() {
+        let expectation = self.expectation(description: "expected performInitialViewSetup() to be called")
+        let loginViewController = LoginViewController()
+        let viewModel = MockLoginViewModel(view: loginViewController)
+        viewModel.performInitialViewSetupExpectation = expectation
+        loginViewController.viewModel = viewModel
+        loginViewController.viewDidLoad()
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}
