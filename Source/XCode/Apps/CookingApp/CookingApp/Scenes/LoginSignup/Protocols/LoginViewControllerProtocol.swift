@@ -9,4 +9,5 @@ import Foundation
 
 protocol LoginViewControllerProtocol: class {
     func clearUserNameField()
+    func clearPasswordField()
 }

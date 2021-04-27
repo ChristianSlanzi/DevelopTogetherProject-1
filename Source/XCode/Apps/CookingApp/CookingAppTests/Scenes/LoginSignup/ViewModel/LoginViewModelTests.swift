@@ -70,4 +70,14 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testPerformInitialViewSetup_Calls_ClearPasswordField_OnViewController() {
+        let expectation = self.expectation(description: "expected clearPasswordField() to be called")
+        mockLoginViewController!.expectationForClearPasswordField = expectation
+        
+        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
