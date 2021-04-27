@@ -71,5 +71,7 @@ class LoginViewModel {
         
         let validator = self.passwordValidator ?? PasswordValidator()
         passwordValidated = validator.validate(value)
+        
+        view?.enableLoginButton(true)
     }
 }
