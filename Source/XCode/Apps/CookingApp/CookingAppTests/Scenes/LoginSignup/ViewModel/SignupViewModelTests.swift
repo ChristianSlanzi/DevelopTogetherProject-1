@@ -115,3 +115,17 @@ extension SignupViewModelTests {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 }
+
+// MARK: userNameDidEndOnExit tests
+extension SignupViewModelTests {
+    
+    func testUserNameDidEndOnExit_Calls_HideKeyboard_OnViewController() {
+        let expectation = self.expectation(description: "expected hideKeyboard() to be called")
+        mockSignupViewController!.expectationForHideKeyboard = expectation
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameDidEndOnExit()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}

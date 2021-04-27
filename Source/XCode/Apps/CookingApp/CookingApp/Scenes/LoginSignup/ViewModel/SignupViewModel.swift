@@ -23,4 +23,8 @@ class SignupViewModel {
         view?.enableCreateButton(false)
         view?.enableCancelButton(true)
     }
+    
+    func userNameDidEndOnExit() {
+        view?.hideKeyboard()
+    }
 }
