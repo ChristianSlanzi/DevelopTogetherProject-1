@@ -15,6 +15,7 @@
 		24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */; };
 		24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BC22637F9C40010BE25 /* CookingAppTests.swift */; };
 		24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */; };
+		24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* AppDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppUITests.swift; sourceTree = "<group>"; };
 		24567BCF2637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24567BE52637FE210010BE25 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				24567BE42637FE0F0010BE25 /* Main */,
 				24567BAB2637F9C20010BE25 /* AppDelegate.swift */,
 				24567BAD2637F9C20010BE25 /* SceneDelegate.swift */,
 				24567BAF2637F9C20010BE25 /* ViewController.swift */,
@@ -126,6 +129,14 @@
 				24567BCF2637F9C40010BE25 /* Info.plist */,
 			);
 			path = CookingAppUITests;
+			sourceTree = "<group>";
+		};
+		24567BE42637FE0F0010BE25 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				24567BE52637FE210010BE25 /* AppDependencies.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
