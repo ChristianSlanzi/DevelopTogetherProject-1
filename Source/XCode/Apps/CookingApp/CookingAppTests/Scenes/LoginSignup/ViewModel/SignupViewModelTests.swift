@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import CookingApp
 
 class SignupViewModelTests: XCTestCase {
     
@@ -22,6 +23,7 @@ class SignupViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockSignupViewController = MockSignupViewController()
     }
 
     override func tearDownWithError() throws {
@@ -40,4 +42,21 @@ class SignupViewModelTests: XCTestCase {
         }
     }
 
+}
+
+// MARK: initialization tests
+extension SignupViewModelTests {
+        
+    func testInit_ValidView_InstantiatesObject() {
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        XCTAssertNotNil(viewModel)
+    }
+    
+    func testInit_ValidView_CopiesViewToIvar() {
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        
+        if let lhs = mockSignupViewController, let rhs = viewModel.view as? MockSignupViewController {
+            XCTAssertTrue(lhs === rhs)
+        }
+    }
 }

@@ -28,6 +28,7 @@
 		24567C3A26388C660010BE25 /* SignupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C3926388C660010BE25 /* SignupViewModelTests.swift */; };
 		24567C3E26388C8C0010BE25 /* MockSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */; };
 		24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */; };
+		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		24567C3926388C660010BE25 /* SignupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelTests.swift; sourceTree = "<group>"; };
 		24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewController.swift; sourceTree = "<group>"; };
 		24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerProtocol.swift; sourceTree = "<group>"; };
+		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				24567BFE263828DF0010BE25 /* LoginViewModel.swift */,
+				24567C4526388D500010BE25 /* SignupViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
+				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
