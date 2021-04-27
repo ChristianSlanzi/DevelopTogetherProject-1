@@ -42,11 +42,17 @@ class LoginViewModel {
     func userNameUpdated(_ value: String?) {
         
         guard let value = value else {
+            view?.enableLoginButton(false)
             return
         }
         
         let validator = self.userNameValidator ?? UserNameValidator()
         userNameValidated = validator.validate(value)
+        
+        if userNameValidated == false {
+            view?.enableLoginButton(false)
+            return
+        }
         
         if passwordValidated == false {
             view?.enableLoginButton(false)
