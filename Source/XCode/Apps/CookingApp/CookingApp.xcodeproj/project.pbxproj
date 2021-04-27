@@ -35,6 +35,9 @@
 		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
 		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
+		2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */; };
+		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
+		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
 		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
+		2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
+		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				2430BDA12638A83B00C5CE19 /* LoginViewController.swift */,
+				2493FDFC2638B75F0063B6BE /* SignupViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */,
+				2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */,
 				24567C4D263894630010BE25 /* MockSignupController.swift */,
 				2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */,
+				2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 			files = (
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
+				2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */,
 				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
 				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
@@ -516,7 +526,9 @@
 			files = (
 				24567C3E26388C8C0010BE25 /* MockSignupViewController.swift in Sources */,
 				24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */,
+				2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */,
 				2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */,
+				2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */,
 				2430BDA72638B18200C5CE19 /* UITextFieldStub.swift in Sources */,
 				24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */,
 				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
