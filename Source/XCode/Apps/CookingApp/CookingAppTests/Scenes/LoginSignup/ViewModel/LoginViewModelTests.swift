@@ -57,3 +57,17 @@ extension LoginViewModelTests {
         }
     }
 }
+
+// MARK: performInitialViewSetup tests
+extension LoginViewModelTests {
+    
+    func testPerformInitialViewSetup_Calls_ClearUserNameField_OnViewController() {
+        let expectation = self.expectation(description: "expected clearUserNameField() to be called")
+        mockLoginViewController!.expectationForClearUserNameField = expectation
+        
+        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}

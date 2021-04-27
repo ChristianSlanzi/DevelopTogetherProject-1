@@ -12,4 +12,9 @@ import XCTest
 
 class MockLoginViewController: LoginViewControllerProtocol {
 
+    var expectationForClearUserNameField: XCTestExpectation?
+    
+    func clearUserNameField() {
+        self.expectationForClearUserNameField?.fulfill()
+    }
 }

@@ -15,4 +15,8 @@ class LoginViewModel {
                
         self.view = view
     }
+    
+    func performInitialViewSetup() {
+        view?.clearUserNameField()
+    }
 }
