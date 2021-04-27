@@ -49,5 +49,10 @@ class MockSignupViewController: SignupViewControllerProtocol {
     func hideKeyboard() {
         self.expectationForHideKeyboard?.fulfill()
     }
+    
+    func showSignupResult(_ result: Bool, error: String?) {
+        
+    }
+    
 }
     

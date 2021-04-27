@@ -14,4 +14,6 @@ protocol SignupViewControllerProtocol: class {
     func enableCancelButton(_ status: Bool)
     func enableCreateButton(_ status: Bool)
     func hideKeyboard()
+    
+    func showSignupResult(_ result: Bool, error: String?)
 }

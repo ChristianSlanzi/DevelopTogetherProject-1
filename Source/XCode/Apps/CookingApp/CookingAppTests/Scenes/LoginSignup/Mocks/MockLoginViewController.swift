@@ -11,7 +11,7 @@ import XCTest
 @testable import CookingApp
 
 class MockLoginViewController: LoginViewControllerProtocol {
-
+    
     var expectationForClearUserNameField: XCTestExpectation?
     var expectationForClearPasswordField: XCTestExpectation?
     var expectationForEnableLoginButton: (XCTestExpectation, Bool)?
@@ -45,4 +45,9 @@ class MockLoginViewController: LoginViewControllerProtocol {
     func hideKeyboard() {
         self.expectationForHideKeyboard?.fulfill()
     }
+    
+    func showLoginResult(_ result: Bool, error: String?) {
+        
+    }
+    
 }

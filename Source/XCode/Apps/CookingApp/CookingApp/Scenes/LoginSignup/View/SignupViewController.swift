@@ -121,13 +121,12 @@ extension SignupViewController : SignupViewControllerProtocol {
         self.confirmPasswordTextField.resignFirstResponder()
     }
     
-    func showSignupResult(_ result: Bool) {
+    func showSignupResult(_ result: Bool, error: String?) {
         let alert = UIAlertController(title: result ? "Congratulations" : "Error",
-                                      message: result ? "Signup was successful" : "Already registered user",
+                                      message: result ? "Signup was successful" : (error ??  "Already registered user"),
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
+
 }

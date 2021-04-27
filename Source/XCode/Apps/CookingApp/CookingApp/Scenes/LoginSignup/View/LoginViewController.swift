@@ -89,4 +89,17 @@ extension LoginViewController : LoginViewControllerProtocol {
         self.passwordTextField.resignFirstResponder()
     }
     
+    func showLoginResult(_ result: Bool, error: String?) {
+        
+        let alert = UIAlertController(title: result ? "Congratulations" : "Error",
+                                      message: result ? "Login was successful" : (error ?? "Username or Password not valid"),
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true) {
+//            if result == true {
+//                self.routing?.routeToMainViewController()
+//            }
+        }
+    }
+    
 }

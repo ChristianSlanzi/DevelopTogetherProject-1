@@ -211,7 +211,7 @@ extension SignupViewModel: SignupControllerDelegate {
         // perhaps segue to a different screen of the app.
         
         // we show an alert as a dummy implementation
-        //view?.showSignupResult(result)
+        view?.showSignupResult(result, error: error)
         
         
     }

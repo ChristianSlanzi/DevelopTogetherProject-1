@@ -13,4 +13,6 @@ protocol LoginViewControllerProtocol: class {
     func enableLoginButton(_ status: Bool)
     func enableCreateAccountButton(_ status: Bool)
     func hideKeyboard()
+    
+    func showLoginResult(_ result: Bool, error: String?)
 }
