@@ -139,3 +139,17 @@ extension LoginViewModelTests {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 }
+
+// MARK: userNameUpdated tests
+extension LoginViewModelTests {
+    func testUserNameUpdated_Calls_Validate_OnUserNameValidator() {
+        let expectation = self.expectation(description: "expected validate() to be called")
+    
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        viewModel.userNameValidator = MockUserNameValidator(expectation, expectedValue: validUserName)
+        
+        viewModel.userNameUpdated(validUserName)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}

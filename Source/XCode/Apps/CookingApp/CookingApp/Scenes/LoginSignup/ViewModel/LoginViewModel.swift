@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import LoginSignupModule
 
 class LoginViewModel {
     
     weak var view: LoginViewControllerProtocol?
     
+    var userNameValidator: UserNameValidator?
+    
+    var userNameValidated: Bool
+    
     init(view: LoginViewControllerProtocol) {
-               
+        self.userNameValidated = false
         self.view = view
     }
     
@@ -30,5 +35,15 @@ class LoginViewModel {
     
     func passwordDidEndOnExit() {
         view?.hideKeyboard()
+    }
+    
+    func userNameUpdated(_ value: String?) {
+        
+        guard let value = value else {
+            return
+        }
+        
+        let validator = self.userNameValidator ?? UserNameValidator()
+        userNameValidated = validator.validate(value)
     }
 }
