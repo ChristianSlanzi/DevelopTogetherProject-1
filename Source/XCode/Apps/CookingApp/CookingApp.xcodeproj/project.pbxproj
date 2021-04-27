@@ -23,6 +23,7 @@
 		24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */; };
 		24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24567C1F26386F780010BE25 /* LoginSignupModule.framework */; };
 		24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24567C1F26386F780010BE25 /* LoginSignupModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24567C322638786E0010BE25 /* MockPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C312638786D0010BE25 /* MockPasswordValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
 		24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserNameValidator.swift; sourceTree = "<group>"; };
 		24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LoginSignupModule.xcodeproj; path = ../../../Modules/LoginSignupModule/LoginSignupModule.xcodeproj; sourceTree = "<group>"; };
+		24567C312638786D0010BE25 /* MockPasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPasswordValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				24567C04263829E60010BE25 /* MockLoginViewController.swift */,
 				24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */,
+				24567C312638786D0010BE25 /* MockPasswordValidator.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
 				24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */,
 				24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */,
+				24567C322638786E0010BE25 /* MockPasswordValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

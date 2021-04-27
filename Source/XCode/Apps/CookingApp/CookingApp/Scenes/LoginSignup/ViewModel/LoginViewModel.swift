@@ -13,7 +13,7 @@ class LoginViewModel {
     weak var view: LoginViewControllerProtocol?
     
     var userNameValidator: UserNameValidator?
-    
+    var passwordValidator: PasswordValidator?
     var userNameValidated: Bool
     var passwordValidated: Bool
     
@@ -60,5 +60,16 @@ class LoginViewModel {
         }
         
         view?.enableLoginButton(true)
+    }
+    
+    func passwordUpdated(_ value: String?) {
+        
+        guard let value = value else {
+            view?.enableLoginButton(false)
+            return
+        }
+        
+        let validator = self.passwordValidator ?? PasswordValidator()
+        passwordValidated = validator.validate(value)
     }
 }

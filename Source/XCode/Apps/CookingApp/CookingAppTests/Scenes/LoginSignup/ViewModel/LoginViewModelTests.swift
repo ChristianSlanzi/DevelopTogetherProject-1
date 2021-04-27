@@ -200,3 +200,19 @@ extension LoginViewModelTests {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 }
+
+// MARK: passwordUpdated tests
+extension LoginViewModelTests {
+    
+    func testPasswordUpdated_Calls_Validate_OnPasswordValidator() {
+        let expectation = self.expectation(description: "expected validate() to be called")
+        
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        viewModel.passwordValidator = MockPasswordValidator(expectation, expectedValue: validPassword)
+        
+        viewModel.passwordUpdated(validPassword)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+}

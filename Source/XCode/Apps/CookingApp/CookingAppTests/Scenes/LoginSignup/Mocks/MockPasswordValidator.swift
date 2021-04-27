@@ -1,5 +1,5 @@
 //
-//  MockUserNameValidator.swift
+//  MockPasswordValidator.swift
 //  CookingAppTests
 //
 //  Created by Christian Slanzi on 27.04.21.
@@ -9,8 +9,8 @@ import Foundation
 import XCTest
 import LoginSignupModule
 
-class MockUserNameValidator: UserNameValidator {
-
+class MockPasswordValidator: PasswordValidator {
+    
     private var expectation: XCTestExpectation?
     private var expectedValue: String?
     
@@ -32,5 +32,4 @@ class MockUserNameValidator: UserNameValidator {
         return super.validate(value)
     }
 
-    
 }
