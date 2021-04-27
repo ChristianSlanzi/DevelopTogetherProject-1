@@ -31,4 +31,8 @@ class SignupViewModel {
     func passwordDidEndOnExit() {
         view?.hideKeyboard()
     }
+    
+    func confirmPasswordDidEndOnExit() {
+        view?.hideKeyboard()
+    }
 }
