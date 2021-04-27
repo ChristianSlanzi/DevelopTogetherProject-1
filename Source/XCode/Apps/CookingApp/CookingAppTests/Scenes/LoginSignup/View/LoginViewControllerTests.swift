@@ -123,4 +123,28 @@ extension LoginViewControllerTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testTextFieldShouldChangeCharacters_userNameTextField_Calls_UserNameUpdated_OnViewModel_WithExpectedUsername() {
+        
+        let expectation = self.expectation(description: "expected userNameUpdated() to be called")
+        
+        let userNameTextFieldStub = UITextFieldStub(text: validUserName)
+        let passwordTextFieldStub = UITextFieldStub(text: validPassword)
+        
+        let loginViewController = LoginViewController()
+        loginViewController.userNameTextField = userNameTextFieldStub
+        loginViewController.passwordTextField = passwordTextFieldStub
+        
+        let viewModel = MockLoginViewModel(view: loginViewController)
+        viewModel.userNameUpdatedExpectation = (expectation,
+                                                expectedValue: "Abcdefghij")
+        
+        loginViewController.viewModel = viewModel
+        
+        let _ = loginViewController.textField(userNameTextFieldStub,
+                                              shouldChangeCharactersIn: NSMakeRange(0, 1),
+                                              replacementString: "A")
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }

@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userNameTextField?.delegate = self
+        
         if self.viewModel == nil {
             self.viewModel = LoginViewModel(view: self)
         }
@@ -41,6 +43,26 @@ class LoginViewController: UIViewController {
     
     @IBAction func passwordDidEndOnExit(_ sender: Any) {
         viewModel?.passwordDidEndOnExit()
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+
+        if textField == self.userNameTextField {
+            self.viewModel?.userNameUpdated(updatedString)
+        }
+        
+        if textField == self.passwordTextField {
+            self.viewModel?.passwordUpdated(updatedString)
+        }
+        
+        return true
     }
 }
 
