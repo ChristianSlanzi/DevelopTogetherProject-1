@@ -6,13 +6,31 @@
 //
 
 import Foundation
+import LoginSignupModule
 
 class SignupViewModel {
     
     weak var view: SignupViewControllerProtocol?
     
+    var userNameValidator: UserNameValidator?
+    
+    var userNameValidated: Bool
+    var emailAddressValidated: Bool
+    
+    var password1Validated: Bool
+    var password2Validated: Bool
+    
+    var passwordsAreIdentical: Bool
+    
     init(view: SignupViewControllerProtocol) {
  
+        self.userNameValidated = false
+        self.emailAddressValidated = false
+        
+        self.password1Validated = false
+        self.password2Validated = false
+        self.passwordsAreIdentical = false
+        
         self.view = view
     }
     
@@ -34,5 +52,36 @@ class SignupViewModel {
     
     func confirmPasswordDidEndOnExit() {
         view?.hideKeyboard()
+    }
+    
+    func emailAddressDidEndOnExit() {
+        view?.hideKeyboard()
+    }
+    
+    func userNameUpdated(_ value: String?) {
+        
+        guard let value = value else {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        let validator = self.userNameValidator ?? UserNameValidator()
+        userNameValidated = validator.validate(value)
+        
+        if userNameValidated == false {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if password1Validated == true &&
+            password2Validated == true &&
+            passwordsAreIdentical == true &&
+            emailAddressValidated == true {
+            
+            view?.enableCreateButton(true)
+            return
+        }
+        
+        view?.enableCreateButton(false)
     }
 }
