@@ -10,6 +10,8 @@ import XCTest
 
 class LoginViewModelTests: XCTestCase {
     
+    fileprivate var mockLoginViewController: MockLoginViewController?
+    
     fileprivate var validUserName = "abcdefghij"
     fileprivate var invalidUserName = "a"
 
@@ -18,6 +20,7 @@ class LoginViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockLoginViewController = MockLoginViewController()
     }
 
     override func tearDownWithError() throws {
@@ -36,4 +39,21 @@ class LoginViewModelTests: XCTestCase {
         }
     }
 
+}
+
+// MARK: initialization tests
+extension LoginViewModelTests {
+    
+    func testInit_ValidView_InstantiatesObject() {
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        XCTAssertNotNil(viewModel)
+    }
+    
+    func testInit_ValidView_CopiesViewToIvar() {
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        
+        if let lhs = mockLoginViewController, let rhs = viewModel.view as? MockLoginViewController {
+            XCTAssertTrue(lhs === rhs)
+        }
+    }
 }

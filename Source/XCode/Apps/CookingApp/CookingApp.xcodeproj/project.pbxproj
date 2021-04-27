@@ -17,6 +17,9 @@
 		24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */; };
 		24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* AppDependencies.swift */; };
 		24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BF6263827790010BE25 /* LoginViewModelTests.swift */; };
+		24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BFE263828DF0010BE25 /* LoginViewModel.swift */; };
+		24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C04263829E60010BE25 /* MockLoginViewController.swift */; };
+		24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		24567BCF2637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24567BE52637FE210010BE25 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		24567BF6263827790010BE25 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		24567BFE263828DF0010BE25 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		24567C04263829E60010BE25 /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
+		24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 		24567BEF263826120010BE25 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 		24567BF1263826280010BE25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				24567BFE263828DF0010BE25 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 		24567BF32638268F0010BE25 /* LoginSignup */ = {
 			isa = PBXGroup;
 			children = (
+				24567C03263829B80010BE25 /* Mocks */,
 				24567BF42638269F0010BE25 /* ViewModel */,
 				24567BF5263826AB0010BE25 /* View */,
 			);
@@ -212,6 +221,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		24567C03263829B80010BE25 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				24567C04263829E60010BE25 /* MockLoginViewController.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +361,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
+				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */,
+				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
 				24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
