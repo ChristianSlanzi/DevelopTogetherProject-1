@@ -12,8 +12,13 @@ import XCTest
 class MockLoginViewModel: LoginViewModel {
     
     var performInitialViewSetupExpectation: XCTestExpectation?
+    var userNameDidEndOnExitExpectation: XCTestExpectation?
     
     override func performInitialViewSetup() {
         performInitialViewSetupExpectation?.fulfill()
+    }
+    
+    override func userNameDidEndOnExit() {
+        userNameDidEndOnExitExpectation?.fulfill()
     }
 }
