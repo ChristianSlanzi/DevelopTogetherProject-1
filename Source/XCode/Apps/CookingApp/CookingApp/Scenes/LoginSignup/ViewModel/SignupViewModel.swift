@@ -27,4 +27,8 @@ class SignupViewModel {
     func userNameDidEndOnExit() {
         view?.hideKeyboard()
     }
+    
+    func passwordDidEndOnExit() {
+        view?.hideKeyboard()
+    }
 }
