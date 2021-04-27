@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func passwordDidEndOnExit(_ sender: Any) {
-
+        viewModel?.passwordDidEndOnExit()
     }
 }
 

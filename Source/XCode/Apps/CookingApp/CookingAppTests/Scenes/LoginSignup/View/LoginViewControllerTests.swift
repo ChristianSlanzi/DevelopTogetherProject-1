@@ -61,4 +61,20 @@ extension LoginViewControllerTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testPasswordDidEndOnExit_Calls_PasswordDidEndOnExit_OnViewModel() {
+        
+        let expectation = self.expectation(description: "expected passwordDidEndOnExit() to be called")
+        
+        let loginViewController = LoginViewController()
+        
+        let viewModel = MockLoginViewModel(view: loginViewController)
+        viewModel.passwordDidEndOnExitExpectation = expectation
+        
+        loginViewController.viewModel = viewModel
+        
+        loginViewController.passwordDidEndOnExit(self)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
