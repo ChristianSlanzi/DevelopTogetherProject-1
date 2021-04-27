@@ -16,6 +16,7 @@ class MockLoginViewController: LoginViewControllerProtocol {
     var expectationForClearPasswordField: XCTestExpectation?
     var expectationForEnableLoginButton: (XCTestExpectation, Bool)?
     var expectationForCreateAccountButton: (XCTestExpectation, Bool)?
+    var expectationForHideKeyboard: XCTestExpectation?
     
     func clearUserNameField() {
         self.expectationForClearUserNameField?.fulfill()
@@ -39,5 +40,9 @@ class MockLoginViewController: LoginViewControllerProtocol {
                 expectation.fulfill()
             }
         }
+    }
+    
+    func hideKeyboard() {
+        self.expectationForHideKeyboard?.fulfill()
     }
 }

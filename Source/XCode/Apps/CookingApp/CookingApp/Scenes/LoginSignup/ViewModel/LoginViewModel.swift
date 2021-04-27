@@ -21,5 +21,6 @@ class LoginViewModel {
         view?.clearPasswordField()
         view?.enableLoginButton(false)
         view?.enableCreateAccountButton(true)
+        view?.hideKeyboard()
     }
 }

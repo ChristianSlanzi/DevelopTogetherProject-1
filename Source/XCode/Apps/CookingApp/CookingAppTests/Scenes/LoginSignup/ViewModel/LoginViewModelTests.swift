@@ -100,4 +100,14 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testPerformInitialViewSetup_HideKeyboard_OnViewController() {
+        let expectation = self.expectation(description: "expected hideKeyboard to be called")
+        mockLoginViewController!.expectationForHideKeyboard = expectation
+        
+        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
