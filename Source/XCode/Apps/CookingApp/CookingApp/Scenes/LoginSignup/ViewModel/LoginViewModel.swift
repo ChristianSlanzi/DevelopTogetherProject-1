@@ -17,6 +17,8 @@ class LoginViewModel {
     var userNameValidated: Bool
     var passwordValidated: Bool
     
+    var loginController: LoginController?
+    
     init(view: LoginViewControllerProtocol) {
         self.userNameValidated = false
         self.passwordValidated = false
@@ -84,4 +86,26 @@ class LoginViewModel {
         
         view?.enableLoginButton(true)
     }
+    
+    func login(userName: String?, password: String?) {
+        let controller = self.loginController ?? LoginController(delegate: self)
+        
+        if let userName = userName,
+           let password = password,
+           let model = LoginModel(userName: userName, password: password) {
+            controller.doLogin(model: model)
+        }
+    }
+}
+
+extension LoginViewModel: LoginControllerDelegate {
+    
+    func loginResult(result: Bool, error: String?) {
+        // do someting with the result,
+        // perhaps segue to a different screen of the app.
+        
+        // we show an alert as a dummy implementation
+        //view?.showLoginResult(result, error: error)
+    }
+    
 }

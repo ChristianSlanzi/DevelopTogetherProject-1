@@ -30,4 +30,12 @@ public class LoginModel {
         self.userName = userName
         self.password = password
     }
+    
+    public func getUsername() -> String {
+        return userName
+    }
+    
+    public func getPassword() -> String {
+        return password
+    }
 }
