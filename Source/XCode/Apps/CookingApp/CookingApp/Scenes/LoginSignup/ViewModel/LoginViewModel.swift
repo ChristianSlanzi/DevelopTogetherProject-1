@@ -23,4 +23,8 @@ class LoginViewModel {
         view?.enableCreateAccountButton(true)
         view?.hideKeyboard()
     }
+    
+    func userNameDidEndOnExit() {
+        view?.hideKeyboard()
+    }
 }
