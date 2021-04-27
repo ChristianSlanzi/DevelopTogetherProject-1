@@ -282,5 +282,39 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testLogin_ValidParameters_Calls_doLoginWithExpectedUserName_OnLoginController() {
+        let expectation = self.expectation(description: "expected doLogin() to be called")
+        
+        let mockLoginController = MockLoginController(expectation,
+                                                      expectedUserName: validUserName,
+                                                      expectedPassword: validPassword)
+        mockLoginController.shouldReturnTrueOnLogin = true
+        
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        viewModel.loginController = mockLoginController
+        mockLoginController.loginControllerDelegate = viewModel
+        
+        viewModel.login(userName: validUserName, password: validPassword)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testLogin_ValidParameters_Calls_doLoginWithExpectedPassword_OnLoginController() {
+        let expectation = self.expectation(description: "expected doLogin() to be called")
+        
+        let mockLoginController = MockLoginController(expectation,
+                                                      expectedUserName: validUserName,
+                                                      expectedPassword: validPassword)
+        mockLoginController.shouldReturnTrueOnLogin = true
+        
+        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        viewModel.loginController = mockLoginController
+        mockLoginController.loginControllerDelegate = viewModel
+        
+        viewModel.login(userName: validUserName, password: validPassword)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 
 }
