@@ -152,4 +152,40 @@ class SignupViewModel {
         
         view?.enableCreateButton(false)
     }
+    
+    func confirmPasswordUpdated(_ value: String?) {
+        
+        self.password2 = value
+        
+        guard let password2 = self.password2 else {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if let password1 = password1 {
+            passwordsAreIdentical = password1.compare(password2) == .orderedSame
+        } else {
+            passwordsAreIdentical = false
+        }
+        
+        let validator = self.passwordValidator ?? PasswordValidator()
+        password2Validated = validator.validate(password2)
+        
+        if userNameValidated == false {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if password1Validated == true &&
+            password2Validated == true &&
+            passwordsAreIdentical == true &&
+            userNameValidated == true &&
+            emailAddressValidated == true {
+            
+            view?.enableCreateButton(true)
+            return
+        }
+        
+        view?.enableCreateButton(false)
+    }
 }
