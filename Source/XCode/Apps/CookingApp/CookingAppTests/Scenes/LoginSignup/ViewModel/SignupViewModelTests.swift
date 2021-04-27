@@ -60,3 +60,58 @@ extension SignupViewModelTests {
         }
     }
 }
+
+// MARK: performInitialViewSetup tests
+extension SignupViewModelTests {
+    
+    func testPerformInitialViewSetup_Calls_ClearUserNameField_OnViewController() {
+        let expectation = self.expectation(description: "expected clearUserNameField() to be called")
+        mockSignupViewController!.expectationForClearUserNameField = expectation
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testPerformInitialViewSetup_Calls_ClearPasswordField_OnViewController() {
+        let expectation = self.expectation(description: "expected clearPasswordField() to be called")
+        mockSignupViewController!.expectationForClearPasswordField = expectation
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testPerformInitialViewSetup_Calls_ClearConfirmPasswordField_OnViewController() {
+        let expectation = self.expectation(description: "expected clearConfirmPasswordField() to be called")
+        mockSignupViewController!.expectationForClearConfirmPasswordField = expectation
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testPerformInitialViewSetup_DisablesCreateButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testPerformInitialViewSetup_EnablesCancelButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCancelButton(true) to be called")
+        mockSignupViewController!.expectationForEnableCancelButton = (expectation, true)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}

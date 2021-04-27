@@ -15,4 +15,12 @@ class SignupViewModel {
  
         self.view = view
     }
+    
+    func performInitialViewSetup() {
+        view?.clearUserNameField()
+        view?.clearPasswordField()
+        view?.clearConfirmPasswordField()
+        view?.enableCreateButton(false)
+        view?.enableCancelButton(true)
+    }
 }
