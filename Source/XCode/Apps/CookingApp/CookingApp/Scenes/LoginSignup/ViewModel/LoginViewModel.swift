@@ -19,5 +19,6 @@ class LoginViewModel {
     func performInitialViewSetup() {
         view?.clearUserNameField()
         view?.clearPasswordField()
+        view?.enableLoginButton(false)
     }
 }

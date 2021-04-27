@@ -80,4 +80,14 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testPerformInitialViewSetup_DisablesLoginButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableLoginButton(false) to be called")
+        mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
+        
+        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
