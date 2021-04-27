@@ -20,5 +20,6 @@ class LoginViewModel {
         view?.clearUserNameField()
         view?.clearPasswordField()
         view?.enableLoginButton(false)
+        view?.enableCreateAccountButton(true)
     }
 }

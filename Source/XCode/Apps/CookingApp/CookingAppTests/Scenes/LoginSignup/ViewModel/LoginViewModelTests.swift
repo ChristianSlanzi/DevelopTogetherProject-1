@@ -90,4 +90,14 @@ extension LoginViewModelTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testPerformInitialViewSetup_EnablesCreateAccountButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateAccountButton(true) to be called")
+        mockLoginViewController!.expectationForCreateAccountButton = (expectation, true)
+        
+        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        viewModel.performInitialViewSetup()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }
