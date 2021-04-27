@@ -280,3 +280,97 @@ extension SignupViewModelTests {
     }
 
 }
+
+// MARK: emailAddressUpdated tests
+extension SignupViewModelTests {
+    
+    func testEmailAddressUpdated_Calls_Validate_OnEmailAddressValidator() {
+        let expectation = self.expectation(description: "expected validate() to be called")
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.emailAddressValidator = MockEmailAddressValidator(expectation, expectedValue: validEmailAddress)
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testEmailAddressUpdated_ValidEmailAddress_PasswordsValidatedAndEqual_UserNameValidated_EnablesCreateButton_OnViewController() {
+        
+        let expectation = self.expectation(description: "expected enableCreateButton(true) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, true)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameValidated = true
+        viewModel.password1Validated = true
+        viewModel.password2Validated = true
+        viewModel.passwordsAreIdentical = true
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testEmailAddressUpdated_ValidEmailAddress_Passwords1Validated_Password2NotValidated_UserNameValidated_DisablesCreateButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameValidated = true
+        viewModel.password1Validated = true
+        viewModel.password2Validated = false
+        viewModel.passwordsAreIdentical = false
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testEmailAddressUpdated_ValidEmailAddress_Passwords2Validated_Password1NotValidated_UserNameValidated_DisablesCreateButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameValidated = true
+        viewModel.password1Validated = false
+        viewModel.password2Validated = true
+        viewModel.passwordsAreIdentical = false
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testEmailAddressUpdated_ValidEmailAddress_PasswordsValidatedButNotEqual_UserNameValidated_DisablesCreateButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameValidated = true
+        viewModel.password1Validated = true
+        viewModel.password2Validated = true
+        viewModel.passwordsAreIdentical = false
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testEmailAddressUpdated_ValidEmailAddress_PasswordsValidatedAndEqual_UserNameNotValidated_DisablesCreateButton_OnViewController() {
+        let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
+        mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
+        
+        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        viewModel.userNameValidated = false
+        viewModel.password1Validated = true
+        viewModel.password2Validated = true
+        viewModel.passwordsAreIdentical = true
+        
+        viewModel.emailAddressUpdated(validEmailAddress)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+}

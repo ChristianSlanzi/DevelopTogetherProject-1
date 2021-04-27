@@ -13,6 +13,7 @@ class SignupViewModel {
     weak var view: SignupViewControllerProtocol?
     
     var userNameValidator: UserNameValidator?
+    var emailAddressValidator: EmailAddressValidator?
     
     var userNameValidated: Bool
     var emailAddressValidated: Bool
@@ -76,6 +77,34 @@ class SignupViewModel {
         if password1Validated == true &&
             password2Validated == true &&
             passwordsAreIdentical == true &&
+            emailAddressValidated == true {
+            
+            view?.enableCreateButton(true)
+            return
+        }
+        
+        view?.enableCreateButton(false)
+    }
+    
+    func emailAddressUpdated(_ value: String?) {
+        
+        guard let value = value else {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        let validator = self.emailAddressValidator ?? EmailAddressValidator()
+        emailAddressValidated = validator.validate(value)
+        
+        if emailAddressValidated == false {
+            view?.enableCreateButton(false)
+            return
+        }
+        
+        if password1Validated == true &&
+            password2Validated == true &&
+            passwordsAreIdentical == true &&
+            userNameValidated == true &&
             emailAddressValidated == true {
             
             view?.enableCreateButton(true)
