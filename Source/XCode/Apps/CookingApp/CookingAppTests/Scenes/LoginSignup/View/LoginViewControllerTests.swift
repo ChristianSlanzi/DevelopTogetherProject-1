@@ -77,4 +77,27 @@ extension LoginViewControllerTests {
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+    func testLogin_ValidUserNameAndPassword_Calls_Login_OnViewModel_WithExpectedUserName() {
+        
+        let expectation = self.expectation(description: "expected login() to be called")
+        
+        let userNameTextFieldStub = UITextFieldStub(text: validUserName)
+        let passwordTextFieldStub = UITextFieldStub(text: "")
+        
+        let loginViewController = LoginViewController()
+        loginViewController.userNameTextField = userNameTextFieldStub
+        loginViewController.passwordTextField = passwordTextFieldStub
+        
+        let viewModel = MockLoginViewModel(view: loginViewController)
+        viewModel.loginExpectation = (expectation,
+                                      expectedUserName: validUserName,
+                                      expectedPassword: "")
+        
+        loginViewController.viewModel = viewModel
+        
+        loginViewController.login(self)
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }

@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-
-        
+        viewModel?.login(userName: userNameTextField.text,
+                         password: passwordTextField.text)
     }
     
     @IBAction func createAccount(_ sender: Any) {

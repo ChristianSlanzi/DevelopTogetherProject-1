@@ -14,6 +14,7 @@ class MockLoginViewModel: LoginViewModel {
     var performInitialViewSetupExpectation: XCTestExpectation?
     var userNameDidEndOnExitExpectation: XCTestExpectation?
     var passwordDidEndOnExitExpectation: XCTestExpectation?
+    var loginExpectation: (XCTestExpectation, expectedUserName: String, expectedPassword: String)?
     
     override func performInitialViewSetup() {
         performInitialViewSetupExpectation?.fulfill()
@@ -25,5 +26,18 @@ class MockLoginViewModel: LoginViewModel {
     
     override func passwordDidEndOnExit() {
         passwordDidEndOnExitExpectation?.fulfill()
+    }
+    
+    override func login(userName: String?, password: String?) {
+        
+        if let (expectation, expectedUserName, expectedPassword) = self.loginExpectation,
+            let userName = userName,
+            let password = password {
+            if ((userName.compare(expectedUserName) == .orderedSame) &&
+                (password.compare(expectedPassword) == .orderedSame)) {
+                
+                expectation.fulfill()
+            }
+        }
     }
 }
