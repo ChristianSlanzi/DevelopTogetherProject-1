@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         userNameTextField?.delegate = self
+        passwordTextField.delegate = self
         
         if self.viewModel == nil {
             self.viewModel = LoginViewModel(view: self)

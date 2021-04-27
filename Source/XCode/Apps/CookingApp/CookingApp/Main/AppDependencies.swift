@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LoginSignupModule
 
 class AppDependencies {
     
@@ -43,11 +44,23 @@ extension AppDependencies {
         let viewController = ViewController()
         return viewController
     }
+    
+    private func createLoginViewController() -> LoginViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        let viewModel = LoginViewModel(view: controller)
+        let loginController = LoginController(delegate: viewModel)
+        viewModel.loginController = loginController
+        controller.viewModel = viewModel
+        
+        return controller
+    }
 }
 
 extension AppDependencies {
     
     public func start() {
-        setRootViewController(createMainViewController(), window: window)
+        setRootViewController(createLoginViewController(), window: window)
     }
 }
