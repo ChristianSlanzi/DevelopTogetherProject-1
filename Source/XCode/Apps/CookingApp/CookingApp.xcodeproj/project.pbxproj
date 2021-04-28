@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
 		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
@@ -41,6 +42,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		241040DE26394C3C00994726 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 241040D226394C3C00994726 /* UserApiService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2436A9B026335697002282CE;
+			remoteInfo = UserApiService;
+		};
+		241040E026394C3C00994726 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 241040D226394C3C00994726 /* UserApiService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2436A9B926335698002282CE;
+			remoteInfo = UserApiServiceTests;
+		};
+		241040E426394C4900994726 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 241040D226394C3C00994726 /* UserApiService.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2436A9AF26335697002282CE;
+			remoteInfo = UserApiService;
+		};
 		24567BBF2637F9C40010BE25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24567BA02637F9C20010BE25 /* Project object */;
@@ -93,6 +115,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
+		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +181,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241040D326394C3C00994726 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				241040DF26394C3C00994726 /* UserApiService.framework */,
+				241040E126394C3C00994726 /* UserApiServiceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		241040E826394CFA00994726 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				241040E926394D2600994726 /* LoginSignupWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
 		2430BDA52638B17200C5CE19 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +266,7 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				241040E826394CFA00994726 /* Wrappers */,
 				24567BE52637FE210010BE25 /* AppDependencies.swift */,
 			);
 			path = Main;
@@ -331,6 +373,7 @@
 		24567C1826386F5C0010BE25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				241040D226394C3C00994726 /* UserApiService.xcodeproj */,
 				24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */,
 			);
 			path = Modules;
@@ -367,6 +410,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				241040E526394C4900994726 /* PBXTargetDependency */,
 				24567C2E263870E60010BE25 /* PBXTargetDependency */,
 			);
 			name = CookingApp;
@@ -448,6 +492,10 @@
 					ProductGroup = 24567C1A26386F780010BE25 /* Products */;
 					ProjectRef = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
 				},
+				{
+					ProductGroup = 241040D326394C3C00994726 /* Products */;
+					ProjectRef = 241040D226394C3C00994726 /* UserApiService.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -459,6 +507,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		241040DF26394C3C00994726 /* UserApiService.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UserApiService.framework;
+			remoteRef = 241040DE26394C3C00994726 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		241040E126394C3C00994726 /* UserApiServiceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UserApiServiceTests.xctest;
+			remoteRef = 241040E026394C3C00994726 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		24567C1F26386F780010BE25 /* LoginSignupModule.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -516,6 +578,7 @@
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
+				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +616,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		241040E526394C4900994726 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UserApiService;
+			targetProxy = 241040E426394C4900994726 /* PBXContainerItemProxy */;
+		};
 		24567BC02637F9C40010BE25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 24567BA72637F9C20010BE25 /* CookingApp */;

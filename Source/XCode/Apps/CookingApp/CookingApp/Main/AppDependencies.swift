@@ -51,6 +51,8 @@ extension AppDependencies {
         
         let viewModel = LoginViewModel(view: controller)
         let loginController = LoginController(delegate: viewModel)
+        let userApiService = LoginSignupWrapper()
+        loginController.userApiService = userApiService
         viewModel.loginController = loginController
         controller.viewModel = viewModel
         
