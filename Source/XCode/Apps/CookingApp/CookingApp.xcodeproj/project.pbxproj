@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
+		241040EF26394ED000994726 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040EE26394ED000994726 /* LoginRouting.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
 		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
@@ -117,6 +118,7 @@
 /* Begin PBXFileReference section */
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
+		241040EE26394ED000994726 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,14 @@
 			path = Wrappers;
 			sourceTree = "<group>";
 		};
+		241040ED26394EBB00994726 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				241040EE26394ED000994726 /* LoginRouting.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		2430BDA52638B17200C5CE19 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +276,7 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				241040ED26394EBB00994726 /* Routing */,
 				241040E826394CFA00994726 /* Wrappers */,
 				24567BE52637FE210010BE25 /* AppDependencies.swift */,
 			);
@@ -579,6 +590,7 @@
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
+				241040EF26394ED000994726 /* LoginRouting.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
