@@ -10,7 +10,11 @@ protocol LoginRouting: class {
     func routeToMainViewController()
 }
 
-extension AppDependencies: LoginRouting {
+protocol SignupRouting: class {
+    func routeToMainViewController()
+}
+
+extension AppDependencies: LoginRouting, SignupRouting {
     func routeToSignupViewController() {
         getWindow()?.rootViewController?.present(createSignupViewController(), animated: true)
     }

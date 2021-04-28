@@ -54,10 +54,12 @@ extension AppDependencies {
         let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         let viewModel = LoginViewModel(view: controller)
+        
         let loginController = LoginController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
         loginController.userApiService = userApiService
         viewModel.loginController = loginController
+        
         controller.viewModel = viewModel
         controller.routing = self
         
@@ -70,13 +72,13 @@ extension AppDependencies {
 
         let viewModel = SignupViewModel(view: controller)
         
-        
         let signupController = SignupController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
         signupController.userApiService = userApiService
         viewModel.signupController = signupController
         
         controller.viewModel = viewModel
+        controller.routing = self
         
         return controller
     }
