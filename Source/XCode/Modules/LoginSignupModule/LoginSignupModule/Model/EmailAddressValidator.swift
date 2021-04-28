@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class EmailAddressValidator {
+open class EmailAddressValidator {
     
     public init() {}
     
-    public func validate(_ value: String) -> Bool {
+    open func validate(_ value: String) -> Bool {
         if (value.count < 6) {
             return false
         }

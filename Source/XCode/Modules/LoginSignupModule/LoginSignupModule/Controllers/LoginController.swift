@@ -11,9 +11,9 @@ public protocol LoginControllerDelegate: class {
     func loginResult(result: Bool, error: String?)
 }
 
-public class LoginController {
+open class LoginController {
 
-    weak var loginControllerDelegate: LoginControllerDelegate?
+    public weak var loginControllerDelegate: LoginControllerDelegate?
     
     public var userApiService: LoginSignupService?
 
@@ -21,7 +21,7 @@ public class LoginController {
         self.loginControllerDelegate = delegate
     }
     
-    public func doLogin(model: LoginModel) {
+    open func doLogin(model: LoginModel) {
         let userName = model.userName
         let password = model.password
         

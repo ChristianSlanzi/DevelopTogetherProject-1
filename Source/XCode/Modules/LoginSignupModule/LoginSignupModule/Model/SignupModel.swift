@@ -39,4 +39,16 @@ public class SignupModel {
         
     }
     
+    public func getUsername() -> String {
+        return userName
+    }
+    
+    public func getEmailAddress() -> String {
+        return emailAddress
+    }
+    
+    public func getPassword() -> String {
+        return password
+    }
+    
 }

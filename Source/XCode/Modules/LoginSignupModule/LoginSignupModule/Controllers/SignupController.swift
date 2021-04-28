@@ -11,13 +11,13 @@ public protocol SignupControllerDelegate: class {
     func signupResult(result: Bool, error: String?)
 }
 
-public class SignupController {
+open class SignupController {
     
 //    let dummyUsername = "Alibaba"
 //    let dummyPassword = "Sesamo123"
 //    let dummyEmailAddress = "a@b.com"
     
-    weak var signupControllerDelegate: SignupControllerDelegate?
+    open weak var signupControllerDelegate: SignupControllerDelegate?
     
     public var userApiService: LoginSignupService?
     
@@ -25,7 +25,7 @@ public class SignupController {
         self.signupControllerDelegate = delegate
     }
     
-    public func doSignup(model: SignupModel) {
+    open func doSignup(model: SignupModel) {
         
         //let userName = model.userName
         let emailAddress = model.emailAddress

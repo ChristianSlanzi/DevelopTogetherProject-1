@@ -1,0 +1,867 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
+		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
+		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
+		2430BDA72638B18200C5CE19 /* UITextFieldStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */; };
+		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
+		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
+		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
+		24567BB32637F9C20010BE25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB12637F9C20010BE25 /* Main.storyboard */; };
+		24567BB52637F9C40010BE25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB42637F9C40010BE25 /* Assets.xcassets */; };
+		24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */; };
+		24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BC22637F9C40010BE25 /* CookingAppTests.swift */; };
+		24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */; };
+		24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* AppDependencies.swift */; };
+		24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BF6263827790010BE25 /* LoginViewModelTests.swift */; };
+		24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BFE263828DF0010BE25 /* LoginViewModel.swift */; };
+		24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C04263829E60010BE25 /* MockLoginViewController.swift */; };
+		24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */; };
+		24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */; };
+		24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24567C1F26386F780010BE25 /* LoginSignupModule.framework */; };
+		24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24567C1F26386F780010BE25 /* LoginSignupModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24567C322638786E0010BE25 /* MockPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C312638786D0010BE25 /* MockPasswordValidator.swift */; };
+		24567C3626387C260010BE25 /* MockLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C3526387C260010BE25 /* MockLoginController.swift */; };
+		24567C3A26388C660010BE25 /* SignupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C3926388C660010BE25 /* SignupViewModelTests.swift */; };
+		24567C3E26388C8C0010BE25 /* MockSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */; };
+		24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */; };
+		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
+		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
+		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
+		2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */; };
+		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
+		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24567BBF2637F9C40010BE25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24567BA02637F9C20010BE25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24567BA72637F9C20010BE25;
+			remoteInfo = CookingApp;
+		};
+		24567BCA2637F9C40010BE25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24567BA02637F9C20010BE25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24567BA72637F9C20010BE25;
+			remoteInfo = CookingApp;
+		};
+		24567C1E26386F780010BE25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2471EF85263488EF00E35A11;
+			remoteInfo = LoginSignupModule;
+		};
+		24567C2026386F780010BE25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2471EF8E263488EF00E35A11;
+			remoteInfo = LoginSignupModuleTests;
+		};
+		24567C2D263870E60010BE25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2471EF84263488EF00E35A11;
+			remoteInfo = LoginSignupModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24567C2A26386F850010BE25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
+		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldStub.swift; sourceTree = "<group>"; };
+		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24567BAB2637F9C20010BE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24567BAD2637F9C20010BE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		24567BAF2637F9C20010BE25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24567BB22637F9C20010BE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24567BB42637F9C40010BE25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24567BB72637F9C40010BE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24567BB92637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24567BBE2637F9C40010BE25 /* CookingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24567BC22637F9C40010BE25 /* CookingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppTests.swift; sourceTree = "<group>"; };
+		24567BC42637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppUITests.swift; sourceTree = "<group>"; };
+		24567BCF2637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24567BE52637FE210010BE25 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		24567BF6263827790010BE25 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		24567BFE263828DF0010BE25 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		24567C04263829E60010BE25 /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
+		24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
+		24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserNameValidator.swift; sourceTree = "<group>"; };
+		24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LoginSignupModule.xcodeproj; path = ../../../Modules/LoginSignupModule/LoginSignupModule.xcodeproj; sourceTree = "<group>"; };
+		24567C312638786D0010BE25 /* MockPasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPasswordValidator.swift; sourceTree = "<group>"; };
+		24567C3526387C260010BE25 /* MockLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginController.swift; sourceTree = "<group>"; };
+		24567C3926388C660010BE25 /* SignupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelTests.swift; sourceTree = "<group>"; };
+		24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewController.swift; sourceTree = "<group>"; };
+		24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerProtocol.swift; sourceTree = "<group>"; };
+		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
+		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
+		2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
+		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24567BA52637F9C20010BE25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BBB2637F9C40010BE25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BC62637F9C40010BE25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2430BDA52638B17200C5CE19 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		24567B9F2637F9C20010BE25 = {
+			isa = PBXGroup;
+			children = (
+				24567C1826386F5C0010BE25 /* Modules */,
+				24567BAA2637F9C20010BE25 /* CookingApp */,
+				24567BC12637F9C40010BE25 /* CookingAppTests */,
+				24567BCC2637F9C40010BE25 /* CookingAppUITests */,
+				24567BA92637F9C20010BE25 /* Products */,
+				24567C2726386F850010BE25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		24567BA92637F9C20010BE25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24567BA82637F9C20010BE25 /* CookingApp.app */,
+				24567BBE2637F9C40010BE25 /* CookingAppTests.xctest */,
+				24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24567BAA2637F9C20010BE25 /* CookingApp */ = {
+			isa = PBXGroup;
+			children = (
+				24567BE42637FE0F0010BE25 /* Main */,
+				24567BED263825C10010BE25 /* Scenes */,
+				24567BAB2637F9C20010BE25 /* AppDelegate.swift */,
+				24567BAD2637F9C20010BE25 /* SceneDelegate.swift */,
+				24567BAF2637F9C20010BE25 /* ViewController.swift */,
+				24567BB12637F9C20010BE25 /* Main.storyboard */,
+				24567BB42637F9C40010BE25 /* Assets.xcassets */,
+				24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */,
+				24567BB92637F9C40010BE25 /* Info.plist */,
+			);
+			path = CookingApp;
+			sourceTree = "<group>";
+		};
+		24567BC12637F9C40010BE25 /* CookingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				24567BF2263826810010BE25 /* Scenes */,
+				24567BC22637F9C40010BE25 /* CookingAppTests.swift */,
+				24567BC42637F9C40010BE25 /* Info.plist */,
+			);
+			path = CookingAppTests;
+			sourceTree = "<group>";
+		};
+		24567BCC2637F9C40010BE25 /* CookingAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */,
+				24567BCF2637F9C40010BE25 /* Info.plist */,
+			);
+			path = CookingAppUITests;
+			sourceTree = "<group>";
+		};
+		24567BE42637FE0F0010BE25 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				24567BE52637FE210010BE25 /* AppDependencies.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		24567BED263825C10010BE25 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24567BEE263825DB0010BE25 /* LoginSignup */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		24567BEE263825DB0010BE25 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				24567BEF263826120010BE25 /* Protocols */,
+				24567BF1263826280010BE25 /* ViewModel */,
+				24567BF02638261C0010BE25 /* View */,
+			);
+			path = LoginSignup;
+			sourceTree = "<group>";
+		};
+		24567BEF263826120010BE25 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24567C0C26382A440010BE25 /* LoginViewControllerProtocol.swift */,
+				24567C4126388CD70010BE25 /* SignupViewControllerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		24567BF02638261C0010BE25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2430BDA12638A83B00C5CE19 /* LoginViewController.swift */,
+				2493FDFC2638B75F0063B6BE /* SignupViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24567BF1263826280010BE25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				24567BFE263828DF0010BE25 /* LoginViewModel.swift */,
+				24567C4526388D500010BE25 /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24567BF2263826810010BE25 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24567BF32638268F0010BE25 /* LoginSignup */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		24567BF32638268F0010BE25 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				2430BDA52638B17200C5CE19 /* Stubs */,
+				24567C03263829B80010BE25 /* Mocks */,
+				24567BF42638269F0010BE25 /* ViewModel */,
+				24567BF5263826AB0010BE25 /* View */,
+			);
+			path = LoginSignup;
+			sourceTree = "<group>";
+		};
+		24567BF42638269F0010BE25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				24567BF6263827790010BE25 /* LoginViewModelTests.swift */,
+				24567C3926388C660010BE25 /* SignupViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24567BF5263826AB0010BE25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */,
+				2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24567C03263829B80010BE25 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				24567C04263829E60010BE25 /* MockLoginViewController.swift */,
+				24567C1326386E6B0010BE25 /* MockUserNameValidator.swift */,
+				24567C312638786D0010BE25 /* MockPasswordValidator.swift */,
+				24567C3526387C260010BE25 /* MockLoginController.swift */,
+				24567C3D26388C8C0010BE25 /* MockSignupViewController.swift */,
+				24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */,
+				24567C4D263894630010BE25 /* MockSignupController.swift */,
+				2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */,
+				2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		24567C1826386F5C0010BE25 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		24567C1A26386F780010BE25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24567C1F26386F780010BE25 /* LoginSignupModule.framework */,
+				24567C2126386F780010BE25 /* LoginSignupModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24567C2726386F850010BE25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24567BA72637F9C20010BE25 /* CookingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24567BD22637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingApp" */;
+			buildPhases = (
+				24567BA42637F9C20010BE25 /* Sources */,
+				24567BA52637F9C20010BE25 /* Frameworks */,
+				24567BA62637F9C20010BE25 /* Resources */,
+				24567C2A26386F850010BE25 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24567C2E263870E60010BE25 /* PBXTargetDependency */,
+			);
+			name = CookingApp;
+			productName = CookingApp;
+			productReference = 24567BA82637F9C20010BE25 /* CookingApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24567BBD2637F9C40010BE25 /* CookingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24567BD52637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingAppTests" */;
+			buildPhases = (
+				24567BBA2637F9C40010BE25 /* Sources */,
+				24567BBB2637F9C40010BE25 /* Frameworks */,
+				24567BBC2637F9C40010BE25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24567BC02637F9C40010BE25 /* PBXTargetDependency */,
+			);
+			name = CookingAppTests;
+			productName = CookingAppTests;
+			productReference = 24567BBE2637F9C40010BE25 /* CookingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24567BC82637F9C40010BE25 /* CookingAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24567BD82637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingAppUITests" */;
+			buildPhases = (
+				24567BC52637F9C40010BE25 /* Sources */,
+				24567BC62637F9C40010BE25 /* Frameworks */,
+				24567BC72637F9C40010BE25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24567BCB2637F9C40010BE25 /* PBXTargetDependency */,
+			);
+			name = CookingAppUITests;
+			productName = CookingAppUITests;
+			productReference = 24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24567BA02637F9C20010BE25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					24567BA72637F9C20010BE25 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					24567BBD2637F9C40010BE25 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 24567BA72637F9C20010BE25;
+					};
+					24567BC82637F9C40010BE25 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 24567BA72637F9C20010BE25;
+					};
+				};
+			};
+			buildConfigurationList = 24567BA32637F9C20010BE25 /* Build configuration list for PBXProject "CookingApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24567B9F2637F9C20010BE25;
+			productRefGroup = 24567BA92637F9C20010BE25 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 24567C1A26386F780010BE25 /* Products */;
+					ProjectRef = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				24567BA72637F9C20010BE25 /* CookingApp */,
+				24567BBD2637F9C40010BE25 /* CookingAppTests */,
+				24567BC82637F9C40010BE25 /* CookingAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		24567C1F26386F780010BE25 /* LoginSignupModule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LoginSignupModule.framework;
+			remoteRef = 24567C1E26386F780010BE25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24567C2126386F780010BE25 /* LoginSignupModuleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LoginSignupModuleTests.xctest;
+			remoteRef = 24567C2026386F780010BE25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24567BA62637F9C20010BE25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */,
+				24567BB52637F9C40010BE25 /* Assets.xcassets in Resources */,
+				24567BB32637F9C20010BE25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BBC2637F9C40010BE25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BC72637F9C40010BE25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24567BA42637F9C20010BE25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
+				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
+				2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */,
+				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
+				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
+				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
+				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
+				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
+				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BBA2637F9C40010BE25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24567C3E26388C8C0010BE25 /* MockSignupViewController.swift in Sources */,
+				24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */,
+				2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */,
+				2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */,
+				2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */,
+				2430BDA72638B18200C5CE19 /* UITextFieldStub.swift in Sources */,
+				24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */,
+				24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */,
+				24567C1426386E6B0010BE25 /* MockUserNameValidator.swift in Sources */,
+				24567C4E263894630010BE25 /* MockSignupController.swift in Sources */,
+				24567C3626387C260010BE25 /* MockLoginController.swift in Sources */,
+				24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */,
+				24567C3A26388C660010BE25 /* SignupViewModelTests.swift in Sources */,
+				2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */,
+				24567C322638786E0010BE25 /* MockPasswordValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24567BC52637F9C40010BE25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24567BC02637F9C40010BE25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24567BA72637F9C20010BE25 /* CookingApp */;
+			targetProxy = 24567BBF2637F9C40010BE25 /* PBXContainerItemProxy */;
+		};
+		24567BCB2637F9C40010BE25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24567BA72637F9C20010BE25 /* CookingApp */;
+			targetProxy = 24567BCA2637F9C40010BE25 /* PBXContainerItemProxy */;
+		};
+		24567C2E263870E60010BE25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LoginSignupModule;
+			targetProxy = 24567C2D263870E60010BE25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24567BB12637F9C20010BE25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24567BB22637F9C20010BE25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24567BB72637F9C40010BE25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24567BD02637F9C40010BE25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24567BD12637F9C40010BE25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24567BD32637F9C40010BE25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24567BD42637F9C40010BE25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24567BD62637F9C40010BE25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookingApp.app/CookingApp";
+			};
+			name = Debug;
+		};
+		24567BD72637F9C40010BE25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookingApp.app/CookingApp";
+			};
+			name = Release;
+		};
+		24567BD92637F9C40010BE25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CookingApp;
+			};
+			name = Debug;
+		};
+		24567BDA2637F9C40010BE25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CookingAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CookingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CookingApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24567BA32637F9C20010BE25 /* Build configuration list for PBXProject "CookingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24567BD02637F9C40010BE25 /* Debug */,
+				24567BD12637F9C40010BE25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24567BD22637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24567BD32637F9C40010BE25 /* Debug */,
+				24567BD42637F9C40010BE25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24567BD52637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24567BD62637F9C40010BE25 /* Debug */,
+				24567BD72637F9C40010BE25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24567BD82637F9C40010BE25 /* Build configuration list for PBXNativeTarget "CookingAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24567BD92637F9C40010BE25 /* Debug */,
+				24567BDA2637F9C40010BE25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24567BA02637F9C20010BE25 /* Project object */;
+}

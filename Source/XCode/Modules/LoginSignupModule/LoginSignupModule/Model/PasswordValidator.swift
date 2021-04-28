@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class PasswordValidator {
+open class PasswordValidator {
     
     public init() {}
     
-    public func validate(_ value: String) -> Bool {
+    open func validate(_ value: String) -> Bool {
         if ((value.count < 6) || (value.count > 10)) {
             return false
         }
