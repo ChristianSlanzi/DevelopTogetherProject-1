@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     
     var viewModel: LoginViewModel?
     
+    weak var routing: LoginRouting?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccount(_ sender: Any) {
-        self.performSegue(withIdentifier: "presentCreateAccount", sender: self)
+        routing?.routeToSignupViewController()
     }
     
     @IBAction func userNameDidEndOnExit(_ sender: Any) {
@@ -97,9 +99,9 @@ extension LoginViewController : LoginViewControllerProtocol {
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true) {
-//            if result == true {
-//                self.routing?.routeToMainViewController()
-//            }
+            if result == true {
+                self.routing?.routeToMainViewController()
+            }
         }
     }
     

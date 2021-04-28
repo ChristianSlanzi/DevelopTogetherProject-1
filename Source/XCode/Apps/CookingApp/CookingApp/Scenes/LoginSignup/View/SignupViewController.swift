@@ -18,6 +18,8 @@ class SignupViewController: UIViewController {
     
     var viewModel: SignupViewModel?
     
+    weak var routing: SignupRouting?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -126,7 +128,11 @@ extension SignupViewController : SignupViewControllerProtocol {
                                       message: result ? "Signup was successful" : (error ??  "Already registered user"),
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true) {
+            if result == true {
+                self.routing?.routeToMainViewController()
+            }
+        }
     }
 
 }
