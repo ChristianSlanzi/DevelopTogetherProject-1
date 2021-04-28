@@ -7,6 +7,8 @@
 
 import UIKit
 import LoginSignupModule
+import NetworkingService
+import CookingApiService
 
 class AppDependencies {
     
@@ -46,6 +48,12 @@ extension AppDependencies {
     
     internal func createMainViewController() -> UIViewController {
         let viewController = ViewController()
+        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                      client: networkingService,
+                                                      apiKey: "COOKING_API_KEY")
+        let service = serviceFactory.getCookingApiService()
+        viewController.cookingApiService = service
         return viewController
     }
     
@@ -91,7 +99,7 @@ extension AppDependencies {
     }
     
     public func login() {
-        var isUserLoggedIn = false
+        var isUserLoggedIn = true
         
         //if we have credentials
         if isUserLoggedIn {
