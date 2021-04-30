@@ -10,6 +10,29 @@ import LoginSignupModule
 import NetworkingService
 import CookingApiService
 
+enum Tabs {
+    case main
+    case search
+
+    var index: Int {
+        switch self {
+        case .main:
+            return 0
+        case .search:
+            return 1
+        }
+    }
+
+    var item: UITabBarItem {
+        switch self {
+        case .main:
+            return UITabBarItem(title: "Home", image: nil, tag: index)
+        case .search:
+            return UITabBarItem(title: "Wishlist", image: nil, tag: index)
+        }
+    }
+}
+
 class AppDependencies {
     
     static let shared = AppDependencies()
@@ -45,6 +68,24 @@ class AppDependencies {
 }
 
 extension AppDependencies {
+    
+    func makeMainTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createMainViewController())
+        navigation.tabBarItem = Tabs.main.item
+        return navigation
+    }
+    
+    func makeSearchTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createSignupViewController())
+        navigation.tabBarItem = Tabs.search.item
+        return navigation
+    }
+    
+    internal func createMainTabBarController() -> UIViewController {
+        let tabs = [makeMainTab(), makeSearchTab()]
+        let tabController = MainTabBarController(viewControllers: tabs)
+        return tabController
+    }
     
     internal func createMainViewController() -> UIViewController {
         let viewController = ViewController()

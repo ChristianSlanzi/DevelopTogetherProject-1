@@ -19,6 +19,6 @@ extension AppDependencies: LoginRouting, SignupRouting {
         getWindow()?.rootViewController?.present(createSignupViewController(), animated: true)
     }
     func routeToMainViewController() {
-        setRootViewController(createMainViewController(), window: getWindow())
+        setRootViewController(createMainTabBarController(), window: getWindow())
     }
 }
