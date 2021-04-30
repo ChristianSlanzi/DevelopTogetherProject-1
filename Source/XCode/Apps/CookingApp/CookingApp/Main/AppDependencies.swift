@@ -13,12 +13,18 @@ import CookingApiService
 enum Tabs {
     case main
     case search
+    case favorites
+    case profile
 
     var index: Int {
         switch self {
         case .main:
             return 0
         case .search:
+            return 1
+        case .favorites:
+            return 1
+        case .profile:
             return 1
         }
     }
@@ -28,7 +34,11 @@ enum Tabs {
         case .main:
             return UITabBarItem(title: "Home", image: nil, tag: index)
         case .search:
-            return UITabBarItem(title: "Wishlist", image: nil, tag: index)
+            return UITabBarItem(title: "Search", image: nil, tag: index)
+        case .favorites:
+            return UITabBarItem(title: "Favorites", image: nil, tag: index)
+        case .profile:
+            return UITabBarItem(title: "Profile", image: nil, tag: index)
         }
     }
 }
@@ -76,13 +86,25 @@ extension AppDependencies {
     }
     
     func makeSearchTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createSignupViewController())
+        let navigation = UINavigationController(rootViewController: createSearchViewController())
         navigation.tabBarItem = Tabs.search.item
         return navigation
     }
     
+    func makeFavoritesTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createFavoritesViewController())
+        navigation.tabBarItem = Tabs.favorites.item
+        return navigation
+    }
+    
+    func makeProfileTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createProfileViewController())
+        navigation.tabBarItem = Tabs.profile.item
+        return navigation
+    }
+    
     internal func createMainTabBarController() -> UIViewController {
-        let tabs = [makeMainTab(), makeSearchTab()]
+        let tabs = [makeMainTab(), makeSearchTab(), makeFavoritesTab(), makeProfileTab()]
         let tabController = MainTabBarController(viewControllers: tabs)
         return tabController
     }
@@ -95,6 +117,21 @@ extension AppDependencies {
                                                       apiKey: "COOKING_API_KEY")
         let service = serviceFactory.getCookingApiService()
         viewController.cookingApiService = service
+        return viewController
+    }
+    
+    internal func createSearchViewController() -> UIViewController {
+        let viewController = SearchViewController()
+        return viewController
+    }
+    
+    internal func createFavoritesViewController() -> UIViewController {
+        let viewController = FavoritesViewController()
+        return viewController
+    }
+    
+    internal func createProfileViewController() -> UIViewController {
+        let viewController = ProfileViewController()
         return viewController
     }
     

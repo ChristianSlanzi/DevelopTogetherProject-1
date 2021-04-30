@@ -38,6 +38,10 @@
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
 		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
 		245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E57263BED8400D2B454 /* MainTabBarController.swift */; };
+		245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E60263C16DD00D2B454 /* SearchViewController.swift */; };
+		245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */; };
+		245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E6A263C170200D2B454 /* ProfileViewController.swift */; };
+		245B7E71263C1C0600D2B454 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E70263C1C0600D2B454 /* LayoutHelper.swift */; };
 		2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */; };
 		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
 		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
@@ -176,6 +180,10 @@
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
 		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
 		245B7E57263BED8400D2B454 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		245B7E60263C16DD00D2B454 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		245B7E6A263C170200D2B454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		245B7E70263C1C0600D2B454 /* LayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
 		2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
 		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				245B7E6E263C1BE300D2B454 /* Utils */,
 				24567BE42637FE0F0010BE25 /* Main */,
 				24567BED263825C10010BE25 /* Scenes */,
 				24567BAB2637F9C20010BE25 /* AppDelegate.swift */,
@@ -326,9 +335,12 @@
 		24567BED263825C10010BE25 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24567BEE263825DB0010BE25 /* LoginSignup */,
 				245B7E53263BED6500D2B454 /* Tabs */,
 				2410410D26397A2B00994726 /* Main */,
-				24567BEE263825DB0010BE25 /* LoginSignup */,
+				245B7E5D263C163400D2B454 /* Search */,
+				245B7E5E263C166100D2B454 /* Favorites */,
+				245B7E5F263C169600D2B454 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -455,6 +467,46 @@
 				245B7E57263BED8400D2B454 /* MainTabBarController.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		245B7E5D263C163400D2B454 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E60263C16DD00D2B454 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		245B7E5E263C166100D2B454 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		245B7E5F263C169600D2B454 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E6A263C170200D2B454 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		245B7E6E263C1BE300D2B454 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E6F263C1BF400D2B454 /* Layout */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		245B7E6F263C1BF400D2B454 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E70263C1C0600D2B454 /* LayoutHelper.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,13 +708,17 @@
 				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
 				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */,
+				245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
 				241040EF26394ED000994726 /* LoginRouting.swift in Sources */,
+				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
+				245B7E71263C1C0600D2B454 /* LayoutHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

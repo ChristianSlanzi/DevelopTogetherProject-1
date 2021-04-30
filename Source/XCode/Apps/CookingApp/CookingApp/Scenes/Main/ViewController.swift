@@ -16,7 +16,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
+        
+        let label = UILabel(frame: .zero)
+        label.text = "Main"
+        
+        let vStack = UIStackView(arrangedSubviews: [label])
+        vStack.axis = .vertical
+        vStack.spacing = 8.0
+
+        view.addSubview(vStack)
+        vStack.layout.center(in: view)
         
         cookingApiService?.searchRecipes(completion: { (result) in
             switch result {
