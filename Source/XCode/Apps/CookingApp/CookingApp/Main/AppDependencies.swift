@@ -47,7 +47,6 @@ class AppDependencies {
     
     static let shared = AppDependencies()
     
-
     private var window: UIWindow?
 
     private init() {
@@ -80,7 +79,11 @@ class AppDependencies {
 extension AppDependencies {
     
     func makeMainTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createMainViewController())
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewController = createMainViewController(router: router)
+        router.root = viewController
+        
+        let navigation = UINavigationController(rootViewController: viewController)
         navigation.tabBarItem = Tabs.main.item
         return navigation
     }
@@ -109,14 +112,20 @@ extension AppDependencies {
         return tabController
     }
     
-    internal func createMainViewController() -> UIViewController {
-        let viewController = ViewController()
+    internal func createMainViewController(router: RecipeRoute) -> UIViewController {
+        
+        let viewModel = MainViewModel(router: router)
+        
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                       client: networkingService,
                                                       apiKey: "COOKING_API_KEY")
         let service = serviceFactory.getCookingApiService()
-        viewController.cookingApiService = service
+        
+        viewModel.cookingApiService = service
+        
+        let viewController = ViewController(viewModel: viewModel)
+        
         return viewController
     }
     
@@ -132,6 +141,11 @@ extension AppDependencies {
     
     internal func createProfileViewController() -> UIViewController {
         let viewController = ProfileViewController()
+        return viewController
+    }
+    
+    internal func createRecipeDetailsViewController() -> UIViewController {
+        let viewController = RecipeDetailsViewController()
         return viewController
     }
     
