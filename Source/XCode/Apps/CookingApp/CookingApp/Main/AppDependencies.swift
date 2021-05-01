@@ -57,6 +57,10 @@ class AppDependencies {
         
     }
     
+    internal func setRootViewController(_ viewController: UIViewController) {
+        setRootViewController(viewController, window: getWindow())
+    }
+    
     internal func setRootViewController(_ viewController: UIViewController, window: UIWindow?) {
         window?.rootViewController = viewController
     }
@@ -149,11 +153,12 @@ extension AppDependencies {
         return viewController
     }
     
-    private func createLoginViewController() -> LoginViewController {
+    internal func createLoginViewController() -> LoginViewController {
+        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
-        let viewModel = LoginViewModel(view: controller)
+        let viewModel = LoginViewModel(view: controller, router: mainRouter)
         
         let loginController = LoginController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
@@ -161,16 +166,18 @@ extension AppDependencies {
         viewModel.loginController = loginController
         
         controller.viewModel = viewModel
-        controller.routing = self
+        mainRouter.root = controller
         
         return controller
     }
     
     internal func createSignupViewController() -> SignupViewController {
+        
+        let router = DefaultRouter(rootTransition: EmptyTransition())
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
 
-        let viewModel = SignupViewModel(view: controller)
+        let viewModel = SignupViewModel(view: controller, router: router)
         
         let signupController = SignupController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
@@ -178,7 +185,7 @@ extension AppDependencies {
         viewModel.signupController = signupController
         
         controller.viewModel = viewModel
-        controller.routing = self
+        router.root = controller
         
         return controller
     }
@@ -195,9 +202,10 @@ extension AppDependencies {
         
         //if we have credentials
         if isUserLoggedIn {
-            routeToMainViewController()
+            //routeToMainViewController()
+            setRootViewController(createMainTabBarController())
         } else {
-            setRootViewController(createLoginViewController(), window: window)
+            setRootViewController(createLoginViewController())
         }
     }
     
@@ -205,6 +213,6 @@ extension AppDependencies {
         //remove credentials
     
         //call login
-        setRootViewController(createLoginViewController(), window: window)
+        setRootViewController(createLoginViewController())
     }
 }

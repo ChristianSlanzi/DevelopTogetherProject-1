@@ -16,17 +16,11 @@ class LoginViewController: UIViewController {
     
     var viewModel: LoginViewModel?
     
-    weak var routing: LoginRouting?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userNameTextField?.delegate = self
         passwordTextField.delegate = self
-        
-        if self.viewModel == nil {
-            self.viewModel = LoginViewModel(view: self)
-        }
         
         self.viewModel?.performInitialViewSetup()
     }
@@ -37,7 +31,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccount(_ sender: Any) {
-        routing?.routeToSignupViewController()
+        //routing?.routeToSignupViewController()
+        viewModel?.createAccount()
     }
     
     @IBAction func userNameDidEndOnExit(_ sender: Any) {
@@ -100,7 +95,7 @@ extension LoginViewController : LoginViewControllerProtocol {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true) {
             if result == true {
-                self.routing?.routeToMainViewController()
+                self.viewModel?.openMain() 
             }
         }
     }
