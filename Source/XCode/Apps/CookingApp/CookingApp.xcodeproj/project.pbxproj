@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
-		241040EF26394ED000994726 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040EE26394ED000994726 /* LoginRouting.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
 		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
 		2430BDA72638B18200C5CE19 /* UITextFieldStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */; };
+		24330D9C263D39D700724978 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330D9B263D39D700724978 /* LoginRoute.swift */; };
+		24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA2263D3ABB00724978 /* ModalTransition.swift */; };
+		24330DA7263D406800724978 /* SignupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA6263D406800724978 /* SignupRoute.swift */; };
+		24330DAB263D451F00724978 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DAA263D451F00724978 /* MainRoute.swift */; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -37,9 +40,23 @@
 		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
 		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
+		245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E57263BED8400D2B454 /* MainTabBarController.swift */; };
+		245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E60263C16DD00D2B454 /* SearchViewController.swift */; };
+		245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */; };
+		245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E6A263C170200D2B454 /* ProfileViewController.swift */; };
+		245B7E71263C1C0600D2B454 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E70263C1C0600D2B454 /* LayoutHelper.swift */; };
+		245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E77263C1FA700D2B454 /* RecipeDetailsViewController.swift */; };
+		245B7E7E263C266500D2B454 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E7D263C266500D2B454 /* Router.swift */; };
+		245B7E85263C26B900D2B454 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E84263C26B900D2B454 /* Transition.swift */; };
+		245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E89263C273800D2B454 /* DefaultRouter.swift */; };
+		245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */; };
+		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
 		2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */; };
 		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
 		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
+		24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD3263C835800F73BBD /* RecipeRoute.swift */; };
+		24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD9263C846700F73BBD /* PushTransition.swift */; };
+		24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FDD263C889100F73BBD /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,12 +156,15 @@
 /* Begin PBXFileReference section */
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
-		241040EE26394ED000994726 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
 		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldStub.swift; sourceTree = "<group>"; };
+		24330D9B263D39D700724978 /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
+		24330DA2263D3ABB00724978 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		24330DA6263D406800724978 /* SignupRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRoute.swift; sourceTree = "<group>"; };
+		24330DAA263D451F00724978 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BAB2637F9C20010BE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24567BAD2637F9C20010BE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,9 +194,23 @@
 		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
 		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
+		245B7E57263BED8400D2B454 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		245B7E60263C16DD00D2B454 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		245B7E6A263C170200D2B454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		245B7E70263C1C0600D2B454 /* LayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
+		245B7E77263C1FA700D2B454 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		245B7E7D263C266500D2B454 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		245B7E84263C26B900D2B454 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
 		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
+		24AA3FD3263C835800F73BBD /* RecipeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRoute.swift; sourceTree = "<group>"; };
+		24AA3FD9263C846700F73BBD /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		24AA3FDD263C889100F73BBD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,14 +256,6 @@
 			path = Wrappers;
 			sourceTree = "<group>";
 		};
-		241040ED26394EBB00994726 /* Routing */ = {
-			isa = PBXGroup;
-			children = (
-				241040EE26394ED000994726 /* LoginRouting.swift */,
-			);
-			path = Routing;
-			sourceTree = "<group>";
-		};
 		241040FC263979C500994726 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				24567BAF2637F9C20010BE25 /* ViewController.swift */,
+				24AA3FDD263C889100F73BBD /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -280,6 +307,8 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				245B7E7C263C25A000D2B454 /* Routing */,
+				245B7E6E263C1BE300D2B454 /* Utils */,
 				24567BE42637FE0F0010BE25 /* Main */,
 				24567BED263825C10010BE25 /* Scenes */,
 				24567BAB2637F9C20010BE25 /* AppDelegate.swift */,
@@ -314,7 +343,7 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				241040ED26394EBB00994726 /* Routing */,
+				24AA3FCF263C82D200F73BBD /* Routes */,
 				241040E826394CFA00994726 /* Wrappers */,
 				24567BE52637FE210010BE25 /* AppDependencies.swift */,
 			);
@@ -324,8 +353,13 @@
 		24567BED263825C10010BE25 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2410410D26397A2B00994726 /* Main */,
+				245B7E76263C1F0A00D2B454 /* RecipeDetails */,
 				24567BEE263825DB0010BE25 /* LoginSignup */,
+				245B7E53263BED6500D2B454 /* Tabs */,
+				2410410D26397A2B00994726 /* Main */,
+				245B7E5D263C163400D2B454 /* Search */,
+				245B7E5E263C166100D2B454 /* Favorites */,
+				245B7E5F263C169600D2B454 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -444,6 +478,111 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		245B7E53263BED6500D2B454 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E57263BED8400D2B454 /* MainTabBarController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		245B7E5D263C163400D2B454 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E60263C16DD00D2B454 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		245B7E5E263C166100D2B454 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		245B7E5F263C169600D2B454 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E6A263C170200D2B454 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		245B7E6E263C1BE300D2B454 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E91263C29DA00D2B454 /* UI */,
+				245B7E6F263C1BF400D2B454 /* Layout */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		245B7E6F263C1BF400D2B454 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E70263C1C0600D2B454 /* LayoutHelper.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		245B7E76263C1F0A00D2B454 /* RecipeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E77263C1FA700D2B454 /* RecipeDetailsViewController.swift */,
+			);
+			path = RecipeDetails;
+			sourceTree = "<group>";
+		};
+		245B7E7C263C25A000D2B454 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E88263C271A00D2B454 /* Routers */,
+				245B7E83263C269A00D2B454 /* Tranistions */,
+				245B7E7D263C266500D2B454 /* Router.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		245B7E83263C269A00D2B454 /* Tranistions */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E84263C26B900D2B454 /* Transition.swift */,
+				245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */,
+				24AA3FD9263C846700F73BBD /* PushTransition.swift */,
+				24330DA2263D3ABB00724978 /* ModalTransition.swift */,
+			);
+			path = Tranistions;
+			sourceTree = "<group>";
+		};
+		245B7E88263C271A00D2B454 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E89263C273800D2B454 /* DefaultRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		245B7E91263C29DA00D2B454 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				245B7E92263C29F300D2B454 /* DefaultButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		24AA3FCF263C82D200F73BBD /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				24AA3FD3263C835800F73BBD /* RecipeRoute.swift */,
+				24330D9B263D39D700724978 /* LoginRoute.swift */,
+				24330DA6263D406800724978 /* SignupRoute.swift */,
+				24330DAA263D451F00724978 /* MainRoute.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,17 +779,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
+				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
+				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
+				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
 				2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */,
+				24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */,
 				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
 				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
+				245B7E7E263C266500D2B454 /* Router.swift in Sources */,
+				24330DAB263D451F00724978 /* MainRoute.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
+				24330D9C263D39D700724978 /* LoginRoute.swift in Sources */,
+				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,
+				24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
+				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
+				245B7E85263C26B900D2B454 /* Transition.swift in Sources */,
+				245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */,
+				245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
-				241040EF26394ED000994726 /* LoginRouting.swift in Sources */,
+				245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */,
+				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
+				245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */,
+				245B7E71263C1C0600D2B454 /* LayoutHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

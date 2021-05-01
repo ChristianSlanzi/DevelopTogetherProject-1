@@ -10,11 +10,43 @@ import LoginSignupModule
 import NetworkingService
 import CookingApiService
 
+enum Tabs {
+    case main
+    case search
+    case favorites
+    case profile
+
+    var index: Int {
+        switch self {
+        case .main:
+            return 0
+        case .search:
+            return 1
+        case .favorites:
+            return 1
+        case .profile:
+            return 1
+        }
+    }
+
+    var item: UITabBarItem {
+        switch self {
+        case .main:
+            return UITabBarItem(title: "Home", image: nil, tag: index)
+        case .search:
+            return UITabBarItem(title: "Search", image: nil, tag: index)
+        case .favorites:
+            return UITabBarItem(title: "Favorites", image: nil, tag: index)
+        case .profile:
+            return UITabBarItem(title: "Profile", image: nil, tag: index)
+        }
+    }
+}
+
 class AppDependencies {
     
     static let shared = AppDependencies()
     
-
     private var window: UIWindow?
 
     private init() {
@@ -23,6 +55,10 @@ class AppDependencies {
     
     private func configureDependencies() {
         
+    }
+    
+    internal func setRootViewController(_ viewController: UIViewController) {
+        setRootViewController(viewController, window: getWindow())
     }
     
     internal func setRootViewController(_ viewController: UIViewController, window: UIWindow?) {
@@ -46,22 +82,83 @@ class AppDependencies {
 
 extension AppDependencies {
     
-    internal func createMainViewController() -> UIViewController {
-        let viewController = ViewController()
+    func makeMainTab() -> UIViewController {
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewController = createMainViewController(router: router)
+        router.root = viewController
+        
+        let navigation = UINavigationController(rootViewController: viewController)
+        navigation.tabBarItem = Tabs.main.item
+        return navigation
+    }
+    
+    func makeSearchTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createSearchViewController())
+        navigation.tabBarItem = Tabs.search.item
+        return navigation
+    }
+    
+    func makeFavoritesTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createFavoritesViewController())
+        navigation.tabBarItem = Tabs.favorites.item
+        return navigation
+    }
+    
+    func makeProfileTab() -> UIViewController {
+        let navigation = UINavigationController(rootViewController: createProfileViewController())
+        navigation.tabBarItem = Tabs.profile.item
+        return navigation
+    }
+    
+    internal func createMainTabBarController() -> UIViewController {
+        let tabs = [makeMainTab(), makeSearchTab(), makeFavoritesTab(), makeProfileTab()]
+        let tabController = MainTabBarController(viewControllers: tabs)
+        return tabController
+    }
+    
+    internal func createMainViewController(router: RecipeRoute) -> UIViewController {
+        
+        let viewModel = MainViewModel(router: router)
+        
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                       client: networkingService,
                                                       apiKey: "COOKING_API_KEY")
         let service = serviceFactory.getCookingApiService()
-        viewController.cookingApiService = service
+        
+        viewModel.cookingApiService = service
+        
+        let viewController = ViewController(viewModel: viewModel)
+        
         return viewController
     }
     
-    private func createLoginViewController() -> LoginViewController {
+    internal func createSearchViewController() -> UIViewController {
+        let viewController = SearchViewController()
+        return viewController
+    }
+    
+    internal func createFavoritesViewController() -> UIViewController {
+        let viewController = FavoritesViewController()
+        return viewController
+    }
+    
+    internal func createProfileViewController() -> UIViewController {
+        let viewController = ProfileViewController()
+        return viewController
+    }
+    
+    internal func createRecipeDetailsViewController() -> UIViewController {
+        let viewController = RecipeDetailsViewController()
+        return viewController
+    }
+    
+    internal func createLoginViewController() -> LoginViewController {
+        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
-        let viewModel = LoginViewModel(view: controller)
+        let viewModel = LoginViewModel(view: controller, router: mainRouter)
         
         let loginController = LoginController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
@@ -69,16 +166,18 @@ extension AppDependencies {
         viewModel.loginController = loginController
         
         controller.viewModel = viewModel
-        controller.routing = self
+        mainRouter.root = controller
         
         return controller
     }
     
     internal func createSignupViewController() -> SignupViewController {
+        
+        let router = DefaultRouter(rootTransition: EmptyTransition())
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
 
-        let viewModel = SignupViewModel(view: controller)
+        let viewModel = SignupViewModel(view: controller, router: router)
         
         let signupController = SignupController(delegate: viewModel)
         let userApiService = LoginSignupWrapper()
@@ -86,7 +185,7 @@ extension AppDependencies {
         viewModel.signupController = signupController
         
         controller.viewModel = viewModel
-        controller.routing = self
+        router.root = controller
         
         return controller
     }
@@ -103,9 +202,10 @@ extension AppDependencies {
         
         //if we have credentials
         if isUserLoggedIn {
-            routeToMainViewController()
+            //routeToMainViewController()
+            setRootViewController(createMainTabBarController())
         } else {
-            setRootViewController(createLoginViewController(), window: window)
+            setRootViewController(createLoginViewController())
         }
     }
     
@@ -113,6 +213,6 @@ extension AppDependencies {
         //remove credentials
     
         //call login
-        setRootViewController(createLoginViewController(), window: window)
+        setRootViewController(createLoginViewController())
     }
 }

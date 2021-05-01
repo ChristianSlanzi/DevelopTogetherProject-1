@@ -13,10 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var appDependencies = AppDependencies.shared
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        let vc = ViewController()
-        vc.view.backgroundColor = .white
-        
+
         appDependencies.setScene(scene)
         appDependencies.start()
 

@@ -10,6 +10,9 @@ import LoginSignupModule
 
 class SignupViewModel {
     
+    typealias Routes = MainRoute & Closable
+    private var router: Routes
+    
     weak var view: SignupViewControllerProtocol?
     
     var userNameValidator: UserNameValidator?
@@ -28,7 +31,7 @@ class SignupViewModel {
     
     var signupController: SignupController?
     
-    init(view: SignupViewControllerProtocol) {
+    init(view: SignupViewControllerProtocol, router: Routes) {
  
         self.userNameValidated = false
         self.emailAddressValidated = false
@@ -38,6 +41,7 @@ class SignupViewModel {
         self.passwordsAreIdentical = false
         
         self.view = view
+        self.router = router
     }
     
     func performInitialViewSetup() {
@@ -201,6 +205,11 @@ class SignupViewModel {
             let model = SignupModel(userName: userName, password: password, emailAddress: emailAddress) {
             controller.doSignup(model: model)
         }
+    }
+    
+    func openMain() {
+        router.close()
+        router.openMain()
     }
 }
 

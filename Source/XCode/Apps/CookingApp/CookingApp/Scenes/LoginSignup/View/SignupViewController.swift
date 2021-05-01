@@ -17,15 +17,9 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     var viewModel: SignupViewModel?
-    
-    weak var routing: SignupRouting?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if self.viewModel == nil {
-            self.viewModel = SignupViewModel(view: self)
-        }
         
         self.viewModel?.performInitialViewSetup()
     }
@@ -130,7 +124,7 @@ extension SignupViewController : SignupViewControllerProtocol {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true) {
             if result == true {
-                self.routing?.routeToMainViewController()
+                self.viewModel?.openMain()
             }
         }
     }
