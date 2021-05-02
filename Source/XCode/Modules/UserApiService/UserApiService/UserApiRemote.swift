@@ -7,6 +7,37 @@
 
 import NetworkingService
 
+class GenericDecoder {
+    static func decodeResult<T: DTO> (result: HTTPClientResult, validStatusCode: Int = 200) -> Swift.Result<T, UserApiService.ServiceError> {
+        print("\n\nResponse HTTP Headers:\n")
+        
+        if let response = result.response {
+            for (key, value) in response.headers.allValues() {
+                print(key, value)
+            }
+            
+            if response.statusCode != validStatusCode {
+                return .failure(.invalidData)
+            }
+        }  else {
+            return .failure(.connectivity)
+        }
+        
+        if let data = result.data {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            guard let userData = try? decoder.decode(T.self, from: data) else {
+                return .failure(.invalidData)
+            }
+            
+            print(userData.description)
+            return .success(userData)
+            
+        } else {
+            return .failure(.invalidData)
+        }
+    }
+}
 
 class UserApiRemote: UserApiService {
     
@@ -37,36 +68,8 @@ class UserApiRemote: UserApiService {
         client.makeRequest(toURL: url.appendingPathComponent("users"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }
             
-            print("\n\nResponse HTTP Headers:\n")
-             
-            if let response = result.response {
-                for (key, value) in response.headers.allValues() {
-                    print(key, value)
-                }
-                
-                if response.statusCode != 200 {
-                    completion(.failure(.invalidData))
-                    return
-                }
-            } else {
-                completion(.failure(.connectivity))
-                return
-            }
-            
-            if let data = result.data {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let userData = try? decoder.decode(UserData.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                print(userData.description)
-                completion(.success(userData))
-            } else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result))
         }
-        
     }
     
     // MARK: - getSingleUser
@@ -78,34 +81,7 @@ class UserApiRemote: UserApiService {
         client.makeRequest(toURL: singleUserURL, withHttpMethod: .get) {  [weak self] result in
             guard self != nil else { return }
             
-            print("\n\nResponse HTTP Headers:\n")
-            
-            if let response = result.response {
-                for (key, value) in response.headers.allValues() {
-                    print(key, value)
-                }
-                
-                if response.statusCode != 200 {
-                    completion(.failure(.invalidData))
-                    return
-                }
-            } else {
-                completion(.failure(.connectivity))
-                return
-            }
-            
-            if let data = result.data {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let singleUserData = try? decoder.decode(SingleUserData.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return }
-     
-                completion(.success(singleUserData))
-     
-            } else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result))
         }
     }
     
@@ -119,27 +95,7 @@ class UserApiRemote: UserApiService {
         client.makeRequest(toURL: url.appendingPathComponent("users"), withHttpMethod: .post) {  [weak self] result in
             guard self != nil else { return }
             
-            guard let response = result.response else {
-                completion(.failure(.connectivity))
-                return
-            }
-            if response.statusCode == 201 {
-                guard let data = result.data else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let jobUser = try? decoder.decode(JobUser.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                print(jobUser.description)
-                completion(.success(jobUser))
-            }
-            else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result, validStatusCode: 201))
         }
     }
     
@@ -154,27 +110,7 @@ class UserApiRemote: UserApiService {
         client.makeRequest(toURL: url.appendingPathComponent("login"), withHttpMethod: .post) {  [weak self] result in
             guard self != nil else { return }
             
-            guard let response = result.response else {
-                completion(.failure(.connectivity))
-                return
-            }
-            if response.statusCode == 200 {
-                guard let data = result.data else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let loginData = try? decoder.decode(LoginData.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                print(loginData.description)
-                completion(.success(loginData))
-            }
-            else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result))
         }
     }
     
@@ -189,27 +125,7 @@ class UserApiRemote: UserApiService {
         client.makeRequest(toURL: url.appendingPathComponent("register"), withHttpMethod: .post) {  [weak self] result in
             guard self != nil else { return }
             
-            guard let response = result.response else {
-                completion(.failure(.connectivity))
-                return
-            }
-            if response.statusCode == 200 {
-                guard let data = result.data else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let registerData = try? decoder.decode(RegisterData.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                print(registerData.description)
-                completion(.success(registerData))
-            }
-            else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result))
         }
     }
 }

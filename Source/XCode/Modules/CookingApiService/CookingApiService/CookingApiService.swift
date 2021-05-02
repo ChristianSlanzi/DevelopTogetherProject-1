@@ -12,6 +12,8 @@ public protocol CookingApiService {
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
     
     func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void)
+    //typedef Parameters [String: Any]
+    //func searchRecipesByNutrients(parameters: Parameters, completion: @escaping (RecipesSearchResult) -> Void)
 }
 
 public class CookingApiServiceFactory {

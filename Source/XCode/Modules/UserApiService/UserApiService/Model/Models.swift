@@ -10,7 +10,11 @@ import Foundation
 var defString = String(stringLiteral: "")
 var defInt = -1
 
-public struct LoginData: Codable, CustomStringConvertible, Hashable {
+public protocol DTO: Codable, CustomStringConvertible, Hashable {
+    
+}
+
+public struct LoginData: DTO {
     
     public var token: String?
 
@@ -23,7 +27,7 @@ public struct LoginData: Codable, CustomStringConvertible, Hashable {
     }
 }
 
-public struct RegisterData: Codable, CustomStringConvertible, Hashable {
+public struct RegisterData: DTO {
     
     public var id: Int
     public var token: String?
@@ -37,9 +41,7 @@ public struct RegisterData: Codable, CustomStringConvertible, Hashable {
     }
 }
 
-public struct UserData: Codable,
-                        CustomStringConvertible,
-                        Hashable {
+public struct UserData: DTO {
     var page: Int?
     var perPage: Int?
     var total: Int?
@@ -65,7 +67,7 @@ public struct UserData: Codable,
     }
 }
 
-public struct User: Codable, CustomStringConvertible, Hashable {
+public struct User: DTO {
     var id: Int?
     var firstName: String?
     var lastName: String?
@@ -83,11 +85,17 @@ public struct User: Codable, CustomStringConvertible, Hashable {
     }
 }
 
-public struct SingleUserData: Codable, Hashable {
+public struct SingleUserData: DTO {
     var data: User?
+    
+    public var description: String {
+        return """
+        data = \(data?.description ?? defString)
+        """
+    }
 }
 
-public struct JobUser: Codable, CustomStringConvertible, Hashable {
+public struct JobUser: DTO {
     var id: String
     var name: String?
     var job: String?
