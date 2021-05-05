@@ -44,7 +44,8 @@ extension SignupViewControllerTests {
         
         let signupViewController = SignupViewController()
         
-        let viewModel = MockSignupViewModel(view: signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.performInitialViewSetupExpectation = expectation
         
         signupViewController.viewModel = viewModel
@@ -60,7 +61,8 @@ extension SignupViewControllerTests {
         
         let signupViewController = SignupViewController()
         
-        let viewModel = MockSignupViewModel(view: signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.userNameDidEndOnExitExpectation = expectation
         
         signupViewController.viewModel = viewModel
@@ -76,7 +78,8 @@ extension SignupViewControllerTests {
         
         let signupViewController = SignupViewController()
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.emailAddressDidEndOnExitExpectation = expectation
         
         signupViewController.viewModel = viewModel
@@ -93,7 +96,8 @@ extension SignupViewControllerTests {
         
         let signupViewController = SignupViewController()
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.passwordDidEndOnExitExpectation = expectation
         
         signupViewController.viewModel = viewModel
@@ -109,7 +113,8 @@ extension SignupViewControllerTests {
         
         let signupViewController = SignupViewController()
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.confirmPasswordDidEndOnExitExpectation = expectation
         
         signupViewController.viewModel = viewModel
@@ -135,7 +140,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.userNameUpdatedExpectation = (expectation, expectedValue: "Abcdefghij")
         
         signupViewController.viewModel = viewModel
@@ -163,7 +169,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.passwordUpdatedExpectation = (expectation, expectedValue:  "A%io7AFn9Y")
         
         signupViewController.viewModel = viewModel
@@ -191,7 +198,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.confirmPasswordUpdatedExpectation = (expectation, expectedValue: "A%io7AFn9Y")
     
         signupViewController.viewModel = viewModel
@@ -219,7 +227,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.emailAddressUpdatedExpectation = (expectation, expectedValue: "Amishra@asmtechnology.com")
         
         signupViewController.viewModel = viewModel
@@ -247,7 +256,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.signupExpectation = (expectation, expectedUserName:validUserName, expectedPassword:"", expectedEmailAddress:"")
         
         signupViewController.viewModel = viewModel
@@ -272,7 +282,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.signupExpectation = (expectation, expectedUserName:"", expectedPassword:validPassword, expectedEmailAddress:"")
         
         signupViewController.viewModel = viewModel
@@ -298,7 +309,8 @@ extension SignupViewControllerTests {
         signupViewController.confirmPasswordTextField = confirmPasswordTextFieldStub
         signupViewController.emailAddressTextField = emailAddressTextFieldStub
         
-        let viewModel = MockSignupViewModel(view:signupViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockSignupViewModel(view: signupViewController, router: router)
         viewModel.signupExpectation = (expectation, expectedUserName:"", expectedPassword:"", expectedEmailAddress:validEmailAddress)
         
         signupViewController.viewModel = viewModel

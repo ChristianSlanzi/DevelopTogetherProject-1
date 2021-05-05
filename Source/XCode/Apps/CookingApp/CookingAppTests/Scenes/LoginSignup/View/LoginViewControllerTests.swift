@@ -39,7 +39,9 @@ extension LoginViewControllerTests {
     func testViewDidLoad_Calls_PerformInitialSetup_OnViewModel() {
         let expectation = self.expectation(description: "expected performInitialViewSetup() to be called")
         let loginViewController = LoginViewController()
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.performInitialViewSetupExpectation = expectation
         loginViewController.viewModel = viewModel
         loginViewController.viewDidLoad()
@@ -52,7 +54,8 @@ extension LoginViewControllerTests {
         
         let loginViewController = LoginViewController()
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.userNameDidEndOnExitExpectation = expectation
         
         loginViewController.viewModel = viewModel
@@ -68,7 +71,8 @@ extension LoginViewControllerTests {
         
         let loginViewController = LoginViewController()
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.passwordDidEndOnExitExpectation = expectation
         
         loginViewController.viewModel = viewModel
@@ -89,7 +93,8 @@ extension LoginViewControllerTests {
         loginViewController.userNameTextField = userNameTextFieldStub
         loginViewController.passwordTextField = passwordTextFieldStub
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.loginExpectation = (expectation,
                                       expectedUserName: validUserName,
                                       expectedPassword: "")
@@ -112,7 +117,8 @@ extension LoginViewControllerTests {
         loginViewController.userNameTextField = userNameTextFieldStub
         loginViewController.passwordTextField = passwordTextFieldStub
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.loginExpectation = (expectation,
                                       expectedUserName: "",
                                       expectedPassword: validPassword)
@@ -135,7 +141,8 @@ extension LoginViewControllerTests {
         loginViewController.userNameTextField = userNameTextFieldStub
         loginViewController.passwordTextField = passwordTextFieldStub
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.userNameUpdatedExpectation = (expectation,
                                                 expectedValue: "Abcdefghij")
         
@@ -159,7 +166,8 @@ extension LoginViewControllerTests {
         loginViewController.userNameTextField = userNameTextFieldStub
         loginViewController.passwordTextField = passwordTextFieldStub
         
-        let viewModel = MockLoginViewModel(view: loginViewController)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = MockLoginViewModel(view: loginViewController, router: router)
         viewModel.passwordUpdatedExpectation = (expectation,
                                                 expectedValue: "A%io7AFn9Y")
         
