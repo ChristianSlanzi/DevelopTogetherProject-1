@@ -10,6 +10,8 @@
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB2B26434825008229B2 /* RecipeStore.swift */; };
+		244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		244DDAFE2643421C008229B2 /* RecipeStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDB032643421C008229B2 /* RecipeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStoreTests.swift; sourceTree = "<group>"; };
 		244DDB052643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		244DDB2B26434825008229B2 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
+		244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecipeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +75,10 @@
 		244DDAF72643421C008229B2 /* RecipeStore */ = {
 			isa = PBXGroup;
 			children = (
+				244DDB2F26434868008229B2 /* CoreData */,
 				244DDAF82643421C008229B2 /* RecipeStore.h */,
 				244DDAF92643421C008229B2 /* Info.plist */,
+				244DDB2B26434825008229B2 /* RecipeStore.swift */,
 			);
 			path = RecipeStore;
 			sourceTree = "<group>";
@@ -84,6 +90,14 @@
 				244DDB052643421C008229B2 /* Info.plist */,
 			);
 			path = RecipeStoreTests;
+			sourceTree = "<group>";
+		};
+		244DDB2F26434868008229B2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +161,7 @@
 				TargetAttributes = {
 					244DDAF42643421C008229B2 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					244DDAFD2643421C008229B2 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
+				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +358,7 @@
 		244DDB0A2643421C008229B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.test.RecipeStore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +383,7 @@
 		244DDB0B2643421C008229B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,6 +407,7 @@
 		244DDB0D2643421C008229B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeStoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +425,7 @@
 		244DDB0E2643421C008229B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeStoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

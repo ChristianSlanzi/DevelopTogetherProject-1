@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import CoreData
+import TestHelpers
 @testable import RecipeStore
 
 class RecipeStoreTests: XCTestCase {
@@ -30,4 +32,16 @@ class RecipeStoreTests: XCTestCase {
         }
     }
 
+}
+
+extension RecipeStoreTests {
+    
+    // - MARK: Helpers
+    
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) throws -> RecipeStore {
+        let inMemoryStoreURL = URL(fileURLWithPath: "/dev/null")
+        let sut = try CoreDataRecipeStore(storeURL: inMemoryStoreURL)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
+    }
 }
