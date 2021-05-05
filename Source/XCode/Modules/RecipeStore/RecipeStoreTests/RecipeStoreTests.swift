@@ -36,7 +36,9 @@ class RecipeStoreTests: XCTestCase {
 
 extension RecipeStoreTests: FailableRecipeStoreSpecs {
     func test_retrieve_deliversFailureOnRetrievalError() throws {
-        
+        let sut = try makeSUT()
+
+        assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnFailure() throws {
