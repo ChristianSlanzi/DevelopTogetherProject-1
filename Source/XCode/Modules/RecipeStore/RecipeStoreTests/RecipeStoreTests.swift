@@ -34,6 +34,9 @@ class RecipeStoreTests: XCTestCase {
 
 }
 
+extension RecipeStoreTests: FailableRecipeStoreSpecs {
+}
+
 extension RecipeStoreTests {
     
     // - MARK: Helpers
