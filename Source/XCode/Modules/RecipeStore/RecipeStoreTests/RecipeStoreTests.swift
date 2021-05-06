@@ -43,7 +43,9 @@ extension RecipeStoreTests: FailableRecipeStoreSpecs {
     }
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() throws {
+        let sut = try makeSUT()
 
+        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() throws {
