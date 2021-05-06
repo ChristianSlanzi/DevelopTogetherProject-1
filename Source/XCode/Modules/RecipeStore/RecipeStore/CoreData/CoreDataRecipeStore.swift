@@ -22,6 +22,6 @@ public final class CoreDataRecipeStore: RecipeStore {
     }
     
     public func retrieve(completion: @escaping RetrievalCompletion) {
-        
+        completion(.empty)
     }
 }
