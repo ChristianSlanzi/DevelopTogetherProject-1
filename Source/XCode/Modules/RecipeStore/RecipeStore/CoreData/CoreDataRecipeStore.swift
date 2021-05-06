@@ -93,6 +93,6 @@ public final class CoreDataRecipeStore: RecipeStore {
     }
     
     public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
-        
+        completion(.none)
     }
 }

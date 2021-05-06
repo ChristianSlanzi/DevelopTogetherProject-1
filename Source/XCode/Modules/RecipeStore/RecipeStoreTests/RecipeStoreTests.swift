@@ -115,15 +115,21 @@ extension RecipeStoreTests: FailableRecipeStoreSpecs {
     }
 
     func test_delete_deliversNoErrorOnEmptyCache() throws {
+        let sut = try makeSUT()
 
+        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
     }
 
     func test_delete_hasNoSideEffectsOnEmptyCache() throws {
+        let sut = try makeSUT()
 
+        assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
     }
 
     func test_delete_deliversNoErrorOnNonEmptyCache() throws {
+        let sut = try makeSUT()
 
+        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
     }
 
     func test_delete_emptiesPreviouslyInsertedCache() throws {
