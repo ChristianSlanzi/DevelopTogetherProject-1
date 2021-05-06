@@ -48,12 +48,14 @@ class SignupViewModelTests: XCTestCase {
 extension SignupViewModelTests {
         
     func testInit_ValidView_InstantiatesObject() {
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         XCTAssertNotNil(viewModel)
     }
     
     func testInit_ValidView_CopiesViewToIvar() {
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         
         if let lhs = mockSignupViewController, let rhs = viewModel.view as? MockSignupViewController {
             XCTAssertTrue(lhs === rhs)
@@ -68,7 +70,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected clearUserNameField() to be called")
         mockSignupViewController!.expectationForClearUserNameField = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -78,7 +81,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected clearPasswordField() to be called")
         mockSignupViewController!.expectationForClearPasswordField = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -88,7 +92,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected clearConfirmPasswordField() to be called")
         mockSignupViewController!.expectationForClearConfirmPasswordField = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -99,7 +104,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -109,7 +115,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCancelButton(true) to be called")
         mockSignupViewController!.expectationForEnableCancelButton = (expectation, true)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -123,7 +130,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard() to be called")
         mockSignupViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameDidEndOnExit()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -137,7 +145,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard() to be called")
         mockSignupViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.passwordDidEndOnExit()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -151,7 +160,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard() to be called")
         mockSignupViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.confirmPasswordDidEndOnExit()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -164,7 +174,8 @@ extension SignupViewModelTests {
     func testUserNameUpdated_Calls_Validate_OnUserNameValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidator = MockUserNameValidator(expectation, expectedValue: validUserName)
         
         viewModel.userNameUpdated(validUserName)
@@ -176,7 +187,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(true) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, true)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = true
         viewModel.password2Validated = true
         viewModel.passwordsAreIdentical = true
@@ -191,7 +203,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = true
         viewModel.password2Validated = true
         viewModel.passwordsAreIdentical = false
@@ -205,7 +218,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = false
         
         viewModel.userNameUpdated(validUserName)
@@ -217,7 +231,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password2Validated = false
         
         viewModel.userNameUpdated(validUserName)
@@ -230,7 +245,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = true
         viewModel.password2Validated = true
         viewModel.passwordsAreIdentical = true
@@ -244,7 +260,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = true
         viewModel.password2Validated = true
         viewModel.passwordsAreIdentical = false
@@ -259,7 +276,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password1Validated = false
         
         viewModel.userNameUpdated(invalidUserName)
@@ -271,7 +289,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.password2Validated = false
         
         viewModel.userNameUpdated(invalidUserName)
@@ -287,7 +306,8 @@ extension SignupViewModelTests {
     func testEmailAddressUpdated_Calls_Validate_OnEmailAddressValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.emailAddressValidator = MockEmailAddressValidator(expectation, expectedValue: validEmailAddress)
         
         viewModel.emailAddressUpdated(validEmailAddress)
@@ -300,7 +320,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(true) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, true)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = true
         viewModel.password2Validated = true
@@ -315,7 +336,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = true
         viewModel.password2Validated = false
@@ -331,7 +353,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = false
         viewModel.password2Validated = true
@@ -347,7 +370,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = true
         viewModel.password2Validated = true
@@ -362,7 +386,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = false
         viewModel.password1Validated = true
         viewModel.password2Validated = true
@@ -381,7 +406,8 @@ extension SignupViewModelTests {
     func testPasswordUpdated_Calls_Validate_OnPasswordValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.passwordValidator = MockPasswordValidator(expectation, expectedValue: validPassword)
         
         viewModel.passwordUpdated(validPassword)
@@ -393,7 +419,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(true) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, true)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.emailAddressValidated = true
         viewModel.password2Validated = true
@@ -408,7 +435,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password2Validated = true
         viewModel.password2 = validPassword2
@@ -423,7 +451,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password2Validated = false
         
@@ -437,7 +466,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = false
         viewModel.password2Validated = true
         viewModel.password2 = validPassword
@@ -451,7 +481,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password2Validated = true
         viewModel.password2 = validPassword2
@@ -467,7 +498,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = false
         viewModel.password2Validated = false
         
@@ -484,7 +516,8 @@ extension SignupViewModelTests {
     func testConfirmPasswordUpdated_Calls_Validate_OnPasswordValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.passwordValidator = MockPasswordValidator(expectation, expectedValue: validPassword)
         
         viewModel.confirmPasswordUpdated(validPassword)
@@ -496,7 +529,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(true) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, true)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.emailAddressValidated = true
         viewModel.password1Validated = true
@@ -511,7 +545,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = true
         viewModel.password1 = validPassword2
@@ -526,7 +561,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = false
         
@@ -540,7 +576,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = false
         viewModel.password1Validated = true
         viewModel.password1 = validPassword
@@ -554,7 +591,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.password1Validated = true
         viewModel.password1 = validPassword2
@@ -569,7 +607,8 @@ extension SignupViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateButton(false) to be called")
         mockSignupViewController!.expectationForEnableCreateButton = (expectation, false)
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.userNameValidated = false
         viewModel.password1Validated = false
         
@@ -592,7 +631,8 @@ extension SignupViewModelTests {
                                                         expectedEmailAddress: validEmailAddress)
         mockSignupController.shouldReturnTrueOnSignup = true
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.signupController = mockSignupController
         mockSignupController.signupControllerDelegate = viewModel
         
@@ -611,7 +651,8 @@ extension SignupViewModelTests {
                                                         expectedEmailAddress: validEmailAddress)
         mockSignupController.shouldReturnTrueOnSignup = true
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.signupController = mockSignupController
         mockSignupController.signupControllerDelegate = viewModel
         
@@ -630,7 +671,8 @@ extension SignupViewModelTests {
                                                         expectedEmailAddress: validEmailAddress)
         mockSignupController.shouldReturnTrueOnSignup = true
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.signupController = mockSignupController
         mockSignupController.signupControllerDelegate = viewModel
         
@@ -648,7 +690,8 @@ extension SignupViewModelTests {
                                                         expectedEmailAddress: validEmailAddress)
         mockSignupController.shouldReturnTrueOnSignup = true
         
-        let viewModel = SignupViewModel(view: mockSignupViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = SignupViewModel(view: mockSignupViewController!, router: router)
         viewModel.signupController = mockSignupController
         mockSignupController.signupControllerDelegate = viewModel
         

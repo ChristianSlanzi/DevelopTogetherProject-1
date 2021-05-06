@@ -11,7 +11,7 @@ import LoginSignupModule
 class LoginViewModel {
     
     typealias Routes = LoginRoute & SignupRoute & MainRoute & Closable
-    private var router: Routes
+    private var router: Routes?
     
     weak var view: LoginViewControllerProtocol?
     
@@ -22,7 +22,7 @@ class LoginViewModel {
     
     var loginController: LoginController?
     
-    init(view: LoginViewControllerProtocol, router: Routes) {
+    init(view: LoginViewControllerProtocol, router: Routes? = nil) {
         self.userNameValidated = false
         self.passwordValidated = false
         self.view = view
@@ -102,12 +102,12 @@ class LoginViewModel {
     }
     
     func createAccount() {
-        router.openSignup()
+        router?.openSignup()
     }
     
     func openMain() {
-        router.close()
-        router.openMain()
+        router?.close()
+        router?.openMain()
     }
 }
 

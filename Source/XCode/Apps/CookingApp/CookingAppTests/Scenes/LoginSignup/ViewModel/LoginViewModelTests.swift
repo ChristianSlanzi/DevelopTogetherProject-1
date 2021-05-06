@@ -45,12 +45,14 @@ class LoginViewModelTests: XCTestCase {
 extension LoginViewModelTests {
     
     func testInit_ValidView_InstantiatesObject() {
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         XCTAssertNotNil(viewModel)
     }
     
     func testInit_ValidView_CopiesViewToIvar() {
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         
         if let lhs = mockLoginViewController, let rhs = viewModel.view as? MockLoginViewController {
             XCTAssertTrue(lhs === rhs)
@@ -65,7 +67,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected clearUserNameField() to be called")
         mockLoginViewController!.expectationForClearUserNameField = expectation
         
-        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -75,7 +78,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected clearPasswordField() to be called")
         mockLoginViewController!.expectationForClearPasswordField = expectation
         
-        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -85,7 +89,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLoginButton(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -95,7 +100,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableCreateAccountButton(true) to be called")
         mockLoginViewController!.expectationForCreateAccountButton = (expectation, true)
         
-        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -105,7 +111,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard to be called")
         mockLoginViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = LoginViewModel(view:mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.performInitialViewSetup()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -119,7 +126,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard() to be called")
         mockLoginViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameDidEndOnExit()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -133,7 +141,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected hideKeyboard() to be called")
         mockLoginViewController!.expectationForHideKeyboard = expectation
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordDidEndOnExit()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -145,7 +154,8 @@ extension LoginViewModelTests {
     func testUserNameUpdated_Calls_Validate_OnUserNameValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
     
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameValidator = MockUserNameValidator(expectation, expectedValue: validUserName)
         
         viewModel.userNameUpdated(validUserName)
@@ -157,7 +167,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(true) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, true)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordValidated = true
         viewModel.userNameUpdated(validUserName)
         
@@ -168,7 +179,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordValidated = false
         
         viewModel.userNameUpdated(validUserName)
@@ -180,7 +192,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordValidated = true
         
         viewModel.userNameUpdated(invalidUserName)
@@ -192,7 +205,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordValidated = false
         
         viewModel.userNameUpdated(invalidUserName)
@@ -207,7 +221,8 @@ extension LoginViewModelTests {
     func testPasswordUpdated_Calls_Validate_OnPasswordValidator() {
         let expectation = self.expectation(description: "expected validate() to be called")
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.passwordValidator = MockPasswordValidator(expectation, expectedValue: validPassword)
         
         viewModel.passwordUpdated(validPassword)
@@ -219,7 +234,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(true) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, true)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameValidated = true
         viewModel.passwordUpdated(validPassword)
         
@@ -230,7 +246,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameValidated = false
         
         viewModel.passwordUpdated(validPassword)
@@ -242,7 +259,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameValidated = true
         
         viewModel.passwordUpdated(invalidPassword)
@@ -254,7 +272,8 @@ extension LoginViewModelTests {
         let expectation = self.expectation(description: "expected enableLogin(false) to be called")
         mockLoginViewController!.expectationForEnableLoginButton = (expectation, false)
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.userNameValidated = false
         
         viewModel.passwordUpdated(invalidPassword)
@@ -274,7 +293,8 @@ extension LoginViewModelTests {
                                                       expectedPassword: validPassword)
         mockLoginController.shouldReturnTrueOnLogin = true
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.loginController = mockLoginController
         //mockLoginController.loginControllerDelegate = viewModel
         
@@ -291,7 +311,8 @@ extension LoginViewModelTests {
                                                       expectedPassword: validPassword)
         mockLoginController.shouldReturnTrueOnLogin = true
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.loginController = mockLoginController
         mockLoginController.loginControllerDelegate = viewModel
         
@@ -308,7 +329,8 @@ extension LoginViewModelTests {
                                                       expectedPassword: validPassword)
         mockLoginController.shouldReturnTrueOnLogin = true
         
-        let viewModel = LoginViewModel(view: mockLoginViewController!)
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        let viewModel = LoginViewModel(view: mockLoginViewController!, router: router)
         viewModel.loginController = mockLoginController
         mockLoginController.loginControllerDelegate = viewModel
         

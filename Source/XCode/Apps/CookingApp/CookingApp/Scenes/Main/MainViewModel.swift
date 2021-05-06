@@ -7,10 +7,12 @@
 
 import Foundation
 import CookingApiService
+import RecipeStore
 
 final class MainViewModel {
     
     var cookingApiService: CookingApiService?
+    var recipeStore: RecipeStore?
     
     typealias Routes = RecipeRoute
     private let router: Routes

@@ -7,6 +7,38 @@
 
 import NetworkingService
 
+class GenericDecoder {
+    static func decodeResult<T: DTO> (result: HTTPClientResult) -> Swift.Result<T, CookingApiService.ServiceError> {
+        print("\n\nResponse HTTP Headers:\n")
+        
+        if let response = result.response {
+            for (key, value) in response.headers.allValues() {
+                print(key, value)
+            }
+            
+            if response.statusCode != 200 {
+                return .failure(.invalidData)
+            }
+        }  else {
+            return .failure(.connectivity)
+        }
+        
+        if let data = result.data {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            guard let userData = try? decoder.decode(T.self, from: data) else {
+                return .failure(.invalidData)
+            }
+            
+            print(userData.description)
+            return .success(userData)
+            
+        } else {
+            return .failure(.invalidData)
+        }
+    }
+}
+
 class CookingApiRemote: CookingApiService {
     
     private var url: URL
@@ -28,36 +60,7 @@ class CookingApiRemote: CookingApiService {
         client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }
             
-            print("\n\nResponse HTTP Headers:\n")
-            
-            if let response = result.response {
-                
-                if response.statusCode != 200 {
-                    
-                    completion(.failure(.invalidData))
-                    
-                    return
-                }
-                
-            }  else {
-                completion(.failure(.connectivity))
-                return
-            }
-            
-            if let data = result.data {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let userData = try? decoder.decode(RecipesSearchResultDTO.self, from: data) else {
-                    completion(.failure(.invalidData))
-                    return
-                }
-                
-                print(userData.description)
-                completion(.success(userData))
-                
-            } else {
-                completion(.failure(.invalidData))
-            }
+            completion(GenericDecoder.decodeResult(result: result))
         }
     }
 }

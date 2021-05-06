@@ -102,6 +102,27 @@
 			remoteGlobalIDString = 24446FAD2636F6AE0038B877;
 			remoteInfo = CookingApiService;
 		};
+		244DDB1E26434260008229B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244DDB1726434260008229B2 /* RecipeStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 244DDAF52643421C008229B2;
+			remoteInfo = RecipeStore;
+		};
+		244DDB2026434260008229B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244DDB1726434260008229B2 /* RecipeStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 244DDAFE2643421C008229B2;
+			remoteInfo = RecipeStoreTests;
+		};
+		244DDB27264345AB008229B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244DDB1726434260008229B2 /* RecipeStore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 244DDAF42643421C008229B2;
+			remoteInfo = RecipeStore;
+		};
 		24567BBF2637F9C40010BE25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24567BA02637F9C20010BE25 /* Project object */;
@@ -165,6 +186,7 @@
 		24330DA2263D3ABB00724978 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		24330DA6263D406800724978 /* SignupRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRoute.swift; sourceTree = "<group>"; };
 		24330DAA263D451F00724978 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
+		244DDB1726434260008229B2 /* RecipeStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeStore.xcodeproj; path = ../../../Modules/RecipeStore/RecipeStore.xcodeproj; sourceTree = "<group>"; };
 		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BAB2637F9C20010BE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24567BAD2637F9C20010BE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +302,15 @@
 				2430BDA62638B18200C5CE19 /* UITextFieldStub.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		244DDB1826434260008229B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				244DDB1F26434260008229B2 /* RecipeStore.framework */,
+				244DDB2126434260008229B2 /* RecipeStoreTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		24567B9F2637F9C20010BE25 = {
@@ -457,6 +488,7 @@
 		24567C1826386F5C0010BE25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				244DDB1726434260008229B2 /* RecipeStore.xcodeproj */,
 				241040FB263979C500994726 /* CookingApiService.xcodeproj */,
 				241040D226394C3C00994726 /* UserApiService.xcodeproj */,
 				24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */,
@@ -600,6 +632,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				244DDB28264345AB008229B2 /* PBXTargetDependency */,
 				2410410A263979DA00994726 /* PBXTargetDependency */,
 				241040E526394C4900994726 /* PBXTargetDependency */,
 				24567C2E263870E60010BE25 /* PBXTargetDependency */,
@@ -688,6 +721,10 @@
 					ProjectRef = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
 				},
 				{
+					ProductGroup = 244DDB1826434260008229B2 /* Products */;
+					ProjectRef = 244DDB1726434260008229B2 /* RecipeStore.xcodeproj */;
+				},
+				{
 					ProductGroup = 241040D326394C3C00994726 /* Products */;
 					ProjectRef = 241040D226394C3C00994726 /* UserApiService.xcodeproj */;
 				},
@@ -728,6 +765,20 @@
 			fileType = wrapper.cfbundle;
 			path = CookingApiServiceTests.xctest;
 			remoteRef = 24104102263979C600994726 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		244DDB1F26434260008229B2 /* RecipeStore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RecipeStore.framework;
+			remoteRef = 244DDB1E26434260008229B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		244DDB2126434260008229B2 /* RecipeStoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RecipeStoreTests.xctest;
+			remoteRef = 244DDB2026434260008229B2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		24567C1F26386F780010BE25 /* LoginSignupModule.framework */ = {
@@ -852,6 +903,11 @@
 			isa = PBXTargetDependency;
 			name = CookingApiService;
 			targetProxy = 24104109263979DA00994726 /* PBXContainerItemProxy */;
+		};
+		244DDB28264345AB008229B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RecipeStore;
+			targetProxy = 244DDB27264345AB008229B2 /* PBXContainerItemProxy */;
 		};
 		24567BC02637F9C40010BE25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

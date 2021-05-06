@@ -9,6 +9,7 @@ import UIKit
 import LoginSignupModule
 import NetworkingService
 import CookingApiService
+import RecipeStore
 
 enum Tabs {
     case main

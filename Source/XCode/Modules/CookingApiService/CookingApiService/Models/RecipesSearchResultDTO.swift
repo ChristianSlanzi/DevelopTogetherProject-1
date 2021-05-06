@@ -8,7 +8,10 @@
 var defString = String(stringLiteral: "")
 var defInt = -1
 
-public struct RecipesSearchResultDTO: Codable, CustomStringConvertible, Hashable {
+public protocol DTO: Codable, CustomStringConvertible, Hashable {
+    
+}
+public struct RecipesSearchResultDTO: DTO {
     
     public var offset: Int
     public var number: Int
