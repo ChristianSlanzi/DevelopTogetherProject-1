@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24093799264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */; };
+		2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */; };
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Stub.swift"; sourceTree = "<group>"; };
 		244DDAF52643421C008229B2 /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF82643421C008229B2 /* RecipeStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeStore.h; sourceTree = "<group>"; };
 		244DDAF92643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24093796264451A40007A954 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */,
+				24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		244DDAEB2643421C008229B2 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 		244DDB022643421C008229B2 /* RecipeStoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				24093796264451A40007A954 /* Helpers */,
 				244DDB3626434B5F008229B2 /* RecipeStoreSpecs */,
 				244DDB032643421C008229B2 /* RecipeStoreTests.swift */,
 				244DDB052643421C008229B2 /* Info.plist */,
@@ -317,9 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				244DDB58264351B4008229B2 /* XCTestCase+RecipeStoreHelpers.swift in Sources */,
+				24093799264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				244DDB5A264351B4008229B2 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				244DDB5126435140008229B2 /* XCTestCase+RecipeStoreSpecs.swift in Sources */,
 				244DDB3826434B7C008229B2 /* RecipeStoreSpecs.swift in Sources */,
+				2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */,
 				244DDB5B264351B4008229B2 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */,
 				244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */,
 				244DDB59264351B4008229B2 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,

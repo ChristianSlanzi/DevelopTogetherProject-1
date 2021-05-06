@@ -55,11 +55,18 @@ extension RecipeStoreTests: FailableRecipeStoreSpecs {
     }
     
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() throws {
+        let sut = try makeSUT()
 
+        assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
     }
 
     func test_retrieve_deliversFailureOnRetrievalError() throws {
+        let stub = NSManagedObjectContext.alwaysFailingFetchStub()
+        stub.startIntercepting()
 
+        let sut = try makeSUT()
+
+        assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
     }
 
     func test_retrieve_hasNoSideEffectsOnFailure() throws {
