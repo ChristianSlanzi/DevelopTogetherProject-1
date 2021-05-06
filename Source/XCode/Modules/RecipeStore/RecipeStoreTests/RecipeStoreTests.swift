@@ -139,15 +139,33 @@ extension RecipeStoreTests: FailableRecipeStoreSpecs {
     }
 
     func test_delete_deliversErrorOnDeletionError() throws {
+        let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+        stub.startIntercepting()
 
+        let sut = try makeSUT()
+
+        assertThatDeleteDeliversErrorOnDeletionError(on: sut)
     }
 
     func test_delete_hasNoSideEffectsOnDeletionError() throws {
+        let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+        let feed = uniqueRecipeFeed()
+        let timestamp = Date()
+        let sut = try makeSUT()
 
+        insert((feed, timestamp), to: sut)
+
+        stub.startIntercepting()
+
+        deleteCache(from: sut)
+
+        expect(sut, toRetrieve: .found(feed: feed/*, timestamp: timestamp*/))
     }
 
     func test_storeSideEffects_runSerially() throws {
+        let sut = try makeSUT()
 
+        assertThatSideEffectsRunSerially(on: sut)
     }
     
 }
