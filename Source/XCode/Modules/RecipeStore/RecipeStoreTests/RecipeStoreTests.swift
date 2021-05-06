@@ -133,7 +133,9 @@ extension RecipeStoreTests: FailableRecipeStoreSpecs {
     }
 
     func test_delete_emptiesPreviouslyInsertedCache() throws {
+        let sut = try makeSUT()
 
+        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
 
     func test_delete_deliversErrorOnDeletionError() throws {

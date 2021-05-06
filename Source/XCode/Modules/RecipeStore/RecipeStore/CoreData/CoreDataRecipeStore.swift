@@ -93,6 +93,25 @@ public final class CoreDataRecipeStore: RecipeStore {
     }
     
     public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
-        completion(.none)
+        let context = self.context
+        context.perform {
+            let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
+            do {
+                /*
+                if let dataFeed = try self.context.fetch(request).first {
+                    self.context.delete(dataFeed)
+                }*/
+                let items = try self.context.fetch(request)
+                for item in items {
+                    self.context.delete(item)
+                }
+            
+                try self.context.save()
+                completion(.none)
+            } catch {
+                self.context.reset()
+                completion(error)
+            }
+        }
     }
 }
