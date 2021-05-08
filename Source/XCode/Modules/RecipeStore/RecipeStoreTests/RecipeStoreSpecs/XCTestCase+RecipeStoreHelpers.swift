@@ -7,6 +7,7 @@
 
 import XCTest
 import RecipeStore
+import GenericStore
 
 func uniqueRecipeFeed() -> [LocalRecipe] {
     [uniqueRecipe(), uniqueRecipe2()]

@@ -15,9 +15,9 @@ open class CoreDataStore<T: Storable & MappableProtocol>: DataStore {
     fileprivate let context: NSManagedObjectContext
     private let model: NSManagedObjectModel
     
-    public init(storeURL: URL, modelName: String) throws {
+    public init(storeURL: URL, modelName: String, in bundle: Bundle) throws {
         
-        guard let managedModel = NSManagedObjectModel(name: modelName, in: Bundle(for: CoreDataStore.self)) else {
+        guard let managedModel = NSManagedObjectModel(name: modelName, in: bundle) else {
             throw ModelNotFound(modelName: modelName)
         }
         

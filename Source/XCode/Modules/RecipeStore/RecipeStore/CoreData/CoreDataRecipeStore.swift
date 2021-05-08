@@ -12,6 +12,6 @@ public final class CoreDataRecipeStore: RecipeStore {
     private static let modelName = "RecipeStore"
     
     public init(storeURL: URL) throws {
-        try super.init(storeURL: storeURL, modelName: CoreDataRecipeStore.modelName)
+        try super.init(storeURL: storeURL, modelName: CoreDataRecipeStore.modelName, in: Bundle(for: CoreDataRecipeStore.self))
     }
 }

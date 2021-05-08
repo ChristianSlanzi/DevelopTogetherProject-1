@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import GenericStore
 
 extension CoreDataRecipe: Storable {
 }

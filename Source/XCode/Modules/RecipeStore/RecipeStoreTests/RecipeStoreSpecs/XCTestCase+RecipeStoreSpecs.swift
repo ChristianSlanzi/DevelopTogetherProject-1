@@ -7,6 +7,7 @@
 
 import XCTest
 import RecipeStore
+import GenericStore
 
 extension RecipeStoreSpecs where Self: XCTestCase {
     func assertThatRetrieveDeliversEmptyOnEmptyCache(on sut: RecipeStore, file: StaticString = #filePath, line: UInt = #line) {

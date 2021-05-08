@@ -11,6 +11,8 @@
 		2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */; };
 		2409379E264457810007A954 /* RecipeStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */; };
 		24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411C692646F99A00C3CA21 /* TestHelpers.framework */; };
+		24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; };
+		24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,14 +28,6 @@
 		244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */; };
 		244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */; };
 		244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */; };
-		244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */; };
-		2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5826467BDA00965BF6 /* DataStore.swift */; };
-		2458EA6526467C2700965BF6 /* FetchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */; };
-		2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5E26467C2600965BF6 /* StorageContext.swift */; };
-		2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */; };
-		2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6226467C2600965BF6 /* MappableProtocol.swift */; };
-		2458EA6926467C2700965BF6 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6426467C2600965BF6 /* Storable.swift */; };
-		2458EA6D2646805F00965BF6 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6C2646805F00965BF6 /* CoreDataStore.swift */; };
 		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
 		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
 /* End PBXBuildFile section */
@@ -48,11 +42,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24411CC92646FEF700C3CA21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Stub.swift"; sourceTree = "<group>"; };
 		2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStoreIntegrationTests.swift; sourceTree = "<group>"; };
 		24411C692646F99A00C3CA21 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24411CC42646FED400C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24411CC62646FEF700C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF52643421C008229B2 /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF82643421C008229B2 /* RecipeStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeStore.h; sourceTree = "<group>"; };
 		244DDAF92643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,15 +81,7 @@
 		244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		244DDB682643528E008229B2 /* RecipeStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeStore.xcdatamodel; sourceTree = "<group>"; };
 		244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		244DDB7D264352DC008229B2 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2458EA5826467BDA00965BF6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchableProtocol.swift; sourceTree = "<group>"; };
-		2458EA5E26467C2600965BF6 /* StorageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContext.swift; sourceTree = "<group>"; };
-		2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataResult.swift; sourceTree = "<group>"; };
-		2458EA6226467C2600965BF6 /* MappableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
-		2458EA6426467C2600965BF6 /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
-		2458EA6C2646805F00965BF6 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
 		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +119,6 @@
 		244DDAEB2643421C008229B2 = {
 			isa = PBXGroup;
 			children = (
-				2458EA5426467B3900965BF6 /* Base */,
 				244DDAF72643421C008229B2 /* RecipeStore */,
 				244DDB022643421C008229B2 /* RecipeStoreTests */,
 				244DDAF62643421C008229B2 /* Products */,
@@ -198,100 +200,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		244DDB6A2643528E008229B2 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		244DDB7C264352DC008229B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24411CC62646FEF700C3CA21 /* GenericStore.framework */,
+				24411CC42646FED400C3CA21 /* GenericStore.framework */,
 				24411C692646F99A00C3CA21 /* TestHelpers.framework */,
 				244DDB7D264352DC008229B2 /* TestHelpers.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2458EA5426467B3900965BF6 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA5526467B4C00965BF6 /* CoreData */,
-				2458EA5626467B5400965BF6 /* Common */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		2458EA5526467B4C00965BF6 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA6C2646805F00965BF6 /* CoreDataStore.swift */,
-				244DDB6A2643528E008229B2 /* Helpers */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		2458EA5626467B5400965BF6 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA5D26467C2600965BF6 /* Context */,
-				2458EA6326467C2600965BF6 /* Entity */,
-				2458EA5B26467C2600965BF6 /* Fetcher */,
-				2458EA6126467C2600965BF6 /* Mapper */,
-				2458EA5F26467C2600965BF6 /* Result */,
-				2458EA5726467B9E00965BF6 /* Store */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		2458EA5726467B9E00965BF6 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA5826467BDA00965BF6 /* DataStore.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		2458EA5B26467C2600965BF6 /* Fetcher */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */,
-			);
-			path = Fetcher;
-			sourceTree = "<group>";
-		};
-		2458EA5D26467C2600965BF6 /* Context */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA5E26467C2600965BF6 /* StorageContext.swift */,
-			);
-			path = Context;
-			sourceTree = "<group>";
-		};
-		2458EA5F26467C2600965BF6 /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */,
-			);
-			path = Result;
-			sourceTree = "<group>";
-		};
-		2458EA6126467C2600965BF6 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA6226467C2600965BF6 /* MappableProtocol.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
-		2458EA6326467C2600965BF6 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				2458EA6426467C2600965BF6 /* Storable.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		2458EA6F264681B500965BF6 /* Mapping */ = {
@@ -325,6 +242,7 @@
 				244DDAF12643421C008229B2 /* Sources */,
 				244DDAF22643421C008229B2 /* Frameworks */,
 				244DDAF32643421C008229B2 /* Resources */,
+				24411CC92646FEF700C3CA21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,21 +330,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2458EA6D2646805F00965BF6 /* CoreDataStore.swift in Sources */,
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
-				2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
 				2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */,
 				244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */,
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
-				2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */,
-				244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */,
-				2458EA6526467C2700965BF6 /* FetchableProtocol.swift in Sources */,
-				2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */,
-				2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
 				2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */,
-				2458EA6926467C2700965BF6 /* Storable.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

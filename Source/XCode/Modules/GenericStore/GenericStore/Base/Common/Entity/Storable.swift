@@ -6,6 +6,6 @@
 //
 
 // MARK: - Storable Protocol
-public protocol Storable: Equatable {
+public protocol Storable {
     
 }

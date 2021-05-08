@@ -28,6 +28,9 @@ final class MainViewModel {
                 print(error)
             case .success(let searchResult):
                 print(searchResult.results)
+                //recipeStore?.create([searchResult.results], completion: { (error) in
+                //    <#code#>
+                //})
             }
         })
     }

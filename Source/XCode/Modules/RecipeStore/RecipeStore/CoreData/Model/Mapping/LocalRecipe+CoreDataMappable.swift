@@ -6,6 +6,9 @@
 //
 
 import CoreData
+import GenericStore
+
+extension LocalRecipe: Storable {}
 
 extension LocalRecipe: MappableProtocol {
     

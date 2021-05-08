@@ -5,9 +5,7 @@
 //  Created by Christian Slanzi on 21.04.21.
 //
 
-import Foundation
-
-public struct LocalRecipe {
+public struct LocalRecipe: Equatable {
     
     public var id: Int
     public var calories: Int?
@@ -31,5 +29,3 @@ public struct LocalRecipe {
         self.title = title
     }
 }
-
-extension LocalRecipe: Storable {}
