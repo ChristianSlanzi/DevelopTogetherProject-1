@@ -26,8 +26,6 @@
 		244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */; };
 		244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */; };
 		244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */; };
-		244DDB7E264352DC008229B2 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; };
-		244DDB7F264352DC008229B2 /* TestHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5826467BDA00965BF6 /* DataStore.swift */; };
 		2458EA6526467C2700965BF6 /* FetchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */; };
 		2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5E26467C2600965BF6 /* StorageContext.swift */; };
@@ -48,20 +46,6 @@
 			remoteInfo = RecipeStore;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		244DDB80264352DC008229B2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				244DDB7F264352DC008229B2 /* TestHelpers.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
@@ -103,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244DDB7E264352DC008229B2 /* TestHelpers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +321,6 @@
 				244DDAF12643421C008229B2 /* Sources */,
 				244DDAF22643421C008229B2 /* Frameworks */,
 				244DDAF32643421C008229B2 /* Resources */,
-				244DDB80264352DC008229B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
