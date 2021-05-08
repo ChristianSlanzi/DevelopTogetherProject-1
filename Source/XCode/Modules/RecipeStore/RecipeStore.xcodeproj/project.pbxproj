@@ -168,7 +168,6 @@
 		244DDB2F26434868008229B2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				244DDB6A2643528E008229B2 /* Helpers */,
 				244DDB652643528E008229B2 /* Model */,
 				244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */,
 			);
@@ -234,6 +233,7 @@
 		2458EA5526467B4C00965BF6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				244DDB6A2643528E008229B2 /* Helpers */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
