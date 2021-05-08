@@ -35,6 +35,8 @@
 		2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6226467C2600965BF6 /* MappableProtocol.swift */; };
 		2458EA6926467C2700965BF6 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6426467C2600965BF6 /* Storable.swift */; };
 		2458EA6D2646805F00965BF6 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6C2646805F00965BF6 /* CoreDataStore.swift */; };
+		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
+		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		2458EA6226467C2600965BF6 /* MappableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
 		2458EA6426467C2600965BF6 /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		2458EA6C2646805F00965BF6 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
+		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 		244DDB652643528E008229B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2458EA6F264681B500965BF6 /* Mapping */,
 				244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */,
 				244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */,
 				244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */,
@@ -300,6 +305,15 @@
 				2458EA6426467C2600965BF6 /* Storable.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		2458EA6F264681B500965BF6 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */,
+				2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */,
+			);
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +430,7 @@
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
 				2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
+				2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */,
 				244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */,
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
 				2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */,
@@ -424,6 +439,7 @@
 				2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */,
 				2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
+				2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */,
 				2458EA6926467C2700965BF6 /* Storable.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
 			);
