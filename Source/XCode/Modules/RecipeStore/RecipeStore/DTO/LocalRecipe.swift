@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LocalRecipe: Equatable {
+public struct LocalRecipe {
     
     public var id: Int
     public var calories: Int?
@@ -31,3 +31,5 @@ public struct LocalRecipe: Equatable {
         self.title = title
     }
 }
+
+extension LocalRecipe: Storable {}
