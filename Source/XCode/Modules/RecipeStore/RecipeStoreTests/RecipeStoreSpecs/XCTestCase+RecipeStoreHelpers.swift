@@ -62,7 +62,7 @@ extension XCTestCase {
         let exp = expectation(description: "Wait for cache retrieval")
         
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
-            key: #keyPath(CoreDataRecipe.calories),
+            key: #keyPath(CoreDataRecipe.idCode),
             ascending: true)
         
         sut.retrieve(sortDescriptors: [recipeSortDescriptor]) { (retrievedResult: RetrieveDataResult<LocalRecipe>) in

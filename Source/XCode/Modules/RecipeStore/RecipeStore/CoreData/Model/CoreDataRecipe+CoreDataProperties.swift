@@ -12,7 +12,7 @@ import CoreData
 
 extension CoreDataRecipe {
 
-    @NSManaged public var id: Int16
+    @NSManaged public var idCode: Int16
     @NSManaged public var calories: Int16
     @NSManaged public var carbs: String?
     @NSManaged public var fat: String?

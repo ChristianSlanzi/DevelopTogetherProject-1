@@ -10,6 +10,7 @@
 		24093799264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */; };
 		2409379E264457810007A954 /* RecipeStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */; };
+		24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411C692646F99A00C3CA21 /* TestHelpers.framework */; };
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +52,7 @@
 		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Stub.swift"; sourceTree = "<group>"; };
 		2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStoreIntegrationTests.swift; sourceTree = "<group>"; };
+		24411C692646F99A00C3CA21 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF52643421C008229B2 /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF82643421C008229B2 /* RecipeStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeStore.h; sourceTree = "<group>"; };
 		244DDAF92643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */,
 				244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +209,7 @@
 		244DDB7C264352DC008229B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24411C692646F99A00C3CA21 /* TestHelpers.framework */,
 				244DDB7D264352DC008229B2 /* TestHelpers.framework */,
 			);
 			name = Frameworks;

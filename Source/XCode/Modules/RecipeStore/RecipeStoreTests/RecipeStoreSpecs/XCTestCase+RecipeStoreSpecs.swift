@@ -104,7 +104,7 @@ extension RecipeStoreSpecs where Self: XCTestCase {
         }
         
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
-            key: #keyPath(CoreDataRecipe.calories),
+            key: #keyPath(CoreDataRecipe.idCode),
             ascending: true)
 
         let op4 = expectation(description: "Operation 4")
