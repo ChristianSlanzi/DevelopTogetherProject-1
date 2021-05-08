@@ -89,22 +89,26 @@ extension RecipeStoreSpecs where Self: XCTestCase {
 
     func assertThatSideEffectsRunSerially(on sut: RecipeStore, file: StaticString = #filePath, line: UInt = #line) {
         let op1 = expectation(description: "Operation 1")
-        sut.insert(uniqueRecipeFeed(), timestamp: Date()) { _ in
+        sut.create(uniqueRecipeFeed()) { _ in
             op1.fulfill()
         }
 
         let op2 = expectation(description: "Operation 2")
-        sut.deleteCachedFeed { _ in
+        sut.deleteAll(entity: LocalRecipe.self) { _ in
             op2.fulfill()
         }
 
         let op3 = expectation(description: "Operation 3")
-        sut.insert(uniqueRecipeFeed(), timestamp: Date()) { _ in
+        sut.create(uniqueRecipeFeed()) { _ in
             op3.fulfill()
         }
+        
+        let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
+            key: #keyPath(CoreDataRecipe.calories),
+            ascending: true)
 
         let op4 = expectation(description: "Operation 4")
-        sut.retrieve { _ in
+        sut.retrieve(sortDescriptors: [recipeSortDescriptor]) { (_: RetrieveDataResult<LocalRecipe>) in
             op4.fulfill()
         }
 
