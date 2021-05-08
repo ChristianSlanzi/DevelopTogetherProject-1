@@ -34,6 +34,7 @@
 		2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */; };
 		2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6226467C2600965BF6 /* MappableProtocol.swift */; };
 		2458EA6926467C2700965BF6 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6426467C2600965BF6 /* Storable.swift */; };
+		2458EA6D2646805F00965BF6 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6C2646805F00965BF6 /* CoreDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataResult.swift; sourceTree = "<group>"; };
 		2458EA6226467C2600965BF6 /* MappableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
 		2458EA6426467C2600965BF6 /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		2458EA6C2646805F00965BF6 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		2458EA5526467B4C00965BF6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				2458EA6C2646805F00965BF6 /* CoreDataStore.swift */,
 				244DDB6A2643528E008229B2 /* Helpers */,
 			);
 			path = CoreData;
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2458EA6D2646805F00965BF6 /* CoreDataStore.swift in Sources */,
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
 				2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
