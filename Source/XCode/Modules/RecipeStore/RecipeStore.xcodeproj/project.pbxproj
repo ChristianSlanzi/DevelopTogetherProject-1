@@ -28,6 +28,12 @@
 		244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */; };
 		244DDB7E264352DC008229B2 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; };
 		244DDB7F264352DC008229B2 /* TestHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5826467BDA00965BF6 /* DataStore.swift */; };
+		2458EA6526467C2700965BF6 /* FetchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */; };
+		2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA5E26467C2600965BF6 /* StorageContext.swift */; };
+		2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */; };
+		2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6226467C2600965BF6 /* MappableProtocol.swift */; };
+		2458EA6926467C2700965BF6 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA6426467C2600965BF6 /* Storable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,12 @@
 		244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		244DDB7D264352DC008229B2 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2458EA5826467BDA00965BF6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchableProtocol.swift; sourceTree = "<group>"; };
+		2458EA5E26467C2600965BF6 /* StorageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContext.swift; sourceTree = "<group>"; };
+		2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataResult.swift; sourceTree = "<group>"; };
+		2458EA6226467C2600965BF6 /* MappableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
+		2458EA6426467C2600965BF6 /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 		244DDAEB2643421C008229B2 = {
 			isa = PBXGroup;
 			children = (
+				2458EA5426467B3900965BF6 /* Base */,
 				244DDAF72643421C008229B2 /* RecipeStore */,
 				244DDB022643421C008229B2 /* RecipeStoreTests */,
 				244DDAF62643421C008229B2 /* Products */,
@@ -207,6 +220,83 @@
 				244DDB7D264352DC008229B2 /* TestHelpers.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2458EA5426467B3900965BF6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA5526467B4C00965BF6 /* CoreData */,
+				2458EA5626467B5400965BF6 /* Common */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2458EA5526467B4C00965BF6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2458EA5626467B5400965BF6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA5D26467C2600965BF6 /* Context */,
+				2458EA6326467C2600965BF6 /* Entity */,
+				2458EA5B26467C2600965BF6 /* Fetcher */,
+				2458EA6126467C2600965BF6 /* Mapper */,
+				2458EA5F26467C2600965BF6 /* Result */,
+				2458EA5726467B9E00965BF6 /* Store */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2458EA5726467B9E00965BF6 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA5826467BDA00965BF6 /* DataStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		2458EA5B26467C2600965BF6 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA5C26467C2600965BF6 /* FetchableProtocol.swift */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		2458EA5D26467C2600965BF6 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA5E26467C2600965BF6 /* StorageContext.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		2458EA5F26467C2600965BF6 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA6026467C2600965BF6 /* RetrieveDataResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		2458EA6126467C2600965BF6 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA6226467C2600965BF6 /* MappableProtocol.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		2458EA6326467C2600965BF6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA6426467C2600965BF6 /* Storable.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,11 +410,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
+				2458EA5926467BDA00965BF6 /* DataStore.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
 				244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */,
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
+				2458EA6626467C2700965BF6 /* StorageContext.swift in Sources */,
 				244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */,
+				2458EA6526467C2700965BF6 /* FetchableProtocol.swift in Sources */,
+				2458EA6726467C2700965BF6 /* RetrieveDataResult.swift in Sources */,
+				2458EA6826467C2700965BF6 /* MappableProtocol.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
+				2458EA6926467C2700965BF6 /* Storable.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
