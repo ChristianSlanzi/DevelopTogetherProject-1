@@ -1,0 +1,24 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=14.4,name=iPhone 8']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Build and test
+        run: |
+          xcodebuild clean test -workspace "/Source/XCode/Apps/CookingApp/CookingApp.xcworkspace" -scheme "CookingApp" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env:
+         destination: ${{ matrix.destination }}
