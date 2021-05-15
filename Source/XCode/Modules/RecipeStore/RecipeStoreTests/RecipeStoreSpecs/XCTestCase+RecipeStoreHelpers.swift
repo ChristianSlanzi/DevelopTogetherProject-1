@@ -7,6 +7,7 @@
 
 import XCTest
 import RecipeStore
+import GenericStore
 
 func uniqueRecipeFeed() -> [LocalRecipe] {
     [uniqueRecipe(), uniqueRecipe2()]
@@ -33,7 +34,7 @@ extension XCTestCase {
     func insert(_ cache: (feed: [LocalRecipe], timestamp: Date), to sut: RecipeStore) -> Error? {
         let exp = expectation(description: "Wait for cache insertion")
         var insertionError: Error?
-        sut.insert(cache.feed, timestamp: cache.timestamp) { receivedInsertionError in
+        sut.create(cache.feed) { receivedInsertionError in
             insertionError = receivedInsertionError
             exp.fulfill()
         }
@@ -45,7 +46,7 @@ extension XCTestCase {
     func deleteCache(from sut: RecipeStore) -> Error? {
         let exp = expectation(description: "Wait for cache deletion")
         var deletionError: Error?
-        sut.deleteCachedFeed { receivedDeletionError in
+        sut.deleteAll(entity: LocalRecipe.self) { receivedDeletionError in
             deletionError = receivedDeletionError
             exp.fulfill()
         }
@@ -61,7 +62,11 @@ extension XCTestCase {
     func expect(_ sut: RecipeStore, toRetrieve expectedResult: RetrieveCachedRecipesResult, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for cache retrieval")
         
-        sut.retrieve { retrievedResult in
+        let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
+            key: #keyPath(CoreDataRecipe.idCode),
+            ascending: true)
+        
+        sut.retrieve(sortDescriptors: [recipeSortDescriptor]) { (retrievedResult: RetrieveDataResult<LocalRecipe>) in
             switch (expectedResult, retrievedResult) {
             case (.empty, .empty),
                  (.failure, .failure):

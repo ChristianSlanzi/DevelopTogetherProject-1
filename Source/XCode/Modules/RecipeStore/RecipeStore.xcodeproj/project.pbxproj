@@ -10,6 +10,9 @@
 		24093799264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */; };
 		2409379E264457810007A954 /* RecipeStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */; };
+		24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411C692646F99A00C3CA21 /* TestHelpers.framework */; };
+		24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; };
+		24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,9 +28,8 @@
 		244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */; };
 		244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */; };
 		244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */; };
-		244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */; };
-		244DDB7E264352DC008229B2 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; };
-		244DDB7F264352DC008229B2 /* TestHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB7D264352DC008229B2 /* TestHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
+		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		244DDB80264352DC008229B2 /* Embed Frameworks */ = {
+		24411CC92646FEF700C3CA21 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				244DDB7F264352DC008229B2 /* TestHelpers.framework in Embed Frameworks */,
+				24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +60,9 @@
 		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Stub.swift"; sourceTree = "<group>"; };
 		2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStoreIntegrationTests.swift; sourceTree = "<group>"; };
+		24411C692646F99A00C3CA21 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24411CC42646FED400C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24411CC62646FEF700C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF52643421C008229B2 /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF82643421C008229B2 /* RecipeStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeStore.h; sourceTree = "<group>"; };
 		244DDAF92643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,8 +81,9 @@
 		244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		244DDB682643528E008229B2 /* RecipeStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeStore.xcdatamodel; sourceTree = "<group>"; };
 		244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		244DDB7D264352DC008229B2 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
+		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244DDB7E264352DC008229B2 /* TestHelpers.framework in Frameworks */,
+				24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */,
 				244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +162,6 @@
 		244DDB2F26434868008229B2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				244DDB6A2643528E008229B2 /* Helpers */,
 				244DDB652643528E008229B2 /* Model */,
 				244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */,
 			);
@@ -186,6 +192,7 @@
 		244DDB652643528E008229B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2458EA6F264681B500965BF6 /* Mapping */,
 				244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */,
 				244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */,
 				244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */,
@@ -193,20 +200,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		244DDB6A2643528E008229B2 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				244DDB6B2643528E008229B2 /* CoreDataHelpers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		244DDB7C264352DC008229B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24411CC62646FEF700C3CA21 /* GenericStore.framework */,
+				24411CC42646FED400C3CA21 /* GenericStore.framework */,
+				24411C692646F99A00C3CA21 /* TestHelpers.framework */,
 				244DDB7D264352DC008229B2 /* TestHelpers.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2458EA6F264681B500965BF6 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */,
+				2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */,
+			);
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +242,7 @@
 				244DDAF12643421C008229B2 /* Sources */,
 				244DDAF22643421C008229B2 /* Frameworks */,
 				244DDAF32643421C008229B2 /* Resources */,
-				244DDB80264352DC008229B2 /* Embed Frameworks */,
+				24411CC92646FEF700C3CA21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,10 +332,11 @@
 			files = (
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
+				2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */,
 				244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */,
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
-				244DDB6F2643528E008229B2 /* CoreDataHelpers.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
+				2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

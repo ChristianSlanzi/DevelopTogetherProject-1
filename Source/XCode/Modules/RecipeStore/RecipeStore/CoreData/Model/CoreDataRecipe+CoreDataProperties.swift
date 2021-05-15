@@ -12,11 +12,7 @@ import CoreData
 
 extension CoreDataRecipe {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CoreDataRecipe> {
-        return NSFetchRequest<CoreDataRecipe>(entityName: "CoreDataRecipe")
-    }
-
-    @NSManaged public var id: Int16
+    @NSManaged public var idCode: Int16
     @NSManaged public var calories: Int16
     @NSManaged public var carbs: String?
     @NSManaged public var fat: String?

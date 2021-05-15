@@ -5,8 +5,6 @@
 //  Created by Christian Slanzi on 21.04.21.
 //
 
-import Foundation
-
 public struct LocalRecipe: Equatable {
     
     public var id: Int
