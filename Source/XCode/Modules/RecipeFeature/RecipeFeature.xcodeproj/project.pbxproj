@@ -13,6 +13,12 @@
 		24C4F0462651300E0061737C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0422651300D0061737C /* Recipe.swift */; };
 		24C4F0472651300E0061737C /* RecipeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0442651300D0061737C /* RecipeCache.swift */; };
 		24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0452651300D0061737C /* RecipeLoader.swift */; };
+		24C4F04E2651306E0061737C /* CompositeFallbackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F04B2651306E0061737C /* CompositeFallbackLoader.swift */; };
+		24C4F04F2651306E0061737C /* LocalRecipesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F04D2651306E0061737C /* LocalRecipesLoader.swift */; };
+		24C4F054265130C30061737C /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F053265130C30061737C /* RecipeStore.framework */; };
+		24C4F055265130C30061737C /* RecipeStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F053265130C30061737C /* RecipeStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C4F059265130C70061737C /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; };
+		24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +31,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24C4F056265130C30061737C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */,
+				24C4F055265130C30061737C /* RecipeStore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24C4F01226511D790061737C /* RecipeFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F01526511D790061737C /* RecipeFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeFeature.h; sourceTree = "<group>"; };
@@ -35,6 +56,10 @@
 		24C4F0422651300D0061737C /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		24C4F0442651300D0061737C /* RecipeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCache.swift; sourceTree = "<group>"; };
 		24C4F0452651300D0061737C /* RecipeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeLoader.swift; sourceTree = "<group>"; };
+		24C4F04B2651306E0061737C /* CompositeFallbackLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeFallbackLoader.swift; sourceTree = "<group>"; };
+		24C4F04D2651306E0061737C /* LocalRecipesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalRecipesLoader.swift; sourceTree = "<group>"; };
+		24C4F053265130C30061737C /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C4F058265130C70061737C /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F059265130C70061737C /* GenericStore.framework in Frameworks */,
+				24C4F054265130C30061737C /* RecipeStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +89,7 @@
 				24C4F01426511D790061737C /* RecipeFeature */,
 				24C4F01F26511D7A0061737C /* RecipeFeatureTests */,
 				24C4F01326511D790061737C /* Products */,
+				24C4F052265130C30061737C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +105,8 @@
 		24C4F01426511D790061737C /* RecipeFeature */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F04B2651306E0061737C /* CompositeFallbackLoader.swift */,
+				24C4F04C2651306E0061737C /* Recipe Cache */,
 				24C4F0412651300D0061737C /* Model */,
 				24C4F0432651300D0061737C /* Protocols */,
 				24C4F01526511D790061737C /* RecipeFeature.h */,
@@ -111,6 +141,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		24C4F04C2651306E0061737C /* Recipe Cache */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F04D2651306E0061737C /* LocalRecipesLoader.swift */,
+			);
+			path = "Recipe Cache";
+			sourceTree = "<group>";
+		};
+		24C4F052265130C30061737C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F058265130C70061737C /* GenericStore.framework */,
+				24C4F053265130C30061737C /* RecipeStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -133,6 +180,7 @@
 				24C4F00E26511D790061737C /* Sources */,
 				24C4F00F26511D790061737C /* Frameworks */,
 				24C4F01026511D790061737C /* Resources */,
+				24C4F056265130C30061737C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,8 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F04F2651306E0061737C /* LocalRecipesLoader.swift in Sources */,
 				24C4F0472651300E0061737C /* RecipeCache.swift in Sources */,
 				24C4F0462651300E0061737C /* Recipe.swift in Sources */,
+				24C4F04E2651306E0061737C /* CompositeFallbackLoader.swift in Sources */,
 				24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
