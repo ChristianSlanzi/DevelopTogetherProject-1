@@ -10,6 +10,9 @@ import LoginSignupModule
 import NetworkingService
 import CookingApiService
 import RecipeStore
+import RecipeUI
+import RecipeFeature
+import CoreData
 
 enum Tabs {
     case main
@@ -49,6 +52,24 @@ class AppDependencies {
     static let shared = AppDependencies()
     
     private var window: UIWindow?
+    
+    private lazy var recipeStore: RecipeStore /*& RecipeDataStore*/ = {
+        do {
+            return try CoreDataRecipeStore(
+                storeURL: NSPersistentContainer
+                    .defaultDirectoryURL()
+                    .appendingPathComponent("feed-store.sqlite"))
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            //TODO
+            /*
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            */
+            return NullStore()
+        }
+    }()
 
     private init() {
         configureDependencies()
@@ -84,6 +105,24 @@ class AppDependencies {
 extension AppDependencies {
     
     func makeMainTab() -> UIViewController {
+        
+        var FLAG = true
+        
+        if FLAG {
+            let recipeListVC = RecipeUI.createRecipelistVC()
+            let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+            let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                          client: networkingService,
+                                                          apiKey: cookingApiKey)
+            let service = serviceFactory.getCookingApiService()
+            let remoteLoader = RemoteLoader(service: service)
+            let localLoader = LocalRecipesLoader(store: recipeStore, currentDate: { Date() })
+            let recipeLoader = CompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+            recipeListVC.viewModel?.recipeLoader = recipeLoader
+            
+            return UINavigationController(rootViewController: recipeListVC)
+        }
+        
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let viewController = createMainViewController(router: router)
         router.root = viewController
@@ -215,5 +254,35 @@ extension AppDependencies {
     
         //call login
         setRootViewController(createLoginViewController())
+    }
+}
+
+// MARK: - Secrets
+
+extension AppDependencies {
+    
+    private var cookingApiKey: String {
+      get {
+        // 1 - search for the secrets plist file
+        guard let filePath = Bundle.main.path(forResource: "Secrets-Info", ofType: "plist") else {
+          //fatalError("Couldn't find file 'Secrets.plist'.")
+            print("Couldn't find file 'Secrets.plist'.")
+            return "COOKING_API_KEY-NOT-FOUND"
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "COOKING_API_KEY") as? String else {
+          //fatalError("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
+            print("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
+            return "COOKING_API_KEY-NOT-FOUND"
+        }
+        // 3
+        if (value.starts(with: "_")) {
+          //fatalError("Register for a Spoonacular developer account and get an API key at https://spoonacular.com/food-api")
+            print("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
+            return "COOKING_API_KEY-NOT-FOUND"
+        }
+        return value
+      }
     }
 }

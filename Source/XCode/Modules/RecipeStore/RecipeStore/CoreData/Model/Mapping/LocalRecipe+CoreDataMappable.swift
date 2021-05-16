@@ -14,7 +14,7 @@ extension LocalRecipe: MappableProtocol {
     
     public func mapToPersistenceObject(context: StorageContext) -> CoreDataRecipe {
         let model = CoreDataRecipe(context: context as! NSManagedObjectContext)
-        model.idCode = Int16(self.id)
+        model.idCode = Int32(self.id)
         model.calories = self.calories != nil ? (Int16(self.calories!)) : -1
         model.carbs = self.carbs
         model.fat = self.fat

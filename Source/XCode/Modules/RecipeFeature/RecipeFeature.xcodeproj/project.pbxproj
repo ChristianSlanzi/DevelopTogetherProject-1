@@ -19,6 +19,9 @@
 		24C4F055265130C30061737C /* RecipeStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F053265130C30061737C /* RecipeStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C4F059265130C70061737C /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; };
 		24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C4F0EA265141640061737C /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0E9265141640061737C /* RemoteLoader.swift */; };
+		24C4F1402651461B0061737C /* CookingApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F13F2651461B0061737C /* CookingApiService.framework */; };
+		24C4F1412651461B0061737C /* CookingApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F13F2651461B0061737C /* CookingApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,7 @@
 			files = (
 				24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */,
 				24C4F055265130C30061737C /* RecipeStore.framework in Embed Frameworks */,
+				24C4F1412651461B0061737C /* CookingApiService.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +64,8 @@
 		24C4F04D2651306E0061737C /* LocalRecipesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalRecipesLoader.swift; sourceTree = "<group>"; };
 		24C4F053265130C30061737C /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F058265130C70061737C /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C4F0E9265141640061737C /* RemoteLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
+		24C4F13F2651461B0061737C /* CookingApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CookingApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			files = (
 				24C4F059265130C70061737C /* GenericStore.framework in Frameworks */,
 				24C4F054265130C30061737C /* RecipeStore.framework in Frameworks */,
+				24C4F1402651461B0061737C /* CookingApiService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +112,7 @@
 		24C4F01426511D790061737C /* RecipeFeature */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0E8265141640061737C /* Recipe API */,
 				24C4F04B2651306E0061737C /* CompositeFallbackLoader.swift */,
 				24C4F04C2651306E0061737C /* Recipe Cache */,
 				24C4F0412651300D0061737C /* Model */,
@@ -152,10 +160,19 @@
 		24C4F052265130C30061737C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F13F2651461B0061737C /* CookingApiService.framework */,
 				24C4F058265130C70061737C /* GenericStore.framework */,
 				24C4F053265130C30061737C /* RecipeStore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24C4F0E8265141640061737C /* Recipe API */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0E9265141640061737C /* RemoteLoader.swift */,
+			);
+			path = "Recipe API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +288,7 @@
 				24C4F0472651300E0061737C /* RecipeCache.swift in Sources */,
 				24C4F0462651300E0061737C /* Recipe.swift in Sources */,
 				24C4F04E2651306E0061737C /* CompositeFallbackLoader.swift in Sources */,
+				24C4F0EA265141640061737C /* RemoteLoader.swift in Sources */,
 				24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
