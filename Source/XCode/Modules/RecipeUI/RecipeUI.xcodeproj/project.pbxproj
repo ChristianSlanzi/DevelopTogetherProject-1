@@ -22,6 +22,9 @@
 		24C4F0CC265135740061737C /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0C6265135740061737C /* CollectionViewCellViewModel.swift */; };
 		24C4F0CD265135740061737C /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0C7265135740061737C /* CollectionViewModel.swift */; };
 		24C4F0CE265135750061737C /* CollectionViewSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0C8265135740061737C /* CollectionViewSectionHeaderViewModel.swift */; };
+		24C4F0D52651370E0061737C /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D22651370E0061737C /* CollectionViewSectionHeader.swift */; };
+		24C4F0D62651370E0061737C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D32651370E0061737C /* CollectionViewCell.swift */; };
+		24C4F0D72651370E0061737C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D42651370E0061737C /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		24C4F0C6265135740061737C /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		24C4F0C7265135740061737C /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		24C4F0C8265135740061737C /* CollectionViewSectionHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		24C4F0D22651370E0061737C /* CollectionViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeader.swift; sourceTree = "<group>"; };
+		24C4F0D32651370E0061737C /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		24C4F0D42651370E0061737C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		24C4F068265131B70061737C /* RecipeUI */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0D12651370E0061737C /* View */,
 				24C4F0C1265135740061737C /* Protocols */,
 				24C4F0C5265135740061737C /* ViewModel */,
 				24C4F0B82651350F0061737C /* Model */,
@@ -160,6 +167,16 @@
 				24C4F0C8265135740061737C /* CollectionViewSectionHeaderViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24C4F0D12651370E0061737C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0D22651370E0061737C /* CollectionViewSectionHeader.swift */,
+				24C4F0D32651370E0061737C /* CollectionViewCell.swift */,
+				24C4F0D42651370E0061737C /* CollectionViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,15 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F0D72651370E0061737C /* CollectionViewController.swift in Sources */,
 				24C4F0CC265135740061737C /* CollectionViewCellViewModel.swift in Sources */,
 				24C4F0BE2651350F0061737C /* RecipeBook.swift in Sources */,
 				24C4F0BC2651350F0061737C /* Recipe.swift in Sources */,
 				24C4F0CB265135740061737C /* CollectionViewCellProtocol.swift in Sources */,
 				24C4F0CD265135740061737C /* CollectionViewModel.swift in Sources */,
+				24C4F0D52651370E0061737C /* CollectionViewSectionHeader.swift in Sources */,
 				24C4F0CA265135740061737C /* CollectionViewSectionHeaderProtocol.swift in Sources */,
 				24C4F0CE265135750061737C /* CollectionViewSectionHeaderViewModel.swift in Sources */,
 				24C4F0C9265135740061737C /* CollectionViewControllerProtocol.swift in Sources */,
 				24C4F0BD2651350F0061737C /* RecipeCategory.swift in Sources */,
+				24C4F0D62651370E0061737C /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
