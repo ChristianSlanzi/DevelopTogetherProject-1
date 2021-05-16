@@ -20,6 +20,8 @@
 		24C4F059265130C70061737C /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; };
 		24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F058265130C70061737C /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C4F0EA265141640061737C /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0E9265141640061737C /* RemoteLoader.swift */; };
+		24C4F1402651461B0061737C /* CookingApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F13F2651461B0061737C /* CookingApiService.framework */; };
+		24C4F1412651461B0061737C /* CookingApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F13F2651461B0061737C /* CookingApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 			files = (
 				24C4F05A265130C70061737C /* GenericStore.framework in Embed Frameworks */,
 				24C4F055265130C30061737C /* RecipeStore.framework in Embed Frameworks */,
+				24C4F1412651461B0061737C /* CookingApiService.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +65,7 @@
 		24C4F053265130C30061737C /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F058265130C70061737C /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F0E9265141640061737C /* RemoteLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
+		24C4F13F2651461B0061737C /* CookingApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CookingApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			files = (
 				24C4F059265130C70061737C /* GenericStore.framework in Frameworks */,
 				24C4F054265130C30061737C /* RecipeStore.framework in Frameworks */,
+				24C4F1402651461B0061737C /* CookingApiService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +160,7 @@
 		24C4F052265130C30061737C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F13F2651461B0061737C /* CookingApiService.framework */,
 				24C4F058265130C70061737C /* GenericStore.framework */,
 				24C4F053265130C30061737C /* RecipeStore.framework */,
 			);

@@ -267,20 +267,20 @@ extension AppDependencies {
         guard let filePath = Bundle.main.path(forResource: "Secrets-Info", ofType: "plist") else {
           //fatalError("Couldn't find file 'Secrets.plist'.")
             print("Couldn't find file 'Secrets.plist'.")
-            return "KEY-NOT-FOUND"
+            return "COOKING_API_KEY-NOT-FOUND"
         }
         // 2
         let plist = NSDictionary(contentsOfFile: filePath)
         guard let value = plist?.object(forKey: "COOKING_API_KEY") as? String else {
           //fatalError("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
             print("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
-            return "KEY-NOT-FOUND"
+            return "COOKING_API_KEY-NOT-FOUND"
         }
         // 3
         if (value.starts(with: "_")) {
           //fatalError("Register for a Spoonacular developer account and get an API key at https://spoonacular.com/food-api")
             print("Couldn't find key 'COOKING_API_KEY' in 'Secrets-Info.plist'.")
-            return "KEY-NOT-FOUND"
+            return "COOKING_API_KEY-NOT-FOUND"
         }
         return value
       }
