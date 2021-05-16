@@ -10,6 +10,9 @@
 		24C4F070265131B70061737C /* RecipeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F066265131B70061737C /* RecipeUI.framework */; };
 		24C4F075265131B70061737C /* RecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F074265131B70061737C /* RecipeUITests.swift */; };
 		24C4F077265131B70061737C /* RecipeUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C4F069265131B70061737C /* RecipeUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C4F0B32651347C0061737C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0AE2651347C0061737C /* Media.xcassets */; };
+		24C4F0B42651347C0061737C /* RecipeBook.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0AF2651347C0061737C /* RecipeBook.plist */; };
+		24C4F0B52651347C0061737C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0B12651347C0061737C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		24C4F06F265131B70061737C /* RecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F074265131B70061737C /* RecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeUITests.swift; sourceTree = "<group>"; };
 		24C4F076265131B70061737C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C4F0AE2651347C0061737C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		24C4F0AF2651347C0061737C /* RecipeBook.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecipeBook.plist; sourceTree = "<group>"; };
+		24C4F0B22651347C0061737C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 		24C4F068265131B70061737C /* RecipeUI */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0B02651347C0061737C /* Base.lproj */,
+				24C4F0AD2651347C0061737C /* Resources */,
 				24C4F069265131B70061737C /* RecipeUI.h */,
 				24C4F06A265131B70061737C /* Info.plist */,
 			);
@@ -84,6 +92,23 @@
 				24C4F076265131B70061737C /* Info.plist */,
 			);
 			path = RecipeUITests;
+			sourceTree = "<group>";
+		};
+		24C4F0AD2651347C0061737C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0AE2651347C0061737C /* Media.xcassets */,
+				24C4F0AF2651347C0061737C /* RecipeBook.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		24C4F0B02651347C0061737C /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0B12651347C0061737C /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F0B52651347C0061737C /* Main.storyboard in Resources */,
+				24C4F0B32651347C0061737C /* Media.xcassets in Resources */,
+				24C4F0B42651347C0061737C /* RecipeBook.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +242,17 @@
 			targetProxy = 24C4F071265131B70061737C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24C4F0B12651347C0061737C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24C4F0B22651347C0061737C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		24C4F078265131B70061737C /* Debug */ = {
