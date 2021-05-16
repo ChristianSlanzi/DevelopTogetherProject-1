@@ -10,6 +10,9 @@
 		24C4F01C26511D7A0061737C /* RecipeFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F01226511D790061737C /* RecipeFeature.framework */; };
 		24C4F02126511D7A0061737C /* RecipeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F02026511D7A0061737C /* RecipeFeatureTests.swift */; };
 		24C4F02326511D7A0061737C /* RecipeFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C4F01526511D790061737C /* RecipeFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C4F0462651300E0061737C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0422651300D0061737C /* Recipe.swift */; };
+		24C4F0472651300E0061737C /* RecipeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0442651300D0061737C /* RecipeCache.swift */; };
+		24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0452651300D0061737C /* RecipeLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		24C4F01B26511D7A0061737C /* RecipeFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F02026511D7A0061737C /* RecipeFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeatureTests.swift; sourceTree = "<group>"; };
 		24C4F02226511D7A0061737C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C4F0422651300D0061737C /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		24C4F0442651300D0061737C /* RecipeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCache.swift; sourceTree = "<group>"; };
+		24C4F0452651300D0061737C /* RecipeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 		24C4F01426511D790061737C /* RecipeFeature */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0412651300D0061737C /* Model */,
+				24C4F0432651300D0061737C /* Protocols */,
 				24C4F01526511D790061737C /* RecipeFeature.h */,
 				24C4F01626511D790061737C /* Info.plist */,
 			);
@@ -84,6 +92,23 @@
 				24C4F02226511D7A0061737C /* Info.plist */,
 			);
 			path = RecipeFeatureTests;
+			sourceTree = "<group>";
+		};
+		24C4F0412651300D0061737C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0422651300D0061737C /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24C4F0432651300D0061737C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0442651300D0061737C /* RecipeCache.swift */,
+				24C4F0452651300D0061737C /* RecipeLoader.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F0472651300E0061737C /* RecipeCache.swift in Sources */,
+				24C4F0462651300E0061737C /* Recipe.swift in Sources */,
+				24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +415,7 @@
 		24C4F02A26511D7A0061737C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeFeatureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +433,7 @@
 		24C4F02B26511D7A0061737C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeFeatureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
