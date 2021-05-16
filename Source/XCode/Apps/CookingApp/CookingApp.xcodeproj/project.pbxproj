@@ -57,6 +57,10 @@
 		24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD3263C835800F73BBD /* RecipeRoute.swift */; };
 		24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD9263C846700F73BBD /* PushTransition.swift */; };
 		24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FDD263C889100F73BBD /* MainViewModel.swift */; };
+		24C4F0DA26513F940061737C /* RecipeFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F03826511D8C0061737C /* RecipeFeature.framework */; };
+		24C4F0DB26513F990061737C /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB1F26434260008229B2 /* RecipeStore.framework */; };
+		24C4F0DC26513F9E0061737C /* RecipeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; };
+		24C4F0E12651403F0061737C /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0E02651403F0061737C /* NullStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +282,7 @@
 		24AA3FDD263C889100F73BBD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeFeature.xcodeproj; path = ../../../Modules/RecipeFeature/RecipeFeature.xcodeproj; sourceTree = "<group>"; };
 		24C4F098265134550061737C /* RecipeUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeUI.xcodeproj; path = ../../../Modules/RecipeUI/RecipeUI.xcodeproj; sourceTree = "<group>"; };
+		24C4F0E02651403F0061737C /* NullStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +290,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C4F0DC26513F9E0061737C /* RecipeUI.framework in Frameworks */,
+				24C4F0DB26513F990061737C /* RecipeStore.framework in Frameworks */,
+				24C4F0DA26513F940061737C /* RecipeFeature.framework in Frameworks */,
 				24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +436,7 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0DF2651403F0061737C /* Stubs */,
 				24AA3FCF263C82D200F73BBD /* Routes */,
 				241040E826394CFA00994726 /* Wrappers */,
 				24567BE52637FE210010BE25 /* AppDependencies.swift */,
@@ -690,6 +699,14 @@
 				24C4F0A7265134550061737C /* RecipeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		24C4F0DF2651403F0061737C /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F0E02651403F0061737C /* NullStore.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -970,6 +987,7 @@
 				245B7E7E263C266500D2B454 /* Router.swift in Sources */,
 				24330DAB263D451F00724978 /* MainRoute.swift in Sources */,
 				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				24C4F0E12651403F0061737C /* NullStore.swift in Sources */,
 				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
 				24330D9C263D39D700724978 /* LoginRoute.swift in Sources */,
 				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,

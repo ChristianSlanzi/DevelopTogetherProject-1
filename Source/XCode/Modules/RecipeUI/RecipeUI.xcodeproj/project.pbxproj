@@ -25,6 +25,7 @@
 		24C4F0D52651370E0061737C /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D22651370E0061737C /* CollectionViewSectionHeader.swift */; };
 		24C4F0D62651370E0061737C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D32651370E0061737C /* CollectionViewCell.swift */; };
 		24C4F0D72651370E0061737C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0D42651370E0061737C /* CollectionViewController.swift */; };
+		24C4F0E52651408C0061737C /* RecipeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0E42651408C0061737C /* RecipeUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		24C4F0D22651370E0061737C /* CollectionViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeader.swift; sourceTree = "<group>"; };
 		24C4F0D32651370E0061737C /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		24C4F0D42651370E0061737C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		24C4F0E42651408C0061737C /* RecipeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		24C4F068265131B70061737C /* RecipeUI */ = {
 			isa = PBXGroup;
 			children = (
+				24C4F0E42651408C0061737C /* RecipeUI.swift */,
 				24C4F0D12651370E0061737C /* View */,
 				24C4F0C1265135740061737C /* Protocols */,
 				24C4F0C5265135740061737C /* ViewModel */,
@@ -301,6 +304,7 @@
 				24C4F0CE265135750061737C /* CollectionViewSectionHeaderViewModel.swift in Sources */,
 				24C4F0C9265135740061737C /* CollectionViewControllerProtocol.swift in Sources */,
 				24C4F0BD2651350F0061737C /* RecipeCategory.swift in Sources */,
+				24C4F0E52651408C0061737C /* RecipeUI.swift in Sources */,
 				24C4F0D62651370E0061737C /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
