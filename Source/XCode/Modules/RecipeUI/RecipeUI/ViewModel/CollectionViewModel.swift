@@ -8,15 +8,22 @@
 import Foundation
 import RecipeFeature
 
+public protocol RecipeRoute {
+    func openRecipe()
+}
+
 public class CollectionViewModel {
     
     weak var view: CollectionViewControllerProtocol?
     public var recipeLoader: RecipeLoader?
     var recipeBook: RecipeBook?
     
+    typealias Routes = RecipeRoute
+    private let router: Routes
     
-    public init(view: CollectionViewControllerProtocol) {
+    public init(view: CollectionViewControllerProtocol, router: RecipeRoute) {
         self.view = view
+        self.router = router
         
         if recipeBook == nil {
             recipeBook = RecipeBook()
@@ -107,5 +114,28 @@ public class CollectionViewModel {
         }
         
         return CollectionViewSectionHeaderViewModel(model: categories[section].title)
+    }
+    
+    func didSelectItemAt(row: Int, section: Int) {
+        
+        guard let recipeBook = recipeBook,
+              let categories = recipeBook.categories else {
+                return
+        }
+        
+        if ((section < 0) || (section >= categories.count)) {
+            return
+        }
+        
+        guard let recipes = categories[section].recipes else {
+            return
+        }
+        
+        if ((row < 0) || (row >= recipes.count)) {
+            return
+        }
+        
+        recipes[row]
+        router.openRecipe()
     }
 }

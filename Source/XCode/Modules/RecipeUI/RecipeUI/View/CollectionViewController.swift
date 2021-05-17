@@ -18,9 +18,9 @@ public class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         ///
-        if self.viewModel == nil {
-            self.viewModel = CollectionViewModel(view: self)
-        }
+//        if self.viewModel == nil {
+//            self.viewModel = CollectionViewModel(view: self)
+//        }
         
         self.viewModel?.performInitialViewSetup()
         ///
@@ -118,5 +118,22 @@ extension CollectionViewController: CollectionViewControllerProtocol {
             let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.width * 0.6)
         }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CollectionViewController {
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Update selected Assets
+        guard let viewModel = viewModel else { return }
+        
+        viewModel.didSelectItemAt(row: indexPath
+                                    .row, section: indexPath.section)
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        // Update de-selected Assets
+        
     }
 }

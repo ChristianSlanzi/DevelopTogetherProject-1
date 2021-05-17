@@ -102,6 +102,10 @@ class AppDependencies {
 
 }
 
+extension DefaultRouter: RecipeUI.RecipeRoute {
+    
+}
+
 extension AppDependencies {
     
     func makeMainTab() -> UIViewController {
@@ -109,7 +113,9 @@ extension AppDependencies {
         var FLAG = true
         
         if FLAG {
-            let recipeListVC = RecipeUI.createRecipelistVC()
+            let router = DefaultRouter(rootTransition: EmptyTransition())
+            let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
+            router.root = recipeListVC
             let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
             let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                           client: networkingService,

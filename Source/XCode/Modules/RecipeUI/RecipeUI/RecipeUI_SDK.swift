@@ -7,12 +7,12 @@
 
 import UIKit
 
-public class RecipeUI {
+public class RecipeUI_SDK {
     
-    public static func createRecipelistVC() -> CollectionViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: RecipeUI.self))
+    public static func createRecipelistVC(router: RecipeRoute) -> CollectionViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: RecipeUI_SDK.self))
         let recipeListVC = storyboard.instantiateViewController(identifier: "CollectionViewController") as! CollectionViewController
-        let viewModel = CollectionViewModel(view: recipeListVC)
+        let viewModel = CollectionViewModel(view: recipeListVC, router: router)
         recipeListVC.viewModel = viewModel
         return recipeListVC
     }
