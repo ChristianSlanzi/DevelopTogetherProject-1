@@ -7,7 +7,23 @@
 
 import UIKit
 
+protocol RecipeDetailsViewProtocol: class {
+    func setRecipeTitle(_ title: String)
+}
+
 class RecipeDetailsViewController: UIViewController {
+    
+    var viewModel: RecipeDetailsViewModel
+    let label = UILabel(frame: .zero)
+    
+    init(viewModel: RecipeDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +31,7 @@ class RecipeDetailsViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        let label = UILabel(frame: .zero)
+        
         label.text = "Recipe Details"
         
         let vStack = UIStackView(arrangedSubviews: [label])
@@ -24,7 +40,13 @@ class RecipeDetailsViewController: UIViewController {
 
         view.addSubview(vStack)
         vStack.layout.center(in: view)
+        
+        viewModel.viewDidLoad()
     }
+}
 
-
+extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
+    func setRecipeTitle(_ title: String) {
+        label.text = title
+    }
 }

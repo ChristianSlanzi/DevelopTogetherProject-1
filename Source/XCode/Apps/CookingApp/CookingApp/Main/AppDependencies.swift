@@ -103,7 +103,17 @@ class AppDependencies {
 }
 
 extension DefaultRouter: RecipeUI.RecipeRoute {
-    
+    func openRecipe(_ recipe: RecipeUI.Recipe) {
+        let recipeFeat = RecipeFeature.Recipe(id: recipe.id,
+                                              calories: recipe.calories,
+                                              carbs: recipe.carbs,
+                                              fat: recipe.fat,
+                                              image: recipe.image,
+                                              imageType: recipe.imageType,
+                                              protein: recipe.protein,
+                                              title: recipe.title)
+        openRecipe(recipeFeat)
+    }
 }
 
 extension AppDependencies {
@@ -194,8 +204,10 @@ extension AppDependencies {
         return viewController
     }
     
-    internal func createRecipeDetailsViewController() -> UIViewController {
-        let viewController = RecipeDetailsViewController()
+    internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
+        let viewModel = RecipeDetailsViewModel(recipe: recipe)
+        let viewController = RecipeDetailsViewController(viewModel: viewModel)
+        viewModel.view = viewController
         return viewController
     }
     

@@ -6,23 +6,24 @@
 //
 
 import Foundation
+import RecipeFeature
 
 protocol RecipeRoute {
-    func openRecipe()
+    func openRecipe(_ recipe: Recipe)
 }
 
 extension RecipeRoute where Self: Router {
 
-    func openRecipe(with transition: Transition) {
+    func openRecipe(_ recipe: Recipe, with transition: Transition) {
         let router = DefaultRouter(rootTransition: transition)
-        let viewController = AppDependencies.shared.createRecipeDetailsViewController()
+        let viewController = AppDependencies.shared.createRecipeDetailsViewController(recipe: recipe)
         router.root = viewController
 
         route(to: viewController, as: transition)
     }
 
-    func openRecipe() {
-        openRecipe(with: PushTransition())
+    func openRecipe(_ recipe: Recipe) {
+        openRecipe(recipe, with: PushTransition())
     }
 }
 

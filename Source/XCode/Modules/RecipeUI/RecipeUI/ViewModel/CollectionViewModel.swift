@@ -9,7 +9,7 @@ import Foundation
 import RecipeFeature
 
 public protocol RecipeRoute {
-    func openRecipe()
+    func openRecipe(_ recipe: Recipe)
 }
 
 public class CollectionViewModel {
@@ -135,7 +135,6 @@ public class CollectionViewModel {
             return
         }
         
-        recipes[row]
-        router.openRecipe()
+        router.openRecipe(recipes[row])
     }
 }
