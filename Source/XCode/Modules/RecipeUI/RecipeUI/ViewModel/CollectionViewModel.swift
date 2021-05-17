@@ -33,8 +33,9 @@ public class CollectionViewModel {
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {
-                    let path = Bundle.main.path(forResource: "RecipeBook", ofType: "plist")
+                    let path = Bundle(for: CollectionViewModel.self).path(forResource: "RecipeBook", ofType: "plist")
                     self.recipeBook?.load(filePath: path)
+                    self.view?.reload()
                     return
                 }
                 let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> Recipe in
