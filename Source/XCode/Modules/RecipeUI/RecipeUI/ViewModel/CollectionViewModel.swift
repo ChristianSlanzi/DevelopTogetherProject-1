@@ -8,15 +8,22 @@
 import Foundation
 import RecipeFeature
 
+public protocol RecipeRoute {
+    func openRecipe(_ recipe: Recipe)
+}
+
 public class CollectionViewModel {
     
     weak var view: CollectionViewControllerProtocol?
     public var recipeLoader: RecipeLoader?
     var recipeBook: RecipeBook?
     
+    typealias Routes = RecipeRoute
+    private let router: Routes
     
-    public init(view: CollectionViewControllerProtocol) {
+    public init(view: CollectionViewControllerProtocol, router: RecipeRoute) {
         self.view = view
+        self.router = router
         
         if recipeBook == nil {
             recipeBook = RecipeBook()
@@ -33,8 +40,9 @@ public class CollectionViewModel {
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {
-                    let path = Bundle.main.path(forResource: "RecipeBook", ofType: "plist")
+                    let path = Bundle(for: CollectionViewModel.self).path(forResource: "RecipeBook", ofType: "plist")
                     self.recipeBook?.load(filePath: path)
+                    self.view?.reload()
                     return
                 }
                 let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> Recipe in
@@ -106,5 +114,27 @@ public class CollectionViewModel {
         }
         
         return CollectionViewSectionHeaderViewModel(model: categories[section].title)
+    }
+    
+    func didSelectItemAt(row: Int, section: Int) {
+        
+        guard let recipeBook = recipeBook,
+              let categories = recipeBook.categories else {
+                return
+        }
+        
+        if ((section < 0) || (section >= categories.count)) {
+            return
+        }
+        
+        guard let recipes = categories[section].recipes else {
+            return
+        }
+        
+        if ((row < 0) || (row >= recipes.count)) {
+            return
+        }
+        
+        router.openRecipe(recipes[row])
     }
 }

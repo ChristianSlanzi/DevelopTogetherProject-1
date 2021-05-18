@@ -102,6 +102,20 @@ class AppDependencies {
 
 }
 
+extension DefaultRouter: RecipeUI.RecipeRoute {
+    func openRecipe(_ recipe: RecipeUI.Recipe) {
+        let recipeFeat = RecipeFeature.Recipe(id: recipe.id,
+                                              calories: recipe.calories,
+                                              carbs: recipe.carbs,
+                                              fat: recipe.fat,
+                                              image: recipe.image,
+                                              imageType: recipe.imageType,
+                                              protein: recipe.protein,
+                                              title: recipe.title)
+        openRecipe(recipeFeat)
+    }
+}
+
 extension AppDependencies {
     
     func makeMainTab() -> UIViewController {
@@ -109,7 +123,9 @@ extension AppDependencies {
         var FLAG = true
         
         if FLAG {
-            let recipeListVC = RecipeUI.createRecipelistVC()
+            let router = DefaultRouter(rootTransition: EmptyTransition())
+            let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
+            router.root = recipeListVC
             let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
             let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                           client: networkingService,
@@ -188,8 +204,10 @@ extension AppDependencies {
         return viewController
     }
     
-    internal func createRecipeDetailsViewController() -> UIViewController {
-        let viewController = RecipeDetailsViewController()
+    internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
+        let viewModel = RecipeDetailsViewModel(recipe: recipe)
+        let viewController = RecipeDetailsViewController(viewModel: viewModel)
+        viewModel.view = viewController
         return viewController
     }
     

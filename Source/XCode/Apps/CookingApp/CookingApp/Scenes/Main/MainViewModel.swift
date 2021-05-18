@@ -8,6 +8,7 @@
 import Foundation
 import CookingApiService
 import RecipeStore
+import RecipeFeature
 
 final class MainViewModel {
     
@@ -37,6 +38,6 @@ final class MainViewModel {
 
     func recipeButtonTouchUpInside() {
         print("Recipe Button pressed")
-        router.openRecipe()
+        router.openRecipe(Recipe(id: 23, image: "cacciatora", imageType: "jpg", title: "Pollo alla cacciatora"))
     }
 }
