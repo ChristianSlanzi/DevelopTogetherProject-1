@@ -13,5 +13,12 @@ public enum RetrieveCachedRecipesResult {
     case failure(Error)
 }
 
-public typealias RecipeStore = CoreDataStore<LocalRecipe>
+public typealias RetrievalCompletion = (RetrieveDataResult<LocalRecipe>) -> Void
+public typealias DeletionCompletion = (Error?) -> Void
 
+public protocol RecipeStore {
+    func create(_ feed: [LocalRecipe], completion: @escaping DataStore.CreationCompletion)
+    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion)
+    func deleteAll(entity: LocalRecipe.Type, completion: @escaping DeletionCompletion)
+}
+extension CoreDataRecipeStore : RecipeStore {}

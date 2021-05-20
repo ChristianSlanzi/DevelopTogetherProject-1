@@ -9,8 +9,6 @@ import Foundation
 import RecipeStore
 import GenericStore
 
-public typealias RecipeStore = CoreDataStore<LocalRecipe>
-
 public final class LocalRecipesLoader {
     private let store: RecipeStore
     private let currentDate: () -> Date

@@ -8,17 +8,18 @@
 import Foundation
 import RecipeStore
 
-class NullStore: RecipeStore {
+class NullStore {}
+
+extension NullStore: RecipeStore {
+    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion) {
+        completion(.empty)
+    }
     
-    init() {
-        try! super.init(storeURL: URL(fileURLWithPath: ""), modelName: "", in: Bundle(for: NullStore.self))
+    func create(_ feed: [LocalRecipe], completion: @escaping (Error?) -> Void) {
+        completion(.none)
+    }
+    
+    func deleteAll(entity: LocalRecipe.Type, completion: @escaping DeletionCompletion) {
+        completion(.none)
     }
 }
-
-//Try to make the RecipeStore just to be a protocol
-//and then make the CoreDataStore<LocalRecipe> conform to the RecipeStore protocol
-//the client should be fine now as it is no more depending from a generic.
-
-//extension NullStore: RecipeStore {
-//
-//}
