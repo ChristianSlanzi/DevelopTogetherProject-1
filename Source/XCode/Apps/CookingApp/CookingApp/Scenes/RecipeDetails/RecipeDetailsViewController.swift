@@ -8,13 +8,36 @@
 import UIKit
 
 protocol RecipeDetailsViewProtocol: class {
+    func setRecipeImage(_ imageName: String)
     func setRecipeTitle(_ title: String)
+    func setRecipeDescription(_ title: String)
 }
 
 class RecipeDetailsViewController: UIViewController {
     
+    // MARK: - ViewModel
     var viewModel: RecipeDetailsViewModel
-    let label = UILabel(frame: .zero)
+    
+    // MARK: - Views
+    
+    //itemImageView
+    let itemImageView = UIImageView()
+    
+    //typeLabel (breakfast, lunch, snack, dinner, dessert)
+    var typeLabel: UILabel!
+    //categoryLabel (cuisine)
+    //titleLabel
+    let titleLabel = UILabel(frame: .zero)
+    //separatorView
+    //descriptionLabel
+    let descriptionLabel = UILabel(frame: .zero)
+    //CookingTimeView
+    //IngredientsView
+    //addToGroceryListButton
+    
+    
+    
+    // MARK: - Init
     
     init(viewModel: RecipeDetailsViewModel) {
         self.viewModel = viewModel
@@ -31,10 +54,14 @@ class RecipeDetailsViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        //navigation
+        navigationController?.navigationBar
         
-        label.text = "Recipe Details"
+        //views
+        titleLabel.text = "Recipe Details"
+        itemImageView.image = UIImage(named: "cooking_icon", in: Bundle(for: Self.self), with: nil)
         
-        let vStack = UIStackView(arrangedSubviews: [label])
+        let vStack = UIStackView(arrangedSubviews: [itemImageView, titleLabel, descriptionLabel])
         vStack.axis = .vertical
         vStack.spacing = 8.0
 
@@ -46,7 +73,21 @@ class RecipeDetailsViewController: UIViewController {
 }
 
 extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
-    func setRecipeTitle(_ title: String) {
-        label.text = title
+    
+    func setRecipeImage(_ imageName: String) {
+        let fallbackImage = UIImage(named: "cooking_icon", in: Bundle(for: Self.self), with: nil)
+        guard let url = URL(string: imageName) else {
+            itemImageView.image = fallbackImage
+            return
+        }
+        itemImageView.load(url: url, fallback: fallbackImage)
+    }
+    
+    func setRecipeTitle(_ text: String) {
+        titleLabel.text = text
+    }
+    
+    func setRecipeDescription(_ text: String) {
+        descriptionLabel.text = text
     }
 }

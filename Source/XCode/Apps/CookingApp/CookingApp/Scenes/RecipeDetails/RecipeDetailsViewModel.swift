@@ -18,6 +18,8 @@ class RecipeDetailsViewModel {
     }
     
     func viewDidLoad() {
+        view?.setRecipeImage(recipe.image)
         view?.setRecipeTitle(recipe.title)
+        view?.setRecipeDescription(recipe.title)
     }
 }
