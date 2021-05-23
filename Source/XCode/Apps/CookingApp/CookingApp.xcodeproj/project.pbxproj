@@ -68,6 +68,9 @@
 		24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB1F26434260008229B2 /* RecipeStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; };
 		24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24FE1F72265A54CD00724646 /* Secrets-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0EE265143370061737C /* Secrets-Info.plist */; };
+		24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; };
+		24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +214,34 @@
 			remoteGlobalIDString = 24C4F06F265131B70061737C;
 			remoteInfo = RecipeUITests;
 		};
+		24FE1FC4265A615300724646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FE1FBF265A615300724646 /* CommonUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE1FA3265A60F400724646;
+			remoteInfo = CommonUI;
+		};
+		24FE1FC6265A615300724646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FE1FBF265A615300724646 /* CommonUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE1FAC265A60F400724646;
+			remoteInfo = CommonUITests;
+		};
+		24FE207D265A63DB00724646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE205C265A63CB00724646;
+			remoteInfo = CommonUtils;
+		};
+		24FE207F265A63DB00724646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE2065265A63CB00724646;
+			remoteInfo = CommonUtilsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -222,6 +253,7 @@
 			files = (
 				24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */,
 				24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */,
+				24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */,
 				24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */,
 				24C4F1032651459E0061737C /* RecipeFeature.framework in Embed Frameworks */,
 			);
@@ -298,6 +330,8 @@
 		24C4F098265134550061737C /* RecipeUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeUI.xcodeproj; path = ../../../Modules/RecipeUI/RecipeUI.xcodeproj; sourceTree = "<group>"; };
 		24C4F0E02651403F0061737C /* NullStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		24C4F0EE265143370061737C /* Secrets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secrets-Info.plist"; sourceTree = "<group>"; };
+		24FE1FBF265A615300724646 /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
+		24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +341,7 @@
 			files = (
 				24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */,
 				24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */,
+				24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */,
 				24C4F104265145A10061737C /* RecipeStore.framework in Frameworks */,
 				24C4F1022651459E0061737C /* RecipeFeature.framework in Frameworks */,
 			);
@@ -567,6 +602,8 @@
 		24567C1826386F5C0010BE25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */,
+				24FE1FBF265A615300724646 /* CommonUI.xcodeproj */,
 				24C4F098265134550061737C /* RecipeUI.xcodeproj */,
 				24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */,
 				24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */,
@@ -761,6 +798,24 @@
 			path = Secrets;
 			sourceTree = "<group>";
 		};
+		24FE1FC0265A615300724646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24FE1FC5265A615300724646 /* CommonUI.framework */,
+				24FE1FC7265A615300724646 /* CommonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24FE2079265A63DB00724646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24FE207E265A63DB00724646 /* CommonUtils.framework */,
+				24FE2080265A63DB00724646 /* CommonUtilsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -856,6 +911,14 @@
 			productRefGroup = 24567BA92637F9C20010BE25 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 24FE1FC0265A615300724646 /* Products */;
+					ProjectRef = 24FE1FBF265A615300724646 /* CommonUI.xcodeproj */;
+				},
+				{
+					ProductGroup = 24FE2079265A63DB00724646 /* Products */;
+					ProjectRef = 24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */;
+				},
 				{
 					ProductGroup = 241040FC263979C500994726 /* Products */;
 					ProjectRef = 241040FB263979C500994726 /* CookingApiService.xcodeproj */;
@@ -993,6 +1056,34 @@
 			remoteRef = 24C4F0A6265134550061737C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		24FE1FC5265A615300724646 /* CommonUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonUI.framework;
+			remoteRef = 24FE1FC4265A615300724646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24FE1FC7265A615300724646 /* CommonUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonUITests.xctest;
+			remoteRef = 24FE1FC6265A615300724646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24FE207E265A63DB00724646 /* CommonUtils.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonUtils.framework;
+			remoteRef = 24FE207D265A63DB00724646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24FE2080265A63DB00724646 /* CommonUtilsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonUtilsTests.xctest;
+			remoteRef = 24FE207F265A63DB00724646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1002,6 +1093,7 @@
 			files = (
 				24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */,
 				24567BB52637F9C40010BE25 /* Assets.xcassets in Resources */,
+				24FE1F72265A54CD00724646 /* Secrets-Info.plist in Resources */,
 				24A59EFA2655B62900D4FFEE /* Media.xcassets in Resources */,
 				24567BB32637F9C20010BE25 /* Main.storyboard in Resources */,
 			);

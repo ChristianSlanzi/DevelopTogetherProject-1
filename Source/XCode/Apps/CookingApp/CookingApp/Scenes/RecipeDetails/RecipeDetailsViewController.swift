@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonUI
 
 protocol RecipeDetailsViewProtocol: class {
     func setRecipeImage(_ imageName: String)
@@ -13,7 +14,7 @@ protocol RecipeDetailsViewProtocol: class {
     func setRecipeDescription(_ title: String)
 }
 
-class RecipeDetailsViewController: UIViewController {
+class RecipeDetailsViewController: CustomScrollViewController {
     
     // MARK: - ViewModel
     var viewModel: RecipeDetailsViewModel
@@ -21,16 +22,40 @@ class RecipeDetailsViewController: UIViewController {
     // MARK: - Views
     
     //itemImageView
-    let itemImageView = UIImageView()
+    let itemImageView: UIImageView = {
+        let image = UIImage(named: "cooking_icon")
+        let view = UIImageView()
+        view.image = image
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //typeLabel (breakfast, lunch, snack, dinner, dessert)
-    var typeLabel: UILabel!
+    var typeLabel: UILabel = {
+       let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.numberOfLines = 0
+        view.lineBreakMode = .byWordWrapping
+        return view
+    }()
     //categoryLabel (cuisine)
     //titleLabel
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = {
+        let view = UILabel()
+         view.translatesAutoresizingMaskIntoConstraints = false
+         view.numberOfLines = 0
+         view.lineBreakMode = .byWordWrapping
+         return view
+     }()
     //separatorView
     //descriptionLabel
-    let descriptionLabel = UILabel(frame: .zero)
+    let descriptionLabel: UILabel = {
+        let view = UILabel()
+         view.translatesAutoresizingMaskIntoConstraints = false
+         view.numberOfLines = 0
+         view.lineBreakMode = .byWordWrapping
+         return view
+     }()
     //CookingTimeView
     //IngredientsView
     //addToGroceryListButton
@@ -41,16 +66,16 @@ class RecipeDetailsViewController: UIViewController {
     
     init(viewModel: RecipeDetailsViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        //super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func setupViews() {
+        super.setupViews()
         
         view.backgroundColor = .white
         
@@ -59,17 +84,56 @@ class RecipeDetailsViewController: UIViewController {
         
         //views
         titleLabel.text = "Recipe Details"
-        itemImageView.image = UIImage(named: "cooking_icon", in: Bundle(for: Self.self), with: nil)
         
-        let vStack = UIStackView(arrangedSubviews: [itemImageView, titleLabel, descriptionLabel])
-        vStack.axis = .vertical
-        vStack.spacing = 8.0
-
-        view.addSubview(vStack)
-        vStack.layout.center(in: view)
+        addToContentView(itemImageView,
+                         titleLabel,
+                         descriptionLabel)
+        
+        //itemImageView.image = UIImage(named: "cooking_icon", in: Bundle(for: Self.self), with: nil)
         
         viewModel.viewDidLoad()
     }
+    
+    override func setupConstraints() {
+        super.setupConstraints()
+        
+        setContentViewTopAnchor(view.safeTopAnchor)
+        let topAnchor = getContentViewTopAnchor()
+        let leadingAnchor = getContentViewLeadingAnchor()
+        let trailingAnchor = getContentViewTrailingAnchor()
+        let bottomAnchor = getContentViewBottomAnchor()
+        
+        let topPadding = CGFloat(35)
+        let hPadding = CGFloat(20)
+        let fieldHeight = CGFloat(30)
+        let textHeight = CGFloat(90)
+        
+        NSLayoutConstraint.activate([
+            itemImageView.topAnchor.constraint(equalTo:
+                topAnchor, constant: 0),
+            itemImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            itemImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            //itemImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: topPadding),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            //titleLabel.heightAnchor.constraint(equalToConstant: fieldHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            descriptionLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            //descriptionLabel.heightAnchor.constraint(equalToConstant: fieldHeight)
+        ])
+        
+        setContentViewBottom(view: descriptionLabel)
+        
+    }
+    
 }
 
 extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
