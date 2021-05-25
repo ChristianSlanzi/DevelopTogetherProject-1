@@ -30,6 +30,7 @@
 		244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */; };
 		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
 		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
+		2472ABD1265D173700589A52 /* LocalRecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		244DDB7D264352DC008229B2 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
 		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
+		2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipeInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				244DDB612643524D008229B2 /* LocalRecipe.swift */,
+				2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
 				2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
+				2472ABD1265D173700589A52 /* LocalRecipeInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
