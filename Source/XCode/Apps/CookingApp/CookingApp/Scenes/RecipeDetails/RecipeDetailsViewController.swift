@@ -21,41 +21,19 @@ class RecipeDetailsViewController: CustomScrollViewController {
     
     // MARK: - Views
     
-    //itemImageView
-    let itemImageView: UIImageView = {
-        let image = UIImage(named: "cooking_icon")
-        let view = UIImageView()
-        view.image = image
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    let itemImageView = DefaultImageView(urlPath: nil, fallback: "cooking_icon")
     
     //typeLabel (breakfast, lunch, snack, dinner, dessert)
-    var typeLabel: UILabel = {
-       let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        return view
-    }()
+    let typeLabel = DefaultLabel(title: "type")
+    
     //categoryLabel (cuisine)
-    //titleLabel
-    let titleLabel: UILabel = {
-        let view = UILabel()
-         view.translatesAutoresizingMaskIntoConstraints = false
-         view.numberOfLines = 0
-         view.lineBreakMode = .byWordWrapping
-         return view
-     }()
+    
+    let titleLabel = DefaultLabel(title: "type")
+    
     //separatorView
-    //descriptionLabel
-    let descriptionLabel: UILabel = {
-        let view = UILabel()
-         view.translatesAutoresizingMaskIntoConstraints = false
-         view.numberOfLines = 0
-         view.lineBreakMode = .byWordWrapping
-         return view
-     }()
+    
+    let descriptionLabel = DefaultLabel(title: "type")
+    
     //CookingTimeView
     //IngredientsView
     //addToGroceryListButton
@@ -89,8 +67,6 @@ class RecipeDetailsViewController: CustomScrollViewController {
                          titleLabel,
                          descriptionLabel)
         
-        //itemImageView.image = UIImage(named: "cooking_icon", in: Bundle(for: Self.self), with: nil)
-        
         viewModel.viewDidLoad()
     }
     
@@ -110,7 +86,7 @@ class RecipeDetailsViewController: CustomScrollViewController {
         
         NSLayoutConstraint.activate([
             itemImageView.topAnchor.constraint(equalTo:
-                topAnchor, constant: 0),
+                topAnchor, constant: 20),
             itemImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             itemImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             //itemImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)

@@ -26,13 +26,17 @@ class GenericDecoder {
         if let data = result.data {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let userData = try? decoder.decode(T.self, from: data) else {
+            
+            do {
+                let jsonStr = String(decoding: data, as: UTF8.self)
+                print(jsonStr)
+                let userData = try decoder.decode(T.self, from: data)
+                print(userData.description)
+                return .success(userData)
+            } catch {
+                print(error)
                 return .failure(.invalidData)
             }
-            
-            print(userData.description)
-            return .success(userData)
-            
         } else {
             return .failure(.invalidData)
         }
@@ -60,6 +64,23 @@ class CookingApiRemote: CookingApiService {
         client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }
             
+            completion(GenericDecoder.decodeResult(result: result))
+        }
+    }
+    
+    func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void) {
+        //https://api.spoonacular.com/recipes/{id}/information
+        
+        if let key = apiKey {
+            client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
+        }
+        
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/\(recipeId)/information"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            //print(result.response)
+            
+            //TODO
             completion(GenericDecoder.decodeResult(result: result))
         }
     }

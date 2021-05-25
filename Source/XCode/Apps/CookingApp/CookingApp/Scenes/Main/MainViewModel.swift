@@ -32,6 +32,12 @@ final class MainViewModel {
                 //recipeStore?.create([searchResult.results], completion: { (error) in
                 //    <#code#>
                 //})
+                for result in searchResult.results {
+                    //guard let result = searchResult.results.shuffled().first else { return }
+                    self.cookingApiService?.getRecipeInformation(recipeId: result.id) { (result) in
+                        print(result)
+                    }
+                }
             }
         })
     }

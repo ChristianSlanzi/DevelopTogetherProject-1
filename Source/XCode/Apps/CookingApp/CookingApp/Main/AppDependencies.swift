@@ -179,7 +179,7 @@ extension AppDependencies {
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                       client: networkingService,
-                                                      apiKey: "COOKING_API_KEY")
+                                                      apiKey: cookingApiKey)
         let service = serviceFactory.getCookingApiService()
         
         viewModel.cookingApiService = service
@@ -252,7 +252,10 @@ extension AppDependencies {
 extension AppDependencies {
     
     public func start() {
-        login()
+        //login()
+        
+        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
+        setRootViewController(createMainViewController(router: mainRouter))
     }
     
     public func login() {
