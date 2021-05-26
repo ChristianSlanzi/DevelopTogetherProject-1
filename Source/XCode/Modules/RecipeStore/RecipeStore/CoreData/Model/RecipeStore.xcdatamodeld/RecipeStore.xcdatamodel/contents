@@ -15,7 +15,50 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="CoreDataRecipeInformation" representedClassName="CoreDataRecipeInformation" syncable="YES">
+        <attribute name="aggregateLikes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="analyzedInstructions" optional="YES" attributeType="Transformable"/>
+        <attribute name="cheap" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="cookingMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="creditsText" optional="YES" attributeType="String"/>
+        <attribute name="cuisines" optional="YES" attributeType="Transformable"/>
+        <attribute name="dairyFree" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="diets" optional="YES" attributeType="Transformable"/>
+        <attribute name="dishTypes" optional="YES" attributeType="Transformable"/>
+        <attribute name="extendedIngredients" optional="YES" attributeType="Transformable"/>
+        <attribute name="gaps" optional="YES" attributeType="String"/>
+        <attribute name="glutenFree" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="healthScore" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="idCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="imageType" optional="YES" attributeType="String"/>
+        <attribute name="instructions" optional="YES" attributeType="String"/>
+        <attribute name="ketogenic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="license" optional="YES" attributeType="String"/>
+        <attribute name="lowFodmap" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="occasions" optional="YES" attributeType="Transformable"/>
+        <attribute name="originalId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="preparationMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pricePerServing" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="readyInMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="servings" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sourceName" optional="YES" attributeType="String"/>
+        <attribute name="sourceUrl" optional="YES" attributeType="String"/>
+        <attribute name="spoonacularScore" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="spoonacularSourceUrl" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <attribute name="sustainable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="vegan" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="vegetarian" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="veryHealthy" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="veryPopular" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="weightWatcherSmartPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="whole30" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="winePairing" optional="YES" attributeType="Transformable"/>
+    </entity>
     <elements>
         <element name="CoreDataRecipe" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="CoreDataRecipeInformation" positionX="-63" positionY="45" width="128" height="28"/>
     </elements>
 </model>

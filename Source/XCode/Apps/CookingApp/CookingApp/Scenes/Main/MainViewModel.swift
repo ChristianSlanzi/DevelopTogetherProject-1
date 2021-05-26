@@ -23,6 +23,8 @@ final class MainViewModel {
     }
     
     func didLoad() {
+        return;
+        
         cookingApiService?.searchRecipes(completion: { (result) in
             switch result {
             case .failure(let error):

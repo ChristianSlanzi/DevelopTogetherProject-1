@@ -41,3 +41,64 @@ public class RemoteLoader: RecipeLoader {
     }
 }
 
+public class RemoteInformationLoader: RecipeInformationLoader {
+    
+    private let service: CookingApiService
+    
+    public init(service: CookingApiService) {
+        self.service = service
+    }
+    public func load(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
+        service.getRecipeInformation(recipeId: recipeId) { (result) in
+            switch result {
+            case let .success(resultDTO):
+                completion(.success(
+                    [RecipeInformation(id: resultDTO.id,
+                                       originalId: resultDTO.originalId,
+                                       title: resultDTO.title,
+                                       image: resultDTO.image,
+                                       imageType: resultDTO.imageType,
+                                       servings: resultDTO.servings,
+                                       readyInMinutes: resultDTO.readyInMinutes,
+                                       preparationMinutes: resultDTO.preparationMinutes,
+                                       cookingMinutes: resultDTO.cookingMinutes,
+                                       license: resultDTO.license,
+                                       sourceName: resultDTO.sourceName,
+                                       sourceUrl: resultDTO.sourceUrl,
+                                       spoonacularSourceUrl: resultDTO.spoonacularSourceUrl,
+                                       aggregateLikes: resultDTO.aggregateLikes,
+                                       healthScore: resultDTO.healthScore,
+                                       spoonacularScore: resultDTO.spoonacularScore,
+                                       pricePerServing: resultDTO.pricePerServing,
+                                       analyzedInstructions: [],
+                                       cheap: resultDTO.cheap,
+                                       creditsText: resultDTO.creditsText,
+                                       cuisines: resultDTO.cuisines,
+                                       dairyFree: resultDTO.dairyFree,
+                                       diets: resultDTO.diets,
+                                       gaps: resultDTO.gaps,
+                                       glutenFree: resultDTO.glutenFree,
+                                       instructions: resultDTO.instructions,
+                                       ketogenic: resultDTO.ketogenic,
+                                       lowFodmap: resultDTO.lowFodmap,
+                                       occasions: resultDTO.occasions,
+                                       sustainable: resultDTO.sustainable,
+                                       vegan: resultDTO.vegan,
+                                       vegetarian: resultDTO.vegetarian,
+                                       veryHealthy: resultDTO.veryHealthy,
+                                       veryPopular: resultDTO.veryPopular,
+                                       whole30: resultDTO.whole30,
+                                       weightWatcherSmartPoints: resultDTO.weightWatcherSmartPoints,
+                                       dishTypes: resultDTO.dishTypes,
+                                       extendedIngredients: [],
+                                       summary: resultDTO.summary,
+                                       winePairing: nil)]
+                ))
+                break
+            case let .failure(error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+}

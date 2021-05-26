@@ -13,6 +13,8 @@
 		24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411C692646F99A00C3CA21 /* TestHelpers.framework */; };
 		24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; };
 		24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2442C45E265E8744000364FA /* RecipeInformationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442C45D265E8744000364FA /* RecipeInformationStore.swift */; };
+		2442C461265E881A000364FA /* CoreDataRecipeInformationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442C460265E881A000364FA /* CoreDataRecipeInformationStore.swift */; };
 		244DDAFF2643421C008229B2 /* RecipeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDAF52643421C008229B2 /* RecipeStore.framework */; };
 		244DDB042643421C008229B2 /* RecipeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB032643421C008229B2 /* RecipeStoreTests.swift */; };
 		244DDB062643421C008229B2 /* RecipeStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 244DDAF82643421C008229B2 /* RecipeStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +33,10 @@
 		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
 		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
 		2472ABD1265D173700589A52 /* LocalRecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */; };
+		2472ABD7265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABD5265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift */; };
+		2472ABD8265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABD6265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift */; };
+		2472ABE7265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABE6265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift */; };
+		2472ABEA265D54BF00589A52 /* CoreDataRecipeInformation+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABE9265D54BE00589A52 /* CoreDataRecipeInformation+Fetchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,8 @@
 		24411C692646F99A00C3CA21 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24411CC42646FED400C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24411CC62646FEF700C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2442C45D265E8744000364FA /* RecipeInformationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationStore.swift; sourceTree = "<group>"; };
+		2442C460265E881A000364FA /* CoreDataRecipeInformationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecipeInformationStore.swift; sourceTree = "<group>"; };
 		244DDAF52643421C008229B2 /* RecipeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244DDAF82643421C008229B2 /* RecipeStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeStore.h; sourceTree = "<group>"; };
 		244DDAF92643421C008229B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +94,10 @@
 		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
 		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 		2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipeInformation.swift; sourceTree = "<group>"; };
+		2472ABD5265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipeInformation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2472ABD6265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipeInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2472ABE6265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRecipeInformation+Mappable.swift"; sourceTree = "<group>"; };
+		2472ABE9265D54BE00589A52 /* CoreDataRecipeInformation+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipeInformation+Fetchable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +157,7 @@
 				244DDAF82643421C008229B2 /* RecipeStore.h */,
 				244DDAF92643421C008229B2 /* Info.plist */,
 				244DDB2B26434825008229B2 /* RecipeStore.swift */,
+				2442C45D265E8744000364FA /* RecipeInformationStore.swift */,
 			);
 			path = RecipeStore;
 			sourceTree = "<group>";
@@ -166,6 +179,7 @@
 			children = (
 				244DDB652643528E008229B2 /* Model */,
 				244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */,
+				2442C460265E881A000364FA /* CoreDataRecipeInformationStore.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -196,9 +210,13 @@
 			isa = PBXGroup;
 			children = (
 				2458EA6F264681B500965BF6 /* Mapping */,
+				2472ABD5265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift */,
+				2472ABD6265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift */,
+				2472ABE9265D54BE00589A52 /* CoreDataRecipeInformation+Fetchable.swift */,
 				244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */,
-				244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */,
 				244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */,
+				2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */,
+				244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */,
-				2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */,
+				2472ABE6265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -335,7 +353,13 @@
 			files = (
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
+				2442C461265E881A000364FA /* CoreDataRecipeInformationStore.swift in Sources */,
+				2442C45E265E8744000364FA /* RecipeInformationStore.swift in Sources */,
+				2472ABEA265D54BF00589A52 /* CoreDataRecipeInformation+Fetchable.swift in Sources */,
+				2472ABE7265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift in Sources */,
+				2472ABD8265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift in Sources */,
 				2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */,
+				2472ABD7265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift in Sources */,
 				244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */,
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
