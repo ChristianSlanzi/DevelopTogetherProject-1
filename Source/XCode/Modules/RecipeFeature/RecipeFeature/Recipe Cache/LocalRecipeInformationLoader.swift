@@ -47,10 +47,11 @@ extension LocalRecipeInformationLoader: RecipeInformationLoader {
 extension LocalRecipeInformationLoader: RecipeInformationCache {
     public func save(_ recipes: [RecipeInformation], completion: @escaping (Result<Void, Error>) -> Void) {
         try store.deleteAll(entity: LocalRecipeInformation.self, completion: { (error) in
+            print(error)
                 
         })
         try store.create(recipes.toLocal(), completion: { (error) in
-            
+            print(error)
         })
     }
 }
@@ -106,14 +107,14 @@ private extension LocalRecipeInformation {
 private extension Array where Element == RecipeInformation {
     func toLocal() -> [LocalRecipeInformation] {
         return map { LocalRecipeInformation(id: Int($0.id),
-                                            originalId:  $0.originalId ?? Int($0.originalId!),
+                                            originalId:  nil,//$0.originalId ?? Int($0.originalId!),
                                             title: $0.title,
                                             image: $0.image,
                                             imageType: $0.imageType,
                                             servings: Int($0.servings),
                                             readyInMinutes: Int($0.readyInMinutes),
-                                            preparationMinutes: $0.preparationMinutes ?? Int($0.preparationMinutes!),
-                                            cookingMinutes: $0.cookingMinutes ?? Int($0.cookingMinutes!),
+                                            preparationMinutes: nil,//$0.preparationMinutes ?? Int($0.preparationMinutes!),
+                                            cookingMinutes: nil,//$0.cookingMinutes ?? Int($0.cookingMinutes!),
                                             license: $0.license,
                                             sourceName: $0.sourceName,
                                             sourceUrl: $0.sourceUrl,

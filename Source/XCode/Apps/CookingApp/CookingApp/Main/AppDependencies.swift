@@ -70,6 +70,24 @@ class AppDependencies {
             return NullStore()
         }
     }()
+    
+    private lazy var recipeInformationStore: RecipeInformationStore /*& RecipeDataStore*/ = {
+        do {
+            return try CoreDataRecipeInformationStore(
+                storeURL: NSPersistentContainer
+                    .defaultDirectoryURL()
+                    .appendingPathComponent("recipe-info-store.sqlite"))
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            //TODO
+            /*
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            */
+            return NullStore()
+        }
+    }()
 
     private init() {
         configureDependencies()
@@ -183,6 +201,7 @@ extension AppDependencies {
         let service = serviceFactory.getCookingApiService()
         
         viewModel.cookingApiService = service
+        viewModel.recipeInformationStore = recipeInformationStore
         
         let viewController = ViewController(viewModel: viewModel)
         
@@ -208,6 +227,17 @@ extension AppDependencies {
         let viewModel = RecipeDetailsViewModel(recipe: recipe)
         let viewController = RecipeDetailsViewController(viewModel: viewModel)
         viewModel.view = viewController
+        
+        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                      client: networkingService,
+                                                      apiKey: cookingApiKey)
+        let service = serviceFactory.getCookingApiService()
+        let remoteLoader = RemoteInformationLoader(service: service)
+        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
+        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        viewModel.recipeLoader = recipeLoader
+
         return viewController
     }
     
@@ -252,7 +282,8 @@ extension AppDependencies {
 extension AppDependencies {
     
     public func start() {
-        //login()
+        login()
+        return;
         
         let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
         setRootViewController(createMainViewController(router: mainRouter))

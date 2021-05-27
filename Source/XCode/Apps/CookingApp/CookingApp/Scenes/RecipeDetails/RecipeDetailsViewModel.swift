@@ -11,7 +11,9 @@ import RecipeFeature
 class RecipeDetailsViewModel {
     
     var recipe: RecipeFeature.Recipe
+    var recipeInfos: RecipeFeature.RecipeInformation?
     weak var view: RecipeDetailsViewProtocol?
+    public var recipeLoader: RecipeInformationLoader?
     
     init(recipe: RecipeFeature.Recipe) {
         self.recipe = recipe
@@ -21,5 +23,33 @@ class RecipeDetailsViewModel {
         view?.setRecipeImage(recipe.image)
         view?.setRecipeTitle(recipe.title)
         view?.setRecipeDescription(recipe.title)
+        
+        recipeLoader?.load(recipeId: recipe.id) { [weak self] (result) in
+            print(result)
+            
+            guard let self = self else { return }
+            
+            switch result {
+            case let .success(infos):
+                guard let recipeInfos = infos.first else { return }
+                self.updateRecipeInformation(recipeInfos)
+            case let .failure(error):
+                print(error)
+            }
+            
+            
+        }
+    }
+    
+    private func updateRecipeInformation(_ infos: RecipeInformation) {
+        
+        recipeInfos = infos
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let summary = self.recipeInfos?.summary {
+                self.view?.setRecipeDescription(summary)
+            }
+        }
     }
 }

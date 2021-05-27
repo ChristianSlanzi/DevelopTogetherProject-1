@@ -50,7 +50,7 @@ public class CollectionViewModel {
                 }))
                 self.recipeBook?.categories?.append(category)
             case let .failure(error):
-                print(error)
+                
                 let path = Bundle.main.path(forResource: "RecipeBook", ofType: "plist")
                 self.recipeBook?.load(filePath: path)
             }

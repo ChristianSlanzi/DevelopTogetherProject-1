@@ -23,3 +23,17 @@ extension NullStore: RecipeStore {
         completion(.none)
     }
 }
+
+extension NullStore: RecipeInformationStore {
+    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping InfoRetrievalCompletion) {
+        completion(.empty)
+    }
+    
+    func create(_ feed: [LocalRecipeInformation], completion: @escaping (Error?) -> Void) {
+        completion(.none)
+    }
+    
+    func deleteAll(entity: LocalRecipeInformation.Type, completion: @escaping InfoDeletionCompletion) {
+        completion(.none)
+    }
+}
