@@ -12,6 +12,8 @@ protocol RecipeDetailsViewProtocol: class {
     func setRecipeImage(_ imageName: String)
     func setRecipeTitle(_ title: String)
     func setRecipeDescription(_ title: String)
+    func setRecipePreparationTime(_ title: String)
+    func setRecipeCookingTime(_ title: String)
 }
 
 class RecipeDetailsViewController: CustomScrollViewController {
@@ -28,13 +30,15 @@ class RecipeDetailsViewController: CustomScrollViewController {
     
     //categoryLabel (cuisine)
     
-    let titleLabel = DefaultLabel(title: "type")
+    let titleLabel = DefaultLabel(title: "title")
     
     //separatorView
     
-    let descriptionLabel = DefaultLabel(title: "type")
+    let descriptionLabel = DefaultLabel(title: "description")
     
     //CookingTimeView
+    let cookingTimeView = CookingTimeView(frame: .zero)
+    
     //IngredientsView
     //addToGroceryListButton
     
@@ -65,7 +69,8 @@ class RecipeDetailsViewController: CustomScrollViewController {
         
         addToContentView(itemImageView,
                          titleLabel,
-                         descriptionLabel)
+                         descriptionLabel,
+                         cookingTimeView)
         
         viewModel.viewDidLoad()
     }
@@ -86,27 +91,31 @@ class RecipeDetailsViewController: CustomScrollViewController {
         
         NSLayoutConstraint.activate([
             itemImageView.topAnchor.constraint(equalTo:
-                topAnchor, constant: 20),
+                topAnchor, constant: hPadding),
             itemImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             itemImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            //itemImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
         ])
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: topPadding),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            //titleLabel.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
             descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            //descriptionLabel.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
-        setContentViewBottom(view: descriptionLabel)
+        NSLayoutConstraint.activate([
+            cookingTimeView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: topPadding),
+            cookingTimeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cookingTimeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            cookingTimeView.heightAnchor.constraint(equalToConstant: 80)
+        ])
+        
+        setContentViewBottom(view: cookingTimeView)
         
     }
     
@@ -128,6 +137,14 @@ extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
     }
     
     func setRecipeDescription(_ text: String) {
-        descriptionLabel.text = text
+        descriptionLabel.attributedText = text.htmlToAttributedString
+    }
+    
+    func setRecipePreparationTime(_ text: String) {
+        cookingTimeView.preparationLabel.text = text
+    }
+    
+    func setRecipeCookingTime(_ text: String) {
+        cookingTimeView.cookingLabel.text = text
     }
 }

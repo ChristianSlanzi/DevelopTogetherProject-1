@@ -46,9 +46,15 @@ class RecipeDetailsViewModel {
         recipeInfos = infos
         
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            if let summary = self.recipeInfos?.summary {
+            guard let self = self, let recipeInfos = self.recipeInfos else { return }
+            if let summary = recipeInfos.summary {
                 self.view?.setRecipeDescription(summary)
+            }
+            if let preparationMinutes = recipeInfos.preparationMinutes {
+                self.view?.setRecipePreparationTime("Preparation\n\(preparationMinutes) minutes")
+            }
+            if let cookingMinutes = recipeInfos.cookingMinutes {
+                self.view?.setRecipeCookingTime("Cooking\n\(cookingMinutes) minutes")
             }
         }
     }
