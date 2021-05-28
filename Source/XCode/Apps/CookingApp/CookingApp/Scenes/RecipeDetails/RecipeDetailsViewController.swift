@@ -14,6 +14,7 @@ protocol RecipeDetailsViewProtocol: class {
     func setRecipeDescription(_ title: String)
     func setRecipePreparationTime(_ title: String)
     func setRecipeCookingTime(_ title: String)
+    func setRecipeIngredients(_ titles: [String])
 }
 
 class RecipeDetailsViewController: CustomScrollViewController {
@@ -43,8 +44,6 @@ class RecipeDetailsViewController: CustomScrollViewController {
     let ingredientsView = IngredientsView(frame: .zero)
     //addToGroceryListButton
     
-    
-    
     // MARK: - Init
     
     init(viewModel: RecipeDetailsViewModel) {
@@ -68,10 +67,13 @@ class RecipeDetailsViewController: CustomScrollViewController {
         //views
         titleLabel.text = "Recipe Details"
         
+        //ingredientsView.backgroundColor = .yellow
+        
         addToContentView(itemImageView,
                          titleLabel,
                          descriptionLabel,
-                         cookingTimeView)
+                         cookingTimeView,
+                         ingredientsView)
         
         viewModel.viewDidLoad()
     }
@@ -113,10 +115,16 @@ class RecipeDetailsViewController: CustomScrollViewController {
             cookingTimeView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: topPadding),
             cookingTimeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             cookingTimeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            cookingTimeView.heightAnchor.constraint(equalToConstant: 80)
+            cookingTimeView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
-        setContentViewBottom(view: cookingTimeView)
+        NSLayoutConstraint.activate([
+            ingredientsView.topAnchor.constraint(equalTo: cookingTimeView.bottomAnchor, constant: topPadding),
+            ingredientsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ingredientsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        ])
+        
+        setContentViewBottom(view: ingredientsView)
         
     }
     
@@ -147,5 +155,9 @@ extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
     
     func setRecipeCookingTime(_ text: String) {
         cookingTimeView.cookingLabel.text = text
+    }
+    
+    func setRecipeIngredients(_ titles: [String]) {
+        ingredientsView.setItems(titles)
     }
 }

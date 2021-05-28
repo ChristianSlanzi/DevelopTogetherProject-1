@@ -56,7 +56,8 @@ class RecipeDetailsViewModel {
             if let cookingMinutes = recipeInfos.cookingMinutes {
                 self.view?.setRecipeCookingTime("Cooking\n\(cookingMinutes) minutes")
             }
-            recipeInfos.extendedIngredients
+            self.view?.setRecipeIngredients(recipeInfos.extendedIngredients.map { "\($0.amount) " + $0.unit + " " + $0.name })
+            
         }
     }
 }

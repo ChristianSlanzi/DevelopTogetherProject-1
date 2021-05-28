@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Metric: DTO {
+public struct MetricDTO: DTO {
     public var amount: Float
     public var unitLong: String
     public var unitShort: String
@@ -21,9 +21,9 @@ public struct Metric: DTO {
     }
 }
 
-public struct Measure: DTO {
-    public var metric: Metric
-    public var us: Metric
+public struct MeasureDTO: DTO {
+    public var metric: MetricDTO
+    public var us: MetricDTO
     
     public var description: String {
         return """
@@ -34,13 +34,13 @@ public struct Measure: DTO {
     }
 }
 
-public struct Ingredient: DTO {
+public struct IngredientDTO: DTO {
     public var id: Int
     public var aisle: String?
     public var amount: Float
     public var consistency: String?
     public var image: String?
-    public var measures: Measure
+    public var measures: MeasureDTO
     public var meta: [String]
     public var metaInformation: [String]
     public var name: String
@@ -58,7 +58,7 @@ public struct Ingredient: DTO {
     }
 }
 
-public struct Product: DTO {
+public struct ProductDTO: DTO {
     public var id: Int
     public var title: String?
     public var descr: String
@@ -91,10 +91,10 @@ public struct Product: DTO {
     }
 }
 
-public struct WinePairing: DTO {
+public struct WinePairingDTO: DTO {
     public var pairedWines: [String]?
     public var pairingText: String?
-    public var productMatches: [Product]?
+    public var productMatches: [ProductDTO]?
     
     public var description: String {
         return """
@@ -105,9 +105,9 @@ public struct WinePairing: DTO {
     }
 }
 
-public struct Instruction: DTO {
+public struct InstructionDTO: DTO {
     public var name: String
-    public var steps: [InstructionStep]
+    public var steps: [InstructionStepDTO]
     
     public var description: String {
         return """
@@ -119,12 +119,12 @@ public struct Instruction: DTO {
     }
 }
 
-public struct InstructionStep: DTO {
+public struct InstructionStepDTO: DTO {
     public var number: Int
     public var step: String
-    public var ingredients: [InstructionIngredient]
-    public var equipment: [InstructionEquipment]
-    public var length: InstructionLenght?
+    public var ingredients: [InstructionIngredientDTO]
+    public var equipment: [InstructionEquipmentDTO]
+    public var length: InstructionLenghtDTO?
     
     public var description: String {
         return """
@@ -135,7 +135,7 @@ public struct InstructionStep: DTO {
     }
 }
 
-public struct InstructionIngredient: DTO {
+public struct InstructionIngredientDTO: DTO {
     public var id: Int
     public var name: String
     public var localizedName: String
@@ -153,7 +153,7 @@ public struct InstructionIngredient: DTO {
     }
 }
 
-public struct InstructionEquipment: DTO {
+public struct InstructionEquipmentDTO: DTO {
     public var id: Int
     public var name: String
     public var localizedName: String
@@ -171,7 +171,7 @@ public struct InstructionEquipment: DTO {
     }
 }
 
-public struct InstructionLenght: DTO {
+public struct InstructionLenghtDTO: DTO {
     public var number: Int
     public var unit: String
     
@@ -203,7 +203,7 @@ public struct RecipeInformationResultDTO: DTO {
     public var healthScore: Float
     public var spoonacularScore: Float
     public var pricePerServing: Float
-    public var analyzedInstructions: [Instruction]
+    public var analyzedInstructions: [InstructionDTO]
     public var cheap: Bool
     public var creditsText: String?
     public var cuisines: [String]
@@ -223,9 +223,9 @@ public struct RecipeInformationResultDTO: DTO {
     public var whole30: Bool?
     public var weightWatcherSmartPoints: Int
     public var dishTypes: [String]
-    public var extendedIngredients: [Ingredient]
+    public var extendedIngredients: [IngredientDTO]
     public var summary: String
-    public var winePairing: WinePairing
+    public var winePairing: WinePairingDTO
     public var description: String {
         return """
         ------------

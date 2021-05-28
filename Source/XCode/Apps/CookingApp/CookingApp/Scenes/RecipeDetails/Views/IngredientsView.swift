@@ -31,16 +31,17 @@ class IngredientsView: CustomView {
         for ingredient in ingredients {
             addEntry(title: ingredient)
         }
+        stackView.layoutIfNeeded()
     }
     
     private func addEntry(title: String) {
-        let stack = stackView
-        let index = stack.arrangedSubviews.count - 1
-        let addView = stack.arrangedSubviews[index]
+        //let stack = stackView
+        //let index = stack.arrangedSubviews.count //- 1
+        //let addView = stack.arrangedSubviews[index]
 
         let newView = createEntry(title: title)
         //newView.hidden = true
-        stack.insertArrangedSubview(newView, at: index)
+        stackView.addArrangedSubview(newView)
     }
     
     private func createEntry(title: String) -> UIView {
@@ -50,8 +51,10 @@ class IngredientsView: CustomView {
     
     override func setupViews() {
         self.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         super.setupViews()
         addSubview(stackView)
+        stackView.axis = .vertical
     }
     
     override func setupConstraints() {

@@ -57,7 +57,7 @@ extension LocalRecipeInformation: MappableProtocol {
         model.whole30 = self.whole30 ?? false
         model.weightWatcherSmartPoints = Int16(self.weightWatcherSmartPoints)
         model.dishTypes = []
-        model.extendedIngredients = Data() //TODO
+        model.extendedIngredients = NSKeyedArchiver.archivedData(withRootObject: self.extendedIngredients) //Data() //TODO
         model.summary = self.summary
         model.winePairing = Data() //TODO
         

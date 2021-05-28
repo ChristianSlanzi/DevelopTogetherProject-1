@@ -90,7 +90,7 @@ public class RemoteInformationLoader: RecipeInformationLoader {
                                        whole30: resultDTO.whole30,
                                        weightWatcherSmartPoints: resultDTO.weightWatcherSmartPoints,
                                        dishTypes: resultDTO.dishTypes,
-                                       extendedIngredients: [],
+                                       extendedIngredients: self.mapIngredients(resultDTO.extendedIngredients),
                                        summary: resultDTO.summary,
                                        winePairing: nil)]
                 ))
@@ -100,5 +100,33 @@ public class RemoteInformationLoader: RecipeInformationLoader {
                 break
             }
         }
+    }
+    
+    private func mapIngredients(_ dtoIngredients: [IngredientDTO]) -> [Ingredient] {
+        dtoIngredients.map { Ingredient(id: $0.id,
+                                          aisle: $0.aisle,
+                                          amount: $0.amount,
+                                          consistency: $0.consistency,
+                                          image: $0.image,
+                                          measures: mapMeasures($0.measures),
+                                          meta: $0.meta,
+                                          metaInformation: $0.metaInformation,
+                                          name: $0.name,
+                                          nameClean: $0.nameClean,
+                                          original: $0.original,
+                                          originalName: $0.originalName,
+                                          unit: $0.unit)
+        }
+    }
+    
+    private func mapMeasures(_ dtoMeasure: MeasureDTO) -> Measure {
+        let localMetric = dtoMeasure.metric
+        let localUs = dtoMeasure.us
+        return Measure(metric: Metric(amount: localMetric.amount,
+                               unitLong: localMetric.unitLong,
+                               unitShort: localMetric.unitShort),
+                us: Metric(amount: localUs.amount,
+                           unitLong: localUs.unitLong,
+                           unitShort: localUs.unitShort))
     }
 }

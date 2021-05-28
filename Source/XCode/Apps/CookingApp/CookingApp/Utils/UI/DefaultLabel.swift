@@ -14,7 +14,7 @@ class DefaultLabel: UILabel {
         
         numberOfLines = numOfLines
         lineBreakMode = lineBreak
-
+        text = title
     }
     
     required init?(coder: NSCoder) {
