@@ -59,6 +59,7 @@
 		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
 		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
 		24A456DB265FAFD700095B31 /* CookingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A456DA265FAFD700095B31 /* CookingTimeView.swift */; };
+		24A456ED266008C800095B31 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A456EC266008C800095B31 /* IngredientsView.swift */; };
 		24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */; };
 		24A59EFA2655B62900D4FFEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A59EF92655B62900D4FFEE /* Media.xcassets */; };
 		24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */; };
@@ -328,6 +329,7 @@
 		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
 		24A456DA265FAFD700095B31 /* CookingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTimeView.swift; sourceTree = "<group>"; };
+		24A456EC266008C800095B31 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		24A59EF92655B62900D4FFEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 			isa = PBXGroup;
 			children = (
 				24A456DA265FAFD700095B31 /* CookingTimeView.swift */,
+				24A456EC266008C800095B31 /* IngredientsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1172,6 +1175,7 @@
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
 				245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */,
 				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,
+				24A456ED266008C800095B31 /* IngredientsView.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 				245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */,
 				24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */,

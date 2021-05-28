@@ -40,6 +40,7 @@ class RecipeDetailsViewController: CustomScrollViewController {
     let cookingTimeView = CookingTimeView(frame: .zero)
     
     //IngredientsView
+    let ingredientsView = IngredientsView(frame: .zero)
     //addToGroceryListButton
     
     

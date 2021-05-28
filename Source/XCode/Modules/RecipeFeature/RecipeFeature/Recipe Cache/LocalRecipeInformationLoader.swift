@@ -46,10 +46,10 @@ extension LocalRecipeInformationLoader: RecipeInformationLoader {
 
 extension LocalRecipeInformationLoader: RecipeInformationCache {
     public func save(_ recipes: [RecipeInformation], completion: @escaping (Result<Void, Error>) -> Void) {
-        try store.deleteAll(entity: LocalRecipeInformation.self, completion: { (error) in
-            print(error)
-                
-        })
+//        try store.deleteAll(entity: LocalRecipeInformation.self, completion: { (error) in
+//            print(error)
+//
+//        })
         try store.create(recipes.toLocal(), completion: { (error) in
             print(error)
         })

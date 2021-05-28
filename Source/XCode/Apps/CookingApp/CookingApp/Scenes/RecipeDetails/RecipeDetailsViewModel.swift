@@ -31,7 +31,7 @@ class RecipeDetailsViewModel {
             
             switch result {
             case let .success(infos):
-                guard let recipeInfos = infos.first else { return }
+                guard let recipeInfos = infos.first(where: {$0.id == self.recipe.id}) else { return }
                 self.updateRecipeInformation(recipeInfos)
             case let .failure(error):
                 print(error)
@@ -56,6 +56,7 @@ class RecipeDetailsViewModel {
             if let cookingMinutes = recipeInfos.cookingMinutes {
                 self.view?.setRecipeCookingTime("Cooking\n\(cookingMinutes) minutes")
             }
+            recipeInfos.extendedIngredients
         }
     }
 }

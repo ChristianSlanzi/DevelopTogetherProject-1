@@ -18,10 +18,49 @@ extension LocalRecipeInformation: MappableProtocol {
         if let originalId = self.originalId {
             model.originalId = Int32(originalId)
         }
-        
+        model.title = self.title
         model.image = self.image
         model.imageType = self.imageType
-        model.title = self.title
+        model.servings = Int16(self.servings)
+        model.readyInMinutes = Int16(self.readyInMinutes)
+        if let preparationMinutes = self.preparationMinutes {
+            model.preparationMinutes = Int16(preparationMinutes)
+        }
+        if let cookingMinutes = self.cookingMinutes {
+            model.cookingMinutes = Int16(cookingMinutes)
+        }
+        model.license = self.license
+        model.sourceName = self.sourceName
+        model.sourceUrl = self.sourceUrl
+        model.spoonacularSourceUrl = self.spoonacularSourceUrl
+        model.aggregateLikes = Int16(self.aggregateLikes)
+        model.healthScore = self.healthScore
+        model.spoonacularScore = self.spoonacularScore
+        model.pricePerServing = self.pricePerServing
+        model.analyzedInstructions = Data() //TODO
+        model.cheap = self.cheap
+        model.creditsText = self.creditsText
+        model.cuisines = []
+        model.dairyFree = self.dairyFree
+        model.diets = []
+        model.gaps = self.gaps
+        model.glutenFree = self.glutenFree
+        model.instructions = self.instructions
+        model.ketogenic = self.ketogenic ?? false
+        model.lowFodmap = self.lowFodmap
+        model.occasions = []
+        model.sustainable = self.sustainable
+        model.vegan = self.vegan
+        model.vegetarian = self.vegetarian
+        model.veryHealthy = self.veryHealthy
+        model.veryPopular = self.veryPopular
+        model.whole30 = self.whole30 ?? false
+        model.weightWatcherSmartPoints = Int16(self.weightWatcherSmartPoints)
+        model.dishTypes = []
+        model.extendedIngredients = Data() //TODO
+        model.summary = self.summary
+        model.winePairing = Data() //TODO
+        
         return model
     }
     
