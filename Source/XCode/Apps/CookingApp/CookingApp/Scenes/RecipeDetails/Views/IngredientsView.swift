@@ -11,7 +11,10 @@ import CommonUI
 class IngredientsView: CustomView {
     
     var ingredients: [String] = []
+    
+    var titleLabel = DefaultLabel(title: "Ingredients")
     var stackView: UIStackView = UIStackView(frame: .zero)
+    var addToGroceryButton = DefaultButton(title: "ADD TO GROCERY LIST", target: self, selector: #selector(addToGroceryButtonTouchUpInside))
     
     func setItems(_ items: [String]) {
         self.ingredients = items
@@ -36,7 +39,10 @@ class IngredientsView: CustomView {
         self.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         super.setupViews()
-        addSubview(stackView)
+        titleLabel.font = .boldSystemFont(ofSize: 18)
+        addToGroceryButton.backgroundColor = .red
+        addToGroceryButton.setTitleColor(.white, for: .normal)
+        addSubviews(titleLabel, stackView, addToGroceryButton)
         stackView.axis = .vertical
     }
     
@@ -44,10 +50,28 @@ class IngredientsView: CustomView {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
         ])
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+            ,
+            stackView.bottomAnchor.constraint(equalTo: addToGroceryButton.topAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            addToGroceryButton.heightAnchor.constraint(equalToConstant: 30),
+            addToGroceryButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            addToGroceryButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            addToGroceryButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
+        ])
+    }
+    
+    @objc
+    private func addToGroceryButtonTouchUpInside() {
+        // delegate to the view controller?
     }
 }
