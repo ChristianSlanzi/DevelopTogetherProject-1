@@ -11,23 +11,11 @@ import CommonUI
 class IngredientsView: CustomView {
     
     var ingredients: [String] = []
-    //var ingredientsLabels: [DefaultLabel] = []
     var stackView: UIStackView = UIStackView(frame: .zero)
     
     func setItems(_ items: [String]) {
         self.ingredients = items
         
-//        for ingredient in ingredients {
-//            let label = DefaultLabel(title: ingredient)
-//            ingredientsLabels.append(label)
-//
-//            NSLayoutConstraint.activate([
-//                label.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-//                preparationLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-//                //preparationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-//                preparationLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
-//            ])
-//        }
         for ingredient in ingredients {
             addEntry(title: ingredient)
         }
@@ -35,12 +23,7 @@ class IngredientsView: CustomView {
     }
     
     private func addEntry(title: String) {
-        //let stack = stackView
-        //let index = stack.arrangedSubviews.count //- 1
-        //let addView = stack.arrangedSubviews[index]
-
         let newView = createEntry(title: title)
-        //newView.hidden = true
         stackView.addArrangedSubview(newView)
     }
     
