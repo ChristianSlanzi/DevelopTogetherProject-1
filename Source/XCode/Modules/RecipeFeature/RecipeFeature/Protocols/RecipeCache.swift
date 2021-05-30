@@ -12,3 +12,9 @@ public protocol RecipeCache {
 
     func save(_ recipes: [Recipe], completion: @escaping (Result) -> Void)
 }
+
+public protocol RecipeInformationCache {
+    typealias Result = Swift.Result<Void, Error>
+
+    func save(_ recipes: [RecipeInformation], completion: @escaping (Result) -> Void)
+}

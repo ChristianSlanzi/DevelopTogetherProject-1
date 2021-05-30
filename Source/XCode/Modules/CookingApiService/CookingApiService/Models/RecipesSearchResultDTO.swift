@@ -5,12 +5,6 @@
 //  Created by Christian Slanzi on 20.04.21.
 //
 
-var defString = String(stringLiteral: "")
-var defInt = -1
-
-public protocol DTO: Codable, CustomStringConvertible, Hashable {
-    
-}
 public struct RecipesSearchResultDTO: DTO {
     
     public var offset: Int

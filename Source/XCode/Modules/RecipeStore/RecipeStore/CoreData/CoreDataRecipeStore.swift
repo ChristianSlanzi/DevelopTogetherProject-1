@@ -6,8 +6,9 @@
 //
 
 import CoreData
+import GenericStore
 
-public final class CoreDataRecipeStore: RecipeStore {
+public final class CoreDataRecipeStore: CoreDataStore<LocalRecipe> {
     
     private static let modelName = "RecipeStore"
     

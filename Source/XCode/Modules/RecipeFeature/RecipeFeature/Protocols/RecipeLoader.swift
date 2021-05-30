@@ -12,3 +12,9 @@ public protocol RecipeLoader {
     
     func load(completion: @escaping (Self.Result) -> Void)
 }
+
+public protocol RecipeInformationLoader {
+    typealias Result = Swift.Result<[RecipeInformation], Error>
+    
+    func load(recipeId: Int, completion: @escaping (Self.Result) -> Void)
+}

@@ -10,10 +10,13 @@ import NetworkingService
 public protocol CookingApiService {
     typealias ServiceError = CookingApiServiceError
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
+    typealias RecipeInformationResult = Swift.Result<RecipeInformationResultDTO, ServiceError>
     
     func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void)
     //typedef Parameters [String: Any]
     //func searchRecipesByNutrients(parameters: Parameters, completion: @escaping (RecipesSearchResult) -> Void)
+    func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void)
+    
 }
 
 public class CookingApiServiceFactory {

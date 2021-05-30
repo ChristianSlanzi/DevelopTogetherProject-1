@@ -9,8 +9,6 @@ import Foundation
 import RecipeStore
 import GenericStore
 
-public typealias RecipeStore = CoreDataStore<LocalRecipe>
-
 public final class LocalRecipesLoader {
     private let store: RecipeStore
     private let currentDate: () -> Date
@@ -49,10 +47,12 @@ extension LocalRecipesLoader: RecipeLoader {
 extension LocalRecipesLoader: RecipeCache {
     public func save(_ recipes: [Recipe], completion: @escaping (Result<Void, Error>) -> Void) {
         try store.deleteAll(entity: LocalRecipe.self, completion: { (error) in
-                
+            guard let error = error else { return }
+            print(error)
         })
         try store.create(recipes.toLocal(), completion: { (error) in
-            
+            guard let error = error else { return }
+            print(error)
         })
     }
 }

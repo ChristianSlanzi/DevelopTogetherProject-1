@@ -17,7 +17,7 @@ extension CookingApiServiceTests {
             case let (.success(receivedUserData), .success(expectedUserData)):
                 XCTAssertEqual(receivedUserData, expectedUserData, file: file, line: line)
                 
-            case let (.failure(receivedError as CookingApiServiceError), .failure(expectedError)):
+            case let (.failure(receivedError), .failure(expectedError)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
             default:

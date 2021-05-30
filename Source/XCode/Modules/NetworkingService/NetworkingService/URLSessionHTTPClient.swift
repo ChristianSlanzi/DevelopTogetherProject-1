@@ -83,16 +83,16 @@ public class URLSessionHTTPClient: HTTPClient {
     
     public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
         
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+        //DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
-            guard let strongSelf = self else { return }
+            //guard let strongSelf = self else { return }
             
-            let targetURL = self?.addURLQueryParameters(toURL: url)
-            let httpBody = self?.getHttpBody()
+            let targetURL = addURLQueryParameters(toURL: url)
+            let httpBody = getHttpBody()
             
-            print("targetURL: " + targetURL!.absoluteString)
+            print("targetURL: " + targetURL.absoluteString)
             
-            guard let request = self?.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else
+            guard let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else
             {
                 completion(HTTPClientResult(withError: HTTPClientCustomError.failedToCreateRequest))
                 return
@@ -100,7 +100,7 @@ public class URLSessionHTTPClient: HTTPClient {
             
             print("request: " + request.description)
 
-            let task = strongSelf.session.dataTask(with: request) { (data, response, error) in
+            let task = session.dataTask(with: request) { (data, response, error) in
                 
                 completion(HTTPClientResult(withData: data,
                                    response: HTTPClientResponse(fromURLResponse: response),
@@ -108,7 +108,7 @@ public class URLSessionHTTPClient: HTTPClient {
             }
             
             task.resume()
-        }
+        //}
     }
     
     public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
