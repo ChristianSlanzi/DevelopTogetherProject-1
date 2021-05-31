@@ -36,7 +36,7 @@ public class CollectionViewModel {
         view?.setSectionInset(top: 20, left: 0, bottom: 0, right: 0)
         view?.setupCollectionViewCellToUseMaxWidth()
         
-        recipeLoader?.load(completion: { (result) in
+        recipeLoader?.load(query: "", completion: { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {

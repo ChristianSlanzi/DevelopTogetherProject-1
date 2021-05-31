@@ -144,15 +144,7 @@ extension AppDependencies {
             let router = DefaultRouter(rootTransition: EmptyTransition())
             let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
             router.root = recipeListVC
-            let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
-            let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
-                                                          client: networkingService,
-                                                          apiKey: cookingApiKey)
-            let service = serviceFactory.getCookingApiService()
-            let remoteLoader = RemoteLoader(service: service)
-            let localLoader = LocalRecipesLoader(store: recipeStore, currentDate: { Date() })
-            let recipeLoader = CompositeFallbackLoader(remote: remoteLoader, local: localLoader)
-            recipeListVC.viewModel?.recipeLoader = recipeLoader
+            recipeListVC.viewModel?.recipeLoader = makeCompositeRecipeLoader()
             
             return UINavigationController(rootViewController: recipeListVC)
         }
@@ -209,7 +201,9 @@ extension AppDependencies {
     }
     
     internal func createSearchViewController() -> UIViewController {
-        let viewController = SearchViewController()
+        let viewModel = SearchViewModel()
+        viewModel.recipeLoader = makeCompositeRecipeLoader()
+        let viewController = SearchViewController(viewModel: viewModel)
         return viewController
     }
     
@@ -276,6 +270,18 @@ extension AppDependencies {
         router.root = controller
         
         return controller
+    }
+    
+    internal func makeCompositeRecipeLoader() -> RecipeLoader {
+        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                      client: networkingService,
+                                                      apiKey: cookingApiKey)
+        let service = serviceFactory.getCookingApiService()
+        let remoteLoader = RemoteLoader(service: service)
+        let localLoader = LocalRecipesLoader(store: recipeStore, currentDate: { Date() })
+        let recipeLoader = CompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        return recipeLoader
     }
 }
 

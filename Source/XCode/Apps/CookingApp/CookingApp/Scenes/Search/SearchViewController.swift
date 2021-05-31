@@ -6,24 +6,68 @@
 //
 
 import UIKit
+import CommonUI
 
-class SearchViewController: UIViewController {
+class SearchViewController: CustomScrollViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    // MARK: - ViewModel
+    var viewModel: SearchViewModel
+    
+    // MARK: - Views
+    
+    let titleLabel = DefaultLabel(title: "Search")
+    let searchView = UISearchBar()
+    
+    // MARK: - Init
+    
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func setupViews() {
+        super.setupViews()
         
         view.backgroundColor = .white
         
-        let label = UILabel(frame: .zero)
-        label.text = "Search"
+        searchView.translatesAutoresizingMaskIntoConstraints = false
+        searchView.delegate = self
+        searchView.searchBarStyle = .minimal
+        addToContentView(titleLabel, searchView)
+
+    }
+    
+    override func setupConstraints() {
+        super.setupConstraints()
+       
+        setContentViewTopAnchor(view.safeTopAnchor)
+        let topAnchor = getContentViewTopAnchor()
         
-        let vStack = UIStackView(arrangedSubviews: [label])
-        vStack.axis = .vertical
-        vStack.spacing = 8.0
+        let topPadding = CGFloat(35)
+        let hPadding = CGFloat(20)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo:
+                topAnchor, constant: hPadding),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            searchView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            searchView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            searchView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        setContentViewBottom(view: searchView)
+    }
+}
 
-        view.addSubview(vStack)
-        vStack.layout.center(in: view)
-
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchBarSearchButtonClicked(textToSearch: searchBar.text!)
     }
 }
