@@ -17,6 +17,7 @@
 		24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA2263D3ABB00724978 /* ModalTransition.swift */; };
 		24330DA7263D406800724978 /* SignupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA6263D406800724978 /* SignupRoute.swift */; };
 		24330DAB263D451F00724978 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DAA263D451F00724978 /* MainRoute.swift */; };
+		2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2438F1BB26653F5F00018753 /* SearchRoute.swift */; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -281,6 +282,7 @@
 		24330DA2263D3ABB00724978 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		24330DA6263D406800724978 /* SignupRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRoute.swift; sourceTree = "<group>"; };
 		24330DAA263D451F00724978 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
+		2438F1BB26653F5F00018753 /* SearchRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoute.swift; sourceTree = "<group>"; };
 		24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GenericStore.xcodeproj; path = ../../../Modules/GenericStore/GenericStore.xcodeproj; sourceTree = "<group>"; };
 		244DDB1726434260008229B2 /* RecipeStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeStore.xcodeproj; path = ../../../Modules/RecipeStore/RecipeStore.xcodeproj; sourceTree = "<group>"; };
 		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -777,6 +779,7 @@
 				24330D9B263D39D700724978 /* LoginRoute.swift */,
 				24330DA6263D406800724978 /* SignupRoute.swift */,
 				24330DAA263D451F00724978 /* MainRoute.swift */,
+				2438F1BB26653F5F00018753 /* SearchRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -1167,6 +1170,7 @@
 				240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */,
 				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,
 				24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */,
+				2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,

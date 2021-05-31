@@ -10,6 +10,15 @@ import RecipeFeature
 
 class SearchViewModel {
     
+    typealias Routes = SearchRoute
+    private let router: Routes
+    
+    init(router: Routes) {
+        self.router = router
+        
+        
+    }
+    
     public var recipeLoader: RecipeLoader?
     var lastTextSearched: String = ""
     
@@ -28,6 +37,11 @@ class SearchViewModel {
                     return
                 }
                 print(recipes)
+                
+                DispatchQueue.main.async {
+                    self.router.openRecipeList(recipes)
+                }
+                
             case let .failure(error):
                 
                 print(error)

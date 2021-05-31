@@ -7,17 +7,17 @@
 
 import Foundation
 
-class RecipeBook: NSObject {
+public class RecipeBook: NSObject {
     
-    var categories: [RecipeCategory]?
+    public var categories: [RecipeCategory]?
     
-    override init() {
+    public override init() {
         super.init()
         
         categories = [RecipeCategory]()
     }
     
-    func load(filePath: String?) {
+    public func load(filePath: String?) {
         
         guard let path = filePath,
               let array = NSArray(contentsOfFile: path) as [AnyObject]? else { return }
