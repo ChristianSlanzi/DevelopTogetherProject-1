@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240754EB2664E774006E84F9 /* SearchViewModel.swift */; };
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
@@ -16,6 +17,7 @@
 		24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA2263D3ABB00724978 /* ModalTransition.swift */; };
 		24330DA7263D406800724978 /* SignupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA6263D406800724978 /* SignupRoute.swift */; };
 		24330DAB263D451F00724978 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DAA263D451F00724978 /* MainRoute.swift */; };
+		2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2438F1BB26653F5F00018753 /* SearchRoute.swift */; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -268,6 +270,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		240754EB2664E774006E84F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 		24330DA2263D3ABB00724978 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		24330DA6263D406800724978 /* SignupRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRoute.swift; sourceTree = "<group>"; };
 		24330DAA263D451F00724978 /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
+		2438F1BB26653F5F00018753 /* SearchRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoute.swift; sourceTree = "<group>"; };
 		24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GenericStore.xcodeproj; path = ../../../Modules/GenericStore/GenericStore.xcodeproj; sourceTree = "<group>"; };
 		244DDB1726434260008229B2 /* RecipeStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeStore.xcodeproj; path = ../../../Modules/RecipeStore/RecipeStore.xcodeproj; sourceTree = "<group>"; };
 		24567BA82637F9C20010BE25 /* CookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -653,6 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				245B7E60263C16DD00D2B454 /* SearchViewController.swift */,
+				240754EB2664E774006E84F9 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				24330D9B263D39D700724978 /* LoginRoute.swift */,
 				24330DA6263D406800724978 /* SignupRoute.swift */,
 				24330DAA263D451F00724978 /* MainRoute.swift */,
+				2438F1BB26653F5F00018753 /* SearchRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -1161,8 +1167,10 @@
 				24C4F0E12651403F0061737C /* NullStore.swift in Sources */,
 				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
 				24330D9C263D39D700724978 /* LoginRoute.swift in Sources */,
+				240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */,
 				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,
 				24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */,
+				2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,

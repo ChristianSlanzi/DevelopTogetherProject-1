@@ -48,7 +48,6 @@ class RecipeDetailsViewController: CustomScrollViewController {
     
     init(viewModel: RecipeDetailsViewModel) {
         self.viewModel = viewModel
-        //super.init(nibName: nil, bundle: nil)
         super.init()
     }
     

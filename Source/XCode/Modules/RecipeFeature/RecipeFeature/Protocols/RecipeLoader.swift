@@ -10,7 +10,7 @@ import Foundation
 public protocol RecipeLoader {
     typealias Result = Swift.Result<[Recipe], Error>
     
-    func load(completion: @escaping (Self.Result) -> Void)
+    func load(query: String, completion: @escaping (Self.Result) -> Void)
 }
 
 public protocol RecipeInformationLoader {

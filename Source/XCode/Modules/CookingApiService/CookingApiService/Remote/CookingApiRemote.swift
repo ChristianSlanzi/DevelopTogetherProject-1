@@ -55,11 +55,13 @@ class CookingApiRemote: CookingApiService {
         self.apiKey = apiKey
     }
     
-    func searchRecipes(completion: @escaping (RecipesSearchResult) -> Void) {
+    func searchRecipes(query: String = "", completion: @escaping (RecipesSearchResult) -> Void) {
         
         if let key = apiKey {
             client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
         }
+        
+        client.urlQueryParameters.add(value: "\(query)", forKey: "query")
         
         client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }

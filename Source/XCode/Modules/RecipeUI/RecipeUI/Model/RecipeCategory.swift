@@ -11,7 +11,7 @@ public struct RecipeCategory {
     public var title: String
     public var recipes: [Recipe]?
     
-    public init(id: Int, title: String, recipes: [Recipe]?) {
+    public init(id: Int, title: String, recipes: [Recipe]) {
         self.id = id
         self.title = title
         self.recipes = recipes
