@@ -17,6 +17,7 @@ class SearchViewController: CustomScrollViewController {
     
     let titleLabel = DefaultLabel(title: "Search")
     let searchView = UISearchBar()
+    let categoryView = CategoriesView()
     
     // MARK: - Init
     
@@ -32,18 +33,18 @@ class SearchViewController: CustomScrollViewController {
         super.setupViews()
         
         view.backgroundColor = .white
-        
+                
         searchView.translatesAutoresizingMaskIntoConstraints = false
         searchView.delegate = self
         searchView.searchBarStyle = .minimal
-        addToContentView(titleLabel, searchView)
+        addToContentView(titleLabel, searchView, categoryView)
 
     }
     
     override func setupConstraints() {
         super.setupConstraints()
        
-        setContentViewTopAnchor(view.safeTopAnchor)
+        setContentViewTopAnchor(view.safeTopAnchor, padding: 0.0)
         let topAnchor = getContentViewTopAnchor()
         
         let topPadding = CGFloat(35)
@@ -51,18 +52,25 @@ class SearchViewController: CustomScrollViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo:
-                topAnchor, constant: hPadding),
+                topAnchor, constant: topPadding),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
         ])
         
         NSLayoutConstraint.activate([
-            searchView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            searchView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: hPadding),
             searchView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
         ])
         
-        setContentViewBottom(view: searchView)
+        NSLayoutConstraint.activate([
+            categoryView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: hPadding),
+            categoryView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            categoryView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            categoryView.heightAnchor.constraint(equalToConstant: 320)
+        ])
+
+        setContentViewBottom(view: categoryView)
     }
 }
 

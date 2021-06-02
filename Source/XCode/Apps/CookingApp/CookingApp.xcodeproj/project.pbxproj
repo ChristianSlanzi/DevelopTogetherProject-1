@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240754EB2664E774006E84F9 /* SearchViewModel.swift */; };
+		240A32E72667B38200A38177 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A32E62667B38200A38177 /* CategoriesView.swift */; };
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
@@ -271,6 +272,7 @@
 
 /* Begin PBXFileReference section */
 		240754EB2664E774006E84F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		240A32E62667B38200A38177 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
@@ -378,6 +380,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240A32D72667B36600A38177 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				240A32E62667B38200A38177 /* CategoriesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		241040D326394C3C00994726 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +666,7 @@
 		245B7E5D263C163400D2B454 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				240A32D72667B36600A38177 /* Views */,
 				245B7E60263C16DD00D2B454 /* SearchViewController.swift */,
 				240754EB2664E774006E84F9 /* SearchViewModel.swift */,
 			);
@@ -1154,6 +1165,7 @@
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
+				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
 				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
