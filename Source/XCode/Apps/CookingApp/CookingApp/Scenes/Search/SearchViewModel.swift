@@ -26,7 +26,7 @@ class SearchViewModel {
         lastTextSearched = ""
     }
     
-    func searchBarSearchButtonClicked(textToSearch: String) {
+    func search(_ textToSearch: String) {
         print(textToSearch)
         
         recipeLoader?.load(query: textToSearch, completion: { (result) in

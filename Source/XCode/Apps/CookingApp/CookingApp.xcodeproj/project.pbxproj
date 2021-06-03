@@ -43,6 +43,7 @@
 		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
 		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
+		245A194026682AB9003CFC6F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A193F26682AB9003CFC6F /* CategoryViewModel.swift */; };
 		245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E57263BED8400D2B454 /* MainTabBarController.swift */; };
 		245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E60263C16DD00D2B454 /* SearchViewController.swift */; };
 		245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */; };
@@ -316,6 +317,7 @@
 		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
 		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
+		245A193F26682AB9003CFC6F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		245B7E57263BED8400D2B454 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		245B7E60263C16DD00D2B454 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				240A32E62667B38200A38177 /* CategoriesView.swift */,
+				245A193F26682AB9003CFC6F /* CategoryViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1188,6 +1191,7 @@
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,
 				245B7E85263C26B900D2B454 /* Transition.swift in Sources */,
 				245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */,
+				245A194026682AB9003CFC6F /* CategoryViewModel.swift in Sources */,
 				245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */,

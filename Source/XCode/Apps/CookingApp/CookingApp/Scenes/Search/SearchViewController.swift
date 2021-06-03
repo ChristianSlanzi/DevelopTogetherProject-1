@@ -8,6 +8,10 @@
 import UIKit
 import CommonUI
 
+public protocol CategoriesViewProtocol: class {
+    func searchRecipesForCategory(_ cuisine: Cuisine)
+}
+
 class SearchViewController: CustomScrollViewController {
     
     // MARK: - ViewModel
@@ -17,7 +21,7 @@ class SearchViewController: CustomScrollViewController {
     
     let titleLabel = DefaultLabel(title: "Search")
     let searchView = UISearchBar()
-    let categoryView = CategoriesView()
+    var categoryView: CategoriesView!
     
     // MARK: - Init
     
@@ -31,6 +35,10 @@ class SearchViewController: CustomScrollViewController {
     }
     override func setupViews() {
         super.setupViews()
+        
+        let categoryViewModel = CategoryViewModel()
+        categoryView = CategoriesView(viewModel: categoryViewModel)
+        categoryViewModel.view = self
         
         view.backgroundColor = .white
                 
@@ -76,6 +84,12 @@ class SearchViewController: CustomScrollViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.searchBarSearchButtonClicked(textToSearch: searchBar.text!)
+        viewModel.search(searchBar.text!)
+    }
+}
+
+extension SearchViewController: CategoriesViewProtocol {
+    func searchRecipesForCategory(_ cuisine: Cuisine) {
+        viewModel.search(cuisine.rawValue)
     }
 }
