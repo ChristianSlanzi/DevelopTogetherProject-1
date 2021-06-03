@@ -7,163 +7,196 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		246049AB26694CC30074E0E7 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246049AA26694CC30074E0E7 /* DTO.swift */; };
-		24C8D9DB2632DE2E00887D44 /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8D9D12632DE2E00887D44 /* NetworkingService.framework */; };
-		24C8D9E02632DE2E00887D44 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8D9DF2632DE2E00887D44 /* NetworkingServiceTests.swift */; };
-		24C8D9E22632DE2E00887D44 /* NetworkingService.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8D9D42632DE2E00887D44 /* NetworkingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8DA172632E5DC00887D44 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8DA162632E5DC00887D44 /* HTTPClient.swift */; };
-		24C8DA1B2632E80900887D44 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8DA1A2632E80900887D44 /* URLSessionHTTPClient.swift */; };
+		24604915266933D20074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460490B266933D20074E0E7 /* CocktailsApiService.framework */; };
+		2460491A266933D20074E0E7 /* CocktailsApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24604919266933D20074E0E7 /* CocktailsApiServiceTests.swift */; };
+		2460491C266933D20074E0E7 /* CocktailsApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 2460490E266933D20074E0E7 /* CocktailsApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24604938266934250074E0E7 /* CocktailsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24604937266934250074E0E7 /* CocktailsApiService.swift */; };
+		2460493D266934470074E0E7 /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460493C266934470074E0E7 /* NetworkingService.framework */; };
+		2460493E266934470074E0E7 /* NetworkingService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460493C266934470074E0E7 /* NetworkingService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2460494926693EC20074E0E7 /* CocktailsApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		24C8D9DC2632DE2E00887D44 /* PBXContainerItemProxy */ = {
+		24604916266933D20074E0E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 24C8D9C82632DE2D00887D44 /* Project object */;
+			containerPortal = 24604902266933D20074E0E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24C8D9D02632DE2E00887D44;
-			remoteInfo = NetworkingService;
+			remoteGlobalIDString = 2460490A266933D20074E0E7;
+			remoteInfo = CocktailsApiService;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2460493F266934470074E0E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2460493E266934470074E0E7 /* NetworkingService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		246049AA26694CC30074E0E7 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
-		24C8D9D12632DE2E00887D44 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C8D9D42632DE2E00887D44 /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
-		24C8D9D52632DE2E00887D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24C8D9DA2632DE2E00887D44 /* NetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C8D9DF2632DE2E00887D44 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
-		24C8D9E12632DE2E00887D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24C8DA162632E5DC00887D44 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		24C8DA1A2632E80900887D44 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		2460490B266933D20074E0E7 /* CocktailsApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocktailsApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2460490E266933D20074E0E7 /* CocktailsApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocktailsApiService.h; sourceTree = "<group>"; };
+		2460490F266933D20074E0E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24604914266933D20074E0E7 /* CocktailsApiServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailsApiServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24604919266933D20074E0E7 /* CocktailsApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsApiServiceTests.swift; sourceTree = "<group>"; };
+		2460491B266933D20074E0E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24604937266934250074E0E7 /* CocktailsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsApiService.swift; sourceTree = "<group>"; };
+		2460493C266934470074E0E7 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsApiRemote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		24C8D9CE2632DE2E00887D44 /* Frameworks */ = {
+		24604908266933D20074E0E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2460493D266934470074E0E7 /* NetworkingService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C8D9D72632DE2E00887D44 /* Frameworks */ = {
+		24604911266933D20074E0E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C8D9DB2632DE2E00887D44 /* NetworkingService.framework in Frameworks */,
+				24604915266933D20074E0E7 /* CocktailsApiService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24C8D9C72632DE2D00887D44 = {
+		24604901266933D20074E0E7 = {
 			isa = PBXGroup;
 			children = (
-				24C8D9D32632DE2E00887D44 /* NetworkingService */,
-				24C8D9DE2632DE2E00887D44 /* NetworkingServiceTests */,
-				24C8D9D22632DE2E00887D44 /* Products */,
+				2460490D266933D20074E0E7 /* CocktailsApiService */,
+				24604918266933D20074E0E7 /* CocktailsApiServiceTests */,
+				2460490C266933D20074E0E7 /* Products */,
+				2460493B266934470074E0E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		24C8D9D22632DE2E00887D44 /* Products */ = {
+		2460490C266933D20074E0E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24C8D9D12632DE2E00887D44 /* NetworkingService.framework */,
-				24C8D9DA2632DE2E00887D44 /* NetworkingServiceTests.xctest */,
+				2460490B266933D20074E0E7 /* CocktailsApiService.framework */,
+				24604914266933D20074E0E7 /* CocktailsApiServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24C8D9D32632DE2E00887D44 /* NetworkingService */ = {
+		2460490D266933D20074E0E7 /* CocktailsApiService */ = {
 			isa = PBXGroup;
 			children = (
-				24C8D9D42632DE2E00887D44 /* NetworkingService.h */,
-				24C8D9D52632DE2E00887D44 /* Info.plist */,
-				24C8DA162632E5DC00887D44 /* HTTPClient.swift */,
-				24C8DA1A2632E80900887D44 /* URLSessionHTTPClient.swift */,
-				246049AA26694CC30074E0E7 /* DTO.swift */,
+				2460494726693E900074E0E7 /* Remote */,
+				2460490E266933D20074E0E7 /* CocktailsApiService.h */,
+				2460490F266933D20074E0E7 /* Info.plist */,
+				24604937266934250074E0E7 /* CocktailsApiService.swift */,
 			);
-			path = NetworkingService;
+			path = CocktailsApiService;
 			sourceTree = "<group>";
 		};
-		24C8D9DE2632DE2E00887D44 /* NetworkingServiceTests */ = {
+		24604918266933D20074E0E7 /* CocktailsApiServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				24C8D9DF2632DE2E00887D44 /* NetworkingServiceTests.swift */,
-				24C8D9E12632DE2E00887D44 /* Info.plist */,
+				24604919266933D20074E0E7 /* CocktailsApiServiceTests.swift */,
+				2460491B266933D20074E0E7 /* Info.plist */,
 			);
-			path = NetworkingServiceTests;
+			path = CocktailsApiServiceTests;
+			sourceTree = "<group>";
+		};
+		2460493B266934470074E0E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2460493C266934470074E0E7 /* NetworkingService.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2460494726693E900074E0E7 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		24C8D9CC2632DE2E00887D44 /* Headers */ = {
+		24604906266933D20074E0E7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C8D9E22632DE2E00887D44 /* NetworkingService.h in Headers */,
+				2460491C266933D20074E0E7 /* CocktailsApiService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		24C8D9D02632DE2E00887D44 /* NetworkingService */ = {
+		2460490A266933D20074E0E7 /* CocktailsApiService */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24C8D9E52632DE2E00887D44 /* Build configuration list for PBXNativeTarget "NetworkingService" */;
+			buildConfigurationList = 2460491F266933D20074E0E7 /* Build configuration list for PBXNativeTarget "CocktailsApiService" */;
 			buildPhases = (
-				24C8D9CC2632DE2E00887D44 /* Headers */,
-				24C8D9CD2632DE2E00887D44 /* Sources */,
-				24C8D9CE2632DE2E00887D44 /* Frameworks */,
-				24C8D9CF2632DE2E00887D44 /* Resources */,
+				24604906266933D20074E0E7 /* Headers */,
+				24604907266933D20074E0E7 /* Sources */,
+				24604908266933D20074E0E7 /* Frameworks */,
+				24604909266933D20074E0E7 /* Resources */,
+				2460493F266934470074E0E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = NetworkingService;
-			productName = NetworkingService;
-			productReference = 24C8D9D12632DE2E00887D44 /* NetworkingService.framework */;
+			name = CocktailsApiService;
+			productName = CocktailsApiService;
+			productReference = 2460490B266933D20074E0E7 /* CocktailsApiService.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		24C8D9D92632DE2E00887D44 /* NetworkingServiceTests */ = {
+		24604913266933D20074E0E7 /* CocktailsApiServiceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24C8D9E82632DE2E00887D44 /* Build configuration list for PBXNativeTarget "NetworkingServiceTests" */;
+			buildConfigurationList = 24604922266933D20074E0E7 /* Build configuration list for PBXNativeTarget "CocktailsApiServiceTests" */;
 			buildPhases = (
-				24C8D9D62632DE2E00887D44 /* Sources */,
-				24C8D9D72632DE2E00887D44 /* Frameworks */,
-				24C8D9D82632DE2E00887D44 /* Resources */,
+				24604910266933D20074E0E7 /* Sources */,
+				24604911266933D20074E0E7 /* Frameworks */,
+				24604912266933D20074E0E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24C8D9DD2632DE2E00887D44 /* PBXTargetDependency */,
+				24604917266933D20074E0E7 /* PBXTargetDependency */,
 			);
-			name = NetworkingServiceTests;
-			productName = NetworkingServiceTests;
-			productReference = 24C8D9DA2632DE2E00887D44 /* NetworkingServiceTests.xctest */;
+			name = CocktailsApiServiceTests;
+			productName = CocktailsApiServiceTests;
+			productReference = 24604914266933D20074E0E7 /* CocktailsApiServiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		24C8D9C82632DE2D00887D44 /* Project object */ = {
+		24604902266933D20074E0E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					24C8D9D02632DE2E00887D44 = {
+					2460490A266933D20074E0E7 = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
 					};
-					24C8D9D92632DE2E00887D44 = {
+					24604913266933D20074E0E7 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 24C8D9CB2632DE2E00887D44 /* Build configuration list for PBXProject "NetworkingService" */;
+			buildConfigurationList = 24604905266933D20074E0E7 /* Build configuration list for PBXProject "CocktailsApiService" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -171,26 +204,26 @@
 				en,
 				Base,
 			);
-			mainGroup = 24C8D9C72632DE2D00887D44;
-			productRefGroup = 24C8D9D22632DE2E00887D44 /* Products */;
+			mainGroup = 24604901266933D20074E0E7;
+			productRefGroup = 2460490C266933D20074E0E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24C8D9D02632DE2E00887D44 /* NetworkingService */,
-				24C8D9D92632DE2E00887D44 /* NetworkingServiceTests */,
+				2460490A266933D20074E0E7 /* CocktailsApiService */,
+				24604913266933D20074E0E7 /* CocktailsApiServiceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		24C8D9CF2632DE2E00887D44 /* Resources */ = {
+		24604909266933D20074E0E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C8D9D82632DE2E00887D44 /* Resources */ = {
+		24604912266933D20074E0E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,36 +233,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24C8D9CD2632DE2E00887D44 /* Sources */ = {
+		24604907266933D20074E0E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				246049AB26694CC30074E0E7 /* DTO.swift in Sources */,
-				24C8DA172632E5DC00887D44 /* HTTPClient.swift in Sources */,
-				24C8DA1B2632E80900887D44 /* URLSessionHTTPClient.swift in Sources */,
+				2460494926693EC20074E0E7 /* CocktailsApiRemote.swift in Sources */,
+				24604938266934250074E0E7 /* CocktailsApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C8D9D62632DE2E00887D44 /* Sources */ = {
+		24604910266933D20074E0E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C8D9E02632DE2E00887D44 /* NetworkingServiceTests.swift in Sources */,
+				2460491A266933D20074E0E7 /* CocktailsApiServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		24C8D9DD2632DE2E00887D44 /* PBXTargetDependency */ = {
+		24604917266933D20074E0E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24C8D9D02632DE2E00887D44 /* NetworkingService */;
-			targetProxy = 24C8D9DC2632DE2E00887D44 /* PBXContainerItemProxy */;
+			target = 2460490A266933D20074E0E7 /* CocktailsApiService */;
+			targetProxy = 24604916266933D20074E0E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		24C8D9E32632DE2E00887D44 /* Debug */ = {
+		2460491D266933D20074E0E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -293,7 +325,7 @@
 			};
 			name = Debug;
 		};
-		24C8D9E42632DE2E00887D44 /* Release */ = {
+		2460491E266933D20074E0E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,7 +383,7 @@
 			};
 			name = Release;
 		};
-		24C8D9E62632DE2E00887D44 /* Debug */ = {
+		24604920266933D20074E0E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -360,14 +392,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkingService/Info.plist;
+				INFOPLIST_FILE = CocktailsApiService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.test.NetworkingService;
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CocktailsApiService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -376,7 +408,7 @@
 			};
 			name = Debug;
 		};
-		24C8D9E72632DE2E00887D44 /* Release */ = {
+		24604921266933D20074E0E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -385,14 +417,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkingService/Info.plist;
+				INFOPLIST_FILE = CocktailsApiService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.test.NetworkingService;
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CocktailsApiService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -400,36 +432,36 @@
 			};
 			name = Release;
 		};
-		24C8D9E92632DE2E00887D44 /* Debug */ = {
+		24604923266933D20074E0E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetworkingServiceTests/Info.plist;
+				INFOPLIST_FILE = CocktailsApiServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.test.NetworkingServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CocktailsApiServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		24C8D9EA2632DE2E00887D44 /* Release */ = {
+		24604924266933D20074E0E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetworkingServiceTests/Info.plist;
+				INFOPLIST_FILE = CocktailsApiServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.test.NetworkingServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = de.test.CocktailsApiServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,34 +471,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24C8D9CB2632DE2E00887D44 /* Build configuration list for PBXProject "NetworkingService" */ = {
+		24604905266933D20074E0E7 /* Build configuration list for PBXProject "CocktailsApiService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C8D9E32632DE2E00887D44 /* Debug */,
-				24C8D9E42632DE2E00887D44 /* Release */,
+				2460491D266933D20074E0E7 /* Debug */,
+				2460491E266933D20074E0E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24C8D9E52632DE2E00887D44 /* Build configuration list for PBXNativeTarget "NetworkingService" */ = {
+		2460491F266933D20074E0E7 /* Build configuration list for PBXNativeTarget "CocktailsApiService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C8D9E62632DE2E00887D44 /* Debug */,
-				24C8D9E72632DE2E00887D44 /* Release */,
+				24604920266933D20074E0E7 /* Debug */,
+				24604921266933D20074E0E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24C8D9E82632DE2E00887D44 /* Build configuration list for PBXNativeTarget "NetworkingServiceTests" */ = {
+		24604922266933D20074E0E7 /* Build configuration list for PBXNativeTarget "CocktailsApiServiceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C8D9E92632DE2E00887D44 /* Debug */,
-				24C8D9EA2632DE2E00887D44 /* Release */,
+				24604923266933D20074E0E7 /* Debug */,
+				24604924266933D20074E0E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 24C8D9C82632DE2D00887D44 /* Project object */;
+	rootObject = 24604902266933D20074E0E7 /* Project object */;
 }

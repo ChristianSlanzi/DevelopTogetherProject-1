@@ -4,6 +4,7 @@
 //
 //  Created by Christian Slanzi on 20.04.21.
 //
+import NetworkingService
 
 public struct RecipesSearchResultDTO: DTO {
     

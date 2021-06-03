@@ -195,6 +195,20 @@
 			remoteGlobalIDString = 2471EF84263488EF00E35A11;
 			remoteInfo = LoginSignupModule;
 		};
+		2460498C26694BE40074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9D12632DE2E00887D44;
+			remoteInfo = NetworkingService;
+		};
+		2460498E26694BE40074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9DA2632DE2E00887D44;
+			remoteInfo = NetworkingServiceTests;
+		};
 		24C4F03726511D8C0061737C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */;
@@ -329,6 +343,7 @@
 		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		2484CEEF265BA00800640D41 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
@@ -629,6 +644,7 @@
 		24567C1826386F5C0010BE25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */,
 				24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */,
 				24FE1FBF265A615300724646 /* CommonUI.xcodeproj */,
 				24C4F098265134550061737C /* RecipeUI.xcodeproj */,
@@ -758,6 +774,15 @@
 				2484CEF3265BAA3400640D41 /* DefaultLabel.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2460498826694BE40074E0E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2460498D26694BE40074E0E7 /* NetworkingService.framework */,
+				2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		24A456CB265FAFC400095B31 /* Views */ = {
@@ -975,6 +1000,10 @@
 					ProjectRef = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
 				},
 				{
+					ProductGroup = 2460498826694BE40074E0E7 /* Products */;
+					ProjectRef = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+				},
+				{
 					ProductGroup = 24C4F02F26511D8C0061737C /* Products */;
 					ProjectRef = 24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */;
 				},
@@ -1069,6 +1098,20 @@
 			fileType = wrapper.cfbundle;
 			path = LoginSignupModuleTests.xctest;
 			remoteRef = 24567C2026386F780010BE25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460498D26694BE40074E0E7 /* NetworkingService.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NetworkingService.framework;
+			remoteRef = 2460498C26694BE40074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkingServiceTests.xctest;
+			remoteRef = 2460498E26694BE40074E0E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		24C4F03826511D8C0061737C /* RecipeFeature.framework */ = {

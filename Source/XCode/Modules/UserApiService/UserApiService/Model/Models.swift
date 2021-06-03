@@ -5,14 +5,10 @@
 //  Created by Christian Slanzi on 23.04.21.
 //
 
-import Foundation
+import NetworkingService
 
 var defString = String(stringLiteral: "")
 var defInt = -1
-
-public protocol DTO: Codable, CustomStringConvertible, Hashable {
-    
-}
 
 public struct LoginData: DTO {
     
