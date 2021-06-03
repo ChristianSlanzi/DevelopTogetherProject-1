@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
+		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24BA410626690BE10062F62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410526690BE10062F62E /* AppDelegate.swift */; };
 		24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410726690BE10062F62E /* SceneDelegate.swift */; };
 		24BA410A26690BE10062F62E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410926690BE10062F62E /* ViewController.swift */; };
@@ -18,6 +20,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		246048EB266932B90074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9D12632DE2E00887D44;
+			remoteInfo = NetworkingService;
+		};
+		246048ED266932B90074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9DA2632DE2E00887D44;
+			remoteInfo = NetworkingServiceTests;
+		};
+		2460492C266933E50074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2460490B266933D20074E0E7;
+			remoteInfo = CocktailsApiService;
+		};
+		2460492E266933E50074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24604914266933D20074E0E7;
+			remoteInfo = CocktailsApiServiceTests;
+		};
 		24BA411926690BE30062F62E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24BA40FA26690BE10062F62E /* Project object */;
@@ -34,7 +64,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24604944266934690074E0E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
+		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
 		24BA410226690BE10062F62E /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BA410526690BE10062F62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BA410726690BE10062F62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +123,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242F4682266931D200839094 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */,
+				246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		246048E7266932B90074E0E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				246048EC266932B90074E0E7 /* NetworkingService.framework */,
+				246048EE266932B90074E0E7 /* NetworkingServiceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24604928266933E50074E0E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2460492D266933E50074E0E7 /* CocktailsApiService.framework */,
+				2460492F266933E50074E0E7 /* CocktailsApiServiceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24604941266934690074E0E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24BA40F926690BE10062F62E = {
 			isa = PBXGroup;
 			children = (
+				242F4682266931D200839094 /* Modules */,
 				24BA410426690BE10062F62E /* BartenderApp */,
 				24BA411B26690BE30062F62E /* BartenderAppTests */,
 				24BA412626690BE30062F62E /* BartenderAppUITests */,
 				24BA410326690BE10062F62E /* Products */,
+				24604941266934690074E0E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +221,7 @@
 				24BA40FE26690BE10062F62E /* Sources */,
 				24BA40FF26690BE10062F62E /* Frameworks */,
 				24BA410026690BE10062F62E /* Resources */,
+				24604944266934690074E0E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +301,16 @@
 			mainGroup = 24BA40F926690BE10062F62E;
 			productRefGroup = 24BA410326690BE10062F62E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 24604928266933E50074E0E7 /* Products */;
+					ProjectRef = 24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */;
+				},
+				{
+					ProductGroup = 246048E7266932B90074E0E7 /* Products */;
+					ProjectRef = 246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				24BA410126690BE10062F62E /* BartenderApp */,
@@ -225,6 +319,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		246048EC266932B90074E0E7 /* NetworkingService.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NetworkingService.framework;
+			remoteRef = 246048EB266932B90074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		246048EE266932B90074E0E7 /* NetworkingServiceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkingServiceTests.xctest;
+			remoteRef = 246048ED266932B90074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460492D266933E50074E0E7 /* CocktailsApiService.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocktailsApiService.framework;
+			remoteRef = 2460492C266933E50074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460492F266933E50074E0E7 /* CocktailsApiServiceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CocktailsApiServiceTests.xctest;
+			remoteRef = 2460492E266933E50074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		24BA410026690BE10062F62E /* Resources */ = {
