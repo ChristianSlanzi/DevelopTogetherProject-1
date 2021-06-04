@@ -64,6 +64,7 @@ public struct Drink: DTO {
         return """
         ------------
         idDrink = \(idDrink)
+        strDrink = \(strDrink)
         ------------
         """
     }

@@ -20,7 +20,14 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemPink
         
         service = CocktailsApiRemote(url: URL(string: "https://www.thecocktaildb.com/api/json/v1/1")!, client: httpClient)
-        service.searchCocktailByName("margarita") { [weak self] result in
+        
+//        service.searchCocktailByName("margarita") { [weak self] result in
+//            guard let self = self else { return }
+//
+//            print(result)
+//        }
+        
+        service.searchCocktailsByFirstLetter("m") { [weak self] result in
             guard let self = self else { return }
             
             print(result)

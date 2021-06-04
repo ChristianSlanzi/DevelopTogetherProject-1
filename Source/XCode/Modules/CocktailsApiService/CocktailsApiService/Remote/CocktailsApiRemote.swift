@@ -28,7 +28,12 @@ public class CocktailsApiRemote: CocktailsApiService {
         }
     }
     
-    public func searchCocktailsByFirstLetter(_ letter: Character) {
-        
+    public func searchCocktailsByFirstLetter(_ letter: Character, completion: @escaping (SearchResult) -> Void) {
+        client.urlQueryParameters.add(value: "\(letter)", forKey: "f")
+        client.makeRequest(toURL: url.appendingPathComponent("search.php"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(GenericDecoder.decodeResult(result: result))
+        }
     }
 }
