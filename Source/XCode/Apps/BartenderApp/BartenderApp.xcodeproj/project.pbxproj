@@ -20,6 +20,7 @@
 		24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468CA266A47A1005E9A7E /* AppDependencies.swift */; };
 		24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */; };
 		24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */; };
+		24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468E0266A5620005E9A7E /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		24E468CA266A47A1005E9A7E /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppDependencies.swift; sourceTree = "<group>"; };
 		24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
+		24E468E0266A5620005E9A7E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				24BA410926690BE10062F62E /* ViewController.swift */,
+				24E468E0266A5620005E9A7E /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */,
 				24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
 				24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */,

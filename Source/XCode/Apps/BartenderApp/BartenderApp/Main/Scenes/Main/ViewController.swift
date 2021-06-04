@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import CocktailsApiService
 
 class ViewController: UIViewController {
 
-    var service: CocktailsApiService
+    var viewModel: MainViewModel
     
-    init(service: CocktailsApiService) {
-        self.service = service
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,20 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemPink
-        
-        
-        
-//        service.searchCocktailByName("margarita") { [weak self] result in
-//            guard let self = self else { return }
-//
-//            print(result)
-//        }
-        
-        service.searchCocktailsByFirstLetter("m") { [weak self] result in
-            guard let self = self else { return }
-            
-            print(result)
-        }
+    
+        viewModel.didLoad()
     }
     
 }
