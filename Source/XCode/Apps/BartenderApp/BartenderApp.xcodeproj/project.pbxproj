@@ -192,7 +192,6 @@
 				24E468C5266A477E005E9A7E /* Main */,
 				24BA410526690BE10062F62E /* AppDelegate.swift */,
 				24BA410726690BE10062F62E /* SceneDelegate.swift */,
-				24BA410926690BE10062F62E /* ViewController.swift */,
 				24BA410B26690BE10062F62E /* Main.storyboard */,
 				24BA410E26690BE30062F62E /* Assets.xcassets */,
 				24BA411026690BE30062F62E /* LaunchScreen.storyboard */,
@@ -222,8 +221,9 @@
 		24E468C5266A477E005E9A7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				24E468D5266A4B4D005E9A7E /* Factories */,
 				24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */,
+				24E468D5266A4B4D005E9A7E /* Factories */,
+				24E468DA266A51CC005E9A7E /* Scenes */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -242,6 +242,22 @@
 				24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		24E468DA266A51CC005E9A7E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24E468DB266A51FB005E9A7E /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		24E468DB266A51FB005E9A7E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				24BA410926690BE10062F62E /* ViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

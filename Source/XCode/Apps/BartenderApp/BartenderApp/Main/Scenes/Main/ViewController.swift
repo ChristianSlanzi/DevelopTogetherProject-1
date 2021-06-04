@@ -7,19 +7,26 @@
 
 import UIKit
 import CocktailsApiService
-import NetworkingService
 
 class ViewController: UIViewController {
 
-    let httpClient = URLSessionHTTPClient(session: URLSession(configuration: .default))
-    var service: CocktailsApiService!
+    var service: CocktailsApiService
+    
+    init(service: CocktailsApiService) {
+        self.service = service
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemPink
         
-        service = CocktailsApiRemote(url: URL(string: "https://www.thecocktaildb.com/api/json/v1/1")!, client: httpClient)
+        
         
 //        service.searchCocktailByName("margarita") { [weak self] result in
 //            guard let self = self else { return }

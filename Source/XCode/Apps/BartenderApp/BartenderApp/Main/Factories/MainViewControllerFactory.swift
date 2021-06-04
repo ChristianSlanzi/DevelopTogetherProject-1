@@ -5,7 +5,8 @@
 //  Created by Christian Slanzi on 04.06.21.
 //
 
-import Foundation
+import NetworkingService
+import CocktailsApiService
 
 protocol MainViewControllerFactory {
     func makeMainViewController() -> ViewController
@@ -15,7 +16,10 @@ protocol MainViewControllerFactory {
 extension BartenderAppDependencies: MainViewControllerFactory {
     
     func makeMainViewController() -> ViewController {
-        let viewController = ViewController()
+        let httpClient = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let service = CocktailsApiRemote(url: URL(string: "https://www.thecocktaildb.com/api/json/v1/1")!, client: httpClient)
+
+        let viewController = ViewController(service: service)
         return viewController
     }
 }
