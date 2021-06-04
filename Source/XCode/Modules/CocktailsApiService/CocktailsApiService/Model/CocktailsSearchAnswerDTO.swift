@@ -68,10 +68,14 @@ public struct Drink: DTO {
         ------------
         """
     }
+    
+    public var name: String {
+        return strDrink
+    }
 }
 
 public struct CocktailsSearchAnswerDTO: DTO {
-    var drinks: [Drink]
+    public var drinks: [Drink]
     
     public var description: String {
         return """

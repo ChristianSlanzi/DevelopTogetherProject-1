@@ -26,7 +26,14 @@ public class RemoteCocktailsLoader: CocktailsLoader {
         service.searchCocktailsByFirstLetter("m") { [weak self] result in
             guard let self = self else { return }
             
-            print(result)
+            switch(result) {
+            case let .success(data):
+                completion(.success(data.drinks))
+
+            case let .failure(error):
+                completion(.failure(error))
+            break
+            }
         }
     }
     

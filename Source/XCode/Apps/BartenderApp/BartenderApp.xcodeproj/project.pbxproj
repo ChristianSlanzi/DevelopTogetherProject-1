@@ -25,6 +25,8 @@
 		24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */; };
 		24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */; };
 		24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */; };
+		24E469A7266A68E0005E9A7E /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; };
+		24E469A8266A68E0005E9A7E /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,34 @@
 			remoteGlobalIDString = 24BA410126690BE10062F62E;
 			remoteInfo = BartenderApp;
 		};
+		24E4699B266A6884005E9A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E46996266A6884005E9A7E /* CommonUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE1FA3265A60F400724646;
+			remoteInfo = CommonUI;
+		};
+		24E4699D266A6884005E9A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E46996266A6884005E9A7E /* CommonUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE1FAC265A60F400724646;
+			remoteInfo = CommonUITests;
+		};
+		24E469BC266A6957005E9A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE205C265A63CB00724646;
+			remoteInfo = CommonUtils;
+		};
+		24E469BE266A6957005E9A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24FE2065265A63CB00724646;
+			remoteInfo = CommonUtilsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +110,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */,
+				24E469A8266A68E0005E9A7E /* CommonUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +142,8 @@
 		24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailsLoader.swift; sourceTree = "<group>"; };
 		24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCocktailsLoader.swift; sourceTree = "<group>"; };
 		24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeFallbackCocktailsLoader.swift; sourceTree = "<group>"; };
+		24E46996266A6884005E9A7E /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
+		24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */,
+				24E469A7266A68E0005E9A7E /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +176,8 @@
 		242F4682266931D200839094 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */,
+				24E46996266A6884005E9A7E /* CommonUI.xcodeproj */,
 				24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */,
 				246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */,
 			);
@@ -299,6 +335,24 @@
 			path = Composite;
 			sourceTree = "<group>";
 		};
+		24E46997266A6884005E9A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24E4699C266A6884005E9A7E /* CommonUI.framework */,
+				24E4699E266A6884005E9A7E /* CommonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24E469B6266A6957005E9A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24E469BD266A6957005E9A7E /* CommonUtils.framework */,
+				24E469BF266A6957005E9A7E /* CommonUtilsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +449,14 @@
 					ProjectRef = 24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */;
 				},
 				{
+					ProductGroup = 24E46997266A6884005E9A7E /* Products */;
+					ProjectRef = 24E46996266A6884005E9A7E /* CommonUI.xcodeproj */;
+				},
+				{
+					ProductGroup = 24E469B6266A6957005E9A7E /* Products */;
+					ProjectRef = 24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */;
+				},
+				{
 					ProductGroup = 246048E7266932B90074E0E7 /* Products */;
 					ProjectRef = 246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */;
 				},
@@ -435,6 +497,34 @@
 			fileType = wrapper.cfbundle;
 			path = CocktailsApiServiceTests.xctest;
 			remoteRef = 2460492E266933E50074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24E4699C266A6884005E9A7E /* CommonUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonUI.framework;
+			remoteRef = 24E4699B266A6884005E9A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24E4699E266A6884005E9A7E /* CommonUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonUITests.xctest;
+			remoteRef = 24E4699D266A6884005E9A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24E469BD266A6957005E9A7E /* CommonUtils.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonUtils.framework;
+			remoteRef = 24E469BC266A6957005E9A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24E469BF266A6957005E9A7E /* CommonUtilsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonUtilsTests.xctest;
+			remoteRef = 24E469BE266A6957005E9A7E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
