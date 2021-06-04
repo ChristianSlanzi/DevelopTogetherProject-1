@@ -21,6 +21,8 @@
 		24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */; };
 		24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */; };
 		24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468E0266A5620005E9A7E /* MainViewModel.swift */; };
+		24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */; };
+		24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppDependencies.swift; sourceTree = "<group>"; };
 		24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
 		24E468E0266A5620005E9A7E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsLoader.swift; sourceTree = "<group>"; };
+		24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailsLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		24BA410426690BE10062F62E /* BartenderApp */ = {
 			isa = PBXGroup;
 			children = (
+				24E468E8266A5857005E9A7E /* Features */,
 				24E468D0266A48CE005E9A7E /* Common */,
 				24E468C5266A477E005E9A7E /* Main */,
 				24BA410526690BE10062F62E /* AppDelegate.swift */,
@@ -261,6 +266,31 @@
 				24E468E0266A5620005E9A7E /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		24E468E8266A5857005E9A7E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				24E468E9266A586E005E9A7E /* CocktailSearch */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		24E468E9266A586E005E9A7E /* CocktailSearch */ = {
+			isa = PBXGroup;
+			children = (
+				24E468EE266A58FD005E9A7E /* Composite */,
+				24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */,
+			);
+			path = CocktailSearch;
+			sourceTree = "<group>";
+		};
+		24E468EE266A58FD005E9A7E /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */,
+			);
+			path = Composite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,8 +469,10 @@
 				24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
 				24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */,
+				24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */,
 				24BA410A26690BE10062F62E /* ViewController.swift in Sources */,
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,
+				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

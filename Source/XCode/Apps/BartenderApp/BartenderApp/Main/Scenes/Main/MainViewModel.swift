@@ -5,27 +5,17 @@
 //  Created by Christian Slanzi on 04.06.21.
 //
 
-import CocktailsApiService
-
 final class MainViewModel {
 
-    var service: CocktailsApiService
+    var loader: CocktailsLoader
     
-    init(service: CocktailsApiService) {
-        self.service = service
+    init(loader: CocktailsLoader) {
+        self.loader = loader
     }
     
     func didLoad() {
         
-        //        service.searchCocktailByName("margarita") { [weak self] result in
-        //            guard let self = self else { return }
-        //
-        //            print(result)
-        //        }
-                
-        service.searchCocktailsByFirstLetter("m") { [weak self] result in
-            guard let self = self else { return }
-            
+        loader.load(query: "m") { (result) in
             print(result)
         }
     }
