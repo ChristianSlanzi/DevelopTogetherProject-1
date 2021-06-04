@@ -14,6 +14,7 @@
 		2460493D266934470074E0E7 /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460493C266934470074E0E7 /* NetworkingService.framework */; };
 		2460493E266934470074E0E7 /* NetworkingService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460493C266934470074E0E7 /* NetworkingService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2460494926693EC20074E0E7 /* CocktailsApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */; };
+		247517072669939C00544DCC /* CocktailsSearchAnswerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247517062669939C00544DCC /* CocktailsSearchAnswerDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		24604937266934250074E0E7 /* CocktailsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsApiService.swift; sourceTree = "<group>"; };
 		2460493C266934470074E0E7 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsApiRemote.swift; sourceTree = "<group>"; };
+		247517062669939C00544DCC /* CocktailsSearchAnswerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsSearchAnswerDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,11 @@
 		2460490D266933D20074E0E7 /* CocktailsApiService */ = {
 			isa = PBXGroup;
 			children = (
+				247517052669936C00544DCC /* Model */,
 				2460494726693E900074E0E7 /* Remote */,
-				2460490E266933D20074E0E7 /* CocktailsApiService.h */,
 				2460490F266933D20074E0E7 /* Info.plist */,
 				24604937266934250074E0E7 /* CocktailsApiService.swift */,
+				2460490E266933D20074E0E7 /* CocktailsApiService.h */,
 			);
 			path = CocktailsApiService;
 			sourceTree = "<group>";
@@ -125,6 +128,14 @@
 				2460494826693EC20074E0E7 /* CocktailsApiRemote.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		247517052669936C00544DCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				247517062669939C00544DCC /* CocktailsSearchAnswerDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				2460494926693EC20074E0E7 /* CocktailsApiRemote.swift in Sources */,
 				24604938266934250074E0E7 /* CocktailsApiService.swift in Sources */,
+				247517072669939C00544DCC /* CocktailsSearchAnswerDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

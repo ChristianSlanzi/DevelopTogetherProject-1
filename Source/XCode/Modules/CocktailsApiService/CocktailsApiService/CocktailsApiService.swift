@@ -8,7 +8,9 @@
 import NetworkingService
 
 public protocol CocktailsApiService {
+    typealias ServiceError = NetworkingServiceError
+    typealias SearchResult = Swift.Result<CocktailsSearchAnswerDTO, ServiceError>
     //Search cocktail by name
-    func searchCocktailByName(_ name: String)
+    func searchCocktailByName(_ name: String, completion: @escaping (SearchResult) -> Void)
     func searchCocktailsByFirstLetter(_ letter: Character)
 }

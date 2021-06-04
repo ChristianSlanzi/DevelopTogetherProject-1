@@ -7,7 +7,7 @@
 
 import NetworkingService
 
-class CocktailsApiRemote: CocktailsApiService {
+public class CocktailsApiRemote: CocktailsApiService {
     
     private var url: URL
     private var client: HTTPClient
@@ -19,11 +19,16 @@ class CocktailsApiRemote: CocktailsApiService {
         self.apiKey = apiKey
     }
     
-    func searchCocktailByName(_ name: String) {
-        
+    public func searchCocktailByName(_ name: String, completion: @escaping (SearchResult) -> Void) {
+        client.urlQueryParameters.add(value: "\(name)", forKey: "s")
+        client.makeRequest(toURL: url.appendingPathComponent("search.php"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(GenericDecoder.decodeResult(result: result))
+        }
     }
     
-    func searchCocktailsByFirstLetter(_ letter: Character) {
+    public func searchCocktailsByFirstLetter(_ letter: Character) {
         
     }
 }
