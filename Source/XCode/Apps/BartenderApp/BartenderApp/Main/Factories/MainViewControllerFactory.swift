@@ -18,8 +18,10 @@ extension BartenderAppDependencies: MainViewControllerFactory {
         let httpClient = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let service = CocktailsApiRemote(url: URL(string: "https://www.thecocktaildb.com/api/json/v1/1")!, client: httpClient)
 
-        let loader = RemoteCocktailsLoader(service: service)
-        let viewModel = MainViewModel(loader: loader)
+        let remoteLoader = RemoteCocktailsLoader(service: service)
+        let localLoader = LocalCocktailsLoader()
+        let compositeFallbackLoader = CompositeFallbackCocktailsLoader(remote: remoteLoader, local: localLoader)
+        let viewModel = MainViewModel(loader: compositeFallbackLoader)
         let viewController = ViewController(viewModel: viewModel)
         return viewController
     }

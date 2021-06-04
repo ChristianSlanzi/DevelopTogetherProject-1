@@ -23,6 +23,8 @@
 		24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468E0266A5620005E9A7E /* MainViewModel.swift */; };
 		24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */; };
 		24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */; };
+		24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */; };
+		24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		24E468E0266A5620005E9A7E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsLoader.swift; sourceTree = "<group>"; };
 		24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailsLoader.swift; sourceTree = "<group>"; };
+		24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCocktailsLoader.swift; sourceTree = "<group>"; };
+		24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeFallbackCocktailsLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */,
+				24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */,
+				24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */,
 			);
 			path = Composite;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */,
 				24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */,
 				24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
@@ -473,6 +480,7 @@
 				24BA410A26690BE10062F62E /* ViewController.swift in Sources */,
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,
 				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
+				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
