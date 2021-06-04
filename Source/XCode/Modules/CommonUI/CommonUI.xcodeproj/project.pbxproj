@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */; };
 		24FE1FAD265A60F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FA3265A60F400724646 /* CommonUI.framework */; };
 		24FE1FB2265A60F400724646 /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FB1265A60F400724646 /* CommonUITests.swift */; };
 		24FE1FB4265A60F400724646 /* CommonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FE1FA6265A60F400724646 /* CommonUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		24FE1FA3265A60F400724646 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE1FA6265A60F400724646 /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
 		24FE1FA7265A60F400724646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				24FE1FE9265A62D400724646 /* Modal.swift */,
 				24FE1FEA265A62D400724646 /* CaptionView.swift */,
 				24FE1FEB265A62D400724646 /* CustomIndicatorView.swift */,
+				24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				24FE2049265A62D400724646 /* ContainerController.swift in Sources */,
 				24FE2038265A62D400724646 /* UILabel+ColorUpdatable.swift in Sources */,
 				24FE202E265A62D400724646 /* NavigationBar.swift in Sources */,
+				24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

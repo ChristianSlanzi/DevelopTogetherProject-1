@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */; };
 		24BA410626690BE10062F62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410526690BE10062F62E /* AppDelegate.swift */; };
 		24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410726690BE10062F62E /* SceneDelegate.swift */; };
 		24BA410A26690BE10062F62E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410926690BE10062F62E /* ViewController.swift */; };
@@ -120,6 +121,7 @@
 /* Begin PBXFileReference section */
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
+		24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
 		24BA410226690BE10062F62E /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BA410526690BE10062F62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BA410726690BE10062F62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */,
+				24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
 				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
+				24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

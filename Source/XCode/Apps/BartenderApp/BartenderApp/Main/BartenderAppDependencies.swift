@@ -12,7 +12,7 @@ class BartenderAppDependencies: AppDependencies {
     override func start() {
         super.start()
         
-        setRootViewController(makeMainViewController())
+        setRootViewController(makeMainTabBarController())
     }
 }
 
