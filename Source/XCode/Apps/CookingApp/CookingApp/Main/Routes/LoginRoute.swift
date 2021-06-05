@@ -16,7 +16,7 @@ extension LoginRoute where Self: Router {
     func openLogin(with transition: Transition) {
 
         let router = DefaultRouter(rootTransition: transition)
-        let viewController = AppDependencies.shared.createLoginViewController()
+        let viewController = CookingAppDependencies.shared.createLoginViewController()
         router.root = viewController
         
         let navigationController = UINavigationController(rootViewController: viewController)

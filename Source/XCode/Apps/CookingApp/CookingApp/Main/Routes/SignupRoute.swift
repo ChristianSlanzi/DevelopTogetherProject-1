@@ -16,7 +16,7 @@ extension SignupRoute where Self: Router {
     func openSignup(with transition: Transition) {
 
         let router = DefaultRouter(rootTransition: transition)
-        let viewController = AppDependencies.shared.createSignupViewController()
+        let viewController = CookingAppDependencies.shared.createSignupViewController()
         router.root = viewController
 
         route(to: viewController, as: transition)

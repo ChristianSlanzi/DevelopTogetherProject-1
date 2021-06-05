@@ -47,11 +47,9 @@ enum Tabs {
     }
 }
 
-class AppDependencies {
+class CookingAppDependencies: AppDependencies {
     
-    static let shared = AppDependencies()
-    
-    private var window: UIWindow?
+    static let shared = CookingAppDependencies()
     
     private lazy var recipeStore: RecipeStore /*& RecipeDataStore*/ = {
         do {
@@ -88,36 +86,15 @@ class AppDependencies {
             return NullStore()
         }
     }()
-
-    private init() {
-        configureDependencies()
-    }
     
-    private func configureDependencies() {
+    public override func start() {
+        super.start()
+        login()
+        return;
         
+        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
+        setRootViewController(createMainViewController(router: mainRouter))
     }
-    
-    internal func setRootViewController(_ viewController: UIViewController) {
-        setRootViewController(viewController, window: getWindow())
-    }
-    
-    internal func setRootViewController(_ viewController: UIViewController, window: UIWindow?) {
-        window?.rootViewController = viewController
-    }
-
-    public func setScene(_ scene: UIScene) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        
-        window?.makeKeyAndVisible()
-    }
-    
-    public func getWindow() -> UIWindow? {
-        return window
-    }
-
 }
 
 extension DefaultRouter: RecipeUI.RecipeRoute {
@@ -134,7 +111,7 @@ extension DefaultRouter: RecipeUI.RecipeRoute {
     }
 }
 
-extension AppDependencies {
+extension CookingAppDependencies {
     
     func makeMainTab() -> UIViewController {
         
@@ -302,15 +279,7 @@ extension AppDependencies {
     }
 }
 
-extension AppDependencies {
-    
-    public func start() {
-        login()
-        return;
-        
-        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
-        setRootViewController(createMainViewController(router: mainRouter))
-    }
+extension CookingAppDependencies {
     
     public func login() {
         var isUserLoggedIn = true
@@ -334,7 +303,7 @@ extension AppDependencies {
 
 // MARK: - Secrets
 
-extension AppDependencies {
+extension CookingAppDependencies {
     
     private var cookingApiKey: String {
       get {

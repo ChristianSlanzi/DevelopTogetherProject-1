@@ -27,7 +27,7 @@
 		24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */; };
 		24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BC22637F9C40010BE25 /* CookingAppTests.swift */; };
 		24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */; };
-		24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* AppDependencies.swift */; };
+		24567BE62637FE210010BE25 /* CookingAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* CookingAppDependencies.swift */; };
 		24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BF6263827790010BE25 /* LoginViewModelTests.swift */; };
 		24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BFE263828DF0010BE25 /* LoginViewModel.swift */; };
 		24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C04263829E60010BE25 /* MockLoginViewController.swift */; };
@@ -55,6 +55,7 @@
 		245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E89263C273800D2B454 /* DefaultRouter.swift */; };
 		245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */; };
 		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
+		245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FDCB3266B6E22005E75FE /* AppDependencies.swift */; };
 		24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */; };
 		2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEDD265B9C1800640D41 /* SeparatorView.swift */; };
 		2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEEF265BA00800640D41 /* DefaultImageView.swift */; };
@@ -316,7 +317,7 @@
 		24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppUITests.swift; sourceTree = "<group>"; };
 		24567BCF2637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24567BE52637FE210010BE25 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		24567BE52637FE210010BE25 /* CookingAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppDependencies.swift; sourceTree = "<group>"; };
 		24567BF6263827790010BE25 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		24567BFE263828DF0010BE25 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		24567C04263829E60010BE25 /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		245FDCB3266B6E22005E75FE /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				245FDCA2266B6DF1005E75FE /* Common */,
 				24C4F0EC265142FE0061737C /* Resources */,
 				245B7E7C263C25A000D2B454 /* Routing */,
 				245B7E6E263C1BE300D2B454 /* Utils */,
@@ -532,7 +535,7 @@
 				24C4F0DF2651403F0061737C /* Stubs */,
 				24AA3FCF263C82D200F73BBD /* Routes */,
 				241040E826394CFA00994726 /* Wrappers */,
-				24567BE52637FE210010BE25 /* AppDependencies.swift */,
+				24567BE52637FE210010BE25 /* CookingAppDependencies.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -774,6 +777,14 @@
 				2484CEF3265BAA3400640D41 /* DefaultLabel.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		245FDCA2266B6DF1005E75FE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				245FDCB3266B6E22005E75FE /* AppDependencies.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		2460498826694BE40074E0E7 /* Products */ = {
@@ -1221,7 +1232,7 @@
 				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
 				245B7E7E263C266500D2B454 /* Router.swift in Sources */,
 				24330DAB263D451F00724978 /* MainRoute.swift in Sources */,
-				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				24567BE62637FE210010BE25 /* CookingAppDependencies.swift in Sources */,
 				24C4F0E12651403F0061737C /* NullStore.swift in Sources */,
 				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
 				24330D9C263D39D700724978 /* LoginRoute.swift in Sources */,
@@ -1243,6 +1254,7 @@
 				245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */,
 				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,
 				24A456ED266008C800095B31 /* IngredientsView.swift in Sources */,
+				245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 				245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */,
 				24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */,
