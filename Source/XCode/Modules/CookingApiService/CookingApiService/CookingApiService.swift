@@ -8,7 +8,7 @@
 import NetworkingService
 
 public protocol CookingApiService {
-    typealias ServiceError = CookingApiServiceError
+    typealias ServiceError = NetworkingServiceError//CookingApiServiceError
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
     typealias RecipeInformationResult = Swift.Result<RecipeInformationResultDTO, ServiceError>
     

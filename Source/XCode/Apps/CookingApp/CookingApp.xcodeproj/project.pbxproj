@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240754EB2664E774006E84F9 /* SearchViewModel.swift */; };
+		240A32E72667B38200A38177 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A32E62667B38200A38177 /* CategoriesView.swift */; };
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
@@ -42,6 +43,7 @@
 		24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4526388D500010BE25 /* SignupViewModel.swift */; };
 		24567C4A2638926D0010BE25 /* MockEmailAddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */; };
 		24567C4E263894630010BE25 /* MockSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C4D263894630010BE25 /* MockSignupController.swift */; };
+		245A194026682AB9003CFC6F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A193F26682AB9003CFC6F /* CategoryViewModel.swift */; };
 		245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E57263BED8400D2B454 /* MainTabBarController.swift */; };
 		245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E60263C16DD00D2B454 /* SearchViewController.swift */; };
 		245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */; };
@@ -193,6 +195,20 @@
 			remoteGlobalIDString = 2471EF84263488EF00E35A11;
 			remoteInfo = LoginSignupModule;
 		};
+		2460498C26694BE40074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9D12632DE2E00887D44;
+			remoteInfo = NetworkingService;
+		};
+		2460498E26694BE40074E0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C8D9DA2632DE2E00887D44;
+			remoteInfo = NetworkingServiceTests;
+		};
 		24C4F03726511D8C0061737C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */;
@@ -271,6 +287,7 @@
 
 /* Begin PBXFileReference section */
 		240754EB2664E774006E84F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		240A32E62667B38200A38177 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
@@ -314,6 +331,7 @@
 		24567C4526388D500010BE25 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		24567C492638926D0010BE25 /* MockEmailAddressValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailAddressValidator.swift; sourceTree = "<group>"; };
 		24567C4D263894630010BE25 /* MockSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupController.swift; sourceTree = "<group>"; };
+		245A193F26682AB9003CFC6F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		245B7E57263BED8400D2B454 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		245B7E60263C16DD00D2B454 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		245B7E66263C16EE00D2B454 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +343,7 @@
 		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		2484CEEF265BA00800640D41 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
@@ -378,6 +397,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240A32D72667B36600A38177 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				240A32E62667B38200A38177 /* CategoriesView.swift */,
+				245A193F26682AB9003CFC6F /* CategoryViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		241040D326394C3C00994726 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +644,7 @@
 		24567C1826386F5C0010BE25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */,
 				24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */,
 				24FE1FBF265A615300724646 /* CommonUI.xcodeproj */,
 				24C4F098265134550061737C /* RecipeUI.xcodeproj */,
@@ -656,6 +685,7 @@
 		245B7E5D263C163400D2B454 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				240A32D72667B36600A38177 /* Views */,
 				245B7E60263C16DD00D2B454 /* SearchViewController.swift */,
 				240754EB2664E774006E84F9 /* SearchViewModel.swift */,
 			);
@@ -744,6 +774,15 @@
 				2484CEF3265BAA3400640D41 /* DefaultLabel.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2460498826694BE40074E0E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2460498D26694BE40074E0E7 /* NetworkingService.framework */,
+				2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		24A456CB265FAFC400095B31 /* Views */ = {
@@ -961,6 +1000,10 @@
 					ProjectRef = 24567C1926386F780010BE25 /* LoginSignupModule.xcodeproj */;
 				},
 				{
+					ProductGroup = 2460498826694BE40074E0E7 /* Products */;
+					ProjectRef = 2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */;
+				},
+				{
 					ProductGroup = 24C4F02F26511D8C0061737C /* Products */;
 					ProjectRef = 24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */;
 				},
@@ -1055,6 +1098,20 @@
 			fileType = wrapper.cfbundle;
 			path = LoginSignupModuleTests.xctest;
 			remoteRef = 24567C2026386F780010BE25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460498D26694BE40074E0E7 /* NetworkingService.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NetworkingService.framework;
+			remoteRef = 2460498C26694BE40074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkingServiceTests.xctest;
+			remoteRef = 2460498E26694BE40074E0E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		24C4F03826511D8C0061737C /* RecipeFeature.framework */ = {
@@ -1154,6 +1211,7 @@
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
+				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
 				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
@@ -1176,6 +1234,7 @@
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,
 				245B7E85263C26B900D2B454 /* Transition.swift in Sources */,
 				245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */,
+				245A194026682AB9003CFC6F /* CategoryViewModel.swift in Sources */,
 				245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */,

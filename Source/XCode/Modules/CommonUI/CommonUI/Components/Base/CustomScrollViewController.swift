@@ -94,8 +94,8 @@ open class CustomScrollViewController: BaseViewController {
         return scrollContentView.trailingAnchor
     }
     
-    public func setContentViewTopAnchor(_ anchor: NSLayoutYAxisAnchor) {
-        NSLayoutConstraint.activate([scrollView.topAnchor.constraint(equalTo: anchor)])
+    public func setContentViewTopAnchor(_ anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0.0) {
+        NSLayoutConstraint.activate([scrollView.topAnchor.constraint(equalTo: anchor, constant: padding)])
     }
     
     public func setContentViewBottom(view: UIView) {

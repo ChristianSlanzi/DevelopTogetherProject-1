@@ -5,7 +5,7 @@
 //  Created by Christian Slanzi on 24.05.21.
 //
 
-import Foundation
+import NetworkingService
 
 public struct MetricDTO: DTO {
     public var amount: Float

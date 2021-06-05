@@ -66,6 +66,7 @@
 		24446FE32636FB080038B877 /* RecipeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDTO.swift; sourceTree = "<group>"; };
 		24446FE42636FB080038B877 /* RecipesSearchResultDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesSearchResultDTO.swift; sourceTree = "<group>"; };
 		24446FEA2636FCA30038B877 /* CookingApiServiceTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CookingApiServiceTests+Helpers.swift"; sourceTree = "<group>"; };
+		2460499226694C030074E0E7 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24802813265C414200BBD925 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24802816265C416100BBD925 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		2480281A265C516800BBD925 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +162,7 @@
 		24446FDC2636F9DB0038B877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2460499226694C030074E0E7 /* NetworkingService.framework */,
 				2480281A265C516800BBD925 /* TestHelpers.framework */,
 				24446FDD2636F9DB0038B877 /* NetworkingService.framework */,
 			);
