@@ -14,39 +14,6 @@ import RecipeUI
 import RecipeFeature
 import CoreData
 
-enum Tabs {
-    case main
-    case search
-    case favorites
-    case profile
-
-    var index: Int {
-        switch self {
-        case .main:
-            return 0
-        case .search:
-            return 1
-        case .favorites:
-            return 1
-        case .profile:
-            return 1
-        }
-    }
-
-    var item: UITabBarItem {
-        switch self {
-        case .main:
-            return UITabBarItem(title: "Home", image: nil, tag: index)
-        case .search:
-            return UITabBarItem(title: "Search", image: nil, tag: index)
-        case .favorites:
-            return UITabBarItem(title: "Favorites", image: nil, tag: index)
-        case .profile:
-            return UITabBarItem(title: "Profile", image: nil, tag: index)
-        }
-    }
-}
-
 class CookingAppDependencies: AppDependencies {
     
     static let shared = CookingAppDependencies()
@@ -69,7 +36,7 @@ class CookingAppDependencies: AppDependencies {
         }
     }()
     
-    private lazy var recipeInformationStore: RecipeInformationStore /*& RecipeDataStore*/ = {
+    internal lazy var recipeInformationStore: RecipeInformationStore /*& RecipeDataStore*/ = {
         do {
             return try CoreDataRecipeInformationStore(
                 storeURL: NSPersistentContainer
@@ -93,7 +60,7 @@ class CookingAppDependencies: AppDependencies {
         return;
         
         let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
-        setRootViewController(createMainViewController(router: mainRouter))
+        setRootViewController(makeMainViewController(router: mainRouter))
     }
 }
 
@@ -112,73 +79,6 @@ extension DefaultRouter: RecipeUI.RecipeRoute {
 }
 
 extension CookingAppDependencies {
-    
-    func makeMainTab() -> UIViewController {
-        
-        var FLAG = true
-        
-        if FLAG {
-            let router = DefaultRouter(rootTransition: EmptyTransition())
-            let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
-            router.root = recipeListVC
-            recipeListVC.viewModel?.recipeLoader = makeCompositeRecipeLoader()
-            
-            return UINavigationController(rootViewController: recipeListVC)
-        }
-        
-        let router = DefaultRouter(rootTransition: EmptyTransition())
-        let viewController = createMainViewController(router: router)
-        router.root = viewController
-        
-        let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.main.item
-        return navigation
-    }
-    
-    func makeSearchTab() -> UIViewController {
-        let router = DefaultRouter(rootTransition: EmptyTransition())
-        let viewController = createSearchViewController(router: router)
-        router.root = viewController
-        let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.search.item
-        return navigation
-    }
-    
-    func makeFavoritesTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createFavoritesViewController())
-        navigation.tabBarItem = Tabs.favorites.item
-        return navigation
-    }
-    
-    func makeProfileTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createProfileViewController())
-        navigation.tabBarItem = Tabs.profile.item
-        return navigation
-    }
-    
-    internal func createMainTabBarController() -> UIViewController {
-        let tabs = [makeMainTab(), makeSearchTab(), makeFavoritesTab(), makeProfileTab()]
-        let tabController = MainTabBarController(viewControllers: tabs)
-        return tabController
-    }
-    
-    internal func createMainViewController(router: RecipeRoute) -> UIViewController {
-        
-        let viewModel = MainViewModel(router: router)
-        
-        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
-        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
-                                                      client: networkingService,
-                                                      apiKey: cookingApiKey)
-        let service = serviceFactory.getCookingApiService()
-        
-        viewModel.cookingApiService = service
-        viewModel.recipeInformationStore = recipeInformationStore
-        
-        let viewController = ViewController(viewModel: viewModel)
-        
-        return viewController
-    }
     
     internal func createSearchViewController(router: SearchRoute) -> UIViewController {
         let viewModel = SearchViewModel(router: router)
@@ -287,7 +187,7 @@ extension CookingAppDependencies {
         //if we have credentials
         if isUserLoggedIn {
             //routeToMainViewController()
-            setRootViewController(createMainTabBarController())
+            setRootViewController(makeMainTabBarController())
         } else {
             setRootViewController(createLoginViewController())
         }
@@ -305,7 +205,7 @@ extension CookingAppDependencies {
 
 extension CookingAppDependencies {
     
-    private var cookingApiKey: String {
+    internal var cookingApiKey: String {
       get {
         // 1 - search for the secrets plist file
         guard let filePath = Bundle.main.path(forResource: "Secrets-Info", ofType: "plist") else {

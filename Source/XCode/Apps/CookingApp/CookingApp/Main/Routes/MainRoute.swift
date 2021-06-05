@@ -16,7 +16,7 @@ extension MainRoute where Self: Router {
     func openMain(with transition: Transition) {
 
         //let router = DefaultRouter(rootTransition: transition)
-        let viewController = CookingAppDependencies.shared.createMainTabBarController()
+        let viewController = CookingAppDependencies.shared.makeMainTabBarController()
         //router.root = viewController
         CookingAppDependencies.shared.setRootViewController(viewController)
         

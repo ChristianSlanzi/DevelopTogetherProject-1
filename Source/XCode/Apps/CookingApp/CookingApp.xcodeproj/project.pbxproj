@@ -78,6 +78,8 @@
 		24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB1F26434260008229B2 /* RecipeStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; };
 		24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24D8051B266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */; };
+		24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */; };
 		24FE1F72265A54CD00724646 /* Secrets-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0EE265143370061737C /* Secrets-Info.plist */; };
 		24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; };
 		24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -365,6 +367,8 @@
 		24C4F098265134550061737C /* RecipeUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeUI.xcodeproj; path = ../../../Modules/RecipeUI/RecipeUI.xcodeproj; sourceTree = "<group>"; };
 		24C4F0E02651403F0061737C /* NullStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		24C4F0EE265143370061737C /* Secrets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secrets-Info.plist"; sourceTree = "<group>"; };
+		24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
+		24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
 		24FE1FBF265A615300724646 /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -532,6 +536,7 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24D80509266BEDCA00A77ED0 /* Factories */,
 				24C4F0DF2651403F0061737C /* Stubs */,
 				24AA3FCF263C82D200F73BBD /* Routes */,
 				241040E826394CFA00994726 /* Wrappers */,
@@ -875,6 +880,15 @@
 				24C4F0EE265143370061737C /* Secrets-Info.plist */,
 			);
 			path = Secrets;
+			sourceTree = "<group>";
+		};
+		24D80509266BEDCA00A77ED0 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */,
+				24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		24FE1FC0265A615300724646 /* Products */ = {
@@ -1223,6 +1237,7 @@
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
 				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
+				24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
 				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
@@ -1240,6 +1255,7 @@
 				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,
 				24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */,
 				2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */,
+				24D8051B266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,
