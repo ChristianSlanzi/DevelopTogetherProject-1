@@ -20,14 +20,14 @@ public final class LocalRecipesLoader {
 }
 
 extension LocalRecipesLoader: RecipeLoader {
-    public func load(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func load(predicate: NSPredicate?,  completion: @escaping (RecipeLoader.Result) -> Void) {
         
         do {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
                 key: #keyPath(CoreDataRecipe.idCode),
                 ascending: true)
             
-            store.retrieve(sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipe>) in
+            store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipe>) in
                 switch result {
                 case let .failure(error):
                     completion(.failure(error))

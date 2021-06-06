@@ -41,7 +41,7 @@ final class MainViewModel {
         }
         
         
-        cookingApiService?.searchRecipes(query: "", completion: { (result) in
+        cookingApiService?.searchRecipes(predicate: nil, completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)

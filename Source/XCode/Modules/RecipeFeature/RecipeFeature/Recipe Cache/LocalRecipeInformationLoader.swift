@@ -26,8 +26,8 @@ extension LocalRecipeInformationLoader: RecipeInformationLoader {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
                 key: #keyPath(CoreDataRecipe.idCode),
                 ascending: true)
-            
-            store.retrieve(sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipeInformation>) in
+            let predicate: NSPredicate = NSPredicate(format: "idCode == %@", recipeId)
+            store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipeInformation>) in
                 switch result {
                 case let .failure(error):
                     completion(.failure(error))

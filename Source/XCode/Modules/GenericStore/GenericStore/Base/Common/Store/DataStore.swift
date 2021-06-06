@@ -19,7 +19,7 @@ public protocol DataStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func retrieve<T: Storable & MappableProtocol>(sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion<T>)
+    func retrieve<T: Storable & MappableProtocol>(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion<T>)
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.

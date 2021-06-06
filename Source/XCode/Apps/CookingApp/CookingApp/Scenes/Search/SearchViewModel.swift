@@ -29,7 +29,7 @@ class SearchViewModel {
     func search(_ textToSearch: String) {
         print(textToSearch)
         
-        recipeLoader?.load(query: textToSearch, completion: { (result) in
+        recipeLoader?.load(predicate: NSPredicate(format:"title CONTAINS '\(textToSearch)'"), completion: { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {

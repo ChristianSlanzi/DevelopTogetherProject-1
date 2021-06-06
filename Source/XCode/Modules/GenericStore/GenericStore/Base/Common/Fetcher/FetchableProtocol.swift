@@ -8,5 +8,5 @@
 public protocol FetchableProtocol {
     associatedtype PersistenceType
     associatedtype FetchRequest
-    static func fetchRequest(sortDescriptors: [NSSortDescriptor]?) -> FetchRequest
+    static func fetchRequest(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> FetchRequest
 }

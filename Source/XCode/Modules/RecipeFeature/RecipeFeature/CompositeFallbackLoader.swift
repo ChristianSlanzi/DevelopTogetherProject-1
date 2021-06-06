@@ -18,8 +18,8 @@ public class CompositeFallbackLoader: RecipeLoader {
         
     }
     
-    public func load(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
-        remote.load(query: query, completion: { [weak self] result in
+    public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        remote.load(predicate: predicate, completion: { [weak self] result in
             switch result {
             case let .success(data):
                 print("fetch \(result) remotely")
@@ -36,7 +36,7 @@ public class CompositeFallbackLoader: RecipeLoader {
                 }
             case .failure:
                 print("remote fetch failed, fetch locally")
-                self?.retrieveLocalData(completion: { [weak self] localResult in
+                self?.retrieveLocalData(predicate: predicate, completion: { [weak self] localResult in
                     
                     guard self != nil else { return }
                     
@@ -51,8 +51,8 @@ public class CompositeFallbackLoader: RecipeLoader {
         })
     }
     
-    private func retrieveLocalData(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
-        local.load(query: query, completion: { localResult in
+    private func retrieveLocalData(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        local.load(predicate: predicate, completion: { localResult in
             switch localResult {
             case let .success(data):
                 print("fetch \(data) locally")

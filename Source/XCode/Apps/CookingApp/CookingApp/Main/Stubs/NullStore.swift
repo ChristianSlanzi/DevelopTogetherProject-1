@@ -11,7 +11,7 @@ import RecipeStore
 class NullStore {}
 
 extension NullStore: RecipeStore {
-    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion) {
+    func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion) {
         completion(.empty)
     }
     
@@ -25,7 +25,7 @@ extension NullStore: RecipeStore {
 }
 
 extension NullStore: RecipeInformationStore {
-    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping InfoRetrievalCompletion) {
+    func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping InfoRetrievalCompletion) {
         completion(.empty)
     }
     

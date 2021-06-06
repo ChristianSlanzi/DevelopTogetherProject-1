@@ -25,8 +25,8 @@ public class RemoteLoader: RecipeLoader {
     public init(service: CookingApiService) {
         self.service = service
     }
-    public func load(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
-        service.searchRecipes(query: query) { (result) in
+    public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        service.searchRecipes(predicate: predicate) { (result) in
             switch result {
             case let .success(resultDTO):
                 completion(.success(resultDTO.results.map({ (dto) -> Recipe in
