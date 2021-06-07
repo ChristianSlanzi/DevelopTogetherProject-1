@@ -26,6 +26,23 @@ public class RemoteLoader: RecipeLoader {
         self.service = service
     }
     public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        if predicate != nil && predicate!.predicateFormat.contains("ingredients") {
+            let parameters = predicate!.predicateFormat.replacingOccurrences(of: "ingredients CONTAINS ", with: "")
+            service.searchRecipesByIngredients(parameters: parameters) { (result) in
+                switch result {
+                case let .success(resultDTO):
+                    completion(.success(resultDTO.map({ (dto) -> Recipe in
+                        Recipe(id: dto.id, calories: nil, carbs: nil, fat: nil, image: dto.image, imageType: dto.imageType, protein: nil, title: dto.title)
+                    })))
+                    break
+                case let .failure(error):
+                    completion(.failure(error))
+                    break
+                }
+            }
+            return
+        }
+        
         service.searchRecipes(predicate: predicate) { (result) in
             switch result {
             case let .success(resultDTO):
@@ -119,7 +136,8 @@ public class RemoteInformationLoader: RecipeInformationLoader {
         }
     }
     
-    private func mapMeasures(_ dtoMeasure: MeasureDTO) -> Measure {
+    private func mapMeasures(_ dtoMeasure: MeasureDTO?) -> Measure? {
+        guard let dtoMeasure = dtoMeasure else { return nil }
         let localMetric = dtoMeasure.metric
         let localUs = dtoMeasure.us
         return Measure(metric: Metric(amount: localMetric.amount,

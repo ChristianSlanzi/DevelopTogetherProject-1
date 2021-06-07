@@ -63,12 +63,12 @@ public struct Measure: Equatable {
 }
 
 public struct Ingredient: Equatable {
-    public var id: Int
+    public var id: Int?
     public var aisle: String?
     public var amount: Float
     public var consistency: String?
     public var image: String?
-    public var measures: Measure
+    public var measures: Measure?
     public var meta: [String]
     public var metaInformation: [String]
     public var name: String

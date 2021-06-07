@@ -20,6 +20,7 @@ public class RecipeInformationCompositeFallbackLoader: RecipeInformationLoader {
     
     public func load(recipeId: Int,completion: @escaping (RecipeInformationLoader.Result) -> Void) {
         remote.load(recipeId: recipeId, completion: { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case let .success(data):
                 print("fetch \(result) remotely")

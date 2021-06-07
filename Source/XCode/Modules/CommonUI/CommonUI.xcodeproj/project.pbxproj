@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241FD944266E143C002C0F00 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD943266E143C002C0F00 /* CheckBox.swift */; };
 		24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */; };
 		24FE1FAD265A60F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FA3265A60F400724646 /* CommonUI.framework */; };
 		24FE1FB2265A60F400724646 /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FB1265A60F400724646 /* CommonUITests.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		241FD943266E143C002C0F00 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		24FE1FA3265A60F400724646 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE1FA6265A60F400724646 /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241FD941266E1406002C0F00 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				241FD943266E143C002C0F00 /* CheckBox.swift */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
 		24FE1F99265A60F400724646 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		24FE1FCC265A62D400724646 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				241FD941266E1406002C0F00 /* Checkbox */,
 				24FE1FCD265A62D400724646 /* BarChart */,
 				24FE1FD8265A62D400724646 /* TextFields */,
 				24FE1FDB265A62D400724646 /* Notification */,
@@ -639,6 +650,7 @@
 				24FE2032265A62D400724646 /* ColorUpdatable.swift in Sources */,
 				24FE2021265A62D400724646 /* UIBezierPathExtension.swift in Sources */,
 				24FE203B265A62D400724646 /* VideoPlayerView.swift in Sources */,
+				241FD944266E143C002C0F00 /* CheckBox.swift in Sources */,
 				24FE2039265A62D400724646 /* CustomNotification.swift in Sources */,
 				24FE2034265A62D400724646 /* Theme.swift in Sources */,
 				24FE2028265A62D400724646 /* TappableLabel.swift in Sources */,

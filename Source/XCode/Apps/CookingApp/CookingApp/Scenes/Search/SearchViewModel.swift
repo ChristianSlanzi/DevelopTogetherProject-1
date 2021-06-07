@@ -26,6 +26,31 @@ class SearchViewModel {
         lastTextSearched = ""
     }
     
+    
+    func searchForIngredients(_ textToSearch: String) {
+        print(textToSearch)
+        
+        recipeLoader?.load(predicate: NSPredicate(format:"ingredients CONTAINS '\(textToSearch)'"), completion: { (result) in
+            switch result {
+            case let .success(recipes):
+                guard !recipes.isEmpty else {
+                    
+                    return
+                }
+                print(recipes)
+                
+                DispatchQueue.main.async {
+                    self.router.openRecipeList(recipes)
+                }
+                
+            case let .failure(error):
+                
+                print(error)
+            }
+
+        })
+    }
+    
     func search(_ textToSearch: String) {
         print(textToSearch)
         

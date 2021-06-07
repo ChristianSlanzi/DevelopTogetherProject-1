@@ -8,7 +8,7 @@
 import NetworkingService
 
 class CookingApiRemote: CookingApiService {
-    
+
     private var url: URL
     private var client: HTTPClient
     private var apiKey: String?
@@ -17,6 +17,25 @@ class CookingApiRemote: CookingApiService {
         self.url = url
         self.client = client
         self.apiKey = apiKey
+    }
+    
+    func searchRecipesByNutrients(parameters: String, completion: @escaping (RecipesSearchResult) -> Void) {
+        
+    }
+    
+    func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void) {
+        
+        if let key = apiKey {
+            client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
+        }
+        
+        client.urlQueryParameters.add(value: parameters, forKey: "ingredients")
+        
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/findByIngredients"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(GenericDecoder.decodeResult(result: result))
+        }
     }
     
     func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void) {
