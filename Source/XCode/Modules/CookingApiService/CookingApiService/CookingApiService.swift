@@ -15,7 +15,7 @@ public protocol CookingApiService {
     
     func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void)
     //typedef Parameters [String: Any]
-    func searchRecipesByNutrients(parameters: String, completion: @escaping (RecipesSearchResult) -> Void)
+    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchResult) -> Void)
     func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void)
     func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void)
     

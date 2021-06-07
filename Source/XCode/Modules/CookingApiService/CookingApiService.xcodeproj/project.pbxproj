@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		241FD947266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */; };
+		241FD94B266E6695002C0F00 /* NutrientParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD94A266E6695002C0F00 /* NutrientParameters.swift */; };
 		2441118E265C2713003EB9B2 /* RecipeInformationResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */; };
 		24446FB82636F6AF0038B877 /* CookingApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24446FAE2636F6AE0038B877 /* CookingApiService.framework */; };
 		24446FBD2636F6AF0038B877 /* CookingApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FBC2636F6AF0038B877 /* CookingApiServiceTests.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchByIngredientsResultDTO.swift; sourceTree = "<group>"; };
+		241FD94A266E6695002C0F00 /* NutrientParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientParameters.swift; sourceTree = "<group>"; };
 		2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationResultDTO.swift; sourceTree = "<group>"; };
 		24446FAE2636F6AE0038B877 /* CookingApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CookingApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24446FB12636F6AE0038B877 /* CookingApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingApiService.h; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				24446FE42636FB080038B877 /* RecipesSearchResultDTO.swift */,
 				2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */,
 				241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */,
+				241FD94A266E6695002C0F00 /* NutrientParameters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24446FD52636F8FB0038B877 /* CookingApiService.swift in Sources */,
+				241FD94B266E6695002C0F00 /* NutrientParameters.swift in Sources */,
 				24446FE72636FB080038B877 /* RecipesSearchResultDTO.swift in Sources */,
 				241FD947266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift in Sources */,
 				2441118E265C2713003EB9B2 /* RecipeInformationResultDTO.swift in Sources */,
