@@ -10,6 +10,7 @@
 		240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240754EB2664E774006E84F9 /* SearchViewModel.swift */; };
 		240A32E72667B38200A38177 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A32E62667B38200A38177 /* CategoriesView.swift */; };
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
+		241FD94E266E6988002C0F00 /* NutrientsSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
 		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
@@ -294,6 +295,7 @@
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
+		241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsSearchView.swift; sourceTree = "<group>"; };
 		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			children = (
 				240A32E62667B38200A38177 /* CategoriesView.swift */,
 				245A193F26682AB9003CFC6F /* CategoryViewModel.swift */,
+				241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1266,6 +1269,7 @@
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
+				241FD94E266E6988002C0F00 /* NutrientsSearchView.swift in Sources */,
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
 				245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */,
 				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,

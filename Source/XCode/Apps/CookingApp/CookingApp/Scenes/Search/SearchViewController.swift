@@ -31,6 +31,7 @@ class SearchViewController: CustomScrollViewController {
         return view
         
     }()
+    var nutrientsSearchView = NutrientsSearchView()
     
     // MARK: - Init
     
@@ -54,7 +55,7 @@ class SearchViewController: CustomScrollViewController {
         searchView.translatesAutoresizingMaskIntoConstraints = false
         searchView.delegate = self
         searchView.searchBarStyle = .minimal
-        addToContentView(titleLabel, searchView, ingredientsCheckBox, categoryView)
+        addToContentView(titleLabel, searchView, ingredientsCheckBox, categoryView, nutrientsSearchView)
         
         
         ingredientsCheckBox.addTarget(self, action: #selector(onCheckBoxValueChange(_:)), for: .valueChanged)
@@ -95,8 +96,15 @@ class SearchViewController: CustomScrollViewController {
             categoryView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             categoryView.heightAnchor.constraint(equalToConstant: 320)
         ])
+        
+        NSLayoutConstraint.activate([
+            nutrientsSearchView.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: hPadding),
+            nutrientsSearchView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nutrientsSearchView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            nutrientsSearchView.heightAnchor.constraint(equalToConstant: 320)
+        ])
 
-        setContentViewBottom(view: categoryView)
+        setContentViewBottom(view: nutrientsSearchView)
     }
     
     @objc func onCheckBoxValueChange(_ sender: CheckBox) {
