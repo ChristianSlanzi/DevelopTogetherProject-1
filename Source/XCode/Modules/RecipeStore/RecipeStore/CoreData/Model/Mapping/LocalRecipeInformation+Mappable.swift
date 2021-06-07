@@ -33,7 +33,7 @@ extension LocalRecipeInformation: MappableProtocol {
         model.sourceName = self.sourceName
         model.sourceUrl = self.sourceUrl
         model.spoonacularSourceUrl = self.spoonacularSourceUrl
-        model.aggregateLikes = Int16(self.aggregateLikes)
+        model.aggregateLikes = Int32(self.aggregateLikes)
         model.healthScore = self.healthScore
         model.spoonacularScore = self.spoonacularScore
         model.pricePerServing = self.pricePerServing
