@@ -74,4 +74,9 @@ class SearchViewModel {
 
         })
     }
+    
+    func searchRecipesForNutrients(_ nutrients: [String : Int]) {
+        // TODO
+        //recipeLoader?.
+    }
 }

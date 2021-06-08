@@ -12,6 +12,10 @@ public protocol CategoriesViewProtocol: class {
     func searchRecipesForCategory(_ cuisine: Cuisine)
 }
 
+public protocol NutrientsSearchViewProtocol: class {
+    func searchRecipesForNutrients(_ nutrients: [String: Int])
+}
+
 class SearchViewController: CustomScrollViewController {
     
     // MARK: - ViewModel
@@ -31,7 +35,7 @@ class SearchViewController: CustomScrollViewController {
         return view
         
     }()
-    var nutrientsSearchView = NutrientsSearchView()
+    var nutrientsSearchView: NutrientsSearchView!
     
     // MARK: - Init
     
@@ -49,6 +53,10 @@ class SearchViewController: CustomScrollViewController {
         let categoryViewModel = CategoryViewModel()
         categoryView = CategoriesView(viewModel: categoryViewModel)
         categoryViewModel.view = self
+        
+        let nutrientsViewModel = NutrientsSearchViewModel()
+        nutrientsSearchView = NutrientsSearchView(viewModel: nutrientsViewModel)
+        nutrientsViewModel.view = self
         
         view.backgroundColor = .white
                 
@@ -127,5 +135,11 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: CategoriesViewProtocol {
     func searchRecipesForCategory(_ cuisine: Cuisine) {
         viewModel.search(cuisine.rawValue)
+    }
+}
+
+extension SearchViewController: NutrientsSearchViewProtocol {
+    func searchRecipesForNutrients(_ nutrients: [String : Int]) {
+        viewModel.searchRecipesForNutrients(nutrients)
     }
 }

@@ -11,11 +11,12 @@ import CommonUtils
 
 public class ValidableTextControl: UIControl {
     
-    var rules: [Rule] = []
-    
-    var errorLabel = UILabel()
     public var inputTextField = CustomTextField()
+    public var textDidChange: ((String?)->Void)?
     
+    var rules: [Rule] = []
+    var errorLabel = UILabel()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -73,6 +74,11 @@ public class ValidableTextControl: UIControl {
         self.inputTextField.isSecureTextEntry = (contentType == .password)
         self.setRules(rules: validationRules)
         self.inputTextField.delegate = self
+        self.inputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.textDidChange?(textField.text)
     }
 }
 
@@ -114,4 +120,5 @@ extension ValidableTextControl: FieldValidatable {
         
         self.setNeedsDisplay()
     }
+    
 }

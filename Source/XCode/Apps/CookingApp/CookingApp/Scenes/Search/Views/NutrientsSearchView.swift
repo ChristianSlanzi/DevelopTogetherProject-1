@@ -15,7 +15,12 @@ class NutrientsSearchView: CustomView {
     let minProtein = ValidableTextControl()
     let maxProtein = ValidableTextControl()
     
-    override init() {
+    var searchButton = DefaultButton(title: "SEARCH BY NUTRIENTS", target: self, selector: #selector(searchButtonTapped))
+    
+    var viewModel: NutrientsSearchViewModel
+    
+    init(viewModel: NutrientsSearchViewModel) {
+        self.viewModel = viewModel
         super.init()
         self.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -32,7 +37,7 @@ class NutrientsSearchView: CustomView {
         minProtein.configure(title: "minProtein", validationRules: [], contentType: .postalCode)
         maxProtein.configure(title: "maxProtein", validationRules: [], contentType: .postalCode)
         
-        addSubviews(minCarbs, maxCarbs, minProtein, maxProtein)
+        addSubviews(minCarbs, maxCarbs, minProtein, maxProtein, searchButton)
     }
     
     override func setupConstraints() {
@@ -65,5 +70,40 @@ class NutrientsSearchView: CustomView {
             maxProtein.safeTrailingAnchor.constraint(equalTo: safeTrailingAnchor, constant: -10),
             maxProtein.heightAnchor.constraint(equalToConstant: 30)
         ])
+        
+        NSLayoutConstraint.activate([
+            searchButton.safeTopAnchor.constraint(equalTo: maxProtein.safeBottomAnchor, constant: 20),
+            searchButton.safeLeadingAnchor.constraint(equalTo: safeLeadingAnchor, constant: 10),
+            searchButton.safeTrailingAnchor.constraint(equalTo: safeTrailingAnchor, constant: -10),
+            searchButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    override func setupActions() {
+        super.setupActions()
+        
+        minCarbs.textDidChange = { text in
+            guard let text = text, let intValue = Int(text) else { return }
+            self.viewModel.minCarbsValueUpdated(intValue)
+        }
+        
+        maxCarbs.textDidChange = { text in
+            guard let text = text, let intValue = Int(text) else { return }
+            self.viewModel.maxCarbsValueUpdated(intValue)
+        }
+        
+        minProtein.textDidChange = { text in
+            guard let text = text, let intValue = Int(text) else { return }
+            self.viewModel.minProteinValueUpdated(intValue)
+        }
+        
+        maxProtein.textDidChange = { text in
+            guard let text = text, let intValue = Int(text) else { return }
+            self.viewModel.maxProteinValueUpdated(intValue)
+        }
+    }
+    
+    @objc func searchButtonTapped() {
+        viewModel.onSearchButtonPressed()
     }
 }
