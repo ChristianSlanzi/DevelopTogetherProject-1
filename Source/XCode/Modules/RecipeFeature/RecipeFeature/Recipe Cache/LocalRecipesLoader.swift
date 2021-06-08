@@ -20,6 +20,10 @@ public final class LocalRecipesLoader {
 }
 
 extension LocalRecipesLoader: RecipeLoader {
+    public func loadRecipesByNutrients(_ nutrients: [String : Int], completion: @escaping (RecipeLoader.Result) -> Void) {
+        
+    }
+    
     public func load(predicate: NSPredicate?,  completion: @escaping (RecipeLoader.Result) -> Void) {
         
         do {

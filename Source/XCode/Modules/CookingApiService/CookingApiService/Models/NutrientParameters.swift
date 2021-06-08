@@ -9,22 +9,27 @@ import Foundation
 
 public struct NutrientParameters {
     
-    enum NumberParameters: String {
+    public enum NumberParameters: String {
         case minCarbs
         case maxCarbs
         case minProtein
         case maxProtein
     }
 
-    enum BooleanParameters: String {
+    public enum BooleanParameters: String {
         case random
         case limitLicense
     }
     
-    let numbers: [NumberParameters: Int]
+    public let numbers: [NumberParameters: Int]
     let booleans: [BooleanParameters: Bool]
     
-    var mapToDictionary: [String: Any] {
+    public init(numbers: [NumberParameters: Int], booleans: [BooleanParameters: Bool]) {
+        self.numbers = numbers
+        self.booleans = booleans
+    }
+    
+    public var mapToDictionary: [String: Any] {
         get {
             var dictionary = [String: Any]()
             numbers.forEach() { dictionary[$0.key.rawValue] = $0.value }

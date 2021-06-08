@@ -77,6 +77,24 @@ class SearchViewModel {
     
     func searchRecipesForNutrients(_ nutrients: [String : Int]) {
         // TODO
-        //recipeLoader?.
+        recipeLoader?.loadRecipesByNutrients(nutrients, completion: { (result) in
+            switch result {
+            case let .success(recipes):
+                guard !recipes.isEmpty else {
+                    
+                    return
+                }
+                print(recipes)
+                
+                DispatchQueue.main.async {
+                    self.router.openRecipeList(recipes)
+                }
+                
+            case let .failure(error):
+                
+                print(error)
+            }
+
+        })
     }
 }

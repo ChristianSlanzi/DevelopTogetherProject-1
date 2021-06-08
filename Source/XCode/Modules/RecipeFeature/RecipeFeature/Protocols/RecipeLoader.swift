@@ -11,6 +11,7 @@ public protocol RecipeLoader {
     typealias Result = Swift.Result<[Recipe], Error>
     
     func load(predicate: NSPredicate?,  completion: @escaping (Self.Result) -> Void)
+    func loadRecipesByNutrients(_ nutrients: [String: Int],  completion: @escaping (Self.Result) -> Void)
 }
 
 public protocol RecipeInformationLoader {

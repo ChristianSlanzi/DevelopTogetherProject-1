@@ -19,12 +19,13 @@ public enum CookingApiServiceError: Swift.Error {
 //TODO: try with the generic RemoteLoader
 
 public class RemoteLoader: RecipeLoader {
-    
+
     private let service: CookingApiService
     
     public init(service: CookingApiService) {
         self.service = service
     }
+    
     public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
         if predicate != nil && predicate!.predicateFormat.contains("ingredients") {
             let parameters = predicate!.predicateFormat.replacingOccurrences(of: "ingredients CONTAINS ", with: "")
@@ -47,6 +48,22 @@ public class RemoteLoader: RecipeLoader {
             switch result {
             case let .success(resultDTO):
                 completion(.success(resultDTO.results.map({ (dto) -> Recipe in
+                    Recipe(id: dto.id, calories: dto.calories, carbs: dto.carbs, fat: dto.fat, image: dto.image, imageType: dto.imageType, protein: dto.protein, title: dto.title)
+                })))
+                break
+            case let .failure(error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    public func loadRecipesByNutrients(_ nutrients: [String : Int], completion: @escaping (RecipeLoader.Result) -> Void) {
+        let nutrientParameters = NutrientParameters(numbers: [.maxCarbs : 300], booleans: [.random : true])
+        service.searchRecipesByNutrients(parameters: nutrientParameters) { (result) in
+            switch result {
+            case let .success(resultDTO):
+                completion(.success(resultDTO.map({ (dto) -> Recipe in
                     Recipe(id: dto.id, calories: dto.calories, carbs: dto.carbs, fat: dto.fat, image: dto.image, imageType: dto.imageType, protein: dto.protein, title: dto.title)
                 })))
                 break

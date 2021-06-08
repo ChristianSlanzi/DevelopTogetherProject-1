@@ -11,11 +11,12 @@ public protocol CookingApiService {
     typealias ServiceError = NetworkingServiceError//CookingApiServiceError
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
     typealias RecipesSearchByIngredientsResult = Swift.Result<[RecipesSearchByIngredientsResultDTO], ServiceError>
+    typealias RecipesSearchByNutrientsResult = Swift.Result<[RecipeDTO], ServiceError>
     typealias RecipeInformationResult = Swift.Result<RecipeInformationResultDTO, ServiceError>
     
     func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void)
     //typedef Parameters [String: Any]
-    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchResult) -> Void)
+    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchByNutrientsResult) -> Void)
     func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void)
     func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void)
     

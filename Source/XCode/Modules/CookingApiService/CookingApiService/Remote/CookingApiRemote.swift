@@ -17,14 +17,9 @@ class CookingApiRemote: CookingApiService {
         self.url = url
         self.client = client
         self.apiKey = apiKey
-        
-        let nutrients = NutrientParameters(numbers: [.maxCarbs : 300], booleans: [.random : true])
-        searchRecipesByNutrients(parameters: nutrients) { (result) in
-            
-        }
     }
     
-    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchResult) -> Void) {
+    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchByNutrientsResult) -> Void) {
         if let key = apiKey {
             client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
         }
@@ -33,7 +28,7 @@ class CookingApiRemote: CookingApiService {
             client.urlQueryParameters.add(value: "\(value)", forKey: key)
         }
         
-        client.makeRequest(toURL: url.appendingPathComponent("recipes/findByIngredients"), withHttpMethod: .get) { [weak self] result in
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/findByNutrients"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }
             
             completion(GenericDecoder.decodeResult(result: result))
