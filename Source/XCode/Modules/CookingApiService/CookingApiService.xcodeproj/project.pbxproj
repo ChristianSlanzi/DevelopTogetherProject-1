@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		241FD947266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */; };
-		241FD94B266E6695002C0F00 /* NutrientParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD94A266E6695002C0F00 /* NutrientParameters.swift */; };
 		2441118E265C2713003EB9B2 /* RecipeInformationResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */; };
 		24446FB82636F6AF0038B877 /* CookingApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24446FAE2636F6AE0038B877 /* CookingApiService.framework */; };
 		24446FBD2636F6AF0038B877 /* CookingApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FBC2636F6AF0038B877 /* CookingApiServiceTests.swift */; };
 		24446FBF2636F6AF0038B877 /* CookingApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = 24446FB12636F6AE0038B877 /* CookingApiService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24446FD52636F8FB0038B877 /* CookingApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FD42636F8FB0038B877 /* CookingApiService.swift */; };
+		24446FD52636F8FB0038B877 /* CookingApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FD42636F8FB0038B877 /* CookingApiProtocol.swift */; };
 		24446FD92636F9790038B877 /* CookingApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FD82636F9790038B877 /* CookingApiRemote.swift */; };
 		24446FDE2636F9DB0038B877 /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24446FDD2636F9DB0038B877 /* NetworkingService.framework */; };
 		24446FDF2636F9DB0038B877 /* NetworkingService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24446FDD2636F9DB0038B877 /* NetworkingService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,6 +20,7 @@
 		24446FE62636FB080038B877 /* RecipeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FE32636FB080038B877 /* RecipeDTO.swift */; };
 		24446FE72636FB080038B877 /* RecipesSearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FE42636FB080038B877 /* RecipesSearchResultDTO.swift */; };
 		24446FEB2636FCA30038B877 /* CookingApiServiceTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24446FEA2636FCA30038B877 /* CookingApiServiceTests+Helpers.swift */; };
+		245F56BE266FE788009AD817 /* NutrientParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F56BD266FE788009AD817 /* NutrientParameters.swift */; };
 		24802814265C414200BBD925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24802813265C414200BBD925 /* Constants.swift */; };
 		2480281B265C516800BBD925 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2480281A265C516800BBD925 /* TestHelpers.framework */; };
 		2480281E265C535200BBD925 /* GetRecipeInformationTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2480281D265C535200BBD925 /* GetRecipeInformationTests+Helpers.swift */; };
@@ -54,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchByIngredientsResultDTO.swift; sourceTree = "<group>"; };
-		241FD94A266E6695002C0F00 /* NutrientParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientParameters.swift; sourceTree = "<group>"; };
 		2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationResultDTO.swift; sourceTree = "<group>"; };
 		24446FAE2636F6AE0038B877 /* CookingApiService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CookingApiService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24446FB12636F6AE0038B877 /* CookingApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingApiService.h; sourceTree = "<group>"; };
@@ -62,13 +61,14 @@
 		24446FB72636F6AF0038B877 /* CookingApiServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingApiServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24446FBC2636F6AF0038B877 /* CookingApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingApiServiceTests.swift; sourceTree = "<group>"; };
 		24446FBE2636F6AF0038B877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24446FD42636F8FB0038B877 /* CookingApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingApiService.swift; sourceTree = "<group>"; };
+		24446FD42636F8FB0038B877 /* CookingApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingApiProtocol.swift; sourceTree = "<group>"; };
 		24446FD82636F9790038B877 /* CookingApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingApiRemote.swift; sourceTree = "<group>"; };
 		24446FDD2636F9DB0038B877 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24446FE22636FB080038B877 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		24446FE32636FB080038B877 /* RecipeDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDTO.swift; sourceTree = "<group>"; };
 		24446FE42636FB080038B877 /* RecipesSearchResultDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesSearchResultDTO.swift; sourceTree = "<group>"; };
 		24446FEA2636FCA30038B877 /* CookingApiServiceTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CookingApiServiceTests+Helpers.swift"; sourceTree = "<group>"; };
+		245F56BD266FE788009AD817 /* NutrientParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutrientParameters.swift; sourceTree = "<group>"; };
 		2460499226694C030074E0E7 /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24802813265C414200BBD925 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2480281A265C516800BBD925 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +124,7 @@
 				24446FD32636F8DA0038B877 /* Remote */,
 				24446FB12636F6AE0038B877 /* CookingApiService.h */,
 				24446FB22636F6AE0038B877 /* Info.plist */,
-				24446FD42636F8FB0038B877 /* CookingApiService.swift */,
+				24446FD42636F8FB0038B877 /* CookingApiProtocol.swift */,
 			);
 			path = CookingApiService;
 			sourceTree = "<group>";
@@ -143,13 +143,13 @@
 		24446FD22636F8D30038B877 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				245F56BD266FE788009AD817 /* NutrientParameters.swift */,
 				24802813265C414200BBD925 /* Constants.swift */,
 				24446FE22636FB080038B877 /* Errors.swift */,
 				24446FE32636FB080038B877 /* RecipeDTO.swift */,
 				24446FE42636FB080038B877 /* RecipesSearchResultDTO.swift */,
 				2441118D265C2713003EB9B2 /* RecipeInformationResultDTO.swift */,
 				241FD946266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift */,
-				241FD94A266E6695002C0F00 /* NutrientParameters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,8 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24446FD52636F8FB0038B877 /* CookingApiService.swift in Sources */,
-				241FD94B266E6695002C0F00 /* NutrientParameters.swift in Sources */,
+				24446FD52636F8FB0038B877 /* CookingApiProtocol.swift in Sources */,
+				245F56BE266FE788009AD817 /* NutrientParameters.swift in Sources */,
 				24446FE72636FB080038B877 /* RecipesSearchResultDTO.swift in Sources */,
 				241FD947266E21B0002C0F00 /* RecipesSearchByIngredientsResultDTO.swift in Sources */,
 				2441118E265C2713003EB9B2 /* RecipeInformationResultDTO.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import NetworkingService
 
-public protocol CookingApiService {
+public protocol CookingApiProtocol {
     typealias ServiceError = NetworkingServiceError//CookingApiServiceError
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
     typealias RecipesSearchByIngredientsResult = Swift.Result<[RecipesSearchByIngredientsResultDTO], ServiceError>
@@ -31,7 +31,7 @@ public class CookingApiServiceFactory {
         self.client = client
         self.apiKey = apiKey
     }
-    public func getCookingApiService() -> CookingApiService {
+    public func getCookingApiService() -> CookingApiProtocol {
         return CookingApiRemote(url: url, client: client, apiKey: apiKey)
     }
 }

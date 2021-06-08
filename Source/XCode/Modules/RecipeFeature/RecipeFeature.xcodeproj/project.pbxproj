@@ -10,6 +10,7 @@
 		240E8501265E925C002FDACF /* RecipeInformationCompositeFallbackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E8500265E925C002FDACF /* RecipeInformationCompositeFallbackLoader.swift */; };
 		2442C473265E8A81000364FA /* RecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442C472265E8A81000364FA /* RecipeInformation.swift */; };
 		2442C476265E8BF2000364FA /* LocalRecipeInformationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442C475265E8BF2000364FA /* LocalRecipeInformationLoader.swift */; };
+		245F56BC266FE6E5009AD817 /* NutrientParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F56BB266FE6E5009AD817 /* NutrientParameters.swift */; };
 		24C4F01C26511D7A0061737C /* RecipeFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F01226511D790061737C /* RecipeFeature.framework */; };
 		24C4F02126511D7A0061737C /* RecipeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F02026511D7A0061737C /* RecipeFeatureTests.swift */; };
 		24C4F02326511D7A0061737C /* RecipeFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C4F01526511D790061737C /* RecipeFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +58,7 @@
 		240E8500265E925C002FDACF /* RecipeInformationCompositeFallbackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationCompositeFallbackLoader.swift; sourceTree = "<group>"; };
 		2442C472265E8A81000364FA /* RecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformation.swift; sourceTree = "<group>"; };
 		2442C475265E8BF2000364FA /* LocalRecipeInformationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipeInformationLoader.swift; sourceTree = "<group>"; };
+		245F56BB266FE6E5009AD817 /* NutrientParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientParameters.swift; sourceTree = "<group>"; };
 		24C4F01226511D790061737C /* RecipeFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecipeFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4F01526511D790061737C /* RecipeFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeFeature.h; sourceTree = "<group>"; };
 		24C4F01626511D790061737C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		24C4F0412651300D0061737C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				245F56BB266FE6E5009AD817 /* NutrientParameters.swift */,
 				24C4F0422651300D0061737C /* Recipe.swift */,
 				2442C472265E8A81000364FA /* RecipeInformation.swift */,
 			);
@@ -300,6 +303,7 @@
 				240E8501265E925C002FDACF /* RecipeInformationCompositeFallbackLoader.swift in Sources */,
 				2442C473265E8A81000364FA /* RecipeInformation.swift in Sources */,
 				24C4F04E2651306E0061737C /* CompositeFallbackLoader.swift in Sources */,
+				245F56BC266FE6E5009AD817 /* NutrientParameters.swift in Sources */,
 				24C4F0EA265141640061737C /* RemoteLoader.swift in Sources */,
 				24C4F0482651300E0061737C /* RecipeLoader.swift in Sources */,
 			);

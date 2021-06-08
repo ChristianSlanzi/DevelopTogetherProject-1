@@ -14,7 +14,7 @@ import CoreData
 
 final class MainViewModel {
 
-    var cookingApiService: CookingApiService?
+    var cookingApiService: CookingApiProtocol?
     var recipeStore: RecipeStore?
     var recipeInformationStore: RecipeInformationStore?
     

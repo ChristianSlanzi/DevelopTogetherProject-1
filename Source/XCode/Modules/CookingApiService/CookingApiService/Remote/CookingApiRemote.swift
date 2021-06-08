@@ -7,7 +7,7 @@
 
 import NetworkingService
 
-class CookingApiRemote: CookingApiService {
+class CookingApiRemote: CookingApiProtocol {
 
     private var url: URL
     private var client: HTTPClient

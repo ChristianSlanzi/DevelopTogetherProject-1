@@ -83,22 +83,22 @@ class NutrientsSearchView: CustomView {
         super.setupActions()
         
         minCarbs.textDidChange = { text in
-            guard let text = text, let intValue = Int(text) else { return }
+            let intValue = text != nil ? Int(text!) : nil
             self.viewModel.minCarbsValueUpdated(intValue)
         }
         
         maxCarbs.textDidChange = { text in
-            guard let text = text, let intValue = Int(text) else { return }
+            let intValue = text != nil ? Int(text!) : nil
             self.viewModel.maxCarbsValueUpdated(intValue)
         }
         
         minProtein.textDidChange = { text in
-            guard let text = text, let intValue = Int(text) else { return }
+            let intValue = text != nil ? Int(text!) : nil
             self.viewModel.minProteinValueUpdated(intValue)
         }
         
         maxProtein.textDidChange = { text in
-            guard let text = text, let intValue = Int(text) else { return }
+            let intValue = text != nil ? Int(text!) : nil
             self.viewModel.maxProteinValueUpdated(intValue)
         }
     }

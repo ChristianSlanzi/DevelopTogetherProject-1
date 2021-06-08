@@ -5,7 +5,7 @@
 //  Created by Christian Slanzi on 11.05.21.
 //
 
-import Foundation
+import CookingApiService
 
 public class CompositeFallbackLoader: RecipeLoader {
     
@@ -18,7 +18,7 @@ public class CompositeFallbackLoader: RecipeLoader {
         
     }
     
-    public func loadRecipesByNutrients(_ nutrients: [String: Int],  completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters,  completion: @escaping (RecipeLoader.Result) -> Void) {
         remote.loadRecipesByNutrients(nutrients, completion: { [weak self] result in
             switch result {
             case let .success(data):

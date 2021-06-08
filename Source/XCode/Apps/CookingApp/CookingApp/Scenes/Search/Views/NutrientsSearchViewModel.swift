@@ -20,19 +20,19 @@ class NutrientsSearchViewModel {
         
     }
     
-    func minCarbsValueUpdated(_ value: Int) {
+    func minCarbsValueUpdated(_ value: Int?) {
         minCarbsValue = value
     }
     
-    func maxCarbsValueUpdated(_ value: Int) {
+    func maxCarbsValueUpdated(_ value: Int?) {
         maxCarbsValue = value
     }
     
-    func minProteinValueUpdated(_ value: Int) {
+    func minProteinValueUpdated(_ value: Int?) {
         minProteinValue = value
     }
     
-    func maxProteinValueUpdated(_ value: Int) {
+    func maxProteinValueUpdated(_ value: Int?) {
         maxProteinValue = value
     }
     

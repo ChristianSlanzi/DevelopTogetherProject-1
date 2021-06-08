@@ -9,7 +9,7 @@ import XCTest
 import CookingApiService
 
 extension GetRecipeInformationTests {
-    func expect(_ sut: CookingApiService, toCompleteWith expectedResult: Result<RecipeInformationResultDTO, CookingApiServiceError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    func expect(_ sut: CookingApiProtocol, toCompleteWith expectedResult: Result<RecipeInformationResultDTO, CookingApiServiceError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for call completion")
         
         sut.getRecipeInformation(recipeId: 20) { receivedResult in

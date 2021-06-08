@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import CookingApiService //TODO: make indipendent
-
+import CookingApiService
 
 public enum CookingApiServiceError: Swift.Error {
     case connectivity
@@ -20,9 +19,9 @@ public enum CookingApiServiceError: Swift.Error {
 
 public class RemoteLoader: RecipeLoader {
 
-    private let service: CookingApiService
+    private let service: CookingApiProtocol
     
-    public init(service: CookingApiService) {
+    public init(service: CookingApiProtocol) {
         self.service = service
     }
     
@@ -58,9 +57,9 @@ public class RemoteLoader: RecipeLoader {
         }
     }
     
-    public func loadRecipesByNutrients(_ nutrients: [String : Int], completion: @escaping (RecipeLoader.Result) -> Void) {
-        let nutrientParameters = NutrientParameters(numbers: [.maxCarbs : 300], booleans: [.random : true])
-        service.searchRecipesByNutrients(parameters: nutrientParameters) { (result) in
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
+        
+        service.searchRecipesByNutrients(parameters: mapNutrientsToServiceModel(nutrients)) { (result) in
             switch result {
             case let .success(resultDTO):
                 completion(.success(resultDTO.map({ (dto) -> Recipe in
@@ -73,13 +72,33 @@ public class RemoteLoader: RecipeLoader {
             }
         }
     }
+    
+    private func mapNutrientsToServiceModel(_ nutrients: NutrientParameters) -> CookingApiService.NutrientParameters {
+        
+        var numbers = [CookingApiService.NutrientParameters.NumberParameters: Int]()
+        for number in nutrients.numbers {
+            if let key = CookingApiService.NutrientParameters.NumberParameters(rawValue: number.key.rawValue) {
+                numbers[key] = number.value
+            }
+        }
+        
+        var booleans = [CookingApiService.NutrientParameters.BooleanParameters: Bool]()
+        for bool in nutrients.booleans {
+            if let key = CookingApiService.NutrientParameters.BooleanParameters(rawValue: bool.key.rawValue) {
+                booleans[key] = bool.value
+            }
+        }
+            
+        let parameters = CookingApiService.NutrientParameters(numbers: numbers, booleans: booleans)
+        return parameters
+    }
 }
 
 public class RemoteInformationLoader: RecipeInformationLoader {
     
-    private let service: CookingApiService
+    private let service: CookingApiProtocol
     
-    public init(service: CookingApiService) {
+    public init(service: CookingApiProtocol) {
         self.service = service
     }
     public func load(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {

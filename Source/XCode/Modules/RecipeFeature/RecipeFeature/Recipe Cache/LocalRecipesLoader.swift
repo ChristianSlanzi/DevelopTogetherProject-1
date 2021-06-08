@@ -8,6 +8,7 @@
 import Foundation
 import RecipeStore
 import GenericStore
+import CookingApiService
 
 public final class LocalRecipesLoader {
     private let store: RecipeStore
@@ -20,7 +21,7 @@ public final class LocalRecipesLoader {
 }
 
 extension LocalRecipesLoader: RecipeLoader {
-    public func loadRecipesByNutrients(_ nutrients: [String : Int], completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
         
     }
     
