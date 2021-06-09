@@ -8,6 +8,7 @@
 import Foundation
 import RecipeStore
 import GenericStore
+import CookingApiService
 
 public final class LocalRecipesLoader {
     private let store: RecipeStore
@@ -20,14 +21,18 @@ public final class LocalRecipesLoader {
 }
 
 extension LocalRecipesLoader: RecipeLoader {
-    public func load(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
+        
+    }
+    
+    public func load(predicate: NSPredicate?,  completion: @escaping (RecipeLoader.Result) -> Void) {
         
         do {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
                 key: #keyPath(CoreDataRecipe.idCode),
                 ascending: true)
             
-            store.retrieve(sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipe>) in
+            store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipe>) in
                 switch result {
                 case let .failure(error):
                     completion(.failure(error))
@@ -46,10 +51,10 @@ extension LocalRecipesLoader: RecipeLoader {
 
 extension LocalRecipesLoader: RecipeCache {
     public func save(_ recipes: [Recipe], completion: @escaping (Result<Void, Error>) -> Void) {
-        try store.deleteAll(entity: LocalRecipe.self, completion: { (error) in
-            guard let error = error else { return }
-            print(error)
-        })
+//        try store.deleteAll(entity: LocalRecipe.self, completion: { (error) in
+//            guard let error = error else { return }
+//            print(error)
+//        })
         try store.create(recipes.toLocal(), completion: { (error) in
             guard let error = error else { return }
             print(error)

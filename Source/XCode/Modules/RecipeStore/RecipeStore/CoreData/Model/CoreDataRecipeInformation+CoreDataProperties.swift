@@ -25,7 +25,7 @@ extension CoreDataRecipeInformation {
     @NSManaged public var sourceName: String?
     @NSManaged public var sourceUrl: String?
     @NSManaged public var spoonacularSourceUrl: String?
-    @NSManaged public var aggregateLikes: Int16
+    @NSManaged public var aggregateLikes: Int32
     @NSManaged public var healthScore: Float
     @NSManaged public var spoonacularScore: Float
     @NSManaged public var pricePerServing: Float

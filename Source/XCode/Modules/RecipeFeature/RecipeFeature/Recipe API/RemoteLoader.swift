@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import CookingApiService //TODO: make indipendent
-
+import CookingApiService
 
 public enum CookingApiServiceError: Swift.Error {
     case connectivity
@@ -19,14 +18,32 @@ public enum CookingApiServiceError: Swift.Error {
 //TODO: try with the generic RemoteLoader
 
 public class RemoteLoader: RecipeLoader {
+
+    private let service: CookingApiProtocol
     
-    private let service: CookingApiService
-    
-    public init(service: CookingApiService) {
+    public init(service: CookingApiProtocol) {
         self.service = service
     }
-    public func load(query: String = "", completion: @escaping (RecipeLoader.Result) -> Void) {
-        service.searchRecipes(query: query) { (result) in
+    
+    public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        if predicate != nil && predicate!.predicateFormat.contains("ingredients") {
+            let parameters = predicate!.predicateFormat.replacingOccurrences(of: "ingredients CONTAINS ", with: "")
+            service.searchRecipesByIngredients(parameters: parameters) { (result) in
+                switch result {
+                case let .success(resultDTO):
+                    completion(.success(resultDTO.map({ (dto) -> Recipe in
+                        Recipe(id: dto.id, calories: nil, carbs: nil, fat: nil, image: dto.image, imageType: dto.imageType, protein: nil, title: dto.title)
+                    })))
+                    break
+                case let .failure(error):
+                    completion(.failure(error))
+                    break
+                }
+            }
+            return
+        }
+        
+        service.searchRecipes(predicate: predicate) { (result) in
             switch result {
             case let .success(resultDTO):
                 completion(.success(resultDTO.results.map({ (dto) -> Recipe in
@@ -39,13 +56,49 @@ public class RemoteLoader: RecipeLoader {
             }
         }
     }
+    
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
+        
+        service.searchRecipesByNutrients(parameters: mapNutrientsToServiceModel(nutrients)) { (result) in
+            switch result {
+            case let .success(resultDTO):
+                completion(.success(resultDTO.map({ (dto) -> Recipe in
+                    Recipe(id: dto.id, calories: dto.calories, carbs: dto.carbs, fat: dto.fat, image: dto.image, imageType: dto.imageType, protein: dto.protein, title: dto.title)
+                })))
+                break
+            case let .failure(error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    private func mapNutrientsToServiceModel(_ nutrients: NutrientParameters) -> CookingApiService.NutrientParameters {
+        
+        var numbers = [CookingApiService.NutrientParameters.NumberParameters: Int]()
+        for number in nutrients.numbers {
+            if let key = CookingApiService.NutrientParameters.NumberParameters(rawValue: number.key.rawValue) {
+                numbers[key] = number.value
+            }
+        }
+        
+        var booleans = [CookingApiService.NutrientParameters.BooleanParameters: Bool]()
+        for bool in nutrients.booleans {
+            if let key = CookingApiService.NutrientParameters.BooleanParameters(rawValue: bool.key.rawValue) {
+                booleans[key] = bool.value
+            }
+        }
+            
+        let parameters = CookingApiService.NutrientParameters(numbers: numbers, booleans: booleans)
+        return parameters
+    }
 }
 
 public class RemoteInformationLoader: RecipeInformationLoader {
     
-    private let service: CookingApiService
+    private let service: CookingApiProtocol
     
-    public init(service: CookingApiService) {
+    public init(service: CookingApiProtocol) {
         self.service = service
     }
     public func load(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
@@ -119,7 +172,8 @@ public class RemoteInformationLoader: RecipeInformationLoader {
         }
     }
     
-    private func mapMeasures(_ dtoMeasure: MeasureDTO) -> Measure {
+    private func mapMeasures(_ dtoMeasure: MeasureDTO?) -> Measure? {
+        guard let dtoMeasure = dtoMeasure else { return nil }
         let localMetric = dtoMeasure.metric
         let localUs = dtoMeasure.us
         return Measure(metric: Metric(amount: localMetric.amount,

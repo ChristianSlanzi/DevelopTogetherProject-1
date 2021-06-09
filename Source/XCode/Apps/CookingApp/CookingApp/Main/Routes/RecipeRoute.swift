@@ -16,7 +16,7 @@ extension RecipeRoute where Self: Router {
 
     func openRecipe(_ recipe: Recipe, with transition: Transition) {
         let router = DefaultRouter(rootTransition: transition)
-        let viewController = AppDependencies.shared.createRecipeDetailsViewController(recipe: recipe)
+        let viewController = CookingAppDependencies.shared.createRecipeDetailsViewController(recipe: recipe)
         router.root = viewController
 
         route(to: viewController, as: transition)

@@ -7,8 +7,8 @@
 
 import NetworkingService
 
-class CookingApiRemote: CookingApiService {
-    
+class CookingApiRemote: CookingApiProtocol {
+
     private var url: URL
     private var client: HTTPClient
     private var apiKey: String?
@@ -19,13 +19,47 @@ class CookingApiRemote: CookingApiService {
         self.apiKey = apiKey
     }
     
-    func searchRecipes(query: String = "", completion: @escaping (RecipesSearchResult) -> Void) {
+    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchByNutrientsResult) -> Void) {
+        if let key = apiKey {
+            client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
+        }
+        
+        parameters.mapToDictionary.forEach { (key, value) in
+            client.urlQueryParameters.add(value: "\(value)", forKey: key)
+        }
+        
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/findByNutrients"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(GenericDecoder.decodeResult(result: result))
+        }
+    }
+    
+    func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void) {
         
         if let key = apiKey {
             client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
         }
         
-        client.urlQueryParameters.add(value: "\(query)", forKey: "query")
+        client.urlQueryParameters.add(value: parameters, forKey: "ingredients")
+        
+        client.makeRequest(toURL: url.appendingPathComponent("recipes/findByIngredients"), withHttpMethod: .get) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(GenericDecoder.decodeResult(result: result))
+        }
+    }
+    
+    func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void) {
+        
+        if let key = apiKey {
+            client.urlQueryParameters.add(value: "\(key)", forKey: "apiKey")
+        }
+        
+        //TODO: different queries based on query's key?
+        if let predicate = predicate {
+            client.urlQueryParameters.add(value: predicate.predicateFormat.replacingOccurrences(of: "title CONTAINS ", with: "").replacingOccurrences(of: "\"", with: ""), forKey: "query")
+        }
         
         client.makeRequest(toURL: url.appendingPathComponent("recipes/complexSearch"), withHttpMethod: .get) { [weak self] result in
             guard self != nil else { return }

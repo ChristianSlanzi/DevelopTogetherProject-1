@@ -41,7 +41,7 @@ public class CollectionViewModel {
                 return
             }
         }
-        recipeLoader?.load(query: "", completion: { (result) in
+        recipeLoader?.load(predicate: nil, completion: { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {
@@ -51,7 +51,14 @@ public class CollectionViewModel {
                     return
                 }
                 let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> Recipe in
-                    Recipe(id: recipe.id, title: recipe.title, image: recipe.image, imageType: recipe.imageType)
+                    Recipe(id: recipe.id,
+                           title: recipe.title,
+                           image: recipe.image,
+                           imageType: recipe.imageType,
+                           calories: recipe.calories,
+                           carbs: recipe.carbs,
+                           fat: recipe.fat,
+                           protein: recipe.protein)
                 }))
                 self.recipeBook?.categories?.append(category)
             case let .failure(error):

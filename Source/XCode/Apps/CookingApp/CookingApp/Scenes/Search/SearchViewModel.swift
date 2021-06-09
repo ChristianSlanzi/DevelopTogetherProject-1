@@ -26,10 +26,66 @@ class SearchViewModel {
         lastTextSearched = ""
     }
     
+    
+    func searchForIngredients(_ textToSearch: String) {
+        print(textToSearch)
+        
+        recipeLoader?.load(predicate: NSPredicate(format:"ingredients CONTAINS '\(textToSearch)'"), completion: { (result) in
+            switch result {
+            case let .success(recipes):
+                guard !recipes.isEmpty else {
+                    
+                    return
+                }
+                print(recipes)
+                
+                DispatchQueue.main.async {
+                    self.router.openRecipeList(recipes)
+                }
+                
+            case let .failure(error):
+                
+                print(error)
+            }
+
+        })
+    }
+    
     func search(_ textToSearch: String) {
         print(textToSearch)
         
-        recipeLoader?.load(query: textToSearch, completion: { (result) in
+        recipeLoader?.load(predicate: NSPredicate(format:"title CONTAINS '\(textToSearch)'"), completion: { (result) in
+            switch result {
+            case let .success(recipes):
+                guard !recipes.isEmpty else {
+                    
+                    return
+                }
+                print(recipes)
+                
+                DispatchQueue.main.async {
+                    self.router.openRecipeList(recipes)
+                }
+                
+            case let .failure(error):
+                
+                print(error)
+            }
+
+        })
+    }
+    
+    func searchRecipesForNutrients(_ nutrients: [String: Int]) {
+        // convert the dictionary in the loader's NutrientParameters type
+        var numbers = [NutrientParameters.NumberParameters : Int]()
+        for nutrient in nutrients {
+            if let key = NutrientParameters.NumberParameters(rawValue: nutrient.key) {
+                numbers[key] = nutrient.value
+            }
+        }
+        
+        let parameters: NutrientParameters = NutrientParameters(numbers: numbers, booleans: [:] /*[.random : true]*/)
+        recipeLoader?.loadRecipesByNutrients(parameters, completion: { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {

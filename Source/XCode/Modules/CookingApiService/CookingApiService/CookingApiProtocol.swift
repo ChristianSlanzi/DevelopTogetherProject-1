@@ -7,14 +7,17 @@
 
 import NetworkingService
 
-public protocol CookingApiService {
+public protocol CookingApiProtocol {
     typealias ServiceError = NetworkingServiceError//CookingApiServiceError
     typealias RecipesSearchResult = Swift.Result<RecipesSearchResultDTO, ServiceError>
+    typealias RecipesSearchByIngredientsResult = Swift.Result<[RecipesSearchByIngredientsResultDTO], ServiceError>
+    typealias RecipesSearchByNutrientsResult = Swift.Result<[RecipeDTO], ServiceError>
     typealias RecipeInformationResult = Swift.Result<RecipeInformationResultDTO, ServiceError>
     
-    func searchRecipes(query: String, completion: @escaping (RecipesSearchResult) -> Void)
+    func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void)
     //typedef Parameters [String: Any]
-    //func searchRecipesByNutrients(parameters: Parameters, completion: @escaping (RecipesSearchResult) -> Void)
+    func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchByNutrientsResult) -> Void)
+    func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void)
     func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void)
     
 }
@@ -28,7 +31,7 @@ public class CookingApiServiceFactory {
         self.client = client
         self.apiKey = apiKey
     }
-    public func getCookingApiService() -> CookingApiService {
+    public func getCookingApiService() -> CookingApiProtocol {
         return CookingApiRemote(url: url, client: client, apiKey: apiKey)
     }
 }

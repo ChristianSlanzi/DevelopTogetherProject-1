@@ -15,6 +15,3 @@ class BartenderAppDependencies: AppDependencies {
         setRootViewController(makeMainTabBarController())
     }
 }
-
-
-

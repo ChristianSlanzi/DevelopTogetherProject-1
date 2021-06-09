@@ -14,44 +14,9 @@ import RecipeUI
 import RecipeFeature
 import CoreData
 
-enum Tabs {
-    case main
-    case search
-    case favorites
-    case profile
-
-    var index: Int {
-        switch self {
-        case .main:
-            return 0
-        case .search:
-            return 1
-        case .favorites:
-            return 1
-        case .profile:
-            return 1
-        }
-    }
-
-    var item: UITabBarItem {
-        switch self {
-        case .main:
-            return UITabBarItem(title: "Home", image: nil, tag: index)
-        case .search:
-            return UITabBarItem(title: "Search", image: nil, tag: index)
-        case .favorites:
-            return UITabBarItem(title: "Favorites", image: nil, tag: index)
-        case .profile:
-            return UITabBarItem(title: "Profile", image: nil, tag: index)
-        }
-    }
-}
-
-class AppDependencies {
+class CookingAppDependencies: AppDependencies {
     
-    static let shared = AppDependencies()
-    
-    private var window: UIWindow?
+    static let shared = CookingAppDependencies()
     
     private lazy var recipeStore: RecipeStore /*& RecipeDataStore*/ = {
         do {
@@ -71,7 +36,7 @@ class AppDependencies {
         }
     }()
     
-    private lazy var recipeInformationStore: RecipeInformationStore /*& RecipeDataStore*/ = {
+    internal lazy var recipeInformationStore: RecipeInformationStore /*& RecipeDataStore*/ = {
         do {
             return try CoreDataRecipeInformationStore(
                 storeURL: NSPersistentContainer
@@ -88,36 +53,15 @@ class AppDependencies {
             return NullStore()
         }
     }()
-
-    private init() {
-        configureDependencies()
-    }
     
-    private func configureDependencies() {
+    public override func start() {
+        super.start()
+        login()
+        return;
         
+        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
+        setRootViewController(makeMainViewController(router: mainRouter))
     }
-    
-    internal func setRootViewController(_ viewController: UIViewController) {
-        setRootViewController(viewController, window: getWindow())
-    }
-    
-    internal func setRootViewController(_ viewController: UIViewController, window: UIWindow?) {
-        window?.rootViewController = viewController
-    }
-
-    public func setScene(_ scene: UIScene) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        
-        window?.makeKeyAndVisible()
-    }
-    
-    public func getWindow() -> UIWindow? {
-        return window
-    }
-
 }
 
 extension DefaultRouter: RecipeUI.RecipeRoute {
@@ -134,74 +78,7 @@ extension DefaultRouter: RecipeUI.RecipeRoute {
     }
 }
 
-extension AppDependencies {
-    
-    func makeMainTab() -> UIViewController {
-        
-        var FLAG = true
-        
-        if FLAG {
-            let router = DefaultRouter(rootTransition: EmptyTransition())
-            let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
-            router.root = recipeListVC
-            recipeListVC.viewModel?.recipeLoader = makeCompositeRecipeLoader()
-            
-            return UINavigationController(rootViewController: recipeListVC)
-        }
-        
-        let router = DefaultRouter(rootTransition: EmptyTransition())
-        let viewController = createMainViewController(router: router)
-        router.root = viewController
-        
-        let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.main.item
-        return navigation
-    }
-    
-    func makeSearchTab() -> UIViewController {
-        let router = DefaultRouter(rootTransition: EmptyTransition())
-        let viewController = createSearchViewController(router: router)
-        router.root = viewController
-        let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.search.item
-        return navigation
-    }
-    
-    func makeFavoritesTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createFavoritesViewController())
-        navigation.tabBarItem = Tabs.favorites.item
-        return navigation
-    }
-    
-    func makeProfileTab() -> UIViewController {
-        let navigation = UINavigationController(rootViewController: createProfileViewController())
-        navigation.tabBarItem = Tabs.profile.item
-        return navigation
-    }
-    
-    internal func createMainTabBarController() -> UIViewController {
-        let tabs = [makeMainTab(), makeSearchTab(), makeFavoritesTab(), makeProfileTab()]
-        let tabController = MainTabBarController(viewControllers: tabs)
-        return tabController
-    }
-    
-    internal func createMainViewController(router: RecipeRoute) -> UIViewController {
-        
-        let viewModel = MainViewModel(router: router)
-        
-        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
-        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
-                                                      client: networkingService,
-                                                      apiKey: cookingApiKey)
-        let service = serviceFactory.getCookingApiService()
-        
-        viewModel.cookingApiService = service
-        viewModel.recipeInformationStore = recipeInformationStore
-        
-        let viewController = ViewController(viewModel: viewModel)
-        
-        return viewController
-    }
+extension CookingAppDependencies {
     
     internal func createSearchViewController(router: SearchRoute) -> UIViewController {
         let viewModel = SearchViewModel(router: router)
@@ -302,15 +179,7 @@ extension AppDependencies {
     }
 }
 
-extension AppDependencies {
-    
-    public func start() {
-        login()
-        return;
-        
-        let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
-        setRootViewController(createMainViewController(router: mainRouter))
-    }
+extension CookingAppDependencies {
     
     public func login() {
         var isUserLoggedIn = true
@@ -318,7 +187,7 @@ extension AppDependencies {
         //if we have credentials
         if isUserLoggedIn {
             //routeToMainViewController()
-            setRootViewController(createMainTabBarController())
+            setRootViewController(makeMainTabBarController())
         } else {
             setRootViewController(createLoginViewController())
         }
@@ -334,9 +203,9 @@ extension AppDependencies {
 
 // MARK: - Secrets
 
-extension AppDependencies {
+extension CookingAppDependencies {
     
-    private var cookingApiKey: String {
+    internal var cookingApiKey: String {
       get {
         // 1 - search for the secrets plist file
         guard let filePath = Bundle.main.path(forResource: "Secrets-Info", ofType: "plist") else {

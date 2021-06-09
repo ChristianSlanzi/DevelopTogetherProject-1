@@ -4,8 +4,9 @@
 //
 //  Created by Christian Slanzi on 20.04.21.
 //
+import NetworkingService
 
-public struct RecipeDTO: Codable, CustomStringConvertible, Hashable {
+public struct RecipeDTO: DTO {
     
     public var id: Int
     public var calories: Int?

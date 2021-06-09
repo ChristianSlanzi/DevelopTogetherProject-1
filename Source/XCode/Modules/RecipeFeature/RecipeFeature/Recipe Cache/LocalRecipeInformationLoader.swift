@@ -26,8 +26,8 @@ extension LocalRecipeInformationLoader: RecipeInformationLoader {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
                 key: #keyPath(CoreDataRecipe.idCode),
                 ascending: true)
-            
-            store.retrieve(sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipeInformation>) in
+            let predicate: NSPredicate = NSPredicate(format: "idCode == \(recipeId)")
+            store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalRecipeInformation>) in
                 switch result {
                 case let .failure(error):
                     completion(.failure(error))
@@ -210,7 +210,8 @@ private extension Array where Element == LocalRecipeInformation {
         }
     }
     
-    private func mapMeasures(_ localMeasure: LocalMeasure) -> Measure {
+    private func mapMeasures(_ localMeasure: LocalMeasure?) -> Measure? {
+        guard let localMeasure = localMeasure else { return nil }
         let localMetric = localMeasure.metric
         let localUs = localMeasure.us
         return Measure(metric: Metric(amount: localMetric.amount,

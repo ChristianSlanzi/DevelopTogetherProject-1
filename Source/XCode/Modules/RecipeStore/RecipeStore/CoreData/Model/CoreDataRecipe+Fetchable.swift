@@ -16,9 +16,9 @@ extension CoreDataRecipe: FetchableProtocol {
     
     public typealias FetchRequest = NSFetchRequest<CoreDataRecipe>
     
-    public static func fetchRequest(sortDescriptors: [NSSortDescriptor]?) -> NSFetchRequest<CoreDataRecipe> {
+    public static func fetchRequest(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> NSFetchRequest<CoreDataRecipe> {
         let request = NSFetchRequest<CoreDataRecipe>(entityName: "CoreDataRecipe")
-        //request.predicate = NSPredicate(format: "title = %@", "Garlicky Kale")
+        request.predicate = predicate
         request.sortDescriptors = sortDescriptors
         return request
     }

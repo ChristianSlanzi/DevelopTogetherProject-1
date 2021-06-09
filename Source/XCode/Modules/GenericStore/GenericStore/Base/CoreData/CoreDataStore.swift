@@ -54,13 +54,14 @@ open class CoreDataStore<T: Storable & MappableProtocol>: DataStore {
         }
     }
     
-    public func retrieve<T>(sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion<T>) where T : Storable & MappableProtocol {
+    public func retrieve<T>(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion<T>) where T : Storable & MappableProtocol {
         let context = self.context
         context.perform {
                         
-            let request = T.PersistenceType.fetchRequest(sortDescriptors: sortDescriptors)
+            let request = T.PersistenceType.fetchRequest(predicate: predicate, sortDescriptors: sortDescriptors) as! NSFetchRequest<NSFetchRequestResult>
+
             do {
-                let dataFeed = try self.context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+                let dataFeed = try self.context.fetch(request )
                 if dataFeed.count > 0 {
                     let items = dataFeed.compactMap {
                         T.mapFromPersistenceObject($0 as! T.PersistenceType)
@@ -80,7 +81,7 @@ open class CoreDataStore<T: Storable & MappableProtocol>: DataStore {
         let context = self.context
         context.perform {
             
-            let request = T.PersistenceType.fetchRequest(sortDescriptors: nil)
+            let request = T.PersistenceType.fetchRequest(predicate: nil, sortDescriptors: nil)
             do {
                 /*
                 if let dataFeed = try self.context.fetch(request).first {

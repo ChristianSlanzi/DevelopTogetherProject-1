@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24011BDE266EDB74003F6D3B /* NutrientsSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24011BDD266EDB74003F6D3B /* NutrientsSearchViewModel.swift */; };
 		240754EC2664E774006E84F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240754EB2664E774006E84F9 /* SearchViewModel.swift */; };
 		240A32E72667B38200A38177 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A32E62667B38200A38177 /* CategoriesView.swift */; };
 		241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241040E926394D2600994726 /* LoginSignupWrapper.swift */; };
+		241FD94E266E6988002C0F00 /* NutrientsSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */; };
 		2430BD992638A3CD00C5CE19 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */; };
 		2430BD9E2638A7DC00C5CE19 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */; };
 		2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BDA12638A83B00C5CE19 /* LoginViewController.swift */; };
@@ -27,7 +29,7 @@
 		24567BB82637F9C40010BE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24567BB62637F9C40010BE25 /* LaunchScreen.storyboard */; };
 		24567BC32637F9C40010BE25 /* CookingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BC22637F9C40010BE25 /* CookingAppTests.swift */; };
 		24567BCE2637F9C40010BE25 /* CookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */; };
-		24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* AppDependencies.swift */; };
+		24567BE62637FE210010BE25 /* CookingAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BE52637FE210010BE25 /* CookingAppDependencies.swift */; };
 		24567BF7263827790010BE25 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BF6263827790010BE25 /* LoginViewModelTests.swift */; };
 		24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BFE263828DF0010BE25 /* LoginViewModel.swift */; };
 		24567C05263829E60010BE25 /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567C04263829E60010BE25 /* MockLoginViewController.swift */; };
@@ -55,6 +57,7 @@
 		245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E89263C273800D2B454 /* DefaultRouter.swift */; };
 		245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */; };
 		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
+		245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FDCB3266B6E22005E75FE /* AppDependencies.swift */; };
 		24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */; };
 		2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEDD265B9C1800640D41 /* SeparatorView.swift */; };
 		2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEEF265BA00800640D41 /* DefaultImageView.swift */; };
@@ -77,6 +80,8 @@
 		24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244DDB1F26434260008229B2 /* RecipeStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; };
 		24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F0A5265134550061737C /* RecipeUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24D8051B266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */; };
+		24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */; };
 		24FE1F72265A54CD00724646 /* Secrets-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C4F0EE265143370061737C /* Secrets-Info.plist */; };
 		24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; };
 		24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FC5265A615300724646 /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -286,11 +291,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24011BDD266EDB74003F6D3B /* NutrientsSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsSearchViewModel.swift; sourceTree = "<group>"; };
 		240754EB2664E774006E84F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		240A32E62667B38200A38177 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		241040D226394C3C00994726 /* UserApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserApiService.xcodeproj; path = ../../../Modules/UserApiService/UserApiService.xcodeproj; sourceTree = "<group>"; };
 		241040E926394D2600994726 /* LoginSignupWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupWrapper.swift; sourceTree = "<group>"; };
 		241040FB263979C500994726 /* CookingApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CookingApiService.xcodeproj; path = ../../../Modules/CookingApiService/CookingApiService.xcodeproj; sourceTree = "<group>"; };
+		241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsSearchView.swift; sourceTree = "<group>"; };
 		2430BD982638A3CD00C5CE19 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		2430BD9D2638A7DC00C5CE19 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		2430BDA12638A83B00C5CE19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -316,7 +323,7 @@
 		24567BC92637F9C40010BE25 /* CookingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24567BCD2637F9C40010BE25 /* CookingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppUITests.swift; sourceTree = "<group>"; };
 		24567BCF2637F9C40010BE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24567BE52637FE210010BE25 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		24567BE52637FE210010BE25 /* CookingAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingAppDependencies.swift; sourceTree = "<group>"; };
 		24567BF6263827790010BE25 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		24567BFE263828DF0010BE25 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		24567C04263829E60010BE25 /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +350,7 @@
 		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		245FDCB3266B6E22005E75FE /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -363,6 +371,8 @@
 		24C4F098265134550061737C /* RecipeUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RecipeUI.xcodeproj; path = ../../../Modules/RecipeUI/RecipeUI.xcodeproj; sourceTree = "<group>"; };
 		24C4F0E02651403F0061737C /* NullStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		24C4F0EE265143370061737C /* Secrets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secrets-Info.plist"; sourceTree = "<group>"; };
+		24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
+		24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
 		24FE1FBF265A615300724646 /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -402,6 +412,8 @@
 			children = (
 				240A32E62667B38200A38177 /* CategoriesView.swift */,
 				245A193F26682AB9003CFC6F /* CategoryViewModel.swift */,
+				241FD94D266E6988002C0F00 /* NutrientsSearchView.swift */,
+				24011BDD266EDB74003F6D3B /* NutrientsSearchViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,6 +504,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				245FDCA2266B6DF1005E75FE /* Common */,
 				24C4F0EC265142FE0061737C /* Resources */,
 				245B7E7C263C25A000D2B454 /* Routing */,
 				245B7E6E263C1BE300D2B454 /* Utils */,
@@ -529,10 +542,11 @@
 		24567BE42637FE0F0010BE25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24D80509266BEDCA00A77ED0 /* Factories */,
 				24C4F0DF2651403F0061737C /* Stubs */,
 				24AA3FCF263C82D200F73BBD /* Routes */,
 				241040E826394CFA00994726 /* Wrappers */,
-				24567BE52637FE210010BE25 /* AppDependencies.swift */,
+				24567BE52637FE210010BE25 /* CookingAppDependencies.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -776,6 +790,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		245FDCA2266B6DF1005E75FE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				245FDCB3266B6E22005E75FE /* AppDependencies.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2460498826694BE40074E0E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +886,15 @@
 				24C4F0EE265143370061737C /* Secrets-Info.plist */,
 			);
 			path = Secrets;
+			sourceTree = "<group>";
+		};
+		24D80509266BEDCA00A77ED0 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */,
+				24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		24FE1FC0265A615300724646 /* Products */ = {
@@ -1212,6 +1243,7 @@
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
 				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
+				24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
 				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
@@ -1221,7 +1253,7 @@
 				24567C4626388D500010BE25 /* SignupViewModel.swift in Sources */,
 				245B7E7E263C266500D2B454 /* Router.swift in Sources */,
 				24330DAB263D451F00724978 /* MainRoute.swift in Sources */,
-				24567BE62637FE210010BE25 /* AppDependencies.swift in Sources */,
+				24567BE62637FE210010BE25 /* CookingAppDependencies.swift in Sources */,
 				24C4F0E12651403F0061737C /* NullStore.swift in Sources */,
 				245B7E6B263C170200D2B454 /* ProfileViewController.swift in Sources */,
 				24330D9C263D39D700724978 /* LoginRoute.swift in Sources */,
@@ -1229,6 +1261,7 @@
 				24330DA3263D3ABB00724978 /* ModalTransition.swift in Sources */,
 				24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */,
 				2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */,
+				24D8051B266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
 				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,
@@ -1239,10 +1272,13 @@
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
 				2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
+				241FD94E266E6988002C0F00 /* NutrientsSearchView.swift in Sources */,
+				24011BDE266EDB74003F6D3B /* NutrientsSearchViewModel.swift in Sources */,
 				241040EA26394D2600994726 /* LoginSignupWrapper.swift in Sources */,
 				245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */,
 				245B7E67263C16EE00D2B454 /* FavoritesViewController.swift in Sources */,
 				24A456ED266008C800095B31 /* IngredientsView.swift in Sources */,
+				245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */,
 				24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */,
 				245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */,
 				24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */,

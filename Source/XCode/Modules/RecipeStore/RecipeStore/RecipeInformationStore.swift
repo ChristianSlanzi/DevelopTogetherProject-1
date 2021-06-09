@@ -18,7 +18,7 @@ public typealias InfoDeletionCompletion = (Error?) -> Void
 
 public protocol RecipeInformationStore {
     func create(_ feed: [LocalRecipeInformation], completion: @escaping DataStore.CreationCompletion)
-    func retrieve(sortDescriptors: [NSSortDescriptor]?, completion: @escaping InfoRetrievalCompletion)
+    func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping InfoRetrievalCompletion)
     func deleteAll(entity: LocalRecipeInformation.Type, completion: @escaping InfoDeletionCompletion)
 }
 extension CoreDataRecipeInformationStore : RecipeInformationStore {

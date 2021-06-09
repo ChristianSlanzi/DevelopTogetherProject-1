@@ -35,12 +35,12 @@ public struct MeasureDTO: DTO {
 }
 
 public struct IngredientDTO: DTO {
-    public var id: Int
+    public var id: Int?
     public var aisle: String?
     public var amount: Float
     public var consistency: String?
     public var image: String?
-    public var measures: MeasureDTO
+    public var measures: MeasureDTO?
     public var meta: [String]
     public var metaInformation: [String]
     public var name: String
@@ -196,9 +196,9 @@ public struct RecipeInformationResultDTO: DTO {
     public var preparationMinutes: Int?
     public var cookingMinutes: Int?
     public var license: String?
-    public var sourceName: String
+    public var sourceName: String?
     public var sourceUrl: String
-    public var spoonacularSourceUrl: String
+    public var spoonacularSourceUrl: String?
     public var aggregateLikes: Int
     public var healthScore: Float
     public var spoonacularScore: Float
