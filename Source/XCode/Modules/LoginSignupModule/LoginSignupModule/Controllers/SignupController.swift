@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SignupControllerDelegate: class {
+public protocol SignupControllerDelegate: AnyObject {
     func signupResult(result: Bool, error: String?)
 }
 

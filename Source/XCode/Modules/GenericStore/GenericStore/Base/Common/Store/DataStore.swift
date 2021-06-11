@@ -23,5 +23,6 @@ public protocol DataStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
+    func delete<T: Storable & MappableProtocol>(predicate: NSPredicate?, entity: T.Type, completion: @escaping DeletionCompletion<T>)
     func deleteAll<T: Storable & MappableProtocol>(entity: T.Type, completion: @escaping DeletionCompletion<T>)
 }

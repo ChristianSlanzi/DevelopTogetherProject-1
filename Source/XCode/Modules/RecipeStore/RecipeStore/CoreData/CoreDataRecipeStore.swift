@@ -12,7 +12,7 @@ public final class CoreDataRecipeStore: CoreDataStore<LocalRecipe> {
     
     private static let modelName = "RecipeStore"
     
-    public init(storeURL: URL) throws {
-        try super.init(storeURL: storeURL, modelName: CoreDataRecipeStore.modelName, in: Bundle(for: CoreDataRecipeStore.self))
+    public init(storeURL: URL, managedModel: NSManagedObjectModel) throws {
+        try super.init(storeURL: storeURL, modelName: CoreDataRecipeStore.modelName, managedModel: managedModel, in: Bundle(for: CoreDataRecipeStore.self))
     }
 }

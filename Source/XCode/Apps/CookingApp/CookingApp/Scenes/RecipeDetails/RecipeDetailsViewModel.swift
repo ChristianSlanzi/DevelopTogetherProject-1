@@ -14,15 +14,23 @@ class RecipeDetailsViewModel {
     var recipeInfos: RecipeFeature.RecipeInformation?
     weak var view: RecipeDetailsViewProtocol?
     public var recipeLoader: RecipeInformationLoader?
+    var recipeManager: RecipeManager
     
-    init(recipe: RecipeFeature.Recipe) {
+    init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManager) {
         self.recipe = recipe
+        self.recipeManager = recipeManager
     }
     
     func viewDidLoad() {
         view?.setRecipeImage(recipe.image)
         view?.setRecipeTitle(recipe.title)
         view?.setRecipeDescription(recipe.title)
+        
+        recipeManager.isFavorite(with: recipe.id) { isFavorite in
+            DispatchQueue.main.async {
+                self.view?.updateFavoriteStatus(isFavorite)
+            }
+        }
         
         recipeLoader?.load(recipeId: recipe.id) { [weak self] (result) in
             print(result)
@@ -37,9 +45,17 @@ class RecipeDetailsViewModel {
             case let .failure(error):
                 print(error)
             }
-            
-            
         }
+    }
+    
+    public func toggleFavoriteStatus() {
+        recipeManager.toggleFavorite(by: recipe.id, completion: {
+            self.recipeManager.isFavorite(with: self.recipe.id) { isFavorite in
+                DispatchQueue.main.async {
+                    self.view?.updateFavoriteStatus(isFavorite)
+                }
+            }
+        })
     }
     
     private func updateRecipeInformation(_ infos: RecipeInformation) {

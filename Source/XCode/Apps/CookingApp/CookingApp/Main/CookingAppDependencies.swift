@@ -13,17 +13,34 @@ import RecipeStore
 import RecipeUI
 import RecipeFeature
 import CoreData
+import GenericStore
 
 class CookingAppDependencies: AppDependencies {
     
     static let shared = CookingAppDependencies()
     
+    private lazy var modelName: String = {
+        return "RecipeStore"
+    }()
+    private lazy var managedModel: NSManagedObjectModel = {
+    
+        do {
+            guard let managedModel = NSManagedObjectModel(name: modelName, in: Bundle(for: CoreDataRecipeStore.self)) else {
+                throw ModelNotFound(modelName: modelName)
+            }
+            return managedModel
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+        }
+        return NSManagedObjectModel()
+    }()
+        
     private lazy var recipeStore: RecipeStore /*& RecipeDataStore*/ = {
         do {
             return try CoreDataRecipeStore(
                 storeURL: NSPersistentContainer
                     .defaultDirectoryURL()
-                    .appendingPathComponent("feed-store.sqlite"))
+                    .appendingPathComponent("feed-store.sqlite"), managedModel: managedModel)
         } catch {
             assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
             
@@ -41,7 +58,25 @@ class CookingAppDependencies: AppDependencies {
             return try CoreDataRecipeInformationStore(
                 storeURL: NSPersistentContainer
                     .defaultDirectoryURL()
-                    .appendingPathComponent("recipe-info-store.sqlite"))
+                    .appendingPathComponent("recipe-info-store.sqlite"), managedModel: managedModel)
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            //TODO
+            /*
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            */
+            return NullStore()
+        }
+    }()
+    
+    internal lazy var favoriteRecipeStore: FavoriteRecipeStore /*& RecipeDataStore*/ = {
+        do {
+            return try CoreDataFavoriteRecipeStore(
+                storeURL: NSPersistentContainer
+                    .defaultDirectoryURL()
+                    .appendingPathComponent("favorite-store.sqlite"), managedModel: managedModel)
         } catch {
             assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
             
@@ -112,7 +147,8 @@ extension CookingAppDependencies {
     }
     
     internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
-        let viewModel = RecipeDetailsViewModel(recipe: recipe)
+        let recipeManager = RecipeManager(store: favoriteRecipeStore, currentDate: { Date() })
+        let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
         let viewController = RecipeDetailsViewController(viewModel: viewModel)
         viewModel.view = viewController
         

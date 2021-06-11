@@ -7,7 +7,7 @@
 
 import CoreData
 
-extension NSPersistentContainer {
+public extension NSPersistentContainer {
     static func load(name: String, model: NSManagedObjectModel, url: URL) throws -> NSPersistentContainer {
         let description = NSPersistentStoreDescription(url: url)
         let container = NSPersistentContainer(name: name, managedObjectModel: model)
@@ -21,7 +21,7 @@ extension NSPersistentContainer {
     }
 }
 
-extension NSManagedObjectModel {
+public extension NSManagedObjectModel {
     convenience init?(name: String, in bundle: Bundle) {
         guard let momd = bundle.url(forResource: name, withExtension: "momd") else {
             return nil

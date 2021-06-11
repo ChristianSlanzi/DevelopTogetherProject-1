@@ -10,6 +10,11 @@
 		24093799264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2409379A264451D80007A954 /* NSManagedObjectContext+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */; };
 		2409379E264457810007A954 /* RecipeStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */; };
+		242AB1832671FB3700867CDE /* FavoriteRecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242AB1822671FB3700867CDE /* FavoriteRecipeStore.swift */; };
+		242AB1852671FBA700867CDE /* LocalFavoriteRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242AB1842671FBA700867CDE /* LocalFavoriteRecipe.swift */; };
+		242AB1872671FD5200867CDE /* CoreDataFavoriteRecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242AB1862671FD5200867CDE /* CoreDataFavoriteRecipeStore.swift */; };
+		242AB1892671FDBE00867CDE /* LocalFavoriteRecipe+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242AB1882671FDBE00867CDE /* LocalFavoriteRecipe+Mappable.swift */; };
+		242AB18B2671FE7400867CDE /* CoreDataFavoriteRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242AB18A2671FE7400867CDE /* CoreDataFavoriteRecipe+Fetchable.swift */; };
 		24411C6A2646F99A00C3CA21 /* TestHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411C692646F99A00C3CA21 /* TestHelpers.framework */; };
 		24411CC72646FEF700C3CA21 /* GenericStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; };
 		24411CC82646FEF700C3CA21 /* GenericStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24411CC62646FEF700C3CA21 /* GenericStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,6 +35,8 @@
 		244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB662643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift */; };
 		244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB672643528E008229B2 /* RecipeStore.xcdatamodeld */; };
 		244DDB6E2643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */; };
+		24586E252670F05A0097E021 /* CoreDataFavoriteRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24586E242670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataClass.swift */; };
+		24586E262670F05A0097E021 /* CoreDataFavoriteRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24586E232670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataProperties.swift */; };
 		2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */; };
 		2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */; };
 		2472ABD1265D173700589A52 /* LocalRecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */; };
@@ -67,6 +74,11 @@
 		24093797264451D80007A954 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		24093798264451D80007A954 /* NSManagedObjectContext+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Stub.swift"; sourceTree = "<group>"; };
 		2409379D264457810007A954 /* RecipeStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStoreIntegrationTests.swift; sourceTree = "<group>"; };
+		242AB1822671FB3700867CDE /* FavoriteRecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeStore.swift; sourceTree = "<group>"; };
+		242AB1842671FBA700867CDE /* LocalFavoriteRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoriteRecipe.swift; sourceTree = "<group>"; };
+		242AB1862671FD5200867CDE /* CoreDataFavoriteRecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavoriteRecipeStore.swift; sourceTree = "<group>"; };
+		242AB1882671FDBE00867CDE /* LocalFavoriteRecipe+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFavoriteRecipe+Mappable.swift"; sourceTree = "<group>"; };
+		242AB18A2671FE7400867CDE /* CoreDataFavoriteRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFavoriteRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 		24411C692646F99A00C3CA21 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24411CC42646FED400C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24411CC62646FEF700C3CA21 /* GenericStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GenericStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +103,8 @@
 		244DDB682643528E008229B2 /* RecipeStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeStore.xcdatamodel; sourceTree = "<group>"; };
 		244DDB692643528E008229B2 /* CoreDataRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		244DDB7D264352DC008229B2 /* TestHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24586E232670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataFavoriteRecipe+CoreDataProperties.swift"; path = "/Users/christianslanzi/Documents/CHRISTIAN/Development/Git/DevelopTogetherProject-1/Source/XCode/Modules/RecipeStore/RecipeStore/CoreData/Model/CoreDataFavoriteRecipe+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		24586E242670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataFavoriteRecipe+CoreDataClass.swift"; path = "/Users/christianslanzi/Documents/CHRISTIAN/Development/Git/DevelopTogetherProject-1/Source/XCode/Modules/RecipeStore/RecipeStore/CoreData/Model/CoreDataFavoriteRecipe+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalRecipe+CoreDataMappable.swift"; sourceTree = "<group>"; };
 		2458EA732646838500965BF6 /* CoreDataRecipe+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRecipe+Fetchable.swift"; sourceTree = "<group>"; };
 		2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipeInformation.swift; sourceTree = "<group>"; };
@@ -158,6 +172,7 @@
 				244DDAF92643421C008229B2 /* Info.plist */,
 				244DDB2B26434825008229B2 /* RecipeStore.swift */,
 				2442C45D265E8744000364FA /* RecipeInformationStore.swift */,
+				242AB1822671FB3700867CDE /* FavoriteRecipeStore.swift */,
 			);
 			path = RecipeStore;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 				244DDB652643528E008229B2 /* Model */,
 				244DDB3026434875008229B2 /* CoreDataRecipeStore.swift */,
 				2442C460265E881A000364FA /* CoreDataRecipeInformationStore.swift */,
+				242AB1862671FD5200867CDE /* CoreDataFavoriteRecipeStore.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -202,6 +218,7 @@
 			children = (
 				244DDB612643524D008229B2 /* LocalRecipe.swift */,
 				2472ABD0265D173700589A52 /* LocalRecipeInformation.swift */,
+				242AB1842671FBA700867CDE /* LocalFavoriteRecipe.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -210,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				2458EA6F264681B500965BF6 /* Mapping */,
+				24586E242670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataClass.swift */,
+				24586E232670F0590097E021 /* CoreDataFavoriteRecipe+CoreDataProperties.swift */,
+				242AB18A2671FE7400867CDE /* CoreDataFavoriteRecipe+Fetchable.swift */,
 				2472ABD5265D499C00589A52 /* CoreDataRecipeInformation+CoreDataClass.swift */,
 				2472ABD6265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift */,
 				2472ABE9265D54BE00589A52 /* CoreDataRecipeInformation+Fetchable.swift */,
@@ -237,6 +257,7 @@
 			children = (
 				2458EA70264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift */,
 				2472ABE6265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift */,
+				242AB1882671FDBE00867CDE /* LocalFavoriteRecipe+Mappable.swift */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -351,11 +372,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242AB1872671FD5200867CDE /* CoreDataFavoriteRecipeStore.swift in Sources */,
 				244DDB6C2643528E008229B2 /* CoreDataRecipe+CoreDataClass.swift in Sources */,
+				242AB1832671FB3700867CDE /* FavoriteRecipeStore.swift in Sources */,
 				244DDB3126434875008229B2 /* CoreDataRecipeStore.swift in Sources */,
 				2442C461265E881A000364FA /* CoreDataRecipeInformationStore.swift in Sources */,
 				2442C45E265E8744000364FA /* RecipeInformationStore.swift in Sources */,
+				24586E252670F05A0097E021 /* CoreDataFavoriteRecipe+CoreDataClass.swift in Sources */,
+				242AB18B2671FE7400867CDE /* CoreDataFavoriteRecipe+Fetchable.swift in Sources */,
 				2472ABEA265D54BF00589A52 /* CoreDataRecipeInformation+Fetchable.swift in Sources */,
+				242AB1892671FDBE00867CDE /* LocalFavoriteRecipe+Mappable.swift in Sources */,
+				242AB1852671FBA700867CDE /* LocalFavoriteRecipe.swift in Sources */,
 				2472ABE7265D4D3200589A52 /* LocalRecipeInformation+Mappable.swift in Sources */,
 				2472ABD8265D499C00589A52 /* CoreDataRecipeInformation+CoreDataProperties.swift in Sources */,
 				2458EA71264681F000965BF6 /* LocalRecipe+CoreDataMappable.swift in Sources */,
@@ -364,6 +391,7 @@
 				244DDB2C26434825008229B2 /* RecipeStore.swift in Sources */,
 				244DDB6D2643528E008229B2 /* RecipeStore.xcdatamodeld in Sources */,
 				2458EA742646838500965BF6 /* CoreDataRecipe+Fetchable.swift in Sources */,
+				24586E262670F05A0097E021 /* CoreDataFavoriteRecipe+CoreDataProperties.swift in Sources */,
 				244DDB622643524D008229B2 /* LocalRecipe.swift in Sources */,
 				2472ABD1265D173700589A52 /* LocalRecipeInformation.swift in Sources */,
 			);

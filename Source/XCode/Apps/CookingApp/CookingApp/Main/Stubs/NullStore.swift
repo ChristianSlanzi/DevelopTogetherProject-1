@@ -37,3 +37,21 @@ extension NullStore: RecipeInformationStore {
         completion(.none)
     }
 }
+
+extension NullStore: FavoriteRecipeStore {
+    func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping FavoriteRetrievalCompletion) {
+        completion(.empty)
+    }
+    
+    func create(_ feed: [LocalFavoriteRecipe], completion: @escaping (Error?) -> Void) {
+        completion(.none)
+    }
+    
+    func delete(predicate: NSPredicate?, entity: LocalFavoriteRecipe.Type, completion: @escaping FavoriteDeletionCompletion) {
+        completion(.none)
+    }
+    
+    func deleteAll(entity: LocalFavoriteRecipe.Type, completion: @escaping FavoriteDeletionCompletion) {
+        completion(.none)
+    }
+}
