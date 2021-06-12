@@ -23,7 +23,11 @@ public class CollectionViewController: UICollectionViewController {
 //        }
         
         self.viewModel?.performInitialViewSetup()
-        ///
+        self.viewModel?.loadData()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     public override func didReceiveMemoryWarning() {

@@ -41,6 +41,9 @@ public class CollectionViewModel {
                 return
             }
         }
+    }
+    
+    func loadData() {
         recipeLoader?.load(predicate: nil, completion: { (result) in
             switch result {
             case let .success(recipes):
@@ -62,7 +65,7 @@ public class CollectionViewModel {
                 }))
                 self.recipeBook?.categories?.append(category)
             case let .failure(error):
-                
+                print(error)
                 let path = Bundle.main.path(forResource: "RecipeBook", ofType: "plist")
                 self.recipeBook?.load(filePath: path)
             }

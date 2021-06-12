@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CollectionViewSectionHeaderProtocol : class {
+protocol CollectionViewSectionHeaderProtocol : AnyObject {
     func setHeaderText(text: String)
 }

@@ -13,17 +13,36 @@ import RecipeStore
 import RecipeUI
 import RecipeFeature
 import CoreData
+import GenericStore
 
 class CookingAppDependencies: AppDependencies {
     
     static let shared = CookingAppDependencies()
     
+    var recipeManager: RecipeManager?
+    
+    private lazy var modelName: String = {
+        return "RecipeStore"
+    }()
+    private lazy var managedModel: NSManagedObjectModel = {
+    
+        do {
+            guard let managedModel = NSManagedObjectModel(name: modelName, in: Bundle(for: CoreDataRecipeStore.self)) else {
+                throw ModelNotFound(modelName: modelName)
+            }
+            return managedModel
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+        }
+        return NSManagedObjectModel()
+    }()
+        
     private lazy var recipeStore: RecipeStore /*& RecipeDataStore*/ = {
         do {
             return try CoreDataRecipeStore(
                 storeURL: NSPersistentContainer
                     .defaultDirectoryURL()
-                    .appendingPathComponent("feed-store.sqlite"))
+                    .appendingPathComponent("feed-store.sqlite"), managedModel: managedModel)
         } catch {
             assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
             
@@ -41,7 +60,25 @@ class CookingAppDependencies: AppDependencies {
             return try CoreDataRecipeInformationStore(
                 storeURL: NSPersistentContainer
                     .defaultDirectoryURL()
-                    .appendingPathComponent("recipe-info-store.sqlite"))
+                    .appendingPathComponent("recipe-info-store.sqlite"), managedModel: managedModel)
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            //TODO
+            /*
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            */
+            return NullStore()
+        }
+    }()
+    
+    internal lazy var favoriteRecipeStore: FavoriteRecipeStore /*& RecipeDataStore*/ = {
+        do {
+            return try CoreDataFavoriteRecipeStore(
+                storeURL: NSPersistentContainer
+                    .defaultDirectoryURL()
+                    .appendingPathComponent("favorite-store.sqlite"), managedModel: managedModel)
         } catch {
             assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
             
@@ -88,7 +125,33 @@ extension CookingAppDependencies {
     }
     
     internal func createFavoritesViewController() -> UIViewController {
-        let viewController = FavoritesViewController()
+        //let viewController = FavoritesViewController()
+        //return viewController
+        let viewController = createRecipeListViewController(recipes: [])
+        
+        
+        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                      client: networkingService,
+                                                      apiKey: cookingApiKey)
+        let service = serviceFactory.getCookingApiService()
+//        let remoteLoader = RemoteInformationLoader(service: service)
+//        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
+//        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+//
+        recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        
+        recipeManager?.getFavorites { recipes in
+            let recipesViewController = viewController as! CollectionViewController
+            recipesViewController.viewModel?.recipeBook  = RecipeBook()
+            let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> RecipeUI.Recipe in
+                Recipe(id: recipe.id, title: recipe.title, image: recipe.image, imageType: recipe.imageType)
+            }))
+            
+            recipesViewController.viewModel?.recipeBook?.categories?.append(category)
+            recipesViewController.reload()
+        }
+        
         return viewController
     }
     
@@ -112,9 +175,6 @@ extension CookingAppDependencies {
     }
     
     internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
-        let viewModel = RecipeDetailsViewModel(recipe: recipe)
-        let viewController = RecipeDetailsViewController(viewModel: viewModel)
-        viewModel.view = viewController
         
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
@@ -124,8 +184,15 @@ extension CookingAppDependencies {
         let remoteLoader = RemoteInformationLoader(service: service)
         let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
         let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        
+        let recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        
+        let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
         viewModel.recipeLoader = recipeLoader
-
+        
+        let viewController = RecipeDetailsViewController(viewModel: viewModel)
+        viewModel.view = viewController
+        
         return viewController
     }
     

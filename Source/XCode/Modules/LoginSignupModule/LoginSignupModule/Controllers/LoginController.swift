@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LoginControllerDelegate: class {
+public protocol LoginControllerDelegate: AnyObject {
     func loginResult(result: Bool, error: String?)
 }
 

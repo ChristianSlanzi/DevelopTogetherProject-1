@@ -50,7 +50,8 @@ extension LocalRecipeInformationLoader: RecipeInformationCache {
 //            print(error)
 //
 //        })
-        try store.create(recipes.toLocal(), completion: { (error) in
+        store.create(recipes.toLocal(), completion: { (error) in
+            guard let error = error else { return }
             print(error)
         })
     }

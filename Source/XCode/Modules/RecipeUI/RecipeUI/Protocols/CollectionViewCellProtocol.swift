@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CollectionViewCellProtocol: class {
+protocol CollectionViewCellProtocol: AnyObject {
     func loadImage(resourceName: String)
     func setCaption(captionText: String)
     func setRecipeDetails(recipeDetailsText: String)
