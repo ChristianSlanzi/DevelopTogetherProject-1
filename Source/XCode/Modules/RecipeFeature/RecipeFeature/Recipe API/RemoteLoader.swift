@@ -43,6 +43,11 @@ public class RemoteLoader: RecipeLoader {
             return
         }
         
+        if predicate != nil && !predicate!.predicateFormat.contains("title CONTAINS ") {
+            completion(.failure(CookingApiServiceError.invalidData))
+            return
+        }
+        
         service.searchRecipes(predicate: predicate) { (result) in
             switch result {
             case let .success(resultDTO):

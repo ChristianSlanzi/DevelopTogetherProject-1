@@ -41,6 +41,9 @@ public class CollectionViewModel {
                 return
             }
         }
+    }
+    
+    func loadData() {
         recipeLoader?.load(predicate: nil, completion: { (result) in
             switch result {
             case let .success(recipes):

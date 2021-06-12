@@ -19,6 +19,8 @@ class CookingAppDependencies: AppDependencies {
     
     static let shared = CookingAppDependencies()
     
+    var recipeManager: RecipeManager?
+    
     private lazy var modelName: String = {
         return "RecipeStore"
     }()
@@ -123,7 +125,33 @@ extension CookingAppDependencies {
     }
     
     internal func createFavoritesViewController() -> UIViewController {
-        let viewController = FavoritesViewController()
+        //let viewController = FavoritesViewController()
+        //return viewController
+        let viewController = createRecipeListViewController(recipes: [])
+        
+        
+        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
+        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
+                                                      client: networkingService,
+                                                      apiKey: cookingApiKey)
+        let service = serviceFactory.getCookingApiService()
+//        let remoteLoader = RemoteInformationLoader(service: service)
+//        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
+//        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+//
+        recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        
+        recipeManager?.getFavorites { recipes in
+            let recipesViewController = viewController as! CollectionViewController
+            recipesViewController.viewModel?.recipeBook  = RecipeBook()
+            let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> RecipeUI.Recipe in
+                Recipe(id: recipe.id, title: recipe.title, image: recipe.image, imageType: recipe.imageType)
+            }))
+            
+            recipesViewController.viewModel?.recipeBook?.categories?.append(category)
+            recipesViewController.reload()
+        }
+        
         return viewController
     }
     
@@ -147,10 +175,6 @@ extension CookingAppDependencies {
     }
     
     internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
-        let recipeManager = RecipeManager(store: favoriteRecipeStore, currentDate: { Date() })
-        let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
-        let viewController = RecipeDetailsViewController(viewModel: viewModel)
-        viewModel.view = viewController
         
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
@@ -160,8 +184,15 @@ extension CookingAppDependencies {
         let remoteLoader = RemoteInformationLoader(service: service)
         let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
         let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        
+        let recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        
+        let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
         viewModel.recipeLoader = recipeLoader
-
+        
+        let viewController = RecipeDetailsViewController(viewModel: viewModel)
+        viewModel.view = viewController
+        
         return viewController
     }
     

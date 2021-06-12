@@ -10,11 +10,13 @@ import RecipeStore
 import GenericStore
 
 public final class RecipeManager {
+    private let recipeLoader: RecipeLoader
     private let store: FavoriteRecipeStore
     private let currentDate: () -> Date
     
-    public init(store: FavoriteRecipeStore, currentDate: @escaping () -> Date) {
+    public init(store: FavoriteRecipeStore, recipeLoader: RecipeLoader, currentDate: @escaping () -> Date) {
         self.store = store
+        self.recipeLoader = recipeLoader
         self.currentDate = currentDate
     }
     
@@ -54,7 +56,7 @@ public final class RecipeManager {
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
             key: #keyPath(CoreDataFavoriteRecipe.idCode),
             ascending: true)
-        let predicate: NSPredicate? = nil // NSPredicate(format: "idCode == \(identifier)")
+        let predicate = NSPredicate(format: "idCode == \(identifier)")
         store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor]) { result in
             switch result {
             case let .failure(error):
@@ -64,6 +66,41 @@ public final class RecipeManager {
                 return completion(false)
             case .found(feed: let feed):
                 return completion(true)
+            }
+        }
+    }
+    
+    public func getFavorites(completion: @escaping ([RecipeFeature.Recipe])->Void)  {
+        let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
+            key: #keyPath(CoreDataFavoriteRecipe.idCode),
+            ascending: true)
+        
+        store.retrieve(predicate: nil, sortDescriptors: [recipeSortDescriptor]) { result in
+            switch result {
+            case let .failure(error):
+                print(error)
+                return completion([])
+            case .empty:
+                return completion([])
+            case .found(feed: let feed):
+            
+                //TODO:
+                
+                var predArray = [NSPredicate]()
+                for item in feed {
+                    predArray.append(NSPredicate(format: "idCode == \(item.id)"))
+                }
+
+                let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predArray)
+                                
+                self.recipeLoader.load(predicate: predicate) { result in
+                    switch result {
+                    case let .success(recipes):
+                        return completion(recipes)
+                    case .failure(_):
+                        return completion([])
+                    }
+                }
             }
         }
     }
