@@ -13,7 +13,7 @@ class RecipeDetailsViewModel {
     var recipe: RecipeFeature.Recipe
     var recipeInfos: RecipeFeature.RecipeInformation?
     weak var view: RecipeDetailsViewProtocol?
-    public var recipeLoader: RecipeInformationLoader?
+    //public var recipeLoader: RecipeInformationLoader?
     var recipeManager: RecipeManager
     
     init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManager) {
@@ -32,7 +32,7 @@ class RecipeDetailsViewModel {
             }
         }
         
-        recipeLoader?.load(recipeId: recipe.id) { [weak self] (result) in
+        recipeManager.loadRecipeInformation(recipeId: recipe.id) { [weak self] (result) in
             print(result)
             
             guard let self = self else { return }

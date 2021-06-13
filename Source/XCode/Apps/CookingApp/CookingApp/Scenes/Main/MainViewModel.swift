@@ -56,10 +56,8 @@ final class MainViewModel {
 //                        print(result)
 //                    }
 //                }
-            
-            
-                
-                self.recipeLoader.load(recipeId: searchResult.results.first!.id) { (result) in
+
+                self.recipeLoader.loadRecipeInformation(recipeId: searchResult.results.first!.id) { (result) in
                     print(result)
                 }
             }

@@ -9,30 +9,43 @@ import Foundation
 import RecipeStore
 import GenericStore
 
+protocol RecipeManaging {
+    
+    // recipes
+    func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void)
+    
+    // recipe information
+    func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void)
+    
+    // favorites ->> TODO: make a FavoriteManaging protocol and a FavoriteManager class
+    func addFavorite(by recipeId: Int)
+    func removeFavorite(by recipeId: Int)
+    func toggleFavorite(by recipeId: Int, completion: @escaping ()->Void)
+    func isFavorite(with identifier: Int, completion: @escaping (Bool)->Void)
+    func getFavorites(completion: @escaping ([RecipeFeature.Recipe])->Void)
+}
+
 public final class RecipeManager {
     private let recipeLoader: RecipeLoader
+    private let recipeInformationLoader: RecipeInformationLoader
     private let store: FavoriteRecipeStore
     private let currentDate: () -> Date
     
-    public init(store: FavoriteRecipeStore, recipeLoader: RecipeLoader, currentDate: @escaping () -> Date) {
+    public init(store: FavoriteRecipeStore, recipeLoader: RecipeLoader, recipeInformationLoader: RecipeInformationLoader, currentDate: @escaping () -> Date) {
         self.store = store
         self.recipeLoader = recipeLoader
+        self.recipeInformationLoader = recipeInformationLoader
         self.currentDate = currentDate
     }
     
-    public func toggleFavorite(by recipeId: Int, completion: @escaping ()->Void) {
-        isFavorite(with: recipeId, completion: { result in
-            if result {
-                print("removeFavorite")
-                self.removeFavorite(by: recipeId)
-                completion()
-            } else {
-                print("addFavorite")
-                self.addFavorite(by: recipeId)
-                completion()
-            }
-        })
+    // recipes
+    func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
+        recipeLoader.loadRecipesByTitle(title, completion: completion)
     }
+    
+    
+    
+    // favorites
     
     public func addFavorite(by recipeId: Int) {
         let recipe = FavoriteRecipe(id: recipeId)
@@ -50,6 +63,20 @@ public final class RecipeManager {
             guard let error = error else { return }
             print(error)
         }
+    }
+    
+    public func toggleFavorite(by recipeId: Int, completion: @escaping ()->Void) {
+        isFavorite(with: recipeId, completion: { result in
+            if result {
+                print("removeFavorite")
+                self.removeFavorite(by: recipeId)
+                completion()
+            } else {
+                print("addFavorite")
+                self.addFavorite(by: recipeId)
+                completion()
+            }
+        })
     }
     
     public func isFavorite(with identifier: Int, completion: @escaping (Bool)->Void) {
@@ -93,7 +120,7 @@ public final class RecipeManager {
 
                 let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predArray)
                                 
-                self.recipeLoader.load(predicate: predicate) { result in
+                self.recipeLoader.loadRecipes(predicate: predicate) { result in
                     switch result {
                     case let .success(recipes):
                         return completion(recipes)
@@ -105,6 +132,34 @@ public final class RecipeManager {
         }
     }
 }
+
+extension RecipeManager: RecipeInformationLoader {
+    public func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
+        recipeInformationLoader.loadRecipeInformation(recipeId: recipeId, completion: completion)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 private extension Array where Element == FavoriteRecipe {
     func toLocal() -> [LocalFavoriteRecipe] {

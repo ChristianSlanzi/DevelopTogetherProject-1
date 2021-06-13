@@ -139,7 +139,7 @@ extension CookingAppDependencies {
 //        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
 //        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
 //
-        recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), recipeInformationLoader: makeCompositeRecipeInformationLoader(), currentDate: { Date() })
         
         recipeManager?.getFavorites { recipes in
             let recipesViewController = viewController as! CollectionViewController
@@ -176,19 +176,10 @@ extension CookingAppDependencies {
     
     internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
         
-        let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
-        let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
-                                                      client: networkingService,
-                                                      apiKey: cookingApiKey)
-        let service = serviceFactory.getCookingApiService()
-        let remoteLoader = RemoteInformationLoader(service: service)
-        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
-        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
-        
-        let recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), currentDate: { Date() })
+        let recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), recipeInformationLoader: makeCompositeRecipeInformationLoader(), currentDate: { Date() })
         
         let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
-        viewModel.recipeLoader = recipeLoader
+        //viewModel.recipeLoader = recipeLoader
         
         let viewController = RecipeDetailsViewController(viewModel: viewModel)
         viewModel.view = viewController
@@ -234,16 +225,28 @@ extension CookingAppDependencies {
     }
     
     internal func makeCompositeRecipeLoader() -> RecipeLoader {
+        let remoteLoader = RemoteLoader(service: makeCookingApiService())
+        let localLoader = LocalRecipesLoader(store: recipeStore, currentDate: { Date() })
+        let recipeLoader = CompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        return recipeLoader
+    }
+    
+    internal func makeCompositeRecipeInformationLoader() -> RecipeInformationLoader {
+        let remoteLoader = RemoteInformationLoader(service: makeCookingApiService())
+        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
+        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
+        return recipeLoader
+    }
+    
+    private func makeCookingApiService() -> CookingApiProtocol {
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
         let serviceFactory = CookingApiServiceFactory(url: URL(string: "https://api.spoonacular.com")!,
                                                       client: networkingService,
                                                       apiKey: cookingApiKey)
         let service = serviceFactory.getCookingApiService()
-        let remoteLoader = RemoteLoader(service: service)
-        let localLoader = LocalRecipesLoader(store: recipeStore, currentDate: { Date() })
-        let recipeLoader = CompositeFallbackLoader(remote: remoteLoader, local: localLoader)
-        return recipeLoader
+        return service
     }
+    
 }
 
 extension CookingAppDependencies {

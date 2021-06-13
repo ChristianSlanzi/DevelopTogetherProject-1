@@ -9,11 +9,11 @@ import Foundation
 
 public enum Cuisine: String {
     case italian
-    case french
-    case american
-    case chinese
-    case japanese
-    case russian
+    case French
+    case American
+    case Chinese
+    case Japanese
+    case Russian
 }
 
 public class CategoryViewModel {
@@ -24,11 +24,11 @@ public class CategoryViewModel {
     init() {
         //add some categories
         categories.append(.italian)
-        categories.append(.french)
-        categories.append(.american)
-        categories.append(.chinese)
-        categories.append(.japanese)
-        categories.append(.russian)
+        categories.append(.French)
+        categories.append(.American)
+        categories.append(.Chinese)
+        categories.append(.Japanese)
+        categories.append(.Russian)
     }
     
     func onCategorySelected(index: Int) {

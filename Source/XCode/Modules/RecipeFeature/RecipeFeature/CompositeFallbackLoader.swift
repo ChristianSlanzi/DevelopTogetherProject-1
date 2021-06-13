@@ -8,7 +8,7 @@
 import CookingApiService
 
 public class CompositeFallbackLoader: RecipeLoader {
-    
+
     let remote: RecipeLoader
     let local: RecipeLoader & RecipeCache
         
@@ -54,8 +54,57 @@ public class CompositeFallbackLoader: RecipeLoader {
         })
     }
     
-    public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
-        remote.load(predicate: predicate, completion: { [weak self] result in
+    
+    public func loadRecipesByIngredients(_ ingredients: [String], completion: @escaping (RecipeLoader.Result) -> Void) {
+        remote.loadRecipesByIngredients(ingredients) { [weak self] result in
+            switch result {
+            case let .success(data):
+                print("fetch \(result) remotely")
+                completion(result)
+                
+                self?.local.save(data) { (saveResult) in
+                    switch saveResult {
+                    case .success():
+                        print("fetch has been cached")
+                    case let .failure(error):
+                        print("saving fetch failed")
+                        print(error)
+                    }
+                }
+            case .failure:
+                print("remote fetch failed, fetch locally")
+                
+                self?.local.loadRecipesByIngredients(ingredients, completion: completion)
+            }
+        }
+    }
+    
+    public func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
+        remote.loadRecipesByTitle(title) { [weak self] result in
+            switch result {
+            case let .success(data):
+                print("fetch \(result) remotely")
+                completion(result)
+                
+                self?.local.save(data) { (saveResult) in
+                    switch saveResult {
+                    case .success():
+                        print("fetch has been cached")
+                    case let .failure(error):
+                        print("saving fetch failed")
+                        print(error)
+                    }
+                }
+            case .failure:
+                print("remote fetch failed, fetch locally")
+                
+                self?.local.loadRecipesByTitle(title, completion: completion)
+            }
+        }
+    }
+    
+    public func loadRecipes(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+        remote.loadRecipes(predicate: predicate, completion: { [weak self] result in
             switch result {
             case let .success(data):
                 print("fetch \(result) remotely")
@@ -88,7 +137,7 @@ public class CompositeFallbackLoader: RecipeLoader {
     }
     
     private func retrieveLocalData(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
-        local.load(predicate: predicate, completion: { localResult in
+        local.loadRecipes(predicate: predicate, completion: { localResult in
             switch localResult {
             case let .success(data):
                 print("fetch \(data) locally")

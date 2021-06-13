@@ -20,7 +20,7 @@ public final class LocalRecipeInformationLoader {
 }
 
 extension LocalRecipeInformationLoader: RecipeInformationLoader {
-    public func load(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
+    public func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
         
         do {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(

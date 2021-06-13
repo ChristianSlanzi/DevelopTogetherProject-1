@@ -30,7 +30,7 @@ class SearchViewModel {
     func searchForIngredients(_ textToSearch: String) {
         print(textToSearch)
         
-        recipeLoader?.load(predicate: NSPredicate(format:"ingredients CONTAINS '\(textToSearch)'"), completion: { (result) in
+        recipeLoader?.loadRecipesByIngredients([textToSearch], completion: { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {
@@ -54,7 +54,7 @@ class SearchViewModel {
     func search(_ textToSearch: String) {
         print(textToSearch)
         
-        recipeLoader?.load(predicate: NSPredicate(format:"title CONTAINS '\(textToSearch)'"), completion: { (result) in
+        recipeLoader?.loadRecipesByTitle(textToSearch) { (result) in
             switch result {
             case let .success(recipes):
                 guard !recipes.isEmpty else {
@@ -72,7 +72,7 @@ class SearchViewModel {
                 print(error)
             }
 
-        })
+        }
     }
     
     func searchRecipesForNutrients(_ nutrients: [String: Int]) {
