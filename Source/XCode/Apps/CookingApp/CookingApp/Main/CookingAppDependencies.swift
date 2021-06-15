@@ -156,7 +156,9 @@ extension CookingAppDependencies {
     }
     
     internal func createProfileViewController() -> UIViewController {
-        let viewController = ProfileViewController()
+        //TODO create a UserFeature
+        let user = User(userID: 999, name: "", biography: "")
+        let viewController = ProfileViewController(userID: user.userID, loader: LocalUserLoader())
         return viewController
     }
     
