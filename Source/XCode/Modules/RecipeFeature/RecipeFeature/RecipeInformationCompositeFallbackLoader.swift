@@ -18,8 +18,8 @@ public class RecipeInformationCompositeFallbackLoader: RecipeInformationLoader {
         
     }
     
-    public func load(recipeId: Int,completion: @escaping (RecipeInformationLoader.Result) -> Void) {
-        remote.load(recipeId: recipeId, completion: { [weak self] result in
+    public func loadRecipeInformation(recipeId: Int,completion: @escaping (RecipeInformationLoader.Result) -> Void) {
+        remote.loadRecipeInformation(recipeId: recipeId, completion: { [weak self] result in
             guard self != nil else { return }
             switch result {
             case let .success(data):
@@ -53,7 +53,7 @@ public class RecipeInformationCompositeFallbackLoader: RecipeInformationLoader {
     }
     
     private func retrieveLocalData(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
-        local.load(recipeId: recipeId, completion: { localResult in
+        local.loadRecipeInformation(recipeId: recipeId, completion: { localResult in
             switch localResult {
             case let .success(data):
                 print("fetch \(data) locally")

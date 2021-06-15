@@ -14,10 +14,11 @@ public protocol CookingApiProtocol {
     typealias RecipesSearchByNutrientsResult = Swift.Result<[RecipeDTO], ServiceError>
     typealias RecipeInformationResult = Swift.Result<RecipeInformationResultDTO, ServiceError>
     
+    func searchRecipesByTitle(_ title: String, completion: @escaping (RecipesSearchResult) -> Void)
     func searchRecipes(predicate: NSPredicate?, completion: @escaping (RecipesSearchResult) -> Void)
     //typedef Parameters [String: Any]
     func searchRecipesByNutrients(parameters: NutrientParameters, completion: @escaping (RecipesSearchByNutrientsResult) -> Void)
-    func searchRecipesByIngredients(parameters: String, completion: @escaping (RecipesSearchByIngredientsResult) -> Void)
+    func searchRecipesByIngredients(_ ingredients: [String], completion: @escaping (RecipesSearchByIngredientsResult) -> Void)
     func getRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationResult) -> Void)
     
 }

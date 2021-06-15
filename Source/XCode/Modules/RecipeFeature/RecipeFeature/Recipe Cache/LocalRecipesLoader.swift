@@ -21,11 +21,43 @@ public final class LocalRecipesLoader {
 }
 
 extension LocalRecipesLoader: RecipeLoader {
-    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
-        
+    
+    public func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
+        let predicate = NSPredicate(format: "title CONTAINS[c] '\(title)'")
+        loadRecipes(predicate: predicate, completion: completion)
     }
     
-    public func load(predicate: NSPredicate?,  completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func loadRecipesByIngredients(_ ingredients: [String], completion: @escaping (RecipeLoader.Result) -> Void) {
+        // TODO
+        let joined = ingredients.joined(separator: ",")
+        let predicate = NSPredicate(format: "extendedIngredients CONTAINS[c] 'pizza'")
+        loadRecipes(predicate: predicate, completion: completion)
+    }
+    
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void) {
+        // TODO
+        var predicateStr = ""
+        for nutrient in nutrients.numbers {
+            switch nutrient.key {
+            case .minCarbs:
+                if !predicateStr.isEmpty { predicateStr.append(" AND ") }
+                predicateStr.append("carbs.intValue >= \(nutrient.value)")
+            case .maxCarbs:
+                if !predicateStr.isEmpty { predicateStr.append(" AND ") }
+                predicateStr.append("carbs.intValue <= \(nutrient.value)")
+            case .minProtein:
+                if !predicateStr.isEmpty { predicateStr.append(" AND ") }
+                predicateStr.append("protein.intValue >= \(nutrient.value)")
+            case .maxProtein:
+                if !predicateStr.isEmpty { predicateStr.append(" AND ") }
+                predicateStr.append("protein.intValue <= \(nutrient.value)")
+            }
+        }
+        let predicate = NSPredicate(format: predicateStr)
+        loadRecipes(predicate: predicate, completion: completion)
+    }
+    
+    public func loadRecipes(predicate: NSPredicate?,  completion: @escaping (RecipeLoader.Result) -> Void) {
         
         do {
             let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(

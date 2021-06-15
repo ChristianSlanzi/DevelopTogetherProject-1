@@ -25,23 +25,53 @@ public class RemoteLoader: RecipeLoader {
         self.service = service
     }
     
-    public func load(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
-        if predicate != nil && predicate!.predicateFormat.contains("ingredients") {
-            let parameters = predicate!.predicateFormat.replacingOccurrences(of: "ingredients CONTAINS ", with: "")
-            service.searchRecipesByIngredients(parameters: parameters) { (result) in
-                switch result {
-                case let .success(resultDTO):
-                    completion(.success(resultDTO.map({ (dto) -> Recipe in
-                        Recipe(id: dto.id, calories: nil, carbs: nil, fat: nil, image: dto.image, imageType: dto.imageType, protein: nil, title: dto.title)
-                    })))
-                    break
-                case let .failure(error):
-                    completion(.failure(error))
-                    break
-                }
+    public func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
+        service.searchRecipesByTitle(title) { (result) in
+            switch result {
+            case let .success(resultDTO):
+                completion(.success(resultDTO.results.map({ (dto) -> Recipe in
+                    Recipe(id: dto.id, calories: dto.calories, carbs: dto.carbs, fat: dto.fat, image: dto.image, imageType: dto.imageType, protein: dto.protein, title: dto.title)
+                })))
+                break
+            case let .failure(error):
+                completion(.failure(error))
+                break
             }
-            return
         }
+    }
+    
+    public func loadRecipesByIngredients(_ ingredients: [String], completion: @escaping (RecipeLoader.Result) -> Void) {
+        service.searchRecipesByIngredients(ingredients) { (result) in
+            switch result {
+            case let .success(resultDTO):
+                completion(.success(resultDTO.map({ (dto) -> Recipe in
+                    Recipe(id: dto.id, calories: nil, carbs: nil, fat: nil, image: dto.image, imageType: dto.imageType, protein: nil, title: dto.title)
+                })))
+                break
+            case let .failure(error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    public func loadRecipes(predicate: NSPredicate?, completion: @escaping (RecipeLoader.Result) -> Void) {
+//        if predicate != nil && predicate!.predicateFormat.contains("ingredients") {
+//            let parameters = predicate!.predicateFormat.replacingOccurrences(of: "ingredients CONTAINS ", with: "")
+//            service.searchRecipesByIngredients(parameters: parameters) { (result) in
+//                switch result {
+//                case let .success(resultDTO):
+//                    completion(.success(resultDTO.map({ (dto) -> Recipe in
+//                        Recipe(id: dto.id, calories: nil, carbs: nil, fat: nil, image: dto.image, imageType: dto.imageType, protein: nil, title: dto.title)
+//                    })))
+//                    break
+//                case let .failure(error):
+//                    completion(.failure(error))
+//                    break
+//                }
+//            }
+//            return
+//        }
         
         if predicate != nil && !predicate!.predicateFormat.contains("title CONTAINS ") {
             completion(.failure(CookingApiServiceError.invalidData))
@@ -106,7 +136,7 @@ public class RemoteInformationLoader: RecipeInformationLoader {
     public init(service: CookingApiProtocol) {
         self.service = service
     }
-    public func load(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
+    public func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
         service.getRecipeInformation(recipeId: recipeId) { (result) in
             switch result {
             case let .success(resultDTO):

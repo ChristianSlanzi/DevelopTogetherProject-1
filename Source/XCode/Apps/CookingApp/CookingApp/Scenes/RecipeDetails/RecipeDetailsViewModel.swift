@@ -13,10 +13,10 @@ class RecipeDetailsViewModel {
     var recipe: RecipeFeature.Recipe
     var recipeInfos: RecipeFeature.RecipeInformation?
     weak var view: RecipeDetailsViewProtocol?
-    public var recipeLoader: RecipeInformationLoader?
-    var recipeManager: RecipeManager
+
+    var recipeManager: RecipeManaging
     
-    init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManager) {
+    init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManaging) {
         self.recipe = recipe
         self.recipeManager = recipeManager
     }
@@ -32,7 +32,7 @@ class RecipeDetailsViewModel {
             }
         }
         
-        recipeLoader?.load(recipeId: recipe.id) { [weak self] (result) in
+        recipeManager.loadRecipeInformation(recipeId: recipe.id) { [weak self] (result) in
             print(result)
             
             guard let self = self else { return }
@@ -40,7 +40,7 @@ class RecipeDetailsViewModel {
             switch result {
             case let .success(infos):
                 //TODO: remove the filtering as the api should return only recipe with given id
-                guard let recipeInfos = infos.first(where: {$0.id == self.recipe.id}) else { return }
+                guard let recipeInfos = infos.first else { return }
                 self.updateRecipeInformation(recipeInfos)
             case let .failure(error):
                 print(error)
@@ -74,7 +74,6 @@ class RecipeDetailsViewModel {
                 self.view?.setRecipeCookingTime("Cooking\n\(cookingMinutes) minutes")
             }
             self.view?.setRecipeIngredients(recipeInfos.extendedIngredients.map { "\($0.amount) " + $0.unit + " " + $0.name })
-            
         }
     }
 }
