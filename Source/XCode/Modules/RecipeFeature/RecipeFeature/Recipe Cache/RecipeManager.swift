@@ -9,10 +9,13 @@ import Foundation
 import RecipeStore
 import GenericStore
 
+/*
 protocol RecipeManaging {
     
     // recipes
     func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void)
+    func loadRecipesByIngredients(_ ingredients: [String], completion: @escaping (RecipeLoader.Result) -> Void)
+    func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (RecipeLoader.Result) -> Void)
     
     // recipe information
     func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void)
@@ -24,8 +27,19 @@ protocol RecipeManaging {
     func isFavorite(with identifier: Int, completion: @escaping (Bool)->Void)
     func getFavorites(completion: @escaping ([RecipeFeature.Recipe])->Void)
 }
+*/
+public protocol FavoriteManaging {
+    func addFavorite(by recipeId: Int)
+    func removeFavorite(by recipeId: Int)
+    func toggleFavorite(by recipeId: Int, completion: @escaping ()->Void)
+    func isFavorite(with identifier: Int, completion: @escaping (Bool)->Void)
+    func getFavorites(completion: @escaping ([RecipeFeature.Recipe])->Void)
+}
 
-public final class RecipeManager {
+public typealias RecipeManaging = RecipeLoader & RecipeInformationLoader & FavoriteManaging //& RecipeCache
+
+public final class RecipeManager: RecipeManaging {
+    
     private let recipeLoader: RecipeLoader
     private let recipeInformationLoader: RecipeInformationLoader
     private let store: FavoriteRecipeStore
@@ -39,10 +53,20 @@ public final class RecipeManager {
     }
     
     // recipes
-    func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
+    public func loadRecipes(predicate: NSPredicate?, completion: @escaping (Result<[Recipe], Error>) -> Void) {
+        recipeLoader.loadRecipes(predicate: predicate, completion: completion)
+    }
+    public func loadRecipesByTitle(_ title: String, completion: @escaping (RecipeLoader.Result) -> Void) {
         recipeLoader.loadRecipesByTitle(title, completion: completion)
     }
     
+    public func loadRecipesByIngredients(_ ingredients: [String], completion: @escaping (Result<[Recipe], Error>) -> Void) {
+        recipeLoader.loadRecipesByIngredients(ingredients, completion: completion)
+    }
+    
+    public func loadRecipesByNutrients(_ nutrients: NutrientParameters, completion: @escaping (Result<[Recipe], Error>) -> Void) {
+        recipeLoader.loadRecipesByNutrients(nutrients, completion: completion)
+    }
     
     
     // favorites
@@ -56,9 +80,7 @@ public final class RecipeManager {
     }
     
     public func removeFavorite(by recipeId: Int) {
-        //let recipe = FavoriteRecipe(id: recipeId)
         let predicate: NSPredicate = NSPredicate(format: "idCode == \(recipeId)")
-        //TODO delete from db
         store.delete(predicate: predicate, entity: LocalFavoriteRecipe.self) { error in
             guard let error = error else { return }
             print(error)
@@ -133,7 +155,8 @@ public final class RecipeManager {
     }
 }
 
-extension RecipeManager: RecipeInformationLoader {
+// RecipeInformationLoader
+extension RecipeManager {
     public func loadRecipeInformation(recipeId: Int, completion: @escaping (RecipeInformationLoader.Result) -> Void) {
         recipeInformationLoader.loadRecipeInformation(recipeId: recipeId, completion: completion)
     }
