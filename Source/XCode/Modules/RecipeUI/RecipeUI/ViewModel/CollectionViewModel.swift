@@ -20,8 +20,10 @@ public class CollectionViewModel {
     
     typealias Routes = RecipeRoute
     private let router: Routes
+    private var title: String
     
-    public init(view: CollectionViewControllerProtocol, router: RecipeRoute) {
+    public init(title: String, view: CollectionViewControllerProtocol, router: RecipeRoute) {
+        self.title = title
         self.view = view
         self.router = router
         
@@ -32,7 +34,7 @@ public class CollectionViewModel {
     
     func performInitialViewSetup() {
         
-        view?.setNavigationTitle("Recipes Book")
+        view?.setNavigationTitle(title)
         view?.setSectionInset(top: 20, left: 0, bottom: 0, right: 0)
         view?.setupCollectionViewCellToUseMaxWidth()
         

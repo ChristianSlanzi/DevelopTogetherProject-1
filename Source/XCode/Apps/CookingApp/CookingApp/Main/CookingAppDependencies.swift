@@ -127,7 +127,7 @@ extension CookingAppDependencies {
     internal func createFavoritesViewController() -> UIViewController {
         //let viewController = FavoritesViewController()
         //return viewController
-        let viewController = createRecipeListViewController(recipes: [])
+        let viewController = createRecipeListViewController(title: "Favorites", recipes: [])
         
         
         let networkingService = URLSessionHTTPClient(session: URLSession(configuration: .default))
@@ -162,9 +162,9 @@ extension CookingAppDependencies {
         return viewController
     }
     
-    internal func createRecipeListViewController(recipes: [RecipeFeature.Recipe]) -> UIViewController {
+    internal func createRecipeListViewController(title: String, recipes: [RecipeFeature.Recipe]) -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
+        let recipeListVC = RecipeUI_SDK.createRecipelistVC(title: title, router: router)
         router.root = recipeListVC
         recipeListVC.viewModel?.recipeBook = RecipeBook()
         let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> RecipeUI.Recipe in

@@ -16,7 +16,7 @@ extension SearchRoute where Self: Router {
 
     func openRecipeList(_ recipes: [Recipe], with transition: Transition) {
         let router = DefaultRouter(rootTransition: transition)
-        let viewController = CookingAppDependencies.shared.createRecipeListViewController(recipes: recipes)
+        let viewController = CookingAppDependencies.shared.createRecipeListViewController(title: "Recipes", recipes: recipes)
         router.root = viewController
 
         route(to: viewController, as: transition)

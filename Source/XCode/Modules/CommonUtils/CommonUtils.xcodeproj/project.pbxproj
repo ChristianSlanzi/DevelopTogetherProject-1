@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A84E502679E39A0034874F /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E4F2679E39A0034874F /* MainQueueDispatchDecorator.swift */; };
+		24A84E532679E94D0034874F /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E522679E94D0034874F /* WeakRefVirtualProxy.swift */; };
 		24FE2066265A63CB00724646 /* CommonUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE205C265A63CB00724646 /* CommonUtils.framework */; };
 		24FE206B265A63CB00724646 /* CommonUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE206A265A63CB00724646 /* CommonUtilsTests.swift */; };
 		24FE206D265A63CB00724646 /* CommonUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FE205F265A63CB00724646 /* CommonUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A84E4F2679E39A0034874F /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
+		24A84E522679E94D0034874F /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 		24FE205C265A63CB00724646 /* CommonUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE205F265A63CB00724646 /* CommonUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
 		24FE2060265A63CB00724646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +178,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24A84E4E2679E3750034874F /* MainQueue */ = {
+			isa = PBXGroup;
+			children = (
+				24A84E4F2679E39A0034874F /* MainQueueDispatchDecorator.swift */,
+			);
+			path = MainQueue;
+			sourceTree = "<group>";
+		};
+		24A84E512679E93C0034874F /* WeakRef */ = {
+			isa = PBXGroup;
+			children = (
+				24A84E522679E94D0034874F /* WeakRefVirtualProxy.swift */,
+			);
+			path = WeakRef;
+			sourceTree = "<group>";
+		};
 		24FE2052265A63CB00724646 = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +558,8 @@
 		24FE20DB265A645C00724646 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				24A84E512679E93C0034874F /* WeakRef */,
+				24A84E4E2679E3750034874F /* MainQueue */,
 				24FE20DC265A645C00724646 /* Debounce */,
 				24FE20DE265A645C00724646 /* FileSystem */,
 				24FE20E0265A645C00724646 /* FieldValidator */,
@@ -710,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24FE20EC265A645C00724646 /* Constants.swift in Sources */,
+				24A84E502679E39A0034874F /* MainQueueDispatchDecorator.swift in Sources */,
 				24FE210D265A645C00724646 /* NSLayoutConstraint+Ext.swift in Sources */,
 				24FE2106265A645C00724646 /* Encodable+Dictionary.swift in Sources */,
 				24FE20F9265A645C00724646 /* UIScrollView+Ext.swift in Sources */,
@@ -742,6 +765,7 @@
 				24FE2108265A645C00724646 /* UICollectionView+Ext.swift in Sources */,
 				24FE20FC265A645C00724646 /* UIToolbar+Ext.swift in Sources */,
 				24FE211C265A645C00724646 /* Scene+Ext.swift in Sources */,
+				24A84E532679E94D0034874F /* WeakRefVirtualProxy.swift in Sources */,
 				24FE210C265A645C00724646 /* UIViewController+Ext.swift in Sources */,
 				24FE210E265A645C00724646 /* UITableView+Empty.swift in Sources */,
 				24FE2119265A645C00724646 /* UIBezierPath+Ext.swift in Sources */,
