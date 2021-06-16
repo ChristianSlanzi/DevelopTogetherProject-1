@@ -29,7 +29,7 @@ extension CookingAppDependencies {
         
         if FLAG {
             let router = DefaultRouter(rootTransition: EmptyTransition())
-            let recipeListVC = RecipeUI_SDK.createRecipelistVC(router: router)
+            let recipeListVC = RecipeUI_SDK.createRecipelistVC(title: "Recipes", router: router)
             router.root = recipeListVC
             recipeListVC.viewModel?.recipeLoader = makeCompositeRecipeLoader()
             
