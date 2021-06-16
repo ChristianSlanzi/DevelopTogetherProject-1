@@ -7,15 +7,20 @@
 
 import Foundation
 
-class CollectionViewSectionHeaderViewModel {
+public protocol CollectionViewSectionHeaderViewModelProtocol {
+    func setView(_ view: CollectionViewSectionHeaderProtocol)
+    func setup()
+}
+
+public class CollectionViewSectionHeaderViewModel {
     
-    var collectionViewSectionHeader: CollectionViewSectionHeaderProtocol?
+    private var collectionViewSectionHeader: CollectionViewSectionHeaderProtocol?
     
-    var sectionTitle: String?
+    private var sectionTitle: String?
     
-    init?(model: String?) {
-        guard let model = model else { return nil }
-        self.sectionTitle = model
+    init?(title: String?) {
+        guard let title = title else { return nil }
+        self.sectionTitle = title
     }
     
     func setView(_ view: CollectionViewSectionHeaderProtocol) {

@@ -70,6 +70,7 @@
 		24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */; };
 		24A59EFA2655B62900D4FFEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A59EF92655B62900D4FFEE /* Media.xcassets */; };
 		24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */; };
+		24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */; };
 		24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD3263C835800F73BBD /* RecipeRoute.swift */; };
 		24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD9263C846700F73BBD /* PushTransition.swift */; };
 		24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FDD263C889100F73BBD /* MainViewModel.swift */; };
@@ -364,6 +365,7 @@
 		24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		24A59EF92655B62900D4FFEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonBuilder.swift; sourceTree = "<group>"; };
 		24AA3FD3263C835800F73BBD /* RecipeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRoute.swift; sourceTree = "<group>"; };
 		24AA3FD9263C846700F73BBD /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		24AA3FDD263C889100F73BBD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -782,6 +784,7 @@
 		245B7E91263C29DA00D2B454 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				24A84E57267A3C240034874F /* UIBuilder */,
 				245B7E92263C29F300D2B454 /* DefaultButton.swift */,
 				2484CEDD265B9C1800640D41 /* SeparatorView.swift */,
 				2484CEEF265BA00800640D41 /* DefaultImageView.swift */,
@@ -831,6 +834,14 @@
 				24A59EF92655B62900D4FFEE /* Media.xcassets */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		24A84E57267A3C240034874F /* UIBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */,
+			);
+			path = UIBuilder;
 			sourceTree = "<group>";
 		};
 		24AA3FCF263C82D200F73BBD /* Routes */ = {
@@ -1238,6 +1249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */,
+				24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */,
 				24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */,
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,

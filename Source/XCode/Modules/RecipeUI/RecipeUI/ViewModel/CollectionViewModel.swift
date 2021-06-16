@@ -12,7 +12,17 @@ public protocol RecipeRoute {
     func openRecipe(_ recipe: Recipe)
 }
 
-public class CollectionViewModel {
+public protocol CollectionViewModelProtocol {
+    func performInitialViewSetup()
+    func loadData()
+    func numberOfSections() -> Int
+    func numberOfItemsInSection(_ section: Int) -> Int
+    func cellViewModel(row: Int, section: Int) -> CollectionViewCellViewModel?
+    func headerViewModel(section: Int) -> CollectionViewSectionHeaderViewModel?
+    func didSelectItemAt(row: Int, section: Int)
+}
+
+public class CollectionViewModel: CollectionViewModelProtocol {
     
     weak var view: CollectionViewControllerProtocol?
     public var recipeLoader: RecipeLoader?
@@ -32,7 +42,7 @@ public class CollectionViewModel {
         }
     }
     
-    func performInitialViewSetup() {
+    public func performInitialViewSetup() {
         
         view?.setNavigationTitle(title)
         view?.setSectionInset(top: 20, left: 0, bottom: 0, right: 0)
@@ -45,7 +55,7 @@ public class CollectionViewModel {
         }
     }
     
-    func loadData() {
+    public func loadData() {
         recipeLoader?.loadRecipes(predicate: nil, completion: { (result) in
             switch result {
             case let .success(recipes):
@@ -75,11 +85,11 @@ public class CollectionViewModel {
         })
     }
     
-    func numberOfSections() -> Int {
+    public func numberOfSections() -> Int {
         return recipeBook?.categories?.count ?? 0
     }
     
-    func numberOfItemsInSection(_ section: Int) -> Int {
+    public func numberOfItemsInSection(_ section: Int) -> Int {
         guard let recipeBook = recipeBook,
             let categories = recipeBook.categories else {
                 return 0
@@ -96,7 +106,7 @@ public class CollectionViewModel {
         return recipes.count
     }
     
-    func cellViewModel(row: Int, section: Int) -> CollectionViewCellViewModel? {
+    public func cellViewModel(row: Int, section: Int) -> CollectionViewCellViewModel? {
         
         guard let recipeBook = recipeBook,
               let categories = recipeBook.categories else {
@@ -118,7 +128,7 @@ public class CollectionViewModel {
         return CollectionViewCellViewModel(model: recipes[row])
     }
     
-    func headerViewModel(section: Int) -> CollectionViewSectionHeaderViewModel? {
+    public func headerViewModel(section: Int) -> CollectionViewSectionHeaderViewModel? {
         
         guard let recipeBook = recipeBook,
               let categories = recipeBook.categories else {
@@ -130,10 +140,10 @@ public class CollectionViewModel {
             return nil
         }
         
-        return CollectionViewSectionHeaderViewModel(model: categories[section].title)
+        return CollectionViewSectionHeaderViewModel(title: categories[section].title)
     }
     
-    func didSelectItemAt(row: Int, section: Int) {
+    public func didSelectItemAt(row: Int, section: Int) {
         
         guard let recipeBook = recipeBook,
               let categories = recipeBook.categories else {

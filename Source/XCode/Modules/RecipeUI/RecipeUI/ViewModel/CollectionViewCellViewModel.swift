@@ -7,29 +7,27 @@
 
 import Foundation
 
-class CollectionViewCellViewModel {
+public protocol CollectionViewCellViewModelProtocol {
+    init(model: Recipe)
+    func setView(_ view: CollectionViewCellProtocol)
+    func setup()
+}
+
+public class CollectionViewCellViewModel: CollectionViewCellViewModelProtocol {
     
-    var recipe: Recipe?
+    var recipe: Recipe
     weak var collectionViewCell: CollectionViewCellProtocol?
     
-    init?(model: Recipe?) {
-        
-        guard let model = model else {
-            return nil
-        }
-        
+    required public init(model: Recipe) {
         self.recipe = model
     }
     
-    func setView(_ view: CollectionViewCellProtocol) {
+    public func setView(_ view: CollectionViewCellProtocol) {
         self.collectionViewCell = view
     }
     
-    func setup() {
-        guard let collectionViewCell = collectionViewCell,
-              let recipe = recipe else {
-            return
-        }
+    public func setup() {
+        guard let collectionViewCell = collectionViewCell else { return }
         
         let calories = recipe.calories != nil ? "\(recipe.calories!)" : "ND"
         collectionViewCell.loadImage(resourceName: recipe.image)
