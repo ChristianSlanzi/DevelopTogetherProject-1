@@ -17,9 +17,18 @@ public protocol HTTPClient {
     var urlQueryParameters: HTTPClientEntity { get set }
     var httpBodyParameters: HTTPClientEntity { get set }
     
+    
+    @discardableResult
     func makeRequest(toURL url: URL,
                      withHttpMethod httpMethod: HTTPMethod,
-                     completion: @escaping (_ result: HTTPClientResult) -> Void)
+                     completion: @escaping (_ result: HTTPClientResult) -> Void)  -> HTTPClientTask
+    
+    @discardableResult
+    func makeRequest(toURL url: URL,
+                     withHttpMethod httpMethod: HTTPMethod,
+                     cachePolicy: NSURLRequest.CachePolicy,
+                     timeoutInterval: TimeInterval,
+                     completion: @escaping (_ result: HTTPClientResult) -> Void)  -> HTTPClientTask
     
     func getData(fromURL url: URL, completion: @escaping (_ data: Data?) -> Void)
 }

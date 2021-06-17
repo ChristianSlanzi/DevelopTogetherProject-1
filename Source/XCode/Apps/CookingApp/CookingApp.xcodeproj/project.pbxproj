@@ -21,6 +21,8 @@
 		24330DA7263D406800724978 /* SignupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA6263D406800724978 /* SignupRoute.swift */; };
 		24330DAB263D451F00724978 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DAA263D451F00724978 /* MainRoute.swift */; };
 		2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2438F1BB26653F5F00018753 /* SearchRoute.swift */; };
+		2442C258267B998600A56F88 /* ImageFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */; };
+		2442C259267B998600A56F88 /* ImageFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -243,6 +245,20 @@
 			remoteGlobalIDString = 24C4F06F265131B70061737C;
 			remoteInfo = RecipeUITests;
 		};
+		24EE82D0267A9B5A00B40C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82AA267A9B4900B40C56;
+			remoteInfo = ImageFeature;
+		};
+		24EE82D2267A9B5A00B40C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82B3267A9B4900B40C56;
+			remoteInfo = ImageFeatureTests;
+		};
 		24FE1FC4265A615300724646 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24FE1FBF265A615300724646 /* CommonUI.xcodeproj */;
@@ -283,6 +299,7 @@
 				24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */,
 				24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */,
 				24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */,
+				2442C259267B998600A56F88 /* ImageFeature.framework in Embed Frameworks */,
 				24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */,
 				24C4F1032651459E0061737C /* RecipeFeature.framework in Embed Frameworks */,
 			);
@@ -375,6 +392,7 @@
 		24C4F0EE265143370061737C /* Secrets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secrets-Info.plist"; sourceTree = "<group>"; };
 		24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
 		24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
+		24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageFeature.xcodeproj; path = ../../../Modules/ImageFeature/ImageFeature.xcodeproj; sourceTree = "<group>"; };
 		24FE1FBF265A615300724646 /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -387,6 +405,7 @@
 				24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */,
 				24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */,
 				24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */,
+				2442C258267B998600A56F88 /* ImageFeature.framework in Frameworks */,
 				24C4F104265145A10061737C /* RecipeStore.framework in Frameworks */,
 				24C4F1022651459E0061737C /* RecipeFeature.framework in Frameworks */,
 			);
@@ -665,6 +684,7 @@
 				24FE1FBF265A615300724646 /* CommonUI.xcodeproj */,
 				24C4F098265134550061737C /* RecipeUI.xcodeproj */,
 				24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */,
+				24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */,
 				24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */,
 				244DDB1726434260008229B2 /* RecipeStore.xcodeproj */,
 				241040FB263979C500994726 /* CookingApiService.xcodeproj */,
@@ -908,6 +928,15 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		24EE82C5267A9B5A00B40C56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */,
+				24EE82D3267A9B5A00B40C56 /* ImageFeatureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		24FE1FC0265A615300724646 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1036,6 +1065,10 @@
 				{
 					ProductGroup = 24411C942646FD7500C3CA21 /* Products */;
 					ProjectRef = 24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 24EE82C5267A9B5A00B40C56 /* Products */;
+					ProjectRef = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
 				},
 				{
 					ProductGroup = 24567C1A26386F780010BE25 /* Products */;
@@ -1182,6 +1215,20 @@
 			fileType = wrapper.cfbundle;
 			path = RecipeUITests.xctest;
 			remoteRef = 24C4F0A6265134550061737C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImageFeature.framework;
+			remoteRef = 24EE82D0267A9B5A00B40C56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24EE82D3267A9B5A00B40C56 /* ImageFeatureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ImageFeatureTests.xctest;
+			remoteRef = 24EE82D2267A9B5A00B40C56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		24FE1FC5265A615300724646 /* CommonUI.framework */ = {
@@ -1507,6 +1554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CookingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1525,6 +1573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CookingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

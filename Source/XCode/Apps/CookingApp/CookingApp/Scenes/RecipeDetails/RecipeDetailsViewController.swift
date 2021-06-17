@@ -10,6 +10,7 @@ import CommonUI
 
 protocol RecipeDetailsViewProtocol: AnyObject {
     func setRecipeImage(_ imageName: String)
+    func setRecipeImage(_ imageData: Data)
     func setRecipeTitle(_ title: String)
     func setRecipeDescription(_ title: String)
     func setRecipePreparationTime(_ title: String)
@@ -155,6 +156,11 @@ extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
             return
         }
         itemImageView.load(url: url, fallback: fallbackImage)
+    }
+    
+    func setRecipeImage(_ imageData: Data) {
+        let image = UIImage(data: imageData)
+        itemImageView.image = image
     }
     
     func setRecipeTitle(_ text: String) {

@@ -11,11 +11,11 @@ public final class MainQueueDispatchDecorator<T> {
 
     public let decoratee: T
 
-    init(decoratee: T) {
+    public init(decoratee: T) {
         self.decoratee = decoratee
     }
 
-    func dispatch(completion: @escaping () -> Void) {
+    public func dispatch(completion: @escaping () -> Void) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async(execute: completion)
             return

@@ -7,6 +7,7 @@
 
 import Foundation
 import RecipeFeature
+import ImageFeature
 
 public protocol RecipeRoute {
     func openRecipe(_ recipe: Recipe)
@@ -26,16 +27,18 @@ public class CollectionViewModel: CollectionViewModelProtocol {
     
     weak var view: CollectionViewControllerProtocol?
     public var recipeLoader: RecipeLoader?
+    public var imageLoader: ImageDataLoader
     public var recipeBook: RecipeBook?
     
     typealias Routes = RecipeRoute
     private let router: Routes
     private var title: String
     
-    public init(title: String, view: CollectionViewControllerProtocol, router: RecipeRoute) {
+    public init(title: String, view: CollectionViewControllerProtocol, router: RecipeRoute, imageLoader: ImageDataLoader) {
         self.title = title
         self.view = view
         self.router = router
+        self.imageLoader = imageLoader
         
         if recipeBook == nil {
             recipeBook = RecipeBook()
@@ -125,7 +128,7 @@ public class CollectionViewModel: CollectionViewModelProtocol {
             return nil
         }
         
-        return CollectionViewCellViewModel(model: recipes[row])
+        return CollectionViewCellViewModel(model: recipes[row], imageDataLoader: imageLoader)
     }
     
     public func headerViewModel(section: Int) -> CollectionViewSectionHeaderViewModel? {
