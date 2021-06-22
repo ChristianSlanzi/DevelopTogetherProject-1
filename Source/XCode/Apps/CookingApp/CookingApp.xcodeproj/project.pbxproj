@@ -61,6 +61,7 @@
 		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
 		245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FDCB3266B6E22005E75FE /* AppDependencies.swift */; };
 		24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */; };
+		247D78DD267C048200E9E21F /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D78DC267C048200E9E21F /* AppStyle.swift */; };
 		2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEDD265B9C1800640D41 /* SeparatorView.swift */; };
 		2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEEF265BA00800640D41 /* DefaultImageView.swift */; };
 		2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEF3265BAA3400640D41 /* DefaultLabel.swift */; };
@@ -371,6 +372,7 @@
 		245FDCB3266B6E22005E75FE /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		247D78DC267C048200E9E21F /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		2484CEEF265BA00800640D41 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
 		2484CEF3265BAA3400640D41 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				247D78C9267C047100E9E21F /* Style */,
 				245FDCA2266B6DF1005E75FE /* Common */,
 				24C4F0EC265142FE0061737C /* Resources */,
 				245B7E7C263C25A000D2B454 /* Routing */,
@@ -828,6 +831,14 @@
 				2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		247D78C9267C047100E9E21F /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				247D78DC267C048200E9E21F /* AppStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		24A456CB265FAFC400095B31 /* Views */ = {
@@ -1301,6 +1312,7 @@
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
+				247D78DD267C048200E9E21F /* AppStyle.swift in Sources */,
 				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
 				24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,

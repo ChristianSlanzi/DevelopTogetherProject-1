@@ -16,14 +16,10 @@ public class CollectionViewController: UICollectionViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        ///
-//        if self.viewModel == nil {
-//            self.viewModel = CollectionViewModel(view: self)
-//        }
         
-        self.viewModel?.performInitialViewSetup()
-        self.viewModel?.loadData()
+        view.backgroundColor = .white
+        viewModel?.performInitialViewSetup()
+        viewModel?.loadData()
     }
     
     public override func viewDidAppear(_ animated: Bool) {

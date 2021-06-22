@@ -7,17 +7,14 @@
 
 import UIKit
 
-struct DefaultButtonStyle {
-    var textColor: UIColor
-    var backgroundColor: UIColor
-    var backgroundImage: UIImage?
-    var cornerRadius: CGFloat
-}
-
 class DefaultButtonBuilder {
     private var button = DefaultButton()
     
-    func withStyle(_ style: DefaultButtonStyle)  -> DefaultButtonBuilder {
+    func withAppStyle() -> DefaultButtonBuilder {
+        withStyle(AppStyle.DefaultButtonStyle())
+    }
+    
+    func withStyle(_ style: AppStyle.DefaultButtonStyle)  -> DefaultButtonBuilder {
         _ = withTitleColor(style.textColor)
         _ = withBackgroundColor(style.backgroundColor)
         if let backgroundImage = style.backgroundImage {

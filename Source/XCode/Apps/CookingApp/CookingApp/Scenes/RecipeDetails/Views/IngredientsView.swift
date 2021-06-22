@@ -16,6 +16,7 @@ class IngredientsView: CustomView {
     var stackView: UIStackView = UIStackView(frame: .zero)
     
     var addToGroceryButton = DefaultButtonBuilder()
+        .withAppStyle()//.default
         .withTitle("ADD TO GROCERY LIST")
         .withAction(#selector(addToGroceryButtonTouchUpInside), target: self)
         .build()

@@ -16,6 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func setup() {
         imageView.image = UIImage(named: "cooking_icon", in: Bundle(for: CollectionViewCell.self), with: nil)
+        imageView.setCorner(radius: 10)
         viewModel?.setup()
     }
 }
