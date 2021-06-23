@@ -16,11 +16,14 @@ class CollectionViewCell: UICollectionViewCell {
     
     func setup() {
         imageView.image = UIImage(named: "cooking_icon", in: Bundle(for: CollectionViewCell.self), with: nil)
+        imageView.setCorner(radius: 10)
         viewModel?.setup()
     }
 }
 
 extension CollectionViewCell: CollectionViewCellProtocol {
+    
+    
     func loadImage(resourceName: String) {
         guard let url = URL(string: resourceName) else { return }
         
@@ -33,6 +36,10 @@ extension CollectionViewCell: CollectionViewCellProtocol {
     
     func setRecipeDetails(recipeDetailsText: String) {
         cellDetailsLabel.text = recipeDetailsText
+    }
+    
+    func setRecipeImage(_ data: Data) {
+        imageView.image = UIImage(data: data)
     }
 }
 

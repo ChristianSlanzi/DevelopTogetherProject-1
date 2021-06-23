@@ -28,7 +28,9 @@ public class RemoteCocktailsLoader: CocktailsLoader {
             
             switch(result) {
             case let .success(data):
-                completion(.success(data.drinks))
+                completion(.success(data.drinks.map({ (dto) in
+                    Drink(idDrink: dto.idDrink, strDrink: dto.strDrink)
+                })))
 
             case let .failure(error):
                 completion(.failure(error))

@@ -8,7 +8,13 @@
 import UIKit
 
 class DefaultButton: UIButton {
-    required init(title: String, target: Any, selector: Selector) {
+    
+    init() {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    init(title: String, target: Any, selector: Selector) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         setTitle(title, for: .normal)

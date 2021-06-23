@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9826828EE8002B8F0D /* MainViewController.swift */; };
+		2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9B268295CA002B8F0D /* DrinkCellView.swift */; };
+		2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */; };
+		2497CDA32682963E002B8F0D /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9E2682963E002B8F0D /* HeaderSupplementaryView.swift */; };
+		2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9F2682963E002B8F0D /* BackgroundDecorationView.swift */; };
+		2497CDA52682963E002B8F0D /* HeaderSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CDA02682963E002B8F0D /* HeaderSupplementaryView.xib */; };
+		2497CDA62682963E002B8F0D /* NewBannerSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CDA12682963E002B8F0D /* NewBannerSupplementaryView.swift */; };
+		2497CDA826829B75002B8F0D /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CDA726829B75002B8F0D /* MainDataSource.swift */; };
+		2497CDB92682A20F002B8F0D /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CDB82682A20F002B8F0D /* Drink.swift */; };
 		24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */; };
 		24BA410626690BE10062F62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410526690BE10062F62E /* AppDelegate.swift */; };
 		24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410726690BE10062F62E /* SceneDelegate.swift */; };
@@ -121,6 +130,15 @@
 /* Begin PBXFileReference section */
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
+		2497CD9826828EE8002B8F0D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2497CD9B268295CA002B8F0D /* DrinkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCellView.swift; sourceTree = "<group>"; };
+		2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBannerSupplementaryView.xib; sourceTree = "<group>"; };
+		2497CD9E2682963E002B8F0D /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
+		2497CD9F2682963E002B8F0D /* BackgroundDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundDecorationView.swift; sourceTree = "<group>"; };
+		2497CDA02682963E002B8F0D /* HeaderSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderSupplementaryView.xib; sourceTree = "<group>"; };
+		2497CDA12682963E002B8F0D /* NewBannerSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBannerSupplementaryView.swift; sourceTree = "<group>"; };
+		2497CDA726829B75002B8F0D /* MainDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
+		2497CDB82682A20F002B8F0D /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
 		24BA410226690BE10062F62E /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BA410526690BE10062F62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +227,34 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2497CD9A268295AF002B8F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2497CD9F2682963E002B8F0D /* BackgroundDecorationView.swift */,
+				2497CD9E2682963E002B8F0D /* HeaderSupplementaryView.swift */,
+				2497CDA02682963E002B8F0D /* HeaderSupplementaryView.xib */,
+				2497CDA12682963E002B8F0D /* NewBannerSupplementaryView.swift */,
+				2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */,
+				2497CD9B268295CA002B8F0D /* DrinkCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2497CDA926829B7E002B8F0D /* Old */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		2497CDB72682A203002B8F0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2497CDB82682A20F002B8F0D /* Drink.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		24BA40F926690BE10062F62E = {
@@ -305,8 +351,12 @@
 		24E468DB266A51FB005E9A7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2497CDA926829B7E002B8F0D /* Old */,
+				2497CD9A268295AF002B8F0D /* Views */,
 				24BA410926690BE10062F62E /* ViewController.swift */,
 				24E468E0266A5620005E9A7E /* MainViewModel.swift */,
+				2497CD9826828EE8002B8F0D /* MainViewController.swift */,
+				2497CDA726829B75002B8F0D /* MainDataSource.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -314,6 +364,7 @@
 		24E468E8266A5857005E9A7E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2497CDB72682A203002B8F0D /* Model */,
 				24E468E9266A586E005E9A7E /* CocktailSearch */,
 			);
 			path = Features;
@@ -540,6 +591,8 @@
 				24BA411226690BE30062F62E /* LaunchScreen.storyboard in Resources */,
 				24BA410F26690BE30062F62E /* Assets.xcassets in Resources */,
 				24BA410D26690BE10062F62E /* Main.storyboard in Resources */,
+				2497CDA52682963E002B8F0D /* HeaderSupplementaryView.xib in Resources */,
+				2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +618,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */,
+				2497CDB92682A20F002B8F0D /* Drink.swift in Sources */,
+				2497CDA62682963E002B8F0D /* NewBannerSupplementaryView.swift in Sources */,
+				2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */,
 				24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */,
 				24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
@@ -574,8 +630,12 @@
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,
 				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
 				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
+				2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */,
+				2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 				24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */,
+				2497CDA32682963E002B8F0D /* HeaderSupplementaryView.swift in Sources */,
+				2497CDA826829B75002B8F0D /* MainDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +813,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BartenderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -771,6 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BartenderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

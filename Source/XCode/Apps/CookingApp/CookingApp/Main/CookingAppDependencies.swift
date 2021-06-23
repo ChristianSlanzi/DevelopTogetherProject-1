@@ -14,6 +14,8 @@ import RecipeUI
 import RecipeFeature
 import CoreData
 import GenericStore
+import ImageFeature
+import CommonUtils
 
 class CookingAppDependencies: AppDependencies {
     
@@ -139,7 +141,9 @@ extension CookingAppDependencies {
 //        let localLoader = LocalRecipeInformationLoader(store: recipeInformationStore, currentDate: { Date() })
 //        let recipeLoader = RecipeInformationCompositeFallbackLoader(remote: remoteLoader, local: localLoader)
 //
-        recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), recipeInformationLoader: makeCompositeRecipeInformationLoader(), currentDate: { Date() })
+        recipeManager = RecipeManager(store: favoriteRecipeStore,
+                                      recipeLoader: makeCompositeRecipeLoader(),
+                                      recipeInformationLoader: makeCompositeRecipeInformationLoader(), currentDate: { Date() })
         
         recipeManager?.getFavorites { recipes in
             let recipesViewController = viewController as! CollectionViewController
@@ -164,7 +168,7 @@ extension CookingAppDependencies {
     
     internal func createRecipeListViewController(title: String, recipes: [RecipeFeature.Recipe]) -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let recipeListVC = RecipeUI_SDK.createRecipelistVC(title: title, router: router)
+        let recipeListVC = RecipeUI_SDK.createRecipelistVC(title: title, router: router, imageLoader: makeImageDataLoader())
         router.root = recipeListVC
         recipeListVC.viewModel?.recipeBook = RecipeBook()
         let category = RecipeCategory(id: 99, title: "", recipes: recipes.map({ (recipe) -> RecipeUI.Recipe in
@@ -178,9 +182,14 @@ extension CookingAppDependencies {
     
     internal func createRecipeDetailsViewController(recipe: RecipeFeature.Recipe) -> UIViewController {
         
-        let recipeManager = RecipeManager(store: favoriteRecipeStore, recipeLoader: makeCompositeRecipeLoader(), recipeInformationLoader: makeCompositeRecipeInformationLoader(), currentDate: { Date() })
+        let recipeManager = RecipeManager(store: favoriteRecipeStore,
+                                          recipeLoader: makeCompositeRecipeLoader(),
+                                          recipeInformationLoader: makeCompositeRecipeInformationLoader(),
+                                          currentDate: { Date() })
         
-        let viewModel = RecipeDetailsViewModel(recipe: recipe, recipeManager: recipeManager)
+        let viewModel = RecipeDetailsViewModel(recipe: recipe,
+                                               recipeManager: recipeManager,
+                                               imageDataLoader: makeImageDataLoader())
         //viewModel.recipeLoader = recipeLoader
         
         let viewController = RecipeDetailsViewController(viewModel: viewModel)
@@ -247,6 +256,11 @@ extension CookingAppDependencies {
                                                       apiKey: cookingApiKey)
         let service = serviceFactory.getCookingApiService()
         return service
+    }
+    
+    internal func makeImageDataLoader() -> ImageDataLoader {
+        let loader = RemoteImageDataLoader(client: URLSessionHTTPClient(session: URLSession(configuration: .default)))
+        return  MainQueueDispatchDecorator(decoratee: loader)
     }
     
 }

@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol CollectionViewCellProtocol: AnyObject {
+public protocol CollectionViewCellProtocol: AnyObject {
     func loadImage(resourceName: String)
+    func setRecipeImage(_ data: Data)
     func setCaption(captionText: String)
     func setRecipeDetails(recipeDetailsText: String)
 }

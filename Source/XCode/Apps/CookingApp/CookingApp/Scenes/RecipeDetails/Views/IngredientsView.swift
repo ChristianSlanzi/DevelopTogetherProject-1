@@ -14,8 +14,13 @@ class IngredientsView: CustomView {
     
     var titleLabel = DefaultLabel(title: "Ingredients")
     var stackView: UIStackView = UIStackView(frame: .zero)
-    var addToGroceryButton = DefaultButton(title: "ADD TO GROCERY LIST", target: self, selector: #selector(addToGroceryButtonTouchUpInside))
     
+    var addToGroceryButton = DefaultButtonBuilder()
+        .withAppStyle()//.default
+        .withTitle("ADD TO GROCERY LIST")
+        .withAction(#selector(addToGroceryButtonTouchUpInside), target: self)
+        .build()
+        
     func setItems(_ items: [String]) {
         self.ingredients = items
         

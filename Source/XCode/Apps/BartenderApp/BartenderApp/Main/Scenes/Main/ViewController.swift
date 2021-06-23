@@ -8,7 +8,7 @@
 import UIKit
 import CommonUI
 
-public protocol ViewControllerProtocol: class {
+public protocol ViewControllerProtocol: AnyObject {
     func reload()
 }
 

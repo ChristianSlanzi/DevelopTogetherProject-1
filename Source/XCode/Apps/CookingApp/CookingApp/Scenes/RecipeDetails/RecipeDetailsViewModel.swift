@@ -7,6 +7,7 @@
 
 import Foundation
 import RecipeFeature
+import ImageFeature
 
 class RecipeDetailsViewModel {
     
@@ -15,14 +16,28 @@ class RecipeDetailsViewModel {
     weak var view: RecipeDetailsViewProtocol?
 
     var recipeManager: RecipeManaging
+    var imageDataLoader: ImageDataLoader
     
-    init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManaging) {
+    init(recipe: RecipeFeature.Recipe, recipeManager: RecipeManaging, imageDataLoader: ImageDataLoader) {
         self.recipe = recipe
         self.recipeManager = recipeManager
+        self.imageDataLoader = imageDataLoader
     }
     
     func viewDidLoad() {
-        view?.setRecipeImage(recipe.image)
+        
+        //view?.setRecipeImage(recipe.image)
+        _ = imageDataLoader.loadImageData(from: URL(string: recipe.image)!) { result in
+            switch result {
+            case let .success(data):
+                self.view?.setRecipeImage(data)
+                break
+            case let .failure(error):
+                print(error)
+                break
+            }
+        }
+        
         view?.setRecipeTitle(recipe.title)
         view?.setRecipeDescription(recipe.title)
         

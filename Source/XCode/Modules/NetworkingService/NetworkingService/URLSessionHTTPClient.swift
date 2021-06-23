@@ -16,6 +16,16 @@ public class URLSessionHTTPClient: HTTPClient {
         self.session = session
     }
     
+    private struct URLSessionTaskWrapper: HTTPClientTask {
+        let wrapped: URLSessionTask
+        
+        func cancel() {
+            wrapped.cancel()
+        }
+    }
+    
+    private struct UnexpectedValuesRepresentation: Error {}
+    
     public var requestHttpHeaders: HTTPClientEntity
     public var urlQueryParameters: HTTPClientEntity
     public var httpBodyParameters: HTTPClientEntity
@@ -66,11 +76,13 @@ public class URLSessionHTTPClient: HTTPClient {
         return url
     }
     
-    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HTTPMethod) -> URLRequest? {
+    private func prepareRequest(withURL url: URL,
+                                httpBody: Data?,
+                                httpMethod: HTTPMethod,
+                                cachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy,
+                                timeoutInterval: TimeInterval = 30) -> URLRequest {
         
-        guard let url = url else { return nil }
-            
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeoutInterval)
         request.httpMethod = httpMethod.rawValue
         
         for (header, value) in requestHttpHeaders.allValues() {
@@ -81,50 +93,51 @@ public class URLSessionHTTPClient: HTTPClient {
         return request
     }
     
-    public func makeRequest(toURL url: URL, withHttpMethod httpMethod: HTTPMethod, completion: @escaping (HTTPClientResult) -> Void) {
+    public func makeRequest(toURL url: URL,
+                            withHttpMethod httpMethod: HTTPMethod,
+                            completion: @escaping (HTTPClientResult) -> Void)  -> HTTPClientTask {
         
-        //DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            
-            //guard let strongSelf = self else { return }
-            
-            let targetURL = addURLQueryParameters(toURL: url)
-            let httpBody = getHttpBody()
-            
-            print("targetURL: " + targetURL.absoluteString)
-            
-            guard let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else
-            {
-                completion(HTTPClientResult(withError: HTTPClientCustomError.failedToCreateRequest))
-                return
-            }
-            
-            print("request: " + request.description)
+        makeRequest(toURL: url, withHttpMethod: httpMethod, cachePolicy: .useProtocolCachePolicy
+                    , timeoutInterval: 30, completion: completion)
 
-            let task = session.dataTask(with: request) { (data, response, error) in
-                
-                completion(HTTPClientResult(withData: data,
-                                   response: HTTPClientResponse(fromURLResponse: response),
-                                   error: error))
-            }
+    }
+    
+    public func makeRequest(toURL url: URL,
+                            withHttpMethod httpMethod: HTTPMethod,
+                            cachePolicy: NSURLRequest.CachePolicy,
+                            timeoutInterval: TimeInterval,
+                            completion: @escaping (HTTPClientResult) -> Void)  -> HTTPClientTask {
+        
+        let targetURL = addURLQueryParameters(toURL: url)
+        let httpBody = getHttpBody()
+        
+        print("targetURL: " + targetURL.absoluteString)
+        
+        let request = prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod)
+
+        print("request: " + request.description)
+
+        let task = session.dataTask(with: request) { (data, response, error) in
             
-            task.resume()
-        //}
+            completion(HTTPClientResult(withData: data,
+                               response: HTTPClientResponse(fromURLResponse: response),
+                               error: error))
+        }
+        
+        task.resume()
+        return URLSessionTaskWrapper(wrapped: task)
+
     }
     
     public func getData(fromURL url: URL, completion: @escaping (Data?) -> Void) {
-        
-        DispatchQueue.global(qos: .userInitiated).async {  [weak self] in
-        
-            guard let strongSelf = self else { return }
-            
-            let task = strongSelf.session.dataTask(with: url, completionHandler: { (data, response, error) in
                 
-                guard let data = data else { completion(nil); return }
-                completion(data)
-            })
+        let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
             
-            task.resume()
-        }
+            guard let data = data else { completion(nil); return }
+            completion(data)
+        })
+        
+        task.resume()
     }
     
 }

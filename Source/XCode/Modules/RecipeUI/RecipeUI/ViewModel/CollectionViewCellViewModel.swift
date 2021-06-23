@@ -6,33 +6,45 @@
 //
 
 import Foundation
+import ImageFeature
 
-class CollectionViewCellViewModel {
+public protocol CollectionViewCellViewModelProtocol {
+    init(model: Recipe, imageDataLoader: ImageDataLoader)
+    func setView(_ view: CollectionViewCellProtocol)
+    func setup()
+}
+
+public class CollectionViewCellViewModel: CollectionViewCellViewModelProtocol {
     
-    var recipe: Recipe?
+    var recipe: Recipe
+    var imageDataLoader: ImageDataLoader
     weak var collectionViewCell: CollectionViewCellProtocol?
     
-    init?(model: Recipe?) {
-        
-        guard let model = model else {
-            return nil
-        }
-        
+    required public init(model: Recipe, imageDataLoader: ImageDataLoader) {
         self.recipe = model
+        self.imageDataLoader = imageDataLoader
     }
     
-    func setView(_ view: CollectionViewCellProtocol) {
+    public func setView(_ view: CollectionViewCellProtocol) {
         self.collectionViewCell = view
     }
     
-    func setup() {
-        guard let collectionViewCell = collectionViewCell,
-              let recipe = recipe else {
-            return
-        }
+    public func setup() {
+        guard let collectionViewCell = collectionViewCell else { return }
         
         let calories = recipe.calories != nil ? "\(recipe.calories!)" : "ND"
-        collectionViewCell.loadImage(resourceName: recipe.image)
+        
+        _ = imageDataLoader.loadImageData(from: URL(string: recipe.image)!) { result in
+            switch result {
+            case let .success(data):
+                self.collectionViewCell?.setRecipeImage(data)
+                break
+            case let .failure(error):
+                print(error)
+                break
+            }
+        }
+        //collectionViewCell.loadImage(resourceName: recipe.image)
         collectionViewCell.setCaption(captionText: recipe.title)
         collectionViewCell.setRecipeDetails(recipeDetailsText: calories + " kCal")
     }

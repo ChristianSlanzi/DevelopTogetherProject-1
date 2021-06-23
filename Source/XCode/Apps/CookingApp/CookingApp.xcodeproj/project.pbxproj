@@ -21,6 +21,8 @@
 		24330DA7263D406800724978 /* SignupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DA6263D406800724978 /* SignupRoute.swift */; };
 		24330DAB263D451F00724978 /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24330DAA263D451F00724978 /* MainRoute.swift */; };
 		2438F1BC26653F5F00018753 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2438F1BB26653F5F00018753 /* SearchRoute.swift */; };
+		2442C258267B998600A56F88 /* ImageFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */; };
+		2442C259267B998600A56F88 /* ImageFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAB2637F9C20010BE25 /* AppDelegate.swift */; };
 		24567BAE2637F9C20010BE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAD2637F9C20010BE25 /* SceneDelegate.swift */; };
 		24567BB02637F9C20010BE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567BAF2637F9C20010BE25 /* ViewController.swift */; };
@@ -59,6 +61,7 @@
 		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
 		245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FDCB3266B6E22005E75FE /* AppDependencies.swift */; };
 		24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */; };
+		247D78DD267C048200E9E21F /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D78DC267C048200E9E21F /* AppStyle.swift */; };
 		2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEDD265B9C1800640D41 /* SeparatorView.swift */; };
 		2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEEF265BA00800640D41 /* DefaultImageView.swift */; };
 		2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEF3265BAA3400640D41 /* DefaultLabel.swift */; };
@@ -70,6 +73,7 @@
 		24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */; };
 		24A59EFA2655B62900D4FFEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A59EF92655B62900D4FFEE /* Media.xcassets */; };
 		24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */; };
+		24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */; };
 		24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD3263C835800F73BBD /* RecipeRoute.swift */; };
 		24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD9263C846700F73BBD /* PushTransition.swift */; };
 		24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FDD263C889100F73BBD /* MainViewModel.swift */; };
@@ -242,6 +246,20 @@
 			remoteGlobalIDString = 24C4F06F265131B70061737C;
 			remoteInfo = RecipeUITests;
 		};
+		24EE82D0267A9B5A00B40C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82AA267A9B4900B40C56;
+			remoteInfo = ImageFeature;
+		};
+		24EE82D2267A9B5A00B40C56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82B3267A9B4900B40C56;
+			remoteInfo = ImageFeatureTests;
+		};
 		24FE1FC4265A615300724646 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24FE1FBF265A615300724646 /* CommonUI.xcodeproj */;
@@ -282,6 +300,7 @@
 				24C4F109265145A20061737C /* RecipeUI.framework in Embed Frameworks */,
 				24C4F105265145A10061737C /* RecipeStore.framework in Embed Frameworks */,
 				24FE2135265A64F400724646 /* CommonUI.framework in Embed Frameworks */,
+				2442C259267B998600A56F88 /* ImageFeature.framework in Embed Frameworks */,
 				24567C2926386F850010BE25 /* LoginSignupModule.framework in Embed Frameworks */,
 				24C4F1032651459E0061737C /* RecipeFeature.framework in Embed Frameworks */,
 			);
@@ -353,6 +372,7 @@
 		245FDCB3266B6E22005E75FE /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		247D78DC267C048200E9E21F /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		2484CEEF265BA00800640D41 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
 		2484CEF3265BAA3400640D41 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -364,6 +384,7 @@
 		24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		24A59EF92655B62900D4FFEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonBuilder.swift; sourceTree = "<group>"; };
 		24AA3FD3263C835800F73BBD /* RecipeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRoute.swift; sourceTree = "<group>"; };
 		24AA3FD9263C846700F73BBD /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		24AA3FDD263C889100F73BBD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -373,6 +394,7 @@
 		24C4F0EE265143370061737C /* Secrets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secrets-Info.plist"; sourceTree = "<group>"; };
 		24D8051A266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
 		24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
+		24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageFeature.xcodeproj; path = ../../../Modules/ImageFeature/ImageFeature.xcodeproj; sourceTree = "<group>"; };
 		24FE1FBF265A615300724646 /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24FE2078265A63DB00724646 /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -385,6 +407,7 @@
 				24C4F108265145A20061737C /* RecipeUI.framework in Frameworks */,
 				24567C2826386F850010BE25 /* LoginSignupModule.framework in Frameworks */,
 				24FE2134265A64F400724646 /* CommonUI.framework in Frameworks */,
+				2442C258267B998600A56F88 /* ImageFeature.framework in Frameworks */,
 				24C4F104265145A10061737C /* RecipeStore.framework in Frameworks */,
 				24C4F1022651459E0061737C /* RecipeFeature.framework in Frameworks */,
 			);
@@ -504,6 +527,7 @@
 		24567BAA2637F9C20010BE25 /* CookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				247D78C9267C047100E9E21F /* Style */,
 				245FDCA2266B6DF1005E75FE /* Common */,
 				24C4F0EC265142FE0061737C /* Resources */,
 				245B7E7C263C25A000D2B454 /* Routing */,
@@ -663,6 +687,7 @@
 				24FE1FBF265A615300724646 /* CommonUI.xcodeproj */,
 				24C4F098265134550061737C /* RecipeUI.xcodeproj */,
 				24C4F02E26511D8C0061737C /* RecipeFeature.xcodeproj */,
+				24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */,
 				24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */,
 				244DDB1726434260008229B2 /* RecipeStore.xcodeproj */,
 				241040FB263979C500994726 /* CookingApiService.xcodeproj */,
@@ -782,6 +807,7 @@
 		245B7E91263C29DA00D2B454 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				24A84E57267A3C240034874F /* UIBuilder */,
 				245B7E92263C29F300D2B454 /* DefaultButton.swift */,
 				2484CEDD265B9C1800640D41 /* SeparatorView.swift */,
 				2484CEEF265BA00800640D41 /* DefaultImageView.swift */,
@@ -805,6 +831,14 @@
 				2460498F26694BE40074E0E7 /* NetworkingServiceTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		247D78C9267C047100E9E21F /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				247D78DC267C048200E9E21F /* AppStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		24A456CB265FAFC400095B31 /* Views */ = {
@@ -831,6 +865,14 @@
 				24A59EF92655B62900D4FFEE /* Media.xcassets */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		24A84E57267A3C240034874F /* UIBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */,
+			);
+			path = UIBuilder;
 			sourceTree = "<group>";
 		};
 		24AA3FCF263C82D200F73BBD /* Routes */ = {
@@ -895,6 +937,15 @@
 				24D8051E266BF93600A77ED0 /* MainViewControllerFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		24EE82C5267A9B5A00B40C56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */,
+				24EE82D3267A9B5A00B40C56 /* ImageFeatureTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		24FE1FC0265A615300724646 /* Products */ = {
@@ -1025,6 +1076,10 @@
 				{
 					ProductGroup = 24411C942646FD7500C3CA21 /* Products */;
 					ProjectRef = 24411C932646FD7500C3CA21 /* GenericStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 24EE82C5267A9B5A00B40C56 /* Products */;
+					ProjectRef = 24EE82C4267A9B5A00B40C56 /* ImageFeature.xcodeproj */;
 				},
 				{
 					ProductGroup = 24567C1A26386F780010BE25 /* Products */;
@@ -1173,6 +1228,20 @@
 			remoteRef = 24C4F0A6265134550061737C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		24EE82D1267A9B5A00B40C56 /* ImageFeature.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImageFeature.framework;
+			remoteRef = 24EE82D0267A9B5A00B40C56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24EE82D3267A9B5A00B40C56 /* ImageFeatureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ImageFeatureTests.xctest;
+			remoteRef = 24EE82D2267A9B5A00B40C56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		24FE1FC5265A615300724646 /* CommonUI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1238,10 +1307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */,
+				24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */,
 				24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */,
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
 				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
+				247D78DD267C048200E9E21F /* AppStyle.swift in Sources */,
 				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
 				24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
@@ -1495,6 +1566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CookingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1513,6 +1585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CookingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
