@@ -15,9 +15,9 @@ class LocalCocktailsLoader: CocktailsLoader {
         
         print("load cocktails from a database")
         
-        completion(.success([Drink(idDrink: "00001", strDrink: "Margarita"),
-                             Drink(idDrink: "00002", strDrink: "Long Island Ice Tea"),
-                             Drink(idDrink: "00003", strDrink: "Pina Colada"),
-                             Drink(idDrink: "00004", strDrink: "Whiskey Sour")]))
+        completion(.success([Drink(idDrink: "00001", strDrink: "Margarita", strDrinkThumb: ""),
+                             Drink(idDrink: "00002", strDrink: "Long Island Ice Tea", strDrinkThumb: ""),
+                             Drink(idDrink: "00003", strDrink: "Pina Colada", strDrinkThumb: ""),
+                             Drink(idDrink: "00004", strDrink: "Whiskey Sour", strDrinkThumb: "")]))
     }
 }

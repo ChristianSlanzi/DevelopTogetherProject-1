@@ -5,8 +5,6 @@
 //  Created by Christian Slanzi on 04.06.21.
 //
 
-import NetworkingService
-import CocktailsApiService
 import CommonUI
 import UIKit
 
@@ -15,6 +13,7 @@ protocol MainViewControllerFactory {
 }
 
 extension BartenderAppDependencies: MainViewControllerFactory {
+    
     
     typealias CollectionViewAdapter = Adapter<DrinkViewModel, DrinkCellView, HeaderSupplementaryView, NewBannerSupplementaryView, NewBannerSupplementaryView>
     
@@ -27,6 +26,17 @@ extension BartenderAppDependencies: MainViewControllerFactory {
             cell.backgroundColor = .lightGray//self.randomColor()
             cell.title.textColor = .black
             cell.title.text = model.name
+            
+            if let url = URL(string: model.thumbnail) {
+                _ = self.imageDataLoader.loadImageData(from:  url) { result in
+                    switch result {
+                    case let .failure(error):
+                        print(error)
+                    case let .success(data):
+                        cell.imageView.loadImageData(data)
+                    }
+                }
+            }
         }
         adapter.configureHeader = { model, header in
             header.viewModel = HeaderSupplementaryView.ViewModel(title: model.title)
@@ -49,11 +59,8 @@ extension BartenderAppDependencies: MainViewControllerFactory {
     }
     
     func makeDataSource() -> MainDataSource {
-        
-        let httpClient = URLSessionHTTPClient(session: URLSession(configuration: .default))
-        let service = CocktailsApiRemote(url: URL(string: "https://www.thecocktaildb.com/api/json/v1/1")!, client: httpClient)
-
-        let remoteLoader = RemoteCocktailsLoader(service: service)
+    
+        let remoteLoader = RemoteCocktailsLoader(service: makeCocktailsApiService())
         let localLoader = LocalCocktailsLoader()
         let compositeFallbackLoader = CompositeFallbackCocktailsLoader(remote: remoteLoader, local: localLoader)
         

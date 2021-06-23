@@ -7,6 +7,8 @@
     
 struct DrinkViewModel {
     var name: String
+    var thumbnail: String
+    var imageSource: String?
 }
     
 final class MainViewModel {
@@ -28,7 +30,7 @@ final class MainViewModel {
             
             switch result {
             case let .success(drinksDTO):
-                self.drinks = drinksDTO.compactMap({ DrinkViewModel(name: $0.name) })
+                self.drinks = drinksDTO.compactMap({ DrinkViewModel(name: $0.name, thumbnail: $0.strDrinkThumb, imageSource: $0.strImageSource) })
                 self.view?.reload()
                 break
             case let .failure(error):
@@ -47,6 +49,6 @@ final class MainViewModel {
             return nil
         }
         
-        return DrinkViewModel(name: drinks[row].name)
+        return DrinkViewModel(name: drinks[row].name, thumbnail: drinks[row].thumbnail, imageSource: drinks[row].imageSource)
     }
 }

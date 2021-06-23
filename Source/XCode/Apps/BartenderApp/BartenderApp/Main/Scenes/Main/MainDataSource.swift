@@ -26,7 +26,7 @@ class MainDataSource: CustomDataSource<DrinkViewModel> {
             
             switch result {
             case let .success(drinksDTO):
-                self.sections.append(CustomDataSource<DrinkViewModel>.Section(title: "New Drinks", items: drinksDTO.compactMap({ DrinkViewModel(name: $0.name) })))
+                self.sections.append(CustomDataSource<DrinkViewModel>.Section(title: "New Drinks", items: drinksDTO.compactMap({ DrinkViewModel(name: $0.name, thumbnail: $0.strDrinkThumb, imageSource: $0.strImageSource) })))
                 
                 DispatchQueue.main.async {
                     self.view?.reload()

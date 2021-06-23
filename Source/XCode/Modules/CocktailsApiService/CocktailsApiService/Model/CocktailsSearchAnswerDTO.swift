@@ -24,7 +24,7 @@ public struct DrinkDTO: DTO {
     var strInstructionsIT: String?
     var strInstructionsZH_HANS: String?
     var strInstructionsZH_HANT: String?
-    var strDrinkThumb: String
+    public var strDrinkThumb: String
     var strIngredient1: String?
     var strIngredient2: String?
     var strIngredient3: String?
@@ -55,7 +55,7 @@ public struct DrinkDTO: DTO {
     var strMeasure13: String?
     var strMeasure14: String?
     var strMeasure15: String?
-    var strImageSource: String?
+    public var strImageSource: String?
     var strImageAttribution: String?
     var strCreativeCommonsConfirmed: String
     var dateModified: String?
