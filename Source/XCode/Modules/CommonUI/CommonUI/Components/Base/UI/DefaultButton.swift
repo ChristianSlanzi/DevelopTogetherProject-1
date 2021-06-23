@@ -7,14 +7,14 @@
 
 import UIKit
 
-class DefaultButton: UIButton {
+public class DefaultButton: UIButton {
     
-    init() {
+    public init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(title: String, target: Any, selector: Selector) {
+    public init(title: String, target: Any, selector: Selector) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         setTitle(title, for: .normal)
@@ -22,7 +22,7 @@ class DefaultButton: UIButton {
         addTarget(target, action: selector, for: .touchUpInside)
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -58,22 +58,14 @@
 		245B7E85263C26B900D2B454 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E84263C26B900D2B454 /* Transition.swift */; };
 		245B7E8A263C273800D2B454 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E89263C273800D2B454 /* DefaultRouter.swift */; };
 		245B7E8E263C27AE00D2B454 /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */; };
-		245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B7E92263C29F300D2B454 /* DefaultButton.swift */; };
 		245FDCB4266B6E22005E75FE /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FDCB3266B6E22005E75FE /* AppDependencies.swift */; };
 		24776000265310120050E20B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */; };
-		247D78DD267C048200E9E21F /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D78DC267C048200E9E21F /* AppStyle.swift */; };
-		2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEDD265B9C1800640D41 /* SeparatorView.swift */; };
-		2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEEF265BA00800640D41 /* DefaultImageView.swift */; };
-		2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484CEF3265BAA3400640D41 /* DefaultLabel.swift */; };
 		2493FDF82638B7070063B6BE /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */; };
 		2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FDFC2638B75F0063B6BE /* SignupViewController.swift */; };
 		2493FE012638B7B70063B6BE /* MockSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */; };
 		24A456DB265FAFD700095B31 /* CookingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A456DA265FAFD700095B31 /* CookingTimeView.swift */; };
 		24A456ED266008C800095B31 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A456EC266008C800095B31 /* IngredientsView.swift */; };
-		24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */; };
 		24A59EFA2655B62900D4FFEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A59EF92655B62900D4FFEE /* Media.xcassets */; };
-		24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */; };
-		24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */; };
 		24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD3263C835800F73BBD /* RecipeRoute.swift */; };
 		24AA3FDA263C846700F73BBD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FD9263C846700F73BBD /* PushTransition.swift */; };
 		24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA3FDD263C889100F73BBD /* MainViewModel.swift */; };
@@ -368,23 +360,15 @@
 		245B7E84263C26B900D2B454 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		245B7E89263C273800D2B454 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		245B7E8D263C27AE00D2B454 /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
-		245B7E92263C29F300D2B454 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		245FDCB3266B6E22005E75FE /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		2460498726694BE40074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24775FFF265310120050E20B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
-		247D78DC267C048200E9E21F /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
-		2484CEDD265B9C1800640D41 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
-		2484CEEF265BA00800640D41 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
-		2484CEF3265BAA3400640D41 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 		2493FDF72638B7070063B6BE /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
 		2493FDFC2638B75F0063B6BE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2493FE002638B7B70063B6BE /* MockSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignupViewModel.swift; sourceTree = "<group>"; };
 		24A456DA265FAFD700095B31 /* CookingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTimeView.swift; sourceTree = "<group>"; };
 		24A456EC266008C800095B31 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
-		24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		24A59EF92655B62900D4FFEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonBuilder.swift; sourceTree = "<group>"; };
 		24AA3FD3263C835800F73BBD /* RecipeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRoute.swift; sourceTree = "<group>"; };
 		24AA3FD9263C846700F73BBD /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		24AA3FDD263C889100F73BBD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -751,7 +735,6 @@
 			isa = PBXGroup;
 			children = (
 				24A59EE92655B4E000D4FFEE /* Extensions */,
-				245B7E91263C29DA00D2B454 /* UI */,
 				245B7E6F263C1BF400D2B454 /* Layout */,
 			);
 			path = Utils;
@@ -804,18 +787,6 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
-		245B7E91263C29DA00D2B454 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				24A84E57267A3C240034874F /* UIBuilder */,
-				245B7E92263C29F300D2B454 /* DefaultButton.swift */,
-				2484CEDD265B9C1800640D41 /* SeparatorView.swift */,
-				2484CEEF265BA00800640D41 /* DefaultImageView.swift */,
-				2484CEF3265BAA3400640D41 /* DefaultLabel.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		245FDCA2266B6DF1005E75FE /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,7 +807,6 @@
 		247D78C9267C047100E9E21F /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				247D78DC267C048200E9E21F /* AppStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -853,8 +823,6 @@
 		24A59EE92655B4E000D4FFEE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				24A59EF42655B4F500D4FFEE /* UIView+Ext.swift */,
-				24A59EFD2655BA7C00D4FFEE /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -865,14 +833,6 @@
 				24A59EF92655B62900D4FFEE /* Media.xcassets */,
 			);
 			path = Media;
-			sourceTree = "<group>";
-		};
-		24A84E57267A3C240034874F /* UIBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				24A84E68267A3C4B0034874F /* DefaultButtonBuilder.swift */,
-			);
-			path = UIBuilder;
 			sourceTree = "<group>";
 		};
 		24AA3FCF263C82D200F73BBD /* Routes */ = {
@@ -1306,18 +1266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A59EFE2655BA7C00D4FFEE /* UIImageView+Ext.swift in Sources */,
-				24A84E69267A3C4B0034874F /* DefaultButtonBuilder.swift in Sources */,
-				24A59EF52655B4F500D4FFEE /* UIView+Ext.swift in Sources */,
 				2430BDA22638A83B00C5CE19 /* LoginViewController.swift in Sources */,
 				245B7E78263C1FA700D2B454 /* RecipeDetailsViewController.swift in Sources */,
-				2484CEDE265B9C1800640D41 /* SeparatorView.swift in Sources */,
-				247D78DD267C048200E9E21F /* AppStyle.swift in Sources */,
 				240A32E72667B38200A38177 /* CategoriesView.swift in Sources */,
 				24D8051F266BF93600A77ED0 /* MainViewControllerFactory.swift in Sources */,
 				24567C0D26382A440010BE25 /* LoginViewControllerProtocol.swift in Sources */,
 				24330DA7263D406800724978 /* SignupRoute.swift in Sources */,
-				245B7E93263C29F300D2B454 /* DefaultButton.swift in Sources */,
 				2493FDFD2638B75F0063B6BE /* SignupViewController.swift in Sources */,
 				24AA3FDE263C889100F73BBD /* MainViewModel.swift in Sources */,
 				24567C4226388CD70010BE25 /* SignupViewControllerProtocol.swift in Sources */,
@@ -1335,13 +1289,11 @@
 				24D8051B266BEE5F00A77ED0 /* MainTabBarControllerFactory.swift in Sources */,
 				24567BB02637F9C20010BE25 /* ViewController.swift in Sources */,
 				24AA3FD4263C835800F73BBD /* RecipeRoute.swift in Sources */,
-				2484CEF4265BAA3400640D41 /* DefaultLabel.swift in Sources */,
 				245B7E85263C26B900D2B454 /* Transition.swift in Sources */,
 				245B7E58263BED8400D2B454 /* MainTabBarController.swift in Sources */,
 				245A194026682AB9003CFC6F /* CategoryViewModel.swift in Sources */,
 				245B7E61263C16DD00D2B454 /* SearchViewController.swift in Sources */,
 				24567BAC2637F9C20010BE25 /* AppDelegate.swift in Sources */,
-				2484CEF0265BA00800640D41 /* DefaultImageView.swift in Sources */,
 				24567BFF263828DF0010BE25 /* LoginViewModel.swift in Sources */,
 				241FD94E266E6988002C0F00 /* NutrientsSearchView.swift in Sources */,
 				24011BDE266EDB74003F6D3B /* NutrientsSearchViewModel.swift in Sources */,

@@ -37,6 +37,7 @@
 		24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */; };
 		24E469A7266A68E0005E9A7E /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; };
 		24E469A8266A68E0005E9A7E /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24EE41802683773500EB07B7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EE417F2683773500EB07B7 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeFallbackCocktailsLoader.swift; sourceTree = "<group>"; };
 		24E46996266A6884005E9A7E /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
+		24EE417F2683773500EB07B7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 		24E468C5266A477E005E9A7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24EE41762683771400EB07B7 /* Resources */,
 				24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */,
 				24E468D5266A4B4D005E9A7E /* Factories */,
 				24E468DA266A51CC005E9A7E /* Scenes */,
@@ -405,6 +408,14 @@
 				24E469BF266A6957005E9A7E /* CommonUtilsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		24EE41762683771400EB07B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24EE417F2683773500EB07B7 /* Media.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -592,6 +603,7 @@
 				24BA410F26690BE30062F62E /* Assets.xcassets in Resources */,
 				24BA410D26690BE10062F62E /* Main.storyboard in Resources */,
 				2497CDA52682963E002B8F0D /* HeaderSupplementaryView.xib in Resources */,
+				24EE41802683773500EB07B7 /* Media.xcassets in Resources */,
 				2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

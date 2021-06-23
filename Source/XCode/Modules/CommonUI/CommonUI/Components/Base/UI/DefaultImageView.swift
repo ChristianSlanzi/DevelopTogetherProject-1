@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DefaultImageView: UIImageView {
-    required init(urlPath: String?, fallback: String, mode: UIView.ContentMode = .scaleAspectFill) {
+public class DefaultImageView: UIImageView {
+    public required init(urlPath: String?, fallback: String, mode: UIView.ContentMode = .scaleAspectFill) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -22,7 +22,7 @@ class DefaultImageView: UIImageView {
         contentMode = mode
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -18,6 +18,12 @@
 		24EA75F526820D72009DBB82 /* FlowLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EB26820D72009DBB82 /* FlowLayoutBuilder.swift */; };
 		24EA75F626820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EC26820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift */; };
 		24EA75F726820D72009DBB82 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EE26820D72009DBB82 /* UICollectionView+Ext.swift */; };
+		24EE416A26836E4F00EB07B7 /* DefaultButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE414E268368B300EB07B7 /* DefaultButtonBuilder.swift */; };
+		24EE416B26836E5300EB07B7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE4150268368B300EB07B7 /* DefaultButton.swift */; };
+		24EE416C26836E5500EB07B7 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE4151268368B300EB07B7 /* SeparatorView.swift */; };
+		24EE416D26836E5800EB07B7 /* DefaultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE4152268368B300EB07B7 /* DefaultImageView.swift */; };
+		24EE416E26836E5B00EB07B7 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE4153268368B300EB07B7 /* DefaultLabel.swift */; };
+		24EE417126836EC200EB07B7 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EE417026836EC200EB07B7 /* AppStyle.swift */; };
 		24FE1FAD265A60F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FA3265A60F400724646 /* CommonUI.framework */; };
 		24FE1FB2265A60F400724646 /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FB1265A60F400724646 /* CommonUITests.swift */; };
 		24FE1FB4265A60F400724646 /* CommonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FE1FA6265A60F400724646 /* CommonUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,6 +116,12 @@
 		24EA75EB26820D72009DBB82 /* FlowLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutBuilder.swift; sourceTree = "<group>"; };
 		24EA75EC26820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentBasedLayoutBuilder.swift; sourceTree = "<group>"; };
 		24EA75EE26820D72009DBB82 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		24EE414E268368B300EB07B7 /* DefaultButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonBuilder.swift; sourceTree = "<group>"; };
+		24EE4150268368B300EB07B7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		24EE4151268368B300EB07B7 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		24EE4152268368B300EB07B7 /* DefaultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageView.swift; sourceTree = "<group>"; };
+		24EE4153268368B300EB07B7 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
+		24EE417026836EC200EB07B7 /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		24FE1FA3265A60F400724646 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE1FA6265A60F400724646 /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
 		24FE1FA7265A60F400724646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +245,34 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		24EE414F268368B300EB07B7 /* UIBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				24EE414E268368B300EB07B7 /* DefaultButtonBuilder.swift */,
+			);
+			path = UIBuilder;
+			sourceTree = "<group>";
+		};
+		24EE4154268368B300EB07B7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				24EE414F268368B300EB07B7 /* UIBuilder */,
+				24EE4150268368B300EB07B7 /* DefaultButton.swift */,
+				24EE4151268368B300EB07B7 /* SeparatorView.swift */,
+				24EE4152268368B300EB07B7 /* DefaultImageView.swift */,
+				24EE4153268368B300EB07B7 /* DefaultLabel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		24EE416F26836EC200EB07B7 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				24EE417026836EC200EB07B7 /* AppStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		24FE1F99265A60F400724646 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +295,7 @@
 		24FE1FA5265A60F400724646 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				24EE416F26836EC200EB07B7 /* Style */,
 				24FE1FCC265A62D400724646 /* Components */,
 				24FE2005265A62D400724646 /* Containers */,
 				24FE1FFD265A62D400724646 /* ContentPlayers */,
@@ -348,6 +389,7 @@
 		24FE1FE0265A62D400724646 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				24EE4154268368B300EB07B7 /* UI */,
 				24FE1FE1265A62D400724646 /* CustomView.swift */,
 				24FE1FE2265A62D400724646 /* BaseViewController.swift */,
 				24FE1FE3265A62D400724646 /* CustomStackView.swift */,
@@ -685,12 +727,14 @@
 				24FE203E265A62D400724646 /* Countdown.swift in Sources */,
 				24FE2029265A62D400724646 /* CustomView.swift in Sources */,
 				24FE2026265A62D400724646 /* InfoNotification.swift in Sources */,
+				24EE416E26836E5B00EB07B7 /* DefaultLabel.swift in Sources */,
 				24FE2044265A62D400724646 /* TableArrayDataSource.swift in Sources */,
 				24FE204D265A62D400724646 /* ReusableCell.swift in Sources */,
 				24FE2037265A62D400724646 /* UINavigationBar+ColorUpdatable.swift in Sources */,
 				24FE203C265A62D400724646 /* Video.swift in Sources */,
 				24FE2033265A62D400724646 /* ColorThemeObserving.swift in Sources */,
 				24FE2030265A62D400724646 /* CaptionView.swift in Sources */,
+				24EE416B26836E5300EB07B7 /* DefaultButton.swift in Sources */,
 				24FE203D265A62D400724646 /* AVPlayerView.swift in Sources */,
 				24FE2036265A62D400724646 /* UITabBar+ColorUpdatable.swift in Sources */,
 				24FE202A265A62D400724646 /* BaseViewController.swift in Sources */,
@@ -711,6 +755,7 @@
 				24FE202F265A62D400724646 /* Modal.swift in Sources */,
 				24FE2022265A62D400724646 /* ArrayExtension.swift in Sources */,
 				24FE2042265A62D400724646 /* TableArrayDataProvider.swift in Sources */,
+				24EE417126836EC200EB07B7 /* AppStyle.swift in Sources */,
 				24FE2047265A62D400724646 /* CollectionDataProvider.swift in Sources */,
 				24EA75F726820D72009DBB82 /* UICollectionView+Ext.swift in Sources */,
 				24FE204C265A62D400724646 /* ConfigurableCell.swift in Sources */,
@@ -718,17 +763,20 @@
 				24FE201E265A62D400724646 /* BasicBarEntry.swift in Sources */,
 				24FE2046265A62D400724646 /* CollectionArrayDataSource.swift in Sources */,
 				24FE203A265A62D400724646 /* ThemeUsageExample.swift in Sources */,
+				24EE416C26836E5500EB07B7 /* SeparatorView.swift in Sources */,
 				24FE202B265A62D400724646 /* CustomStackView.swift in Sources */,
 				24FE2045265A62D400724646 /* CollectionDataSource.swift in Sources */,
 				24FE202D265A62D400724646 /* CustomScrollViewController.swift in Sources */,
 				24FE2031265A62D400724646 /* CustomIndicatorView.swift in Sources */,
 				24FE2023265A62D400724646 /* DataEntry.swift in Sources */,
 				24FE203F265A62D400724646 /* Stopwatch.swift in Sources */,
+				24EE416D26836E5800EB07B7 /* DefaultImageView.swift in Sources */,
 				24FE2048265A62D400724646 /* CollectionArrayDataProvider.swift in Sources */,
 				24EA75F226820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift in Sources */,
 				24FE2040265A62D400724646 /* CustomHeader.swift in Sources */,
 				24FE201D265A62D400724646 /* BasicBarChart.swift in Sources */,
 				24FE2024265A62D400724646 /* ValidableTextControl.swift in Sources */,
+				24EE416A26836E4F00EB07B7 /* DefaultButtonBuilder.swift in Sources */,
 				24EA75EF26820D72009DBB82 /* BaseCollectionViewController.swift in Sources */,
 				24FE2049265A62D400724646 /* ContainerController.swift in Sources */,
 				24FE2038265A62D400724646 /* UILabel+ColorUpdatable.swift in Sources */,

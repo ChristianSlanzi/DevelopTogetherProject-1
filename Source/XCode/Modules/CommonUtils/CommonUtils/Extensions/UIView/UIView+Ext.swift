@@ -15,7 +15,6 @@ public extension UIView {
     }
 }
 
-
 // QUICKLY INSTANTIATE AN UIVIEW FROM A NIB / XIB FILE
 public extension UIView {
     class func load(nib name: String) -> UIView? {

@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import CommonUI
 
 class DrinkCellView: UICollectionViewCell {
+    
+    let imageView: DefaultImageView = {
+        let view = DefaultImageView(urlPath: nil, fallback: "drink-placeholder")
+        return view
+    }()
     
     let title: UILabel = {
         let label = UILabel()
@@ -34,16 +40,23 @@ class DrinkCellView: UICollectionViewCell {
     }
     
     func setupViews() {
-        addSubview(title)
+        addSubviews(imageView, title)
     }
     
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: rightAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            //title.topAnchor.constraint(equalTo: topAnchor),
             title.leftAnchor.constraint(equalTo: leftAnchor),
             title.rightAnchor.constraint(equalTo: rightAnchor),
-            title.bottomAnchor.constraint(equalTo: bottomAnchor)
+            title.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
     
