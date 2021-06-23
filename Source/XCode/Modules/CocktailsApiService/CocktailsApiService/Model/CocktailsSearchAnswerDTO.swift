@@ -7,9 +7,9 @@
 
 import NetworkingService
 
-public struct Drink: DTO {
-    var idDrink: String
-    var strDrink: String
+public struct DrinkDTO: DTO {
+    public var idDrink: String
+    public var strDrink: String
     var strDrinkAlternate: String?
     var strTags: String?
     var strVideo: String?
@@ -75,7 +75,7 @@ public struct Drink: DTO {
 }
 
 public struct CocktailsSearchAnswerDTO: DTO {
-    public var drinks: [Drink]
+    public var drinks: [DrinkDTO]
     
     public var description: String {
         return """

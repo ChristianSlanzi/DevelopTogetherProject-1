@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		241FD944266E143C002C0F00 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD943266E143C002C0F00 /* CheckBox.swift */; };
 		24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */; };
+		24EA75EF26820D72009DBB82 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E326820D72009DBB82 /* BaseCollectionViewController.swift */; };
+		24EA75F026820D72009DBB82 /* CollectionViewCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E526820D72009DBB82 /* CollectionViewCellAdapter.swift */; };
+		24EA75F126820D72009DBB82 /* CustomDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E626820D72009DBB82 /* CustomDataSource.swift */; };
+		24EA75F226820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E826820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift */; };
+		24EA75F326820D72009DBB82 /* CollectionViewLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E926820D72009DBB82 /* CollectionViewLayoutBuilder.swift */; };
+		24EA75F426820D72009DBB82 /* OrthogonalLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EA26820D72009DBB82 /* OrthogonalLayoutBuilder.swift */; };
+		24EA75F526820D72009DBB82 /* FlowLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EB26820D72009DBB82 /* FlowLayoutBuilder.swift */; };
+		24EA75F626820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EC26820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift */; };
+		24EA75F726820D72009DBB82 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75EE26820D72009DBB82 /* UICollectionView+Ext.swift */; };
 		24FE1FAD265A60F400724646 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FE1FA3265A60F400724646 /* CommonUI.framework */; };
 		24FE1FB2265A60F400724646 /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FB1265A60F400724646 /* CommonUITests.swift */; };
 		24FE1FB4265A60F400724646 /* CommonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FE1FA6265A60F400724646 /* CommonUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,7 +37,6 @@
 		24FE2029265A62D400724646 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE1265A62D400724646 /* CustomView.swift */; };
 		24FE202A265A62D400724646 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE2265A62D400724646 /* BaseViewController.swift */; };
 		24FE202B265A62D400724646 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE3265A62D400724646 /* CustomStackView.swift */; };
-		24FE202C265A62D400724646 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE6265A62D400724646 /* Adapter.swift */; };
 		24FE202D265A62D400724646 /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE7265A62D400724646 /* CustomScrollViewController.swift */; };
 		24FE202E265A62D400724646 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE8265A62D400724646 /* NavigationBar.swift */; };
 		24FE202F265A62D400724646 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE1FE9265A62D400724646 /* Modal.swift */; };
@@ -93,6 +101,15 @@
 /* Begin PBXFileReference section */
 		241FD943266E143C002C0F00 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		24EA75E326820D72009DBB82 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		24EA75E526820D72009DBB82 /* CollectionViewCellAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellAdapter.swift; sourceTree = "<group>"; };
+		24EA75E626820D72009DBB82 /* CustomDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDataSource.swift; sourceTree = "<group>"; };
+		24EA75E826820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomingCarouselLayoutBuilder.swift; sourceTree = "<group>"; };
+		24EA75E926820D72009DBB82 /* CollectionViewLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutBuilder.swift; sourceTree = "<group>"; };
+		24EA75EA26820D72009DBB82 /* OrthogonalLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalLayoutBuilder.swift; sourceTree = "<group>"; };
+		24EA75EB26820D72009DBB82 /* FlowLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutBuilder.swift; sourceTree = "<group>"; };
+		24EA75EC26820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentBasedLayoutBuilder.swift; sourceTree = "<group>"; };
+		24EA75EE26820D72009DBB82 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		24FE1FA3265A60F400724646 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE1FA6265A60F400724646 /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
 		24FE1FA7265A60F400724646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +132,6 @@
 		24FE1FE1265A62D400724646 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		24FE1FE2265A62D400724646 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		24FE1FE3265A62D400724646 /* CustomStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
-		24FE1FE6265A62D400724646 /* Adapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		24FE1FE7265A62D400724646 /* CustomScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
 		24FE1FE8265A62D400724646 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		24FE1FE9265A62D400724646 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
@@ -178,6 +194,43 @@
 				241FD943266E143C002C0F00 /* CheckBox.swift */,
 			);
 			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		24EA75E226820D72009DBB82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24EA75E326820D72009DBB82 /* BaseCollectionViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		24EA75E426820D72009DBB82 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				24EA75E526820D72009DBB82 /* CollectionViewCellAdapter.swift */,
+				24EA75E626820D72009DBB82 /* CustomDataSource.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		24EA75E726820D72009DBB82 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				24EA75E826820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift */,
+				24EA75E926820D72009DBB82 /* CollectionViewLayoutBuilder.swift */,
+				24EA75EA26820D72009DBB82 /* OrthogonalLayoutBuilder.swift */,
+				24EA75EB26820D72009DBB82 /* FlowLayoutBuilder.swift */,
+				24EA75EC26820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		24EA75ED26820D72009DBB82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24EA75EE26820D72009DBB82 /* UICollectionView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		24FE1F99265A60F400724646 = {
@@ -312,17 +365,12 @@
 		24FE1FE4265A62D400724646 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				24FE1FE5265A62D400724646 /* Adapter */,
+				24EA75E426820D72009DBB82 /* Adapter */,
+				24EA75E726820D72009DBB82 /* Builders */,
+				24EA75ED26820D72009DBB82 /* Extensions */,
+				24EA75E226820D72009DBB82 /* Views */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		24FE1FE5265A62D400724646 /* Adapter */ = {
-			isa = PBXGroup;
-			children = (
-				24FE1FE6265A62D400724646 /* Adapter.swift */,
-			);
-			path = Adapter;
 			sourceTree = "<group>";
 		};
 		24FE1FEC265A62D400724646 /* Theme */ = {
@@ -628,10 +676,12 @@
 			files = (
 				24FE204B265A62D400724646 /* BaseContainerCell.swift in Sources */,
 				24FE2020265A62D400724646 /* CALayerExtension.swift in Sources */,
+				24EA75F426820D72009DBB82 /* OrthogonalLayoutBuilder.swift in Sources */,
 				24FE2035265A62D400724646 /* UIColor+Palette.swift in Sources */,
 				24FE2027265A62D400724646 /* PopupNotification.swift in Sources */,
 				24FE204A265A62D400724646 /* ChildController.swift in Sources */,
 				24FE201F265A62D400724646 /* CustomSegments.swift in Sources */,
+				24EA75F026820D72009DBB82 /* CollectionViewCellAdapter.swift in Sources */,
 				24FE203E265A62D400724646 /* Countdown.swift in Sources */,
 				24FE2029265A62D400724646 /* CustomView.swift in Sources */,
 				24FE2026265A62D400724646 /* InfoNotification.swift in Sources */,
@@ -642,13 +692,16 @@
 				24FE2033265A62D400724646 /* ColorThemeObserving.swift in Sources */,
 				24FE2030265A62D400724646 /* CaptionView.swift in Sources */,
 				24FE203D265A62D400724646 /* AVPlayerView.swift in Sources */,
-				24FE202C265A62D400724646 /* Adapter.swift in Sources */,
 				24FE2036265A62D400724646 /* UITabBar+ColorUpdatable.swift in Sources */,
 				24FE202A265A62D400724646 /* BaseViewController.swift in Sources */,
 				24FE2043265A62D400724646 /* TableDataProvider.swift in Sources */,
 				24FE201C265A62D400724646 /* BasicBarChartPresenter.swift in Sources */,
+				24EA75F526820D72009DBB82 /* FlowLayoutBuilder.swift in Sources */,
 				24FE2032265A62D400724646 /* ColorUpdatable.swift in Sources */,
 				24FE2021265A62D400724646 /* UIBezierPathExtension.swift in Sources */,
+				24EA75F126820D72009DBB82 /* CustomDataSource.swift in Sources */,
+				24EA75F626820D72009DBB82 /* EnvironmentBasedLayoutBuilder.swift in Sources */,
+				24EA75F326820D72009DBB82 /* CollectionViewLayoutBuilder.swift in Sources */,
 				24FE203B265A62D400724646 /* VideoPlayerView.swift in Sources */,
 				241FD944266E143C002C0F00 /* CheckBox.swift in Sources */,
 				24FE2039265A62D400724646 /* CustomNotification.swift in Sources */,
@@ -659,6 +712,7 @@
 				24FE2022265A62D400724646 /* ArrayExtension.swift in Sources */,
 				24FE2042265A62D400724646 /* TableArrayDataProvider.swift in Sources */,
 				24FE2047265A62D400724646 /* CollectionDataProvider.swift in Sources */,
+				24EA75F726820D72009DBB82 /* UICollectionView+Ext.swift in Sources */,
 				24FE204C265A62D400724646 /* ConfigurableCell.swift in Sources */,
 				24FE2041265A62D400724646 /* TableDataSource.swift in Sources */,
 				24FE201E265A62D400724646 /* BasicBarEntry.swift in Sources */,
@@ -671,9 +725,11 @@
 				24FE2023265A62D400724646 /* DataEntry.swift in Sources */,
 				24FE203F265A62D400724646 /* Stopwatch.swift in Sources */,
 				24FE2048265A62D400724646 /* CollectionArrayDataProvider.swift in Sources */,
+				24EA75F226820D72009DBB82 /* ZoomingCarouselLayoutBuilder.swift in Sources */,
 				24FE2040265A62D400724646 /* CustomHeader.swift in Sources */,
 				24FE201D265A62D400724646 /* BasicBarChart.swift in Sources */,
 				24FE2024265A62D400724646 /* ValidableTextControl.swift in Sources */,
+				24EA75EF26820D72009DBB82 /* BaseCollectionViewController.swift in Sources */,
 				24FE2049265A62D400724646 /* ContainerController.swift in Sources */,
 				24FE2038265A62D400724646 /* UILabel+ColorUpdatable.swift in Sources */,
 				24FE202E265A62D400724646 /* NavigationBar.swift in Sources */,
