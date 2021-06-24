@@ -7,7 +7,7 @@
 
 import CommonUI
 
-class MainDataSource: CustomDataSource<DrinkViewModel> {
+class MainDataSource: CustomDataSource<Drink> {
     
     weak var view: ViewControllerProtocol?
     
@@ -26,8 +26,8 @@ class MainDataSource: CustomDataSource<DrinkViewModel> {
             
             switch result {
             case let .success(drinksDTO):
-                self.sections.append(CustomDataSource<DrinkViewModel>.Section(title: "New Drinks", items: drinksDTO.compactMap({ DrinkViewModel(name: $0.name, thumbnail: $0.strDrinkThumb, imageSource: $0.strImageSource) })))
-                
+                //self.sections.append(CustomDataSource<Drink>.Section(title: "New Drinks", items: drinksDTO.compactMap({ Drink(name: $0.name, thumbnail: $0.strDrinkThumb, imageSource: $0.strImageSource) })))
+                self.sections.append(CustomDataSource<Drink>.Section(title: "New Drinks", items: drinksDTO))
                 DispatchQueue.main.async {
                     self.view?.reload()
                 }

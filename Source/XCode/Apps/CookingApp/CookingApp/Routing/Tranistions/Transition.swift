@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol Transition: class {
+protocol Transition: AnyObject {
     var isAnimated: Bool { get set }
 
     func open(_ viewController: UIViewController, from: UIViewController, completion: (() -> Void)?)

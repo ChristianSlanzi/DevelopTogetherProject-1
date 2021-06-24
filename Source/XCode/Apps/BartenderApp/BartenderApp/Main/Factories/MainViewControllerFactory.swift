@@ -5,8 +5,9 @@
 //  Created by Christian Slanzi on 04.06.21.
 //
 
-import CommonUI
 import UIKit
+import CommonUI
+import CommonRouting
 
 protocol MainViewControllerFactory {
     func makeMainViewController() -> UIViewController
@@ -15,9 +16,10 @@ protocol MainViewControllerFactory {
 extension BartenderAppDependencies: MainViewControllerFactory {
     
     
-    typealias CollectionViewAdapter = Adapter<DrinkViewModel, DrinkCellView, HeaderSupplementaryView, NewBannerSupplementaryView, NewBannerSupplementaryView>
+    typealias CollectionViewAdapter = Adapter<Drink, DrinkCellView, HeaderSupplementaryView, NewBannerSupplementaryView, NewBannerSupplementaryView>
     
     func makeMainViewController() -> UIViewController {
+        let router = DefaultRouter(rootTransition: EmptyTransition())
         let layout = EnvironmentBasedLayoutBuilder().makeLayout(itemsPerRow: 1, groupHeightDimension: .absolute(200))//.fractionalWidth(fraction)))
         
         let adapter = CollectionViewAdapter()
@@ -27,7 +29,7 @@ extension BartenderAppDependencies: MainViewControllerFactory {
             cell.title.textColor = .black
             cell.title.text = model.name
             
-            if let url = URL(string: model.thumbnail) {
+            if let url = URL(string: model.strDrinkThumb) {
                 _ = self.imageDataLoader.loadImageData(from:  url) { result in
                     switch result {
                     case let .failure(error):
@@ -43,11 +45,13 @@ extension BartenderAppDependencies: MainViewControllerFactory {
         }
         adapter.select = { model in
             //TODO
+            router.showDrinkDetails(model)
         }
         
         adapter.dataSource = makeDataSource()
         
         let viewController = MainViewController(collectionViewLayout: layout, dataSource: adapter)
+        
         let viewModel = adapter.dataSource as! MainDataSource
         viewModel.view = viewController
         
@@ -55,6 +59,9 @@ extension BartenderAppDependencies: MainViewControllerFactory {
         viewController.registerHeaderSupplementaryView(type: HeaderSupplementaryView.self)
         viewController.registerFooterSupplementaryView(type: NewBannerSupplementaryView.self)
         viewController.setFLowLayoutDelegate(adapter)
+        
+        router.root = viewController
+        
         return viewController
     }
     

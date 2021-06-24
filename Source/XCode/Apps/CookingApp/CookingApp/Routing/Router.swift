@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol Closable: class {
+protocol Closable: AnyObject {
     /// Closes the Router's root view controller using the transition used to show it.
     func close()
 
@@ -15,7 +15,7 @@ protocol Closable: class {
     func close(completion: (() -> Void)?)
 }
 
-protocol Dismissable: class {
+protocol Dismissable: AnyObject {
     /// Dismisses the Router's root view controller ignoring the transition used to show it.
     func dismiss()
 
@@ -23,13 +23,13 @@ protocol Dismissable: class {
     func dismiss(completion: (() -> Void)?)
 }
 
-protocol Deeplinkable: class {
+protocol Deeplinkable: AnyObject {
     /// Route to a view controller applying the transition provided by resolving the URL to a specific Route.
     @discardableResult
     func route(to url: URL, as transition: Transition) -> Bool
 }
 
-protocol Routable: class {
+protocol Routable: AnyObject {
     /// Route to a view controller using the transition provided.
     func route(to viewController: UIViewController, as transition: Transition)
 
