@@ -18,6 +18,11 @@
 		24715F752685171F0009278A /* DrinkStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24715F732685171F0009278A /* DrinkStore.xcdatamodeld */; };
 		24715F77268518230009278A /* LocalDrink+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F76268518230009278A /* LocalDrink+Mappable.swift */; };
 		24715F79268519760009278A /* CoreDataDrink+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F78268519760009278A /* CoreDataDrink+Fetchable.swift */; };
+		24715F8F268530280009278A /* LocalFavoriteDrink+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8E268530280009278A /* LocalFavoriteDrink+Mappable.swift */; };
+		24715F92268531250009278A /* LocalFavoriteDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F91268531250009278A /* LocalFavoriteDrink.swift */; };
+		24715F94268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */; };
+		24715F96268532230009278A /* CoreDataFavoriteDrinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F95268532230009278A /* CoreDataFavoriteDrinkStore.swift */; };
+		24715F98268533300009278A /* FavoriteDrinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F97268533300009278A /* FavoriteDrinkStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		24715F742685171F0009278A /* DrinkStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkStore.xcdatamodel; sourceTree = "<group>"; };
 		24715F76268518230009278A /* LocalDrink+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalDrink+Mappable.swift"; sourceTree = "<group>"; };
 		24715F78268519760009278A /* CoreDataDrink+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDrink+Fetchable.swift"; sourceTree = "<group>"; };
+		24715F8E268530280009278A /* LocalFavoriteDrink+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFavoriteDrink+Mappable.swift"; sourceTree = "<group>"; };
+		24715F91268531250009278A /* LocalFavoriteDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoriteDrink.swift; sourceTree = "<group>"; };
+		24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFavoriteDrink+Fetchable.swift"; sourceTree = "<group>"; };
+		24715F95268532230009278A /* CoreDataFavoriteDrinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavoriteDrinkStore.swift; sourceTree = "<group>"; };
+		24715F97268533300009278A /* FavoriteDrinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDrinkStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,7 @@
 				24715F1A268513DE0009278A /* DrinkStore.h */,
 				24715F1B268513DE0009278A /* Info.plist */,
 				24715F6B268515770009278A /* DrinkStore.swift */,
+				24715F97268533300009278A /* FavoriteDrinkStore.swift */,
 			);
 			path = DrinkStore;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				24715F6D268515EE0009278A /* LocalDrink.swift */,
+				24715F91268531250009278A /* LocalFavoriteDrink.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 			children = (
 				24715F6F268516970009278A /* Model */,
 				24715F70268516A50009278A /* CoreDataDrinkStore.swift */,
+				24715F95268532230009278A /* CoreDataFavoriteDrinkStore.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -159,6 +172,8 @@
 			children = (
 				24715F76268518230009278A /* LocalDrink+Mappable.swift */,
 				24715F78268519760009278A /* CoreDataDrink+Fetchable.swift */,
+				24715F8E268530280009278A /* LocalFavoriteDrink+Mappable.swift */,
+				24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -275,10 +290,15 @@
 			files = (
 				24715F79268519760009278A /* CoreDataDrink+Fetchable.swift in Sources */,
 				24715F752685171F0009278A /* DrinkStore.xcdatamodeld in Sources */,
+				24715F96268532230009278A /* CoreDataFavoriteDrinkStore.swift in Sources */,
 				24715F77268518230009278A /* LocalDrink+Mappable.swift in Sources */,
 				24715F6E268515EE0009278A /* LocalDrink.swift in Sources */,
+				24715F8F268530280009278A /* LocalFavoriteDrink+Mappable.swift in Sources */,
 				24715F71268516A50009278A /* CoreDataDrinkStore.swift in Sources */,
+				24715F92268531250009278A /* LocalFavoriteDrink.swift in Sources */,
+				24715F94268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift in Sources */,
 				24715F6C268515770009278A /* DrinkStore.swift in Sources */,
+				24715F98268533300009278A /* FavoriteDrinkStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

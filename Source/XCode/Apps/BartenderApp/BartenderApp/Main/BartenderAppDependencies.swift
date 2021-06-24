@@ -52,6 +52,24 @@ class BartenderAppDependencies: AppDependencies {
         }
     }()
     
+    private lazy var favoriteDrinkStore: FavoriteDrinkStore /*& RecipeDataStore*/ = {
+        do {
+            return try CoreDataFavoriteDrinkStore(
+                storeURL: NSPersistentContainer
+                    .defaultDirectoryURL()
+                    .appendingPathComponent("favorite-store.sqlite"), managedModel: managedModel)
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            //TODO
+            /*
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            
+            */
+            return NullStore()
+        }
+    }()
+    
     override func start() {
         super.start()
         

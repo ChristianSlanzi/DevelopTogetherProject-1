@@ -23,3 +23,21 @@ extension NullStore: DrinkStore {
         completion(.none)
     }
 }
+
+extension NullStore: FavoriteDrinkStore {
+    func create(_ feed: [LocalFavoriteDrink], completion: @escaping (Error?) -> Void) {
+        completion(.none)
+    }
+    
+    func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping FavoriteRetrievalCompletion) {
+        completion(.empty)
+    }
+    
+    func delete(predicate: NSPredicate?, entity: LocalFavoriteDrink.Type, completion: @escaping FavoriteDeletionCompletion) {
+        completion(.none)
+    }
+    
+    func deleteAll(entity: LocalFavoriteDrink.Type, completion: @escaping FavoriteDeletionCompletion) {
+        completion(.none)
+    }
+}

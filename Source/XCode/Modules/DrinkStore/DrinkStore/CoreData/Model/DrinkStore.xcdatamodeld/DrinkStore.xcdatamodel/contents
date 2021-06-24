@@ -11,7 +11,16 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="CoreDataFavoriteDrink" representedClassName="CoreDataFavoriteDrink" syncable="YES" codeGenerationType="class">
+        <attribute name="idDrink" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="idDrink"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
         <element name="CoreDataDrink" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="CoreDataFavoriteDrink" positionX="-54" positionY="18" width="128" height="44"/>
     </elements>
 </model>

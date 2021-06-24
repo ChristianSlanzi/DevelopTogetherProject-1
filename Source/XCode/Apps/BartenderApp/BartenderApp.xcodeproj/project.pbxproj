@@ -11,6 +11,7 @@
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24715F8B26851D100009278A /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8A26851D100009278A /* NullStore.swift */; };
 		24715F8D268522700009278A /* CocktailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8C268522700009278A /* CocktailsCache.swift */; };
+		24715F90268530C50009278A /* DrinkStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24715F3E2685141F0009278A /* DrinkStore.framework */; };
 		2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9826828EE8002B8F0D /* MainViewController.swift */; };
 		2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9B268295CA002B8F0D /* DrinkCellView.swift */; };
 		2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */; };
@@ -258,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24715F90268530C50009278A /* DrinkStore.framework in Frameworks */,
 				24CBF84926848DEE002C011B /* CommonRouting.framework in Frameworks */,
 				24EE419E2683821700EB07B7 /* ImageFeature.framework in Frameworks */,
 				24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */,
@@ -515,19 +517,19 @@
 			isa = PBXGroup;
 			children = (
 				2497CDB72682A203002B8F0D /* Model */,
-				24E468E9266A586E005E9A7E /* CocktailSearch */,
+				24E468E9266A586E005E9A7E /* CocktailList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		24E468E9266A586E005E9A7E /* CocktailSearch */ = {
+		24E468E9266A586E005E9A7E /* CocktailList */ = {
 			isa = PBXGroup;
 			children = (
 				24E468EE266A58FD005E9A7E /* Composite */,
 				24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */,
 				24715F8C268522700009278A /* CocktailsCache.swift */,
 			);
-			path = CocktailSearch;
+			path = CocktailList;
 			sourceTree = "<group>";
 		};
 		24E468EE266A58FD005E9A7E /* Composite */ = {
