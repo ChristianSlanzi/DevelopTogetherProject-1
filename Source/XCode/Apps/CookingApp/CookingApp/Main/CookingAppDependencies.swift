@@ -16,6 +16,7 @@ import CoreData
 import GenericStore
 import ImageFeature
 import CommonUtils
+import CommonRouting
 
 class CookingAppDependencies: AppDependencies {
     
@@ -104,7 +105,7 @@ class CookingAppDependencies: AppDependencies {
 }
 
 extension DefaultRouter: RecipeUI.RecipeRoute {
-    func openRecipe(_ recipe: RecipeUI.Recipe) {
+    public func openRecipe(_ recipe: RecipeUI.Recipe) {
         let recipeFeat = RecipeFeature.Recipe(id: recipe.id,
                                               calories: recipe.calories,
                                               carbs: recipe.carbs,

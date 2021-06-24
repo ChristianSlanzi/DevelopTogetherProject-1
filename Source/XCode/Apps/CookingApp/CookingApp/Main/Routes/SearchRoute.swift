@@ -7,6 +7,7 @@
 
 import Foundation
 import RecipeFeature
+import CommonRouting
 
 protocol SearchRoute {
     func openRecipeList(_ recipes: [Recipe])

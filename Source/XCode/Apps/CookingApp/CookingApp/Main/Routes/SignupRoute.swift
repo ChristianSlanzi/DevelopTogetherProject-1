@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CommonRouting
 
 protocol SignupRoute {
     func openSignup()
