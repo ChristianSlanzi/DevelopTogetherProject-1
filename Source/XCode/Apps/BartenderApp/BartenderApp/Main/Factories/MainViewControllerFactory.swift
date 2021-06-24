@@ -68,7 +68,7 @@ extension BartenderAppDependencies: MainViewControllerFactory {
     func makeDataSource() -> MainDataSource {
     
         let remoteLoader = RemoteCocktailsLoader(service: makeCocktailsApiService())
-        let localLoader = LocalCocktailsLoader()
+        let localLoader = LocalCocktailsLoader(store: getDrinkStore(), currentDate: { Date() })
         let compositeFallbackLoader = CompositeFallbackCocktailsLoader(remote: remoteLoader, local: localLoader)
         
         //let viewModel = MainViewModel(loader: compositeFallbackLoader)

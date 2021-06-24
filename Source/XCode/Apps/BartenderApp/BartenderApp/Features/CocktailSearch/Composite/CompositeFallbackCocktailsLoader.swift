@@ -10,9 +10,9 @@ import Foundation
 public class CompositeFallbackCocktailsLoader: CocktailsLoader {
 
     let remote: CocktailsLoader
-    let local: CocktailsLoader // & CocktailsCache
+    let local: CocktailsLoader & CocktailsCache
     
-    public init(remote: CocktailsLoader, local: CocktailsLoader) {
+    public init(remote: CocktailsLoader, local: CocktailsLoader & CocktailsCache) {
         self.remote = remote
         self.local = local
     }
@@ -25,7 +25,15 @@ public class CompositeFallbackCocktailsLoader: CocktailsLoader {
             case let .success(data):
                 
                 //TODO: save data to local persistent repository
-                
+                self.local.save(data)  { (saveResult) in
+                    switch saveResult {
+                    case .success():
+                        print("fetch has been cached")
+                    case let .failure(error):
+                        print("saving fetch failed")
+                        print(error)
+                    }
+                }
                 print("remote fetch succeded with data: \(data)")
                 completion(.success(data))
                 break

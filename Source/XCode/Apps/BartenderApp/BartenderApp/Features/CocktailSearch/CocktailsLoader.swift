@@ -11,5 +11,5 @@ import CocktailsApiService
 public protocol CocktailsLoader {
     typealias Result = Swift.Result<[Drink], Error>
     
-    func load(query: String, completion: @escaping (Self.Result) -> Void)
+    func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void)
 }

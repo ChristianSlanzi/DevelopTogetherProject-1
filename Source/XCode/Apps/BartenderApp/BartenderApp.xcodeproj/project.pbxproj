@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24715F8B26851D100009278A /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8A26851D100009278A /* NullStore.swift */; };
+		24715F8D268522700009278A /* CocktailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8C268522700009278A /* CocktailsCache.swift */; };
 		2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9826828EE8002B8F0D /* MainViewController.swift */; };
 		2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9B268295CA002B8F0D /* DrinkCellView.swift */; };
 		2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */; };
@@ -76,6 +78,34 @@
 			proxyType = 2;
 			remoteGlobalIDString = 24604914266933D20074E0E7;
 			remoteInfo = CocktailsApiServiceTests;
+		};
+		24715F3D2685141F0009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24715F17268513DE0009278A;
+			remoteInfo = DrinkStore;
+		};
+		24715F3F2685141F0009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24715F20268513DE0009278A;
+			remoteInfo = DrinkStoreTests;
+		};
+		24715F4A268514E50009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24411C772646FD4E00C3CA21;
+			remoteInfo = GenericStore;
+		};
+		24715F4C268514E50009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24411C802646FD4F00C3CA21;
+			remoteInfo = GenericStoreTests;
 		};
 		24BA411926690BE30062F62E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -176,6 +206,10 @@
 /* Begin PBXFileReference section */
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
+		24715F312685141F0009278A /* DrinkStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrinkStore.xcodeproj; path = ../../../Modules/DrinkStore/DrinkStore.xcodeproj; sourceTree = "<group>"; };
+		24715F45268514E50009278A /* GenericStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GenericStore.xcodeproj; path = ../../../Modules/GenericStore/GenericStore.xcodeproj; sourceTree = "<group>"; };
+		24715F8A26851D100009278A /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
+		24715F8C268522700009278A /* CocktailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsCache.swift; sourceTree = "<group>"; };
 		2497CD9826828EE8002B8F0D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2497CD9B268295CA002B8F0D /* DrinkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCellView.swift; sourceTree = "<group>"; };
 		2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBannerSupplementaryView.xib; sourceTree = "<group>"; };
@@ -251,6 +285,8 @@
 		242F4682266931D200839094 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				24715F45268514E50009278A /* GenericStore.xcodeproj */,
+				24715F312685141F0009278A /* DrinkStore.xcodeproj */,
 				24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */,
 				24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */,
 				24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */,
@@ -284,6 +320,32 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24715F322685141F0009278A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24715F3E2685141F0009278A /* DrinkStore.framework */,
+				24715F402685141F0009278A /* DrinkStoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24715F46268514E50009278A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24715F4B268514E50009278A /* GenericStore.framework */,
+				24715F4D268514E50009278A /* GenericStoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24715F7A26851D040009278A /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				24715F8A26851D100009278A /* NullStore.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		2497CD9A268295AF002B8F0D /* Views */ = {
@@ -399,6 +461,7 @@
 		24E468C5266A477E005E9A7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24715F7A26851D040009278A /* Stubs */,
 				24CBF84626848D18002C011B /* Routes */,
 				24EE41762683771400EB07B7 /* Resources */,
 				24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */,
@@ -462,6 +525,7 @@
 			children = (
 				24E468EE266A58FD005E9A7E /* Composite */,
 				24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */,
+				24715F8C268522700009278A /* CocktailsCache.swift */,
 			);
 			path = CocktailSearch;
 			sourceTree = "<group>";
@@ -620,6 +684,14 @@
 					ProjectRef = 24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */;
 				},
 				{
+					ProductGroup = 24715F322685141F0009278A /* Products */;
+					ProjectRef = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 24715F46268514E50009278A /* Products */;
+					ProjectRef = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+				},
+				{
 					ProductGroup = 24EE418F268381D400EB07B7 /* Products */;
 					ProjectRef = 24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */;
 				},
@@ -664,6 +736,34 @@
 			fileType = wrapper.cfbundle;
 			path = CocktailsApiServiceTests.xctest;
 			remoteRef = 2460492E266933E50074E0E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F3E2685141F0009278A /* DrinkStore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DrinkStore.framework;
+			remoteRef = 24715F3D2685141F0009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F402685141F0009278A /* DrinkStoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DrinkStoreTests.xctest;
+			remoteRef = 24715F3F2685141F0009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F4B268514E50009278A /* GenericStore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GenericStore.framework;
+			remoteRef = 24715F4A268514E50009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F4D268514E50009278A /* GenericStoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GenericStoreTests.xctest;
+			remoteRef = 24715F4C268514E50009278A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		24CBF82C26848C3B002C011B /* CommonRouting.framework */ = {
@@ -777,6 +877,8 @@
 				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
 				2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */,
 				24CBF84E26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift in Sources */,
+				24715F8D268522700009278A /* CocktailsCache.swift in Sources */,
+				24715F8B26851D100009278A /* NullStore.swift in Sources */,
 				2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 				24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */,
