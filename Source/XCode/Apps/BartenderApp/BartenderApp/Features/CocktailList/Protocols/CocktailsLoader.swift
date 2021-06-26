@@ -12,4 +12,5 @@ public protocol CocktailsLoader {
     typealias Result = Swift.Result<[Drink], Error>
     
     func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void)
+    func loadDrinks(withIds: [String], completion: @escaping (CocktailsLoader.Result) -> Void)
 }

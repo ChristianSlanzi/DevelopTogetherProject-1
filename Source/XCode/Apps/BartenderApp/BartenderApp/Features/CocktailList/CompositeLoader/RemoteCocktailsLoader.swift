@@ -15,6 +15,10 @@ public class RemoteCocktailsLoader: CocktailsLoader {
         self.service = service
     }
     
+    public func loadDrinks(withIds: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
+        //TODO
+        completion(.failure(CocktailsApiService.ServiceError.invalidData))
+    }
     public func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void) {
         
         //        service.searchCocktailByName("margarita") { [weak self] result in
