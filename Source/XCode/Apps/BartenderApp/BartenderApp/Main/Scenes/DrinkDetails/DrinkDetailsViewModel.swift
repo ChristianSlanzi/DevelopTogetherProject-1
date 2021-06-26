@@ -14,10 +14,12 @@ class DrinkDetailsViewModel {
     var drink: Drink
     weak var view: DrinkDetailsViewProtocol?
 
+    var drinkManager: CocktailsManaging
     var imageDataLoader: ImageDataLoader
     
-    init(drink: Drink, imageDataLoader: ImageDataLoader) {
+    init(drink: Drink, drinkManager: CocktailsManaging, imageDataLoader: ImageDataLoader) {
         self.drink = drink
+        self.drinkManager = drinkManager
         self.imageDataLoader = imageDataLoader
     }
     
@@ -38,20 +40,20 @@ class DrinkDetailsViewModel {
         view?.setDrinkTitle(drink.name)
         view?.setDrinkDescription(drink.name)
         
-//        drinkManager.isFavorite(with: drink.id) { isFavorite in
-//            DispatchQueue.main.async {
-//                self.view?.updateFavoriteStatus(isFavorite)
-//            }
-//        }
+        drinkManager.isFavorite(with: drink.idDrink) { isFavorite in
+            DispatchQueue.main.async {
+                self.view?.updateFavoriteStatus(isFavorite)
+            }
+        }
     }
     
     public func toggleFavoriteStatus() {
-//        drinkManager.toggleFavorite(by: drink.id, completion: {
-//            self.recipeManager.isFavorite(with: self.recipe.id) { isFavorite in
-//                DispatchQueue.main.async {
-//                    self.view?.updateFavoriteStatus(isFavorite)
-//                }
-//            }
-//        })
+        drinkManager.toggleFavorite(by: drink.idDrink, completion: {
+            self.drinkManager.isFavorite(with: self.drink.idDrink) { isFavorite in
+                DispatchQueue.main.async {
+                    self.view?.updateFavoriteStatus(isFavorite)
+                }
+            }
+        })
     }
 }

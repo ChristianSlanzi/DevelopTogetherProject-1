@@ -78,7 +78,6 @@ class DrinkDetailsViewController: CustomScrollViewController {
         navigationItem.rightBarButtonItem = favoriteButton
     }
     
-    
     override func setupConstraints() {
         super.setupConstraints()
         
@@ -166,6 +165,10 @@ extension DrinkDetailsViewController: DrinkDetailsViewProtocol {
     }
     
     func updateFavoriteStatus(_ isFavorite: Bool) {
-        
+        let tintColor: UIColor = isFavorite ? .red : .black
+        let favoriteImage = UIImage(named: "favorite_icon", in: Bundle(for: Self.self), with: nil)?.withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        let favoriteButton = UIBarButtonItem(image: favoriteImage, style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        //let favoriteButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(favoriteButtonTapped))
+        navigationItem.rightBarButtonItem = favoriteButton
     }
 }

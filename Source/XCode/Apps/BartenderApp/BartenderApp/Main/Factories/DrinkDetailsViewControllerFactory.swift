@@ -15,7 +15,11 @@ protocol DrinkDetailsViewControllerFactory {
 extension BartenderAppDependencies: DrinkDetailsViewControllerFactory {
 
     func createDrinkDetailsViewController(drink: Drink) -> UIViewController  {
-        let viewModel = DrinkDetailsViewModel(drink: drink, imageDataLoader: imageDataLoader)
+        let compositeFallbackLoader = makeCompositeDrinkLoader()
+        let drinkManager = CocktailsManager(store: getFavoriteDrinkStore(), cocktailsLoader: compositeFallbackLoader) {
+            Date()
+        }
+        let viewModel = DrinkDetailsViewModel(drink: drink, drinkManager: drinkManager, imageDataLoader: imageDataLoader)
         let viewController = DrinkDetailsViewController(viewModel: viewModel)
         viewModel.view = viewController
         return viewController

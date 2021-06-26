@@ -91,4 +91,7 @@ class BartenderAppDependencies: AppDependencies {
     internal func getDrinkStore() -> DrinkStore {
         return drinkStore
     }
+    internal func getFavoriteDrinkStore() -> FavoriteDrinkStore {
+        return favoriteDrinkStore
+    }
 }
