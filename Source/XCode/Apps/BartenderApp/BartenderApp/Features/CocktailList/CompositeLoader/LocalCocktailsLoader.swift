@@ -90,12 +90,12 @@ extension LocalCocktailsLoader: CocktailsCache {
 
 private extension Array where Element == Drink {
     func toLocal() -> [LocalDrink] {
-        return map { LocalDrink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource) }
+        return map { LocalDrink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource, strInstructions: $0.strInstructions, ingredients: $0.ingredients) }
     }
 }
 
 private extension Array where Element == LocalDrink {
     func toModels() -> [Drink] {
-        return map { Drink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource) }
+        return map { Drink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource, strInstructions: $0.strInstructions, ingredients: $0.ingredients) }
     }
 }

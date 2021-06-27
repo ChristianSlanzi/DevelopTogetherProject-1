@@ -13,12 +13,16 @@ public class Drink: Equatable {
     var strDrink: String
     var strDrinkThumb: String
     var strImageSource: String?
+    var strInstructions: String
+    var ingredients: [String]
     
-    internal init(idDrink: String, strDrink: String, strDrinkThumb: String, strImageSource: String? = nil) {
+    internal init(idDrink: String, strDrink: String, strDrinkThumb: String, strImageSource: String? = nil, strInstructions: String, ingredients: [String]) {
         self.idDrink = idDrink
         self.strDrink = strDrink
         self.strDrinkThumb = strDrinkThumb
         self.strImageSource = strImageSource
+        self.strInstructions = strInstructions
+        self.ingredients = ingredients
     }
     
     public var name: String {

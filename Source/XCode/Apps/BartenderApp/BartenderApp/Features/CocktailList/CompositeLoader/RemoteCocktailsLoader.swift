@@ -27,13 +27,15 @@ public class RemoteCocktailsLoader: CocktailsLoader {
         //            print(result)
         //        }
                 
-        service.searchCocktailsByFirstLetter("m") { [weak self] result in
+        //service.searchCocktailsByFirstLetter(" ") { [weak self] result in
+        service.searchCocktailByName(query) { [weak self] result in
             guard let self = self else { return }
             
             switch(result) {
             case let .success(data):
                 completion(.success(data.drinks.map({ (dto) in
-                    Drink(idDrink: dto.idDrink, strDrink: dto.strDrink, strDrinkThumb: dto.strDrinkThumb, strImageSource: dto.strImageSource)
+                    
+                    return Drink(idDrink: dto.idDrink, strDrink: dto.strDrink, strDrinkThumb: dto.strDrinkThumb, strImageSource: dto.strImageSource, strInstructions: dto.strInstructions, ingredients: dto.ingredients)
                 })))
 
             case let .failure(error):

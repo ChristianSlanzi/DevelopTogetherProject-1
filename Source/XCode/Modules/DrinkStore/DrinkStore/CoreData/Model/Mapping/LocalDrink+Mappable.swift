@@ -23,7 +23,7 @@ extension LocalDrink: MappableProtocol {
     
     public static func mapFromPersistenceObject(_ object: CoreDataDrink) -> LocalDrink {
         return LocalDrink(idDrink: object.idDrink ?? "", strDrink: object.strDrink ?? "", strDrinkThumb: object.strDrinkThumb ?? "",
-                          strImageSource: object.strImageSource)
+                          strImageSource: object.strImageSource, strInstructions: "TODO", ingredients: ["TODO"])
     }
     
 }
