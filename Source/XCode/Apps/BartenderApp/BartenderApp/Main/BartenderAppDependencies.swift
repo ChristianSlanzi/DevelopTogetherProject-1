@@ -11,6 +11,7 @@ import CocktailsApiService
 import CoreData
 import GenericStore
 import DrinkStore
+import CommonUI
 
 class BartenderAppDependencies: AppDependencies {
     
@@ -93,5 +94,16 @@ class BartenderAppDependencies: AppDependencies {
     }
     internal func getFavoriteDrinkStore() -> FavoriteDrinkStore {
         return favoriteDrinkStore
+    }
+    internal func makeFavoriteDataSource() -> CustomDataSource<Drink> {
+        return FavoriteDataSource(loader: getDrinkManager())
+    }
+    internal func getDrinkManager() -> CocktailsManaging {
+        let compositeFallbackLoader = makeCompositeDrinkLoader()
+        let drinkManager = CocktailsManager(store: getFavoriteDrinkStore(), cocktailsLoader: compositeFallbackLoader) {
+            Date()
+        }
+        return drinkManager
+        
     }
 }

@@ -7,7 +7,7 @@
 
 import CommonUI
 
-class MainDataSource: CustomDataSource<Drink> {
+class MainDataSource: CustomDataSource<Drink>, ViewModelProtocol {
     
     weak var view: ViewControllerProtocol?
     
@@ -16,10 +16,10 @@ class MainDataSource: CustomDataSource<Drink> {
     init(loader: CocktailsLoader) {
         self.loader = loader
         super.init(sections: [], sectionStyle: .single)
-        didLoad()
+        reloadData()
     }
     
-    func didLoad() {
+    override func reloadData() {
                 
         loader.load(query: "m") { (result) in
             print(result)

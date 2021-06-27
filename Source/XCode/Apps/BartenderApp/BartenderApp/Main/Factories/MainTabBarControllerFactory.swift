@@ -24,7 +24,7 @@ extension BartenderAppDependencies: MainTabBarControllerFactory {
 extension BartenderAppDependencies {
     
     func makeMainTab() -> UIViewController {
-        let viewController = makeMainViewController()
+        let viewController = makeMainViewController(dataSource: makeDataSource())
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.tabBarItem = Tabs.main.item
         return navigation
@@ -38,7 +38,8 @@ extension BartenderAppDependencies {
     }
     
     func makeFavoritesTab() -> UIViewController {
-        let viewController = UIViewController()
+        //let viewController = UIViewController()
+        let viewController = makeMainViewController(dataSource: makeFavoriteDataSource())
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.tabBarItem = Tabs.favorites.item
         return navigation

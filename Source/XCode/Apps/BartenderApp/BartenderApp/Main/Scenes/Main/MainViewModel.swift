@@ -10,8 +10,12 @@ struct DrinkViewModel {
     var thumbnail: String
     var imageSource: String?
 }
+
+protocol ViewModelProtocol {
+    var view: ViewControllerProtocol? { get set }
+}
     
-final class MainViewModel {
+final class MainViewModel: ViewModelProtocol {
     
     weak var view: ViewControllerProtocol?
 

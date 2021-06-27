@@ -14,6 +14,8 @@
 		24715F90268530C50009278A /* DrinkStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24715F3E2685141F0009278A /* DrinkStore.framework */; };
 		24715F9B268537590009278A /* CocktailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F9A268537590009278A /* CocktailsManager.swift */; };
 		24715F9D268538DC0009278A /* FavoriteDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F9C268538DC0009278A /* FavoriteDrink.swift */; };
+		2496684F268791E000415255 /* FavoritesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */; };
+		24966851268798D400415255 /* FavoriteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24966850268798D400415255 /* FavoriteDataSource.swift */; };
 		2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9826828EE8002B8F0D /* MainViewController.swift */; };
 		2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9B268295CA002B8F0D /* DrinkCellView.swift */; };
 		2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */; };
@@ -215,6 +217,8 @@
 		24715F8C268522700009278A /* CocktailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsCache.swift; sourceTree = "<group>"; };
 		24715F9A268537590009278A /* CocktailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsManager.swift; sourceTree = "<group>"; };
 		24715F9C268538DC0009278A /* FavoriteDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDrink.swift; sourceTree = "<group>"; };
+		2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerFactory.swift; sourceTree = "<group>"; };
+		24966850268798D400415255 /* FavoriteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataSource.swift; sourceTree = "<group>"; };
 		2497CD9826828EE8002B8F0D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2497CD9B268295CA002B8F0D /* DrinkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCellView.swift; sourceTree = "<group>"; };
 		2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBannerSupplementaryView.xib; sourceTree = "<group>"; };
@@ -363,6 +367,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		2496683E268791AF00415255 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				24966850268798D400415255 /* FavoriteDataSource.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		2497CD9A268295AF002B8F0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +513,7 @@
 				24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */,
 				24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */,
 				24CBF84D26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift */,
+				2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -508,6 +521,7 @@
 		24E468DA266A51CC005E9A7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2496683E268791AF00415255 /* Favorites */,
 				24B7FDE52684B5C200E4ED14 /* DrinkDetails */,
 				24E468DB266A51FB005E9A7E /* Main */,
 			);
@@ -892,9 +906,11 @@
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,
 				24B7FDF42684B64800E4ED14 /* DrinkDetailsViewModel.swift in Sources */,
 				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
+				2496684F268791E000415255 /* FavoritesViewControllerFactory.swift in Sources */,
 				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
 				2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */,
 				24CBF84E26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift in Sources */,
+				24966851268798D400415255 /* FavoriteDataSource.swift in Sources */,
 				24715F8D268522700009278A /* CocktailsCache.swift in Sources */,
 				24715F8B26851D100009278A /* NullStore.swift in Sources */,
 				2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */,

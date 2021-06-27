@@ -7,10 +7,14 @@
 
 import UIKit
 
+public protocol DataSourceProtocol {
+    func reloadData()
+}
+
 /// Displays a list of items in a collection view.
 open class BaseCollectionViewController: UICollectionViewController {
     private let layout: UICollectionViewLayout
-    private let dataSource: UICollectionViewDataSource
+    private let dataSource: UICollectionViewDataSource & DataSourceProtocol
       
     // MARK: - NSCoding
     required public init?(coder: NSCoder) {
@@ -20,16 +24,21 @@ open class BaseCollectionViewController: UICollectionViewController {
     // MARK: - UIViewController
     
     public override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .white
         collectionView.backgroundColor = .white
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = dataSource
-        collectionView.reloadData()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSource.reloadData()
     }
     
     // MARK: - Init
     
-    public init(collectionViewLayout: UICollectionViewLayout, dataSource: UICollectionViewDataSource) {
+    public init(collectionViewLayout: UICollectionViewLayout, dataSource: UICollectionViewDataSource & DataSourceProtocol) {
         self.layout = collectionViewLayout
         self.dataSource = dataSource
         super.init(collectionViewLayout: collectionViewLayout)

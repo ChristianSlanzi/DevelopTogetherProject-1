@@ -9,17 +9,14 @@ import CommonUI
 import UIKit
 
 protocol DrinkDetailsViewControllerFactory {
-    func makeMainViewController() -> UIViewController
+    func createDrinkDetailsViewController(drink: Drink) -> UIViewController
 }
 
 extension BartenderAppDependencies: DrinkDetailsViewControllerFactory {
 
     func createDrinkDetailsViewController(drink: Drink) -> UIViewController  {
-        let compositeFallbackLoader = makeCompositeDrinkLoader()
-        let drinkManager = CocktailsManager(store: getFavoriteDrinkStore(), cocktailsLoader: compositeFallbackLoader) {
-            Date()
-        }
-        let viewModel = DrinkDetailsViewModel(drink: drink, drinkManager: drinkManager, imageDataLoader: imageDataLoader)
+        
+        let viewModel = DrinkDetailsViewModel(drink: drink, drinkManager: getDrinkManager(), imageDataLoader: imageDataLoader)
         let viewController = DrinkDetailsViewController(viewModel: viewModel)
         viewModel.view = viewController
         return viewController

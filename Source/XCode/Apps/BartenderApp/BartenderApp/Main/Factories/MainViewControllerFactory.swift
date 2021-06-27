@@ -10,7 +10,7 @@ import CommonUI
 import CommonRouting
 
 protocol MainViewControllerFactory {
-    func makeMainViewController() -> UIViewController
+    func makeMainViewController(dataSource: CustomDataSource<Drink>) -> UIViewController
 }
 
 extension BartenderAppDependencies: MainViewControllerFactory {
@@ -18,7 +18,7 @@ extension BartenderAppDependencies: MainViewControllerFactory {
     
     typealias CollectionViewAdapter = Adapter<Drink, DrinkCellView, HeaderSupplementaryView, NewBannerSupplementaryView, NewBannerSupplementaryView>
     
-    func makeMainViewController() -> UIViewController {
+    func makeMainViewController(dataSource: CustomDataSource<Drink>) -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let layout = EnvironmentBasedLayoutBuilder().makeLayout(itemsPerRow: 1, groupHeightDimension: .absolute(200))//.fractionalWidth(fraction)))
         
@@ -48,11 +48,11 @@ extension BartenderAppDependencies: MainViewControllerFactory {
             router.showDrinkDetails(model)
         }
         
-        adapter.dataSource = makeDataSource()
+        adapter.dataSource = dataSource//makeDataSource()
         
         let viewController = MainViewController(collectionViewLayout: layout, dataSource: adapter)
         
-        let viewModel = adapter.dataSource as! MainDataSource
+        var viewModel = adapter.dataSource as! ViewModelProtocol
         viewModel.view = viewController
         
         viewController.registerCells(type: DrinkCellView.self)
