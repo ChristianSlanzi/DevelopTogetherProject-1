@@ -21,6 +21,11 @@ public final class LocalCocktailsLoader {
 }
 
 extension LocalCocktailsLoader: CocktailsLoader {
+    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (Result<[Drink], Error>) -> Void) {
+        //TODO
+        load(query: String(letter), completion: completion)
+    }
+    
     public func loadDrinks(withIds ids: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
         //TODO
         

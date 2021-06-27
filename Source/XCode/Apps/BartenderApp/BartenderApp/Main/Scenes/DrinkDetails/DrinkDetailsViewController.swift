@@ -37,7 +37,11 @@ class DrinkDetailsViewController: CustomScrollViewController {
     
     //separatorView
     
-    let descriptionLabel = DefaultLabel(title: "description")
+    //let descriptionLabel = DefaultLabel(title: "description")
+    let instructionsView = InstructionsView(frame: .zero)
+    
+    //IngredientsView
+    let ingredientsView = IngredientsView(frame: .zero)
     
     // MARK: - Init
     
@@ -65,10 +69,11 @@ class DrinkDetailsViewController: CustomScrollViewController {
         
         addToContentView(itemImageView,
                          titleLabel,
-                         descriptionLabel)
+                         instructionsView,
+                         ingredientsView)
 //                        ,
-//                         cookingTimeView,
-//                         ingredientsView)
+//                         cookingTimeView
+//                         )
         
         viewModel.viewDidLoad()
         
@@ -107,9 +112,9 @@ class DrinkDetailsViewController: CustomScrollViewController {
         ])
         
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
-            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            descriptionLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            instructionsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            instructionsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            instructionsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
         ])
         
 //        NSLayoutConstraint.activate([
@@ -119,13 +124,14 @@ class DrinkDetailsViewController: CustomScrollViewController {
 //            cookingTimeView.heightAnchor.constraint(equalToConstant: 30)
 //        ])
 //
-//        NSLayoutConstraint.activate([
-//            ingredientsView.topAnchor.constraint(equalTo: cookingTimeView.bottomAnchor, constant: topPadding),
-//            ingredientsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            ingredientsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-//        ])
         
-        setContentViewBottom(view: descriptionLabel)
+        NSLayoutConstraint.activate([
+            ingredientsView.topAnchor.constraint(equalTo: instructionsView.bottomAnchor, constant: topPadding),
+            ingredientsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ingredientsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        ])
+        
+        setContentViewBottom(view: ingredientsView)
         
     }
     
@@ -149,7 +155,8 @@ extension DrinkDetailsViewController: DrinkDetailsViewProtocol {
     }
     
     func setDrinkDescription(_ text: String) {
-        descriptionLabel.attributedText = text.htmlToAttributedString
+        instructionsView.setItems([text])
+        //descriptionLabel.attributedText = text.htmlToAttributedString
     }
     
     func setDrinkPreparationTime(_ text: String) {
@@ -161,7 +168,7 @@ extension DrinkDetailsViewController: DrinkDetailsViewProtocol {
     }
     
     func setDrinkIngredients(_ titles: [String]) {
-        
+        ingredientsView.setItems(titles)
     }
     
     func updateFavoriteStatus(_ isFavorite: Bool) {

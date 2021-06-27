@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24231F032688D4AC0086662C /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F022688D4AC0086662C /* IngredientsView.swift */; };
+		24231F052688D5FC0086662C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F042688D5FC0086662C /* InstructionsView.swift */; };
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24715F8B26851D100009278A /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8A26851D100009278A /* NullStore.swift */; };
@@ -209,6 +211,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24231F022688D4AC0086662C /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		24231F042688D5FC0086662C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
 		24715F312685141F0009278A /* DrinkStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrinkStore.xcodeproj; path = ../../../Modules/DrinkStore/DrinkStore.xcodeproj; sourceTree = "<group>"; };
@@ -292,6 +296,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24231EF22688D4700086662C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24231F022688D4AC0086662C /* IngredientsView.swift */,
+				24231F042688D5FC0086662C /* InstructionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		242F4682266931D200839094 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +420,7 @@
 		24B7FDE52684B5C200E4ED14 /* DrinkDetails */ = {
 			isa = PBXGroup;
 			children = (
+				24231EF22688D4700086662C /* Views */,
 				24B7FDF12684B5E300E4ED14 /* DrinkDetailsViewController.swift */,
 				24B7FDF32684B64800E4ED14 /* DrinkDetailsViewModel.swift */,
 			);
@@ -890,6 +904,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */,
+				24231F032688D4AC0086662C /* IngredientsView.swift in Sources */,
 				2497CDB92682A20F002B8F0D /* Drink.swift in Sources */,
 				2497CDA62682963E002B8F0D /* NewBannerSupplementaryView.swift in Sources */,
 				2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */,
@@ -901,6 +916,7 @@
 				24715F9D268538DC0009278A /* FavoriteDrink.swift in Sources */,
 				24715F9B268537590009278A /* CocktailsManager.swift in Sources */,
 				24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */,
+				24231F052688D5FC0086662C /* InstructionsView.swift in Sources */,
 				24BA410A26690BE10062F62E /* ViewController.swift in Sources */,
 				24CBF84826848D3C002C011B /* DrinkRoute.swift in Sources */,
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,

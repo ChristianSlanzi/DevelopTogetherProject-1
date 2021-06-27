@@ -71,8 +71,17 @@ class BartenderAppDependencies: AppDependencies {
         }
     }()
     
+    private lazy var cocktailsManager: CocktailsManaging = {
+        getDrinkManager()
+    }()
+    
     override func start() {
         super.start()
+        
+        //getDrinkManager().load(query: " ") { _ in }
+        for char in "abcdefghijklmnopqrstuvwxyz" {
+            cocktailsManager.loadDrinksByFirstLetter(char) { _ in }
+        }
         
         imageDataLoader = makeImageDataLoader()
         setRootViewController(makeMainTabBarController())
@@ -96,7 +105,7 @@ class BartenderAppDependencies: AppDependencies {
         return favoriteDrinkStore
     }
     internal func makeFavoriteDataSource() -> CustomDataSource<Drink> {
-        return FavoriteDataSource(loader: getDrinkManager())
+        return FavoriteDataSource(loader: cocktailsManager)
     }
     internal func getDrinkManager() -> CocktailsManaging {
         let compositeFallbackLoader = makeCompositeDrinkLoader()

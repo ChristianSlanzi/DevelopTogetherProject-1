@@ -45,4 +45,22 @@ public class RemoteCocktailsLoader: CocktailsLoader {
         }
     }
     
+    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (Result<[Drink], Error>) -> Void) {
+        service.searchCocktailsByFirstLetter(letter) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch(result) {
+            case let .success(data):
+                completion(.success(data.drinks.map({ (dto) in
+                    
+                    return Drink(idDrink: dto.idDrink, strDrink: dto.strDrink, strDrinkThumb: dto.strDrinkThumb, strImageSource: dto.strImageSource, strInstructions: dto.strInstructions, ingredients: dto.ingredients)
+                })))
+
+            case let .failure(error):
+                completion(.failure(error))
+            break
+            }
+        }
+    }
+    
 }
