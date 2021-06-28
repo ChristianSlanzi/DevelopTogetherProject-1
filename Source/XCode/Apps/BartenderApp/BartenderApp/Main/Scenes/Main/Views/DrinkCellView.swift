@@ -10,10 +10,9 @@ import CommonUI
 
 class DrinkCellView: UICollectionViewCell {
     
-    let imageView: DefaultImageView = {
-        let view = DefaultImageView(urlPath: nil, fallback: "drink-placeholder")
-        return view
-    }()
+    let imageView = DefaultImageViewBuilder()
+        .withAppStyle()//.default
+        .build()
     
     let title: UILabel = {
         let label = UILabel()
@@ -49,7 +48,7 @@ class DrinkCellView: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leftAnchor.constraint(equalTo: leftAnchor),
             imageView.rightAnchor.constraint(equalTo: rightAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
         ])
         
         NSLayoutConstraint.activate([

@@ -8,6 +8,11 @@
 import UIKit
 
 public class DefaultImageView: UIImageView {
+    public required init(mode: UIView.ContentMode = .scaleAspectFill) {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+        contentMode = mode
+    }
     public required init(urlPath: String?, fallback: String, mode: UIView.ContentMode = .scaleAspectFill) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false

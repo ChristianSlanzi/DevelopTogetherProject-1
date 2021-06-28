@@ -10,12 +10,19 @@ import UIKit
 public struct AppStyle {
     
     var defaultButtonStyle = DefaultButtonStyle()
+    var defaultImageViewStyle = DefaultImageViewStyle()
     
     public struct DefaultButtonStyle {
         var textColor: UIColor = .white
         var backgroundColor: UIColor = .red
         var backgroundImage: UIImage? = nil
         var cornerRadius: CGFloat = 5.0
+    }
+    
+    public struct DefaultImageViewStyle {
+        var backgroundColor: UIColor = .white
+        var cornerRadius: CGFloat = 10.0
+        var contentMode: UIView.ContentMode = .scaleAspectFill
     }
 }
 

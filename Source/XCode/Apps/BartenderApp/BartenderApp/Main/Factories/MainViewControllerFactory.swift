@@ -25,7 +25,7 @@ extension BartenderAppDependencies: MainViewControllerFactory {
         let adapter = CollectionViewAdapter()
         adapter.configureCell = { model, cell in
             //TODO
-            cell.backgroundColor = .lightGray//self.randomColor()
+            cell.backgroundColor = .white//.lightGray//self.randomColor()
             cell.title.textColor = .black
             cell.title.text = model.name
             

@@ -45,9 +45,7 @@ class InstructionsView: CustomView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         super.setupViews()
         titleLabel.font = .boldSystemFont(ofSize: 18)
-//        addToGroceryButton.backgroundColor = .red
-//        addToGroceryButton.setTitleColor(.white, for: .normal)
-//        addSubviews(titleLabel, stackView, addToGroceryButton)
+        addSubviews(titleLabel, stackView)
         stackView.axis = .vertical
     }
     

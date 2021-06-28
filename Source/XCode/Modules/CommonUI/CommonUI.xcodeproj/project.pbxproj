@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		241FD944266E143C002C0F00 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FD943266E143C002C0F00 /* CheckBox.swift */; };
+		24231F3B268935500086662C /* DefaultImageViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F3A268935500086662C /* DefaultImageViewBuilder.swift */; };
 		24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */; };
 		24EA75EF26820D72009DBB82 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E326820D72009DBB82 /* BaseCollectionViewController.swift */; };
 		24EA75F026820D72009DBB82 /* CollectionViewCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA75E526820D72009DBB82 /* CollectionViewCellAdapter.swift */; };
@@ -106,6 +107,7 @@
 
 /* Begin PBXFileReference section */
 		241FD943266E143C002C0F00 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		24231F3A268935500086662C /* DefaultImageViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageViewBuilder.swift; sourceTree = "<group>"; };
 		24A21DC0266AB2B400F3F23A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		24EA75E326820D72009DBB82 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		24EA75E526820D72009DBB82 /* CollectionViewCellAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellAdapter.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				24EE414E268368B300EB07B7 /* DefaultButtonBuilder.swift */,
+				24231F3A268935500086662C /* DefaultImageViewBuilder.swift */,
 			);
 			path = UIBuilder;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				24FE2049265A62D400724646 /* ContainerController.swift in Sources */,
 				24FE2038265A62D400724646 /* UILabel+ColorUpdatable.swift in Sources */,
 				24FE202E265A62D400724646 /* NavigationBar.swift in Sources */,
+				24231F3B268935500086662C /* DefaultImageViewBuilder.swift in Sources */,
 				24A21DC1266AB2B400F3F23A /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
