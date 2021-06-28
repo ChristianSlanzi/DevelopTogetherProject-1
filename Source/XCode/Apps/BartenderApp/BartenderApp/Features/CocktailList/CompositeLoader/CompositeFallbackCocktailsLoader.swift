@@ -17,7 +17,7 @@ public class CompositeFallbackCocktailsLoader: CocktailsLoader {
         self.local = local
     }
     
-    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         print("fetch drinks first letter: \(letter) remotely")
         remote.loadDrinksByFirstLetter(letter) { (result) in
             switch result {
@@ -52,7 +52,7 @@ public class CompositeFallbackCocktailsLoader: CocktailsLoader {
         }
     }
     
-    public func loadDrinks(withIds ids: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinks(withIds ids: [String], completion: @escaping CocktailsLoader.Result) {
         print("fetch drinks ids: \(ids.joined(separator: ",")) remotely")
         remote.loadDrinks(withIds: ids) { (result) in
             switch result {
@@ -88,7 +88,7 @@ public class CompositeFallbackCocktailsLoader: CocktailsLoader {
         }
     }
     
-    public func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void) {
+    public func load(query: String, completion: @escaping CocktailsLoader.Result) {
         self.local.load(query: query) { (localResult) in
             switch(localResult) {
             case let .success(data):

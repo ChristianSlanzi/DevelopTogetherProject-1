@@ -29,6 +29,7 @@ extension BartenderAppDependencies: MainViewControllerFactory {
             cell.title.textColor = .black
             cell.title.text = model.name
             
+            cell.imageView.image = UIImage(named: "drink-placeholder")
             if let url = URL(string: model.strDrinkThumb) {
                 _ = self.imageDataLoader.loadImageData(from:  url) { result in
                     switch result {

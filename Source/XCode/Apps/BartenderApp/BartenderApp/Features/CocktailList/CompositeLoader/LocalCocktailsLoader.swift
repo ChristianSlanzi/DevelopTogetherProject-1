@@ -21,12 +21,12 @@ public final class LocalCocktailsLoader {
 }
 
 extension LocalCocktailsLoader: CocktailsLoader {
-    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         //TODO
         load(query: String(letter), completion: completion)
     }
     
-    public func loadDrinks(withIds ids: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinks(withIds ids: [String], completion: @escaping CocktailsLoader.Result) {
         //TODO
         
         var predArray = [NSPredicate]()
@@ -41,12 +41,12 @@ extension LocalCocktailsLoader: CocktailsLoader {
         }
     }
     
-    public func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void) {
+    public func load(query: String, completion: @escaping CocktailsLoader.Result) {
         let predicate = NSPredicate(format: "strDrink CONTAINS[c] '\(query)'")
         loadDrinks(predicate: predicate, completion: completion)
     }
     
-    private func loadDrinks(predicate: NSPredicate, completion: @escaping (CocktailsLoader.Result) -> Void) {
+    private func loadDrinks(predicate: NSPredicate, completion: @escaping CocktailsLoader.Result) {
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
             key: #keyPath(CoreDataDrink.idDrink),
             ascending: true)
@@ -95,12 +95,30 @@ extension LocalCocktailsLoader: CocktailsCache {
 
 private extension Array where Element == Drink {
     func toLocal() -> [LocalDrink] {
-        return map { LocalDrink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource, strInstructions: $0.strInstructions, ingredients: $0.ingredients) }
+        return map { LocalDrink(idDrink: $0.idDrink,
+                                strDrink: $0.strDrink,
+                                strDrinkThumb: $0.strDrinkThumb,
+                                strImageSource: $0.strImageSource,
+                                strInstructions: $0.strInstructions,
+                                ingredients: $0.ingredients,
+                                strCategory: $0.strCategory,
+                                strIBA: $0.strIBA,
+                                strAlcoholic: $0.strAlcoholic,
+                                strGlass: $0.strGlass) }
     }
 }
 
 private extension Array where Element == LocalDrink {
     func toModels() -> [Drink] {
-        return map { Drink(idDrink: $0.idDrink, strDrink: $0.strDrink, strDrinkThumb: $0.strDrinkThumb, strImageSource: $0.strImageSource, strInstructions: $0.strInstructions, ingredients: $0.ingredients) }
+        return map { Drink(idDrink: $0.idDrink,
+                           strDrink: $0.strDrink,
+                           strDrinkThumb: $0.strDrinkThumb,
+                           strImageSource: $0.strImageSource,
+                           strInstructions: $0.strInstructions,
+                           ingredients: $0.ingredients,
+                           strCategory: $0.strCategory,
+                           strIBA: $0.strIBA,
+                           strAlcoholic: $0.strAlcoholic,
+                           strGlass: $0.strGlass) }
     }
 }

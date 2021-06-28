@@ -9,9 +9,9 @@ import Foundation
 import CocktailsApiService
 
 public protocol CocktailsLoader {
-    typealias Result = Swift.Result<[Drink], Error>
+    typealias Result = (Swift.Result<[Drink], Error>) -> Void
     
-    func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void)
-    func loadDrinks(withIds: [String], completion: @escaping (CocktailsLoader.Result) -> Void)
-    func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (CocktailsLoader.Result) -> Void)
+    func load(query: String, completion: @escaping CocktailsLoader.Result)
+    func loadDrinks(withIds: [String], completion: @escaping CocktailsLoader.Result)
+    func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result)
 }

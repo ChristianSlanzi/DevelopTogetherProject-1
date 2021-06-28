@@ -34,14 +34,14 @@ public final class CocktailsManager: CocktailsManaging {
     }
     
     // drinks
-    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         cocktailsLoader.loadDrinksByFirstLetter(letter, completion: completion)
     }
     
-    public func loadDrinks(withIds ids: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinks(withIds ids: [String], completion: @escaping CocktailsLoader.Result) {
         cocktailsLoader.loadDrinks(withIds: ids, completion: completion)
     }
-    public func load(query: String, completion: @escaping (CocktailsLoader.Result) -> Void) {
+    public func load(query: String, completion: @escaping CocktailsLoader.Result) {
         cocktailsLoader.load(query: query, completion: completion)
     }
     

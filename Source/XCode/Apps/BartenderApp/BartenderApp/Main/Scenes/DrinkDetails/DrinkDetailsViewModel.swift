@@ -13,6 +13,7 @@ class DrinkDetailsViewModel {
     
     var drink: Drink
     weak var view: DrinkDetailsViewProtocol?
+    var placeholder: Data?
 
     var drinkManager: CocktailsManaging
     var imageDataLoader: ImageDataLoader
@@ -25,15 +26,15 @@ class DrinkDetailsViewModel {
     
     func viewDidLoad() {
         
-        //view?.setRecipeImage(recipe.image)
+        if let placeholder = self.placeholder {
+            self.view?.setDrinkImage(placeholder)
+        }
         _ = imageDataLoader.loadImageData(from: URL(string: drink.strDrinkThumb)!) { result in
             switch result {
             case let .success(data):
                 self.view?.setDrinkImage(data)
-                break
-            case let .failure(error):
-                print(error)
-                break
+            case .failure(_):
+               break
             }
         }
         

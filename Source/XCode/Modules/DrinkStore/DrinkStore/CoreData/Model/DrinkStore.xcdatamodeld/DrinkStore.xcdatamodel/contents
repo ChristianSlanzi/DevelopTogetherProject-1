@@ -3,8 +3,12 @@
     <entity name="CoreDataDrink" representedClassName="CoreDataDrink" syncable="YES" codeGenerationType="class">
         <attribute name="idDrink" optional="YES" attributeType="String"/>
         <attribute name="ingredients" optional="YES" attributeType="Binary"/>
+        <attribute name="strAlcoholic" optional="YES" attributeType="String"/>
+        <attribute name="strCategory" optional="YES" attributeType="String"/>
         <attribute name="strDrink" optional="YES" attributeType="String"/>
         <attribute name="strDrinkThumb" optional="YES" attributeType="String"/>
+        <attribute name="strGlass" optional="YES" attributeType="String"/>
+        <attribute name="strIBA" optional="YES" attributeType="String"/>
         <attribute name="strImageSource" optional="YES" attributeType="String"/>
         <attribute name="strInstructions" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
@@ -22,7 +26,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CoreDataDrink" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="CoreDataDrink" positionX="-63" positionY="-18" width="128" height="14"/>
         <element name="CoreDataFavoriteDrink" positionX="-54" positionY="18" width="128" height="44"/>
     </elements>
 </model>

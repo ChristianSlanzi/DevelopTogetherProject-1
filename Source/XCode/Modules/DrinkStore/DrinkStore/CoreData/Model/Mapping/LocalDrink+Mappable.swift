@@ -39,8 +39,16 @@ extension LocalDrink: MappableProtocol {
             print("could not unarchive ingredients array: \(error)")
           }
         }
-        return LocalDrink(idDrink: object.idDrink ?? "", strDrink: object.strDrink ?? "", strDrinkThumb: object.strDrinkThumb ?? "",
-                          strImageSource: object.strImageSource, strInstructions: object.strInstructions ?? "", ingredients: ingredientsArr)
+        return LocalDrink(idDrink: object.idDrink ?? "",
+                          strDrink: object.strDrink ?? "",
+                          strDrinkThumb: object.strDrinkThumb ?? "",
+                          strImageSource: object.strImageSource,
+                          strInstructions: object.strInstructions ?? "",
+                          ingredients: ingredientsArr,
+                          strCategory: object.strCategory ?? "",
+                          strIBA: object.strIBA,
+                          strAlcoholic: object.strAlcoholic ?? "",
+                          strGlass: object.strGlass ?? "")
     }
     
 }
