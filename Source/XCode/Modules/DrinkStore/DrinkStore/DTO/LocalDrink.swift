@@ -9,12 +9,23 @@ import Foundation
 
 public struct LocalDrink: Equatable {
     
+    public struct Ingredient: Equatable {
+        
+        public var name: String
+        public var measure: String
+        
+        public init(name: String, measure: String) {
+            self.name = name
+            self.measure = measure
+        }
+    }
+    
     public var idDrink: String
     public var strDrink: String
     public var strDrinkThumb: String
     public var strImageSource: String?
     public var strInstructions: String
-    public var ingredients: [String]
+    public var ingredients: [Ingredient]
     public var strCategory: String
     public var strIBA: String?
     public var strAlcoholic: String
@@ -25,7 +36,7 @@ public struct LocalDrink: Equatable {
                 strDrinkThumb: String,
                 strImageSource: String?,
                 strInstructions: String,
-                ingredients: [String],
+                ingredients: [Ingredient],
                 strCategory: String,
                 strIBA: String?,
                 strAlcoholic: String,

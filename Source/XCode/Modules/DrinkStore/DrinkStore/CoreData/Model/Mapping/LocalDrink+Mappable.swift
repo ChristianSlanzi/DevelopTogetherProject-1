@@ -22,25 +22,35 @@ extension LocalDrink: MappableProtocol {
         model.strAlcoholic = self.strAlcoholic
         model.strGlass = self.strGlass
         model.strInstructions = self.strInstructions
+        
+        /*
         do {
-            model.ingredients = try NSKeyedArchiver.archivedData(withRootObject: self.ingredients, requiringSecureCoding: true)
+            model.ingredients = try NSKeyedArchiver.archivedData(withRootObject: self.ingredients)//, requiringSecureCoding: true)
         } catch {
             print("failed to archive ingredients array with error: \(error)")
-        }
+        }*/
+        let ingredients = LocalIngredients(ingredients: self.ingredients.map{ LocalIngredient(name: $0.name, measure: $0.measure) })
+        model.setValue(ingredients, forKey: "ingredients")
+    
         return model
     }
     
     public static func mapFromPersistenceObject(_ object: CoreDataDrink) -> LocalDrink {
-        var ingredientsArr: [String] = []
+        var ingredientsArr: [LocalDrink.Ingredient] = []
         if let ingredients = object.ingredients {
-          do {
-            if let dumpArr = try NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: ingredients) as? [String] {
-              dump(dumpArr)
-                ingredientsArr = dumpArr
-            }
-          } catch {
-            print("could not unarchive ingredients array: \(error)")
-          }
+            
+            
+            let localIngredients = object.value(forKey: "ingredients") as! LocalIngredients
+            ingredientsArr = localIngredients.ingredients.map{ LocalDrink.Ingredient(name: $0.name, measure: $0.measure)}
+            
+//          do {
+//            if let dumpArr = try NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: ingredients) as? [LocalDrink.Ingredient] {
+//              dump(dumpArr)
+//                ingredientsArr = dumpArr
+//            }
+//          } catch {
+//            print("could not unarchive ingredients array: \(error)")
+//          }
         }
         return LocalDrink(idDrink: object.idDrink ?? "",
                           strDrink: object.strDrink ?? "",

@@ -44,7 +44,7 @@ class DrinkDetailsViewModel {
         view?.setDrinkGlass(drink.strGlass)
         view?.setDrinkIBA(drink.strIBA)
         view?.setDrinkDescription(drink.strInstructions)
-        view?.setDrinkIngredients(drink.ingredients)
+        view?.setDrinkIngredients(drink.ingredients.map{$0.name + " ( " + $0.measure + ")"})
         
         drinkManager.isFavorite(with: drink.idDrink) { isFavorite in
             DispatchQueue.main.async {

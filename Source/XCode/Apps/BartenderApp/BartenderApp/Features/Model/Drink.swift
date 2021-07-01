@@ -9,12 +9,28 @@ import Foundation
 
 public class Drink: Equatable {
     
+    public class Ingredient: Equatable {
+        
+        var name: String
+        var measure: String
+        
+        internal init(name: String = "", measure: String) {
+            self.name = name
+            self.measure = measure
+        }
+        
+        public static func == (lhs: Drink.Ingredient, rhs: Drink.Ingredient) -> Bool {
+            lhs.name == rhs.name && lhs.measure == rhs.measure
+        }
+    }
+    
+    
     var idDrink: String
     var strDrink: String
     var strDrinkThumb: String
     var strImageSource: String?
     var strInstructions: String
-    var ingredients: [String]
+    var ingredients: [Ingredient]
     var strCategory: String
     var strIBA: String?
     var strAlcoholic: String
@@ -25,7 +41,7 @@ public class Drink: Equatable {
                   strDrinkThumb: String,
                   strImageSource: String? = nil,
                   strInstructions: String,
-                  ingredients: [String],
+                  ingredients: [Ingredient],
                   strCategory: String,
                   strIBA: String?,
                   strAlcoholic: String,

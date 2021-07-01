@@ -56,7 +56,7 @@ public class RemoteCocktailsLoader: CocktailsLoader {
                      strDrinkThumb: dto.strDrinkThumb,
                      strImageSource: dto.strImageSource,
                      strInstructions: dto.strInstructions,
-                     ingredients: dto.ingredients,
+                     ingredients: dto.ingredients.map{Drink.Ingredient(name: $0.0, measure: $0.1)},
                      strCategory: dto.strCategory,
                      strIBA: dto.strIBA,
                      strAlcoholic: dto.strAlcoholic,
