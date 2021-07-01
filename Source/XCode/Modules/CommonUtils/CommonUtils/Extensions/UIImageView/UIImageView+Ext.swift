@@ -21,3 +21,22 @@ public extension UIImageView {
         }
     }
 }
+
+public extension UIImageView {
+    func load(url: URL, fallback: UIImage?) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                        return
+                    }
+                }
+            } else if let image = fallback {
+                DispatchQueue.main.async {
+                    self?.image = image
+                }
+            }
+        }
+    }
+}

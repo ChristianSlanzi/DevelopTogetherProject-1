@@ -12,9 +12,9 @@ public final class Adapter<T,
                            Header: UICollectionReusableView,
                            Footer: UICollectionReusableView,
                            Banner: UICollectionReusableView>: NSObject,
-                                                              UICollectionViewDataSource,
+                                                              UICollectionViewDataSource & DataSourceProtocol,
                                                               UICollectionViewDelegateFlowLayout {
-
+    
     public var dataSource: CustomDataSource<T>!
     public var configureCell: ((T, Cell) -> Void)?
     public var configureHeader: ((CustomDataSource<T>.Section, Header) -> Void)?
@@ -24,6 +24,9 @@ public final class Adapter<T,
     public var cellHeight: CGFloat = 60
     public var numberOfItemsPerRow: CGFloat = 3
     
+    public func reloadData() {
+        dataSource.reloadData()
+    }
     // MARK: - UICollectionViewDataSource
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {

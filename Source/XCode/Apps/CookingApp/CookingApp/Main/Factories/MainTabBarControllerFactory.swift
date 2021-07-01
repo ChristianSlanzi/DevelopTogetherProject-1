@@ -8,6 +8,7 @@
 import UIKit
 import CommonUI
 import RecipeUI
+import CommonRouting
 
 protocol MainTabBarControllerFactory {
     func makeMainTabBarController() -> MainTabBarController

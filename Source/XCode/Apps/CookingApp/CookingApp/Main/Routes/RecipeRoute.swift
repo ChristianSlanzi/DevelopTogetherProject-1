@@ -7,6 +7,7 @@
 
 import Foundation
 import RecipeFeature
+import CommonRouting
 
 protocol RecipeRoute {
     func openRecipe(_ recipe: Recipe)

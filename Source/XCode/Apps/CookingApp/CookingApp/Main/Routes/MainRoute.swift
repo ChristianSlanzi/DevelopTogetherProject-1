@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonRouting
 
 protocol MainRoute {
     func openMain()

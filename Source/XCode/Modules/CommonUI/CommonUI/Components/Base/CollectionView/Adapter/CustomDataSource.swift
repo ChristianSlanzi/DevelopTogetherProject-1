@@ -8,7 +8,10 @@
 import Foundation
 
 /// The data source associated with a list of items.
-open class CustomDataSource<Item>: NSObject {
+open class CustomDataSource<Item>: NSObject, DataSourceProtocol {
+    open func reloadData() {
+        
+    }
     
     /// Represents a section in the data source.
     public struct Section {

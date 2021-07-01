@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24231F032688D4AC0086662C /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F022688D4AC0086662C /* IngredientsView.swift */; };
+		24231F052688D5FC0086662C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F042688D5FC0086662C /* InstructionsView.swift */; };
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24715F8B26851D100009278A /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8A26851D100009278A /* NullStore.swift */; };
+		24715F8D268522700009278A /* CocktailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8C268522700009278A /* CocktailsCache.swift */; };
+		24715F90268530C50009278A /* DrinkStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24715F3E2685141F0009278A /* DrinkStore.framework */; };
+		24715F9B268537590009278A /* CocktailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F9A268537590009278A /* CocktailsManager.swift */; };
+		24715F9D268538DC0009278A /* FavoriteDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F9C268538DC0009278A /* FavoriteDrink.swift */; };
+		2496684F268791E000415255 /* FavoritesViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */; };
+		24966851268798D400415255 /* FavoriteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24966850268798D400415255 /* FavoriteDataSource.swift */; };
 		2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9826828EE8002B8F0D /* MainViewController.swift */; };
 		2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CD9B268295CA002B8F0D /* DrinkCellView.swift */; };
 		2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */; };
@@ -19,6 +28,8 @@
 		2497CDA826829B75002B8F0D /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CDA726829B75002B8F0D /* MainDataSource.swift */; };
 		2497CDB92682A20F002B8F0D /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497CDB82682A20F002B8F0D /* Drink.swift */; };
 		24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */; };
+		24B7FDF22684B5E300E4ED14 /* DrinkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7FDF12684B5E300E4ED14 /* DrinkDetailsViewController.swift */; };
+		24B7FDF42684B64800E4ED14 /* DrinkDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7FDF32684B64800E4ED14 /* DrinkDetailsViewModel.swift */; };
 		24BA410626690BE10062F62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410526690BE10062F62E /* AppDelegate.swift */; };
 		24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410726690BE10062F62E /* SceneDelegate.swift */; };
 		24BA410A26690BE10062F62E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA410926690BE10062F62E /* ViewController.swift */; };
@@ -27,6 +38,10 @@
 		24BA411226690BE30062F62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BA411026690BE30062F62E /* LaunchScreen.storyboard */; };
 		24BA411D26690BE30062F62E /* BartenderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA411C26690BE30062F62E /* BartenderAppTests.swift */; };
 		24BA412826690BE30062F62E /* BartenderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BA412726690BE30062F62E /* BartenderAppUITests.swift */; };
+		24CBF84826848D3C002C011B /* DrinkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CBF84726848D3C002C011B /* DrinkRoute.swift */; };
+		24CBF84926848DEE002C011B /* CommonRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CBF82C26848C3B002C011B /* CommonRouting.framework */; };
+		24CBF84A26848DEE002C011B /* CommonRouting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24CBF82C26848C3B002C011B /* CommonRouting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24CBF84E26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CBF84D26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift */; };
 		24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468CA266A47A1005E9A7E /* AppDependencies.swift */; };
 		24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */; };
 		24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */; };
@@ -37,6 +52,9 @@
 		24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */; };
 		24E469A7266A68E0005E9A7E /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; };
 		24E469A8266A68E0005E9A7E /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E4699C266A6884005E9A7E /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24EE41802683773500EB07B7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EE417F2683773500EB07B7 /* Media.xcassets */; };
+		24EE419E2683821700EB07B7 /* ImageFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE4194268381D400EB07B7 /* ImageFeature.framework */; };
+		24EE419F2683821700EB07B7 /* ImageFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE4194268381D400EB07B7 /* ImageFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +86,34 @@
 			remoteGlobalIDString = 24604914266933D20074E0E7;
 			remoteInfo = CocktailsApiServiceTests;
 		};
+		24715F3D2685141F0009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24715F17268513DE0009278A;
+			remoteInfo = DrinkStore;
+		};
+		24715F3F2685141F0009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24715F20268513DE0009278A;
+			remoteInfo = DrinkStoreTests;
+		};
+		24715F4A268514E50009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24411C772646FD4E00C3CA21;
+			remoteInfo = GenericStore;
+		};
+		24715F4C268514E50009278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24411C802646FD4F00C3CA21;
+			remoteInfo = GenericStoreTests;
+		};
 		24BA411926690BE30062F62E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24BA40FA26690BE10062F62E /* Project object */;
@@ -81,6 +127,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 24BA410126690BE10062F62E;
 			remoteInfo = BartenderApp;
+		};
+		24CBF82B26848C3B002C011B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24CBF80A26848C22002C011B;
+			remoteInfo = CommonRouting;
+		};
+		24CBF82D26848C3B002C011B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24CBF81326848C22002C011B;
+			remoteInfo = CommonRoutingTests;
+		};
+		24CBF84B26848E87002C011B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 24CBF80926848C22002C011B;
+			remoteInfo = CommonRouting;
 		};
 		24E4699B266A6884005E9A7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -110,6 +177,20 @@
 			remoteGlobalIDString = 24FE2065265A63CB00724646;
 			remoteInfo = CommonUtilsTests;
 		};
+		24EE4193268381D400EB07B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82AA267A9B4900B40C56;
+			remoteInfo = ImageFeature;
+		};
+		24EE4195268381D400EB07B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24EE82B3267A9B4900B40C56;
+			remoteInfo = ImageFeatureTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +200,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				24CBF84A26848DEE002C011B /* CommonRouting.framework in Embed Frameworks */,
+				24EE419F2683821700EB07B7 /* ImageFeature.framework in Embed Frameworks */,
 				24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */,
 				24E469A8266A68E0005E9A7E /* CommonUI.framework in Embed Frameworks */,
 			);
@@ -128,8 +211,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24231F022688D4AC0086662C /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		24231F042688D5FC0086662C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
+		24715F312685141F0009278A /* DrinkStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrinkStore.xcodeproj; path = ../../../Modules/DrinkStore/DrinkStore.xcodeproj; sourceTree = "<group>"; };
+		24715F45268514E50009278A /* GenericStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GenericStore.xcodeproj; path = ../../../Modules/GenericStore/GenericStore.xcodeproj; sourceTree = "<group>"; };
+		24715F8A26851D100009278A /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
+		24715F8C268522700009278A /* CocktailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsCache.swift; sourceTree = "<group>"; };
+		24715F9A268537590009278A /* CocktailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsManager.swift; sourceTree = "<group>"; };
+		24715F9C268538DC0009278A /* FavoriteDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDrink.swift; sourceTree = "<group>"; };
+		2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerFactory.swift; sourceTree = "<group>"; };
+		24966850268798D400415255 /* FavoriteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataSource.swift; sourceTree = "<group>"; };
 		2497CD9826828EE8002B8F0D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2497CD9B268295CA002B8F0D /* DrinkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCellView.swift; sourceTree = "<group>"; };
 		2497CD9D2682963E002B8F0D /* NewBannerSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBannerSupplementaryView.xib; sourceTree = "<group>"; };
@@ -140,6 +233,8 @@
 		2497CDA726829B75002B8F0D /* MainDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
 		2497CDB82682A20F002B8F0D /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerFactory.swift; sourceTree = "<group>"; };
+		24B7FDF12684B5E300E4ED14 /* DrinkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewController.swift; sourceTree = "<group>"; };
+		24B7FDF32684B64800E4ED14 /* DrinkDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewModel.swift; sourceTree = "<group>"; };
 		24BA410226690BE10062F62E /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BA410526690BE10062F62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BA410726690BE10062F62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +249,9 @@
 		24BA412326690BE30062F62E /* BartenderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartenderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BA412726690BE30062F62E /* BartenderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppUITests.swift; sourceTree = "<group>"; };
 		24BA412926690BE30062F62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonRouting.xcodeproj; path = ../../../Modules/CommonRouting/CommonRouting.xcodeproj; sourceTree = "<group>"; };
+		24CBF84726848D3C002C011B /* DrinkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRoute.swift; sourceTree = "<group>"; };
+		24CBF84D26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewControllerFactory.swift; sourceTree = "<group>"; };
 		24E468CA266A47A1005E9A7E /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppDependencies.swift; sourceTree = "<group>"; };
 		24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -164,6 +262,8 @@
 		24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeFallbackCocktailsLoader.swift; sourceTree = "<group>"; };
 		24E46996266A6884005E9A7E /* CommonUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUI.xcodeproj; path = ../../../Modules/CommonUI/CommonUI.xcodeproj; sourceTree = "<group>"; };
 		24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtils.xcodeproj; path = ../../../Modules/CommonUtils/CommonUtils.xcodeproj; sourceTree = "<group>"; };
+		24EE417F2683773500EB07B7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageFeature.xcodeproj; path = ../../../Modules/ImageFeature/ImageFeature.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +271,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24715F90268530C50009278A /* DrinkStore.framework in Frameworks */,
+				24CBF84926848DEE002C011B /* CommonRouting.framework in Frameworks */,
+				24EE419E2683821700EB07B7 /* ImageFeature.framework in Frameworks */,
 				24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */,
 				24E469A7266A68E0005E9A7E /* CommonUI.framework in Frameworks */,
 			);
@@ -193,9 +296,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24231EF22688D4700086662C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24231F022688D4AC0086662C /* IngredientsView.swift */,
+				24231F042688D5FC0086662C /* InstructionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		242F4682266931D200839094 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				24715F45268514E50009278A /* GenericStore.xcodeproj */,
+				24715F312685141F0009278A /* DrinkStore.xcodeproj */,
+				24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */,
+				24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */,
 				24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */,
 				24E46996266A6884005E9A7E /* CommonUI.xcodeproj */,
 				24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */,
@@ -229,6 +345,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		24715F322685141F0009278A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24715F3E2685141F0009278A /* DrinkStore.framework */,
+				24715F402685141F0009278A /* DrinkStoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24715F46268514E50009278A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24715F4B268514E50009278A /* GenericStore.framework */,
+				24715F4D268514E50009278A /* GenericStoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24715F7A26851D040009278A /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				24715F8A26851D100009278A /* NullStore.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		24715F99268536F90009278A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */,
+				24715F8C268522700009278A /* CocktailsCache.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2496683E268791AF00415255 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				24966850268798D400415255 /* FavoriteDataSource.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		2497CD9A268295AF002B8F0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +412,19 @@
 			isa = PBXGroup;
 			children = (
 				2497CDB82682A20F002B8F0D /* Drink.swift */,
+				24715F9C268538DC0009278A /* FavoriteDrink.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		24B7FDE52684B5C200E4ED14 /* DrinkDetails */ = {
+			isa = PBXGroup;
+			children = (
+				24231EF22688D4700086662C /* Views */,
+				24B7FDF12684B5E300E4ED14 /* DrinkDetailsViewController.swift */,
+				24B7FDF32684B64800E4ED14 /* DrinkDetailsViewModel.swift */,
+			);
+			path = DrinkDetails;
 			sourceTree = "<group>";
 		};
 		24BA40F926690BE10062F62E = {
@@ -313,9 +483,29 @@
 			path = BartenderAppUITests;
 			sourceTree = "<group>";
 		};
+		24CBF82526848C3B002C011B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24CBF82C26848C3B002C011B /* CommonRouting.framework */,
+				24CBF82E26848C3B002C011B /* CommonRoutingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24CBF84626848D18002C011B /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				24CBF84726848D3C002C011B /* DrinkRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 		24E468C5266A477E005E9A7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				24715F7A26851D040009278A /* Stubs */,
+				24CBF84626848D18002C011B /* Routes */,
+				24EE41762683771400EB07B7 /* Resources */,
 				24E468D1266A48F4005E9A7E /* BartenderAppDependencies.swift */,
 				24E468D5266A4B4D005E9A7E /* Factories */,
 				24E468DA266A51CC005E9A7E /* Scenes */,
@@ -336,6 +526,8 @@
 			children = (
 				24E468D6266A4B71005E9A7E /* MainViewControllerFactory.swift */,
 				24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */,
+				24CBF84D26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift */,
+				2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -343,6 +535,8 @@
 		24E468DA266A51CC005E9A7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2496683E268791AF00415255 /* Favorites */,
+				24B7FDE52684B5C200E4ED14 /* DrinkDetails */,
 				24E468DB266A51FB005E9A7E /* Main */,
 			);
 			path = Scenes;
@@ -365,28 +559,29 @@
 			isa = PBXGroup;
 			children = (
 				2497CDB72682A203002B8F0D /* Model */,
-				24E468E9266A586E005E9A7E /* CocktailSearch */,
+				24E468E9266A586E005E9A7E /* CocktailList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		24E468E9266A586E005E9A7E /* CocktailSearch */ = {
+		24E468E9266A586E005E9A7E /* CocktailList */ = {
 			isa = PBXGroup;
 			children = (
-				24E468EE266A58FD005E9A7E /* Composite */,
-				24E468EA266A58AB005E9A7E /* CocktailsLoader.swift */,
+				24715F99268536F90009278A /* Protocols */,
+				24E468EE266A58FD005E9A7E /* CompositeLoader */,
+				24715F9A268537590009278A /* CocktailsManager.swift */,
 			);
-			path = CocktailSearch;
+			path = CocktailList;
 			sourceTree = "<group>";
 		};
-		24E468EE266A58FD005E9A7E /* Composite */ = {
+		24E468EE266A58FD005E9A7E /* CompositeLoader */ = {
 			isa = PBXGroup;
 			children = (
 				24E468EF266A596D005E9A7E /* RemoteCocktailsLoader.swift */,
 				24E468F5266A5BDA005E9A7E /* LocalCocktailsLoader.swift */,
 				24E468F9266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift */,
 			);
-			path = Composite;
+			path = CompositeLoader;
 			sourceTree = "<group>";
 		};
 		24E46997266A6884005E9A7E /* Products */ = {
@@ -407,6 +602,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		24EE41762683771400EB07B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24EE417F2683773500EB07B7 /* Media.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		24EE418F268381D400EB07B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24EE4194268381D400EB07B7 /* ImageFeature.framework */,
+				24EE4196268381D400EB07B7 /* ImageFeatureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +634,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				24CBF84C26848E87002C011B /* PBXTargetDependency */,
 			);
 			name = BartenderApp;
 			productName = BartenderApp;
@@ -503,12 +716,28 @@
 					ProjectRef = 24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */;
 				},
 				{
+					ProductGroup = 24CBF82526848C3B002C011B /* Products */;
+					ProjectRef = 24CBF82426848C3B002C011B /* CommonRouting.xcodeproj */;
+				},
+				{
 					ProductGroup = 24E46997266A6884005E9A7E /* Products */;
 					ProjectRef = 24E46996266A6884005E9A7E /* CommonUI.xcodeproj */;
 				},
 				{
 					ProductGroup = 24E469B6266A6957005E9A7E /* Products */;
 					ProjectRef = 24E469B5266A6957005E9A7E /* CommonUtils.xcodeproj */;
+				},
+				{
+					ProductGroup = 24715F322685141F0009278A /* Products */;
+					ProjectRef = 24715F312685141F0009278A /* DrinkStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 24715F46268514E50009278A /* Products */;
+					ProjectRef = 24715F45268514E50009278A /* GenericStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 24EE418F268381D400EB07B7 /* Products */;
+					ProjectRef = 24EE418E268381D400EB07B7 /* ImageFeature.xcodeproj */;
 				},
 				{
 					ProductGroup = 246048E7266932B90074E0E7 /* Products */;
@@ -553,6 +782,48 @@
 			remoteRef = 2460492E266933E50074E0E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		24715F3E2685141F0009278A /* DrinkStore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DrinkStore.framework;
+			remoteRef = 24715F3D2685141F0009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F402685141F0009278A /* DrinkStoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DrinkStoreTests.xctest;
+			remoteRef = 24715F3F2685141F0009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F4B268514E50009278A /* GenericStore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GenericStore.framework;
+			remoteRef = 24715F4A268514E50009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24715F4D268514E50009278A /* GenericStoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GenericStoreTests.xctest;
+			remoteRef = 24715F4C268514E50009278A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24CBF82C26848C3B002C011B /* CommonRouting.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonRouting.framework;
+			remoteRef = 24CBF82B26848C3B002C011B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24CBF82E26848C3B002C011B /* CommonRoutingTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonRoutingTests.xctest;
+			remoteRef = 24CBF82D26848C3B002C011B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		24E4699C266A6884005E9A7E /* CommonUI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -581,6 +852,20 @@
 			remoteRef = 24E469BE266A6957005E9A7E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		24EE4194268381D400EB07B7 /* ImageFeature.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ImageFeature.framework;
+			remoteRef = 24EE4193268381D400EB07B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24EE4196268381D400EB07B7 /* ImageFeatureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ImageFeatureTests.xctest;
+			remoteRef = 24EE4195268381D400EB07B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -592,6 +877,7 @@
 				24BA410F26690BE30062F62E /* Assets.xcassets in Resources */,
 				24BA410D26690BE10062F62E /* Main.storyboard in Resources */,
 				2497CDA52682963E002B8F0D /* HeaderSupplementaryView.xib in Resources */,
+				24EE41802683773500EB07B7 /* Media.xcassets in Resources */,
 				2497CDA22682963E002B8F0D /* NewBannerSupplementaryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,19 +904,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */,
+				24231F032688D4AC0086662C /* IngredientsView.swift in Sources */,
 				2497CDB92682A20F002B8F0D /* Drink.swift in Sources */,
 				2497CDA62682963E002B8F0D /* NewBannerSupplementaryView.swift in Sources */,
 				2497CD9926828EE8002B8F0D /* MainViewController.swift in Sources */,
 				24E468E1266A5620005E9A7E /* MainViewModel.swift in Sources */,
 				24E468D7266A4B71005E9A7E /* MainViewControllerFactory.swift in Sources */,
+				24B7FDF22684B5E300E4ED14 /* DrinkDetailsViewController.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
 				24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */,
+				24715F9D268538DC0009278A /* FavoriteDrink.swift in Sources */,
+				24715F9B268537590009278A /* CocktailsManager.swift in Sources */,
 				24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */,
+				24231F052688D5FC0086662C /* InstructionsView.swift in Sources */,
 				24BA410A26690BE10062F62E /* ViewController.swift in Sources */,
+				24CBF84826848D3C002C011B /* DrinkRoute.swift in Sources */,
 				24BA410626690BE10062F62E /* AppDelegate.swift in Sources */,
+				24B7FDF42684B64800E4ED14 /* DrinkDetailsViewModel.swift in Sources */,
 				24E468F0266A596D005E9A7E /* RemoteCocktailsLoader.swift in Sources */,
+				2496684F268791E000415255 /* FavoritesViewControllerFactory.swift in Sources */,
 				24E468F6266A5BDA005E9A7E /* LocalCocktailsLoader.swift in Sources */,
 				2497CD9C268295CA002B8F0D /* DrinkCellView.swift in Sources */,
+				24CBF84E26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift in Sources */,
+				24966851268798D400415255 /* FavoriteDataSource.swift in Sources */,
+				24715F8D268522700009278A /* CocktailsCache.swift in Sources */,
+				24715F8B26851D100009278A /* NullStore.swift in Sources */,
 				2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 				24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */,
@@ -667,6 +965,11 @@
 			isa = PBXTargetDependency;
 			target = 24BA410126690BE10062F62E /* BartenderApp */;
 			targetProxy = 24BA412426690BE30062F62E /* PBXContainerItemProxy */;
+		};
+		24CBF84C26848E87002C011B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CommonRouting;
+			targetProxy = 24CBF84B26848E87002C011B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -28,6 +28,8 @@
 		24C4F0E52651408C0061737C /* RecipeUI_SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F0E42651408C0061737C /* RecipeUI_SDK.swift */; };
 		24C4F12F265145EE0061737C /* RecipeFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F12E265145EE0061737C /* RecipeFeature.framework */; };
 		24C4F130265145EE0061737C /* RecipeFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C4F12E265145EE0061737C /* RecipeFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24EE416826836CA100EB07B7 /* ImageFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE416726836CA100EB07B7 /* ImageFeature.framework */; };
+		24EE416926836CA100EB07B7 /* ImageFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE416726836CA100EB07B7 /* ImageFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				24C4F130265145EE0061737C /* RecipeFeature.framework in Embed Frameworks */,
+				24EE416926836CA100EB07B7 /* ImageFeature.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +81,7 @@
 		24C4F0D42651370E0061737C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		24C4F0E42651408C0061737C /* RecipeUI_SDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeUI_SDK.swift; sourceTree = "<group>"; };
 		24C4F12E265145EE0061737C /* RecipeFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RecipeFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EE416726836CA100EB07B7 /* ImageFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C4F12F265145EE0061737C /* RecipeFeature.framework in Frameworks */,
+				24EE416826836CA100EB07B7 /* ImageFeature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +209,7 @@
 		24C4F12D265145EE0061737C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24EE416726836CA100EB07B7 /* ImageFeature.framework */,
 				24C4F12E265145EE0061737C /* RecipeFeature.framework */,
 			);
 			name = Frameworks;
