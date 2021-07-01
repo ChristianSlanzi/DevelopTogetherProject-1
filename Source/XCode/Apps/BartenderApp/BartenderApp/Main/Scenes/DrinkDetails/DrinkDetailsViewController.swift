@@ -13,8 +13,11 @@ protocol DrinkDetailsViewProtocol: AnyObject {
     func setDrinkImage(_ imageData: Data)
     func setDrinkTitle(_ title: String)
     func setDrinkDescription(_ title: String)
+    func setDrinkCategory(_ title: String)
+    func setDrinkIBA(_ title: String?)
+    func setDrinkAlcoholic(_ title: String)
+    func setDrinkGlass(_ title: String)
     func setDrinkPreparationTime(_ title: String)
-    func setDrinkCookingTime(_ title: String)
     func setDrinkIngredients(_ titles: [String])
     func updateFavoriteStatus(_ isFavorite: Bool)
 }
@@ -28,12 +31,12 @@ class DrinkDetailsViewController: CustomScrollViewController {
     
     let itemImageView = DefaultImageView(urlPath: nil, fallback: "drink-placeholder")
     
-    //typeLabel (breakfast, lunch, snack, dinner, dessert)
-    let typeLabel = DefaultLabel(title: "type")
-    
-    //categoryLabel (cuisine)
-    
-    let titleLabel = DefaultLabel(title: "title")
+    let categoryLabel = DefaultLabel(title: "Category")
+    let ibaLabel = DefaultLabel(title: "IBA")
+    let alcoholicLabel = DefaultLabel(title: "Alcoholic")
+    let glassLabel = DefaultLabel(title: "Glass")
+        
+    let titleLabel = DefaultLabel(title: "Title")
     
     //separatorView
     
@@ -64,16 +67,15 @@ class DrinkDetailsViewController: CustomScrollViewController {
         
         //views
         titleLabel.text = "Recipe Details"
-        
-        //ingredientsView.backgroundColor = .yellow
-        
+                
         addToContentView(itemImageView,
                          titleLabel,
+                         categoryLabel,
+                         ibaLabel,
+                         alcoholicLabel,
+                         glassLabel,
                          instructionsView,
                          ingredientsView)
-//                        ,
-//                         cookingTimeView
-//                         )
         
         viewModel.viewDidLoad()
     }
@@ -107,18 +109,34 @@ class DrinkDetailsViewController: CustomScrollViewController {
         ])
         
         NSLayoutConstraint.activate([
-            instructionsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPadding),
+            categoryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            categoryLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            ibaLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: topPadding),
+            ibaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ibaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            alcoholicLabel.topAnchor.constraint(equalTo: ibaLabel.bottomAnchor, constant: topPadding),
+            alcoholicLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            alcoholicLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            glassLabel.topAnchor.constraint(equalTo: alcoholicLabel.bottomAnchor, constant: topPadding),
+            glassLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            glassLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            instructionsView.topAnchor.constraint(equalTo: glassLabel.bottomAnchor, constant: topPadding),
             instructionsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             instructionsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
         ])
-        
-//        NSLayoutConstraint.activate([
-//            cookingTimeView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: topPadding),
-//            cookingTimeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            cookingTimeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-//            cookingTimeView.heightAnchor.constraint(equalToConstant: 30)
-//        ])
-//
         
         NSLayoutConstraint.activate([
             ingredientsView.topAnchor.constraint(equalTo: instructionsView.bottomAnchor, constant: topPadding),
@@ -136,6 +154,22 @@ class DrinkDetailsViewController: CustomScrollViewController {
 }
 
 extension DrinkDetailsViewController: DrinkDetailsViewProtocol {
+    func setDrinkGlass(_ title: String) {
+        glassLabel.text = title
+    }
+    
+    func setDrinkIBA(_ title: String?) {
+        ibaLabel.text = title
+    }
+    
+    func setDrinkAlcoholic(_ title: String) {
+        alcoholicLabel.text = title
+    }
+    
+    func setDrinkCategory(_ title: String) {
+        categoryLabel.text = title
+    }
+    
     func setDrinkImage(_ imageName: String) {
         
     }
@@ -155,10 +189,6 @@ extension DrinkDetailsViewController: DrinkDetailsViewProtocol {
     }
     
     func setDrinkPreparationTime(_ text: String) {
-        
-    }
-    
-    func setDrinkCookingTime(_ text: String) {
         
     }
     

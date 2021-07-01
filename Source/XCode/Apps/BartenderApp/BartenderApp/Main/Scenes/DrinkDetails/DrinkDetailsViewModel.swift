@@ -39,6 +39,10 @@ class DrinkDetailsViewModel {
         }
         
         view?.setDrinkTitle(drink.name)
+        view?.setDrinkCategory(drink.strCategory)
+        view?.setDrinkAlcoholic(drink.strAlcoholic)
+        view?.setDrinkGlass(drink.strGlass)
+        view?.setDrinkIBA(drink.strIBA)
         view?.setDrinkDescription(drink.strInstructions)
         view?.setDrinkIngredients(drink.ingredients)
         

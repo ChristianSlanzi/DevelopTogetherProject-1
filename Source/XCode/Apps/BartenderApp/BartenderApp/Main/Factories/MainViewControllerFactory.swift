@@ -15,7 +15,6 @@ protocol MainViewControllerFactory {
 
 extension BartenderAppDependencies: MainViewControllerFactory {
     
-    
     typealias CollectionViewAdapter = Adapter<Drink, DrinkCellView, HeaderSupplementaryView, NewBannerSupplementaryView, NewBannerSupplementaryView>
     
     func makeMainViewController(dataSource: CustomDataSource<Drink>) -> UIViewController {

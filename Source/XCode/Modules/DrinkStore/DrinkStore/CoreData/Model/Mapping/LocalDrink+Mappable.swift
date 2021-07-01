@@ -18,6 +18,9 @@ extension LocalDrink: MappableProtocol {
         model.strDrink = self.strDrink
         model.strDrinkThumb = self.strDrinkThumb
         model.strImageSource = self.strImageSource
+        model.strIBA = self.strIBA
+        model.strAlcoholic = self.strAlcoholic
+        model.strGlass = self.strGlass
         model.strInstructions = self.strInstructions
         do {
             model.ingredients = try NSKeyedArchiver.archivedData(withRootObject: self.ingredients, requiringSecureCoding: true)
