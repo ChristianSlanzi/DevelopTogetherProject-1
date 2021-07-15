@@ -40,8 +40,6 @@ open class CustomScrollViewController: BaseViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupViews()
-        setupConstraints()
     }
     
     override open func setupViews() {
