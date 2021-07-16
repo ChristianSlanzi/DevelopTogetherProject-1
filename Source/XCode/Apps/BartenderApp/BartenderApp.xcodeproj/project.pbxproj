@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		24231F032688D4AC0086662C /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F022688D4AC0086662C /* IngredientsView.swift */; };
 		24231F052688D5FC0086662C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24231F042688D5FC0086662C /* InstructionsView.swift */; };
+		24256EFB26A0DC5500AF7943 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24256EFA26A0DC5500AF7943 /* SearchViewController.swift */; };
+		24256EFD26A0DCDE00AF7943 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24256EFC26A0DCDE00AF7943 /* SearchViewModel.swift */; };
+		24256EFF26A0DD3100AF7943 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24256EFE26A0DD3100AF7943 /* SearchRoute.swift */; };
+		24256F0126A0DDCF00AF7943 /* SearchViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24256F0026A0DDCF00AF7943 /* SearchViewControllerFactory.swift */; };
 		24604942266934690074E0E7 /* CocktailsApiService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; };
 		24604943266934690074E0E7 /* CocktailsApiService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2460492D266933E50074E0E7 /* CocktailsApiService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24715F8B26851D100009278A /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F8A26851D100009278A /* NullStore.swift */; };
@@ -213,6 +217,10 @@
 /* Begin PBXFileReference section */
 		24231F022688D4AC0086662C /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		24231F042688D5FC0086662C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		24256EFA26A0DC5500AF7943 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		24256EFC26A0DCDE00AF7943 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		24256EFE26A0DD3100AF7943 /* SearchRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoute.swift; sourceTree = "<group>"; };
+		24256F0026A0DDCF00AF7943 /* SearchViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerFactory.swift; sourceTree = "<group>"; };
 		246048E6266932B90074E0E7 /* NetworkingService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkingService.xcodeproj; path = ../../../Modules/NetworkingService/NetworkingService.xcodeproj; sourceTree = "<group>"; };
 		24604927266933E50074E0E7 /* CocktailsApiService.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocktailsApiService.xcodeproj; path = ../../../Modules/CocktailsApiService/CocktailsApiService.xcodeproj; sourceTree = "<group>"; };
 		24715F312685141F0009278A /* DrinkStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrinkStore.xcodeproj; path = ../../../Modules/DrinkStore/DrinkStore.xcodeproj; sourceTree = "<group>"; };
@@ -303,6 +311,15 @@
 				24231F042688D5FC0086662C /* InstructionsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		24256EEA26A0DC0D00AF7943 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				24256EFA26A0DC5500AF7943 /* SearchViewController.swift */,
+				24256EFC26A0DCDE00AF7943 /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		242F4682266931D200839094 /* Modules */ = {
@@ -496,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				24CBF84726848D3C002C011B /* DrinkRoute.swift */,
+				24256EFE26A0DD3100AF7943 /* SearchRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -528,6 +546,7 @@
 				24A21DC3266AB38400F3F23A /* MainTabBarControllerFactory.swift */,
 				24CBF84D26848FC3002C011B /* DrinkDetailsViewControllerFactory.swift */,
 				2496684E268791E000415255 /* FavoritesViewControllerFactory.swift */,
+				24256F0026A0DDCF00AF7943 /* SearchViewControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -535,6 +554,7 @@
 		24E468DA266A51CC005E9A7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24256EEA26A0DC0D00AF7943 /* Search */,
 				2496683E268791AF00415255 /* Favorites */,
 				24B7FDE52684B5C200E4ED14 /* DrinkDetails */,
 				24E468DB266A51FB005E9A7E /* Main */,
@@ -903,6 +923,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24256EFD26A0DCDE00AF7943 /* SearchViewModel.swift in Sources */,
 				24E468FA266A5C86005E9A7E /* CompositeFallbackCocktailsLoader.swift in Sources */,
 				24231F032688D4AC0086662C /* IngredientsView.swift in Sources */,
 				2497CDB92682A20F002B8F0D /* Drink.swift in Sources */,
@@ -913,6 +934,7 @@
 				24B7FDF22684B5E300E4ED14 /* DrinkDetailsViewController.swift in Sources */,
 				24E468CB266A47A2005E9A7E /* AppDependencies.swift in Sources */,
 				24E468D2266A48F4005E9A7E /* BartenderAppDependencies.swift in Sources */,
+				24256EFB26A0DC5500AF7943 /* SearchViewController.swift in Sources */,
 				24715F9D268538DC0009278A /* FavoriteDrink.swift in Sources */,
 				24715F9B268537590009278A /* CocktailsManager.swift in Sources */,
 				24E468EB266A58AB005E9A7E /* CocktailsLoader.swift in Sources */,
@@ -932,8 +954,10 @@
 				2497CDA42682963E002B8F0D /* BackgroundDecorationView.swift in Sources */,
 				24BA410826690BE10062F62E /* SceneDelegate.swift in Sources */,
 				24A21DC4266AB38400F3F23A /* MainTabBarControllerFactory.swift in Sources */,
+				24256F0126A0DDCF00AF7943 /* SearchViewControllerFactory.swift in Sources */,
 				2497CDA32682963E002B8F0D /* HeaderSupplementaryView.swift in Sources */,
 				2497CDA826829B75002B8F0D /* MainDataSource.swift in Sources */,
+				24256EFF26A0DD3100AF7943 /* SearchRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@
 import UIKit
 import CommonUI
 
-public protocol CategoriesViewProtocol: class {
+public protocol CategoriesViewProtocol: AnyObject {
     func searchRecipesForCategory(_ cuisine: Cuisine)
 }
 
-public protocol NutrientsSearchViewProtocol: class {
+public protocol NutrientsSearchViewProtocol: AnyObject {
     func searchRecipesForNutrients(_ nutrients: [String: Int])
 }
 

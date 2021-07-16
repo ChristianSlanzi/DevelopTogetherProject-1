@@ -31,7 +31,7 @@ extension BartenderAppDependencies {
     }
     
     func makeSearchTab() -> UIViewController {
-        let viewController = UIViewController()
+        let viewController = makeSearchViewController()
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.tabBarItem = Tabs.search.item
         return navigation
