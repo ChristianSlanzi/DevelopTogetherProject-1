@@ -29,7 +29,7 @@ final class MainViewModel: ViewModelProtocol {
     
     func didLoad() {
                 
-        loader.load(query: "m") { (result) in
+        loader.load(query: " ") { (result) in
             print(result)
             
             switch result {

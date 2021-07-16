@@ -20,7 +20,6 @@ public protocol FavoriteManaging {
 public typealias CocktailsManaging = CocktailsLoader & FavoriteManaging //& DrinkCache
 
 public final class CocktailsManager: CocktailsManaging {
-    
     private let cocktailsLoader: CocktailsLoader
     private let store: FavoriteDrinkStore
     private let currentDate: () -> Date
@@ -34,6 +33,10 @@ public final class CocktailsManager: CocktailsManaging {
     }
     
     // drinks
+    
+    public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
+        cocktailsLoader.loadAllDrinks(completion: completion)
+    }
     public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         cocktailsLoader.loadDrinksByFirstLetter(letter, completion: completion)
     }

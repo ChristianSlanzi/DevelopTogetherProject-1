@@ -8,11 +8,16 @@
 import CocktailsApiService
 
 public class RemoteCocktailsLoader: CocktailsLoader {
-        
+    
     var service: CocktailsApiService
     
     init(service: CocktailsApiService) {
         self.service = service
+    }
+    
+    public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
+        //TODO
+        completion(.failure(CocktailsApiService.ServiceError.invalidData))
     }
     
     public func loadDrinks(withIds: [String], completion: @escaping CocktailsLoader.Result) {

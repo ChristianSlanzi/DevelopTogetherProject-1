@@ -21,6 +21,10 @@ public final class LocalCocktailsLoader {
 }
 
 extension LocalCocktailsLoader: CocktailsLoader {
+    public func loadAllDrinks(completion: @escaping CocktailsLoader.Result) {
+        loadDrinks(predicate: nil, completion: completion)
+    }
+    
     public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         //TODO
         load(query: String(letter), completion: completion)
@@ -46,7 +50,7 @@ extension LocalCocktailsLoader: CocktailsLoader {
         loadDrinks(predicate: predicate, completion: completion)
     }
     
-    private func loadDrinks(predicate: NSPredicate, completion: @escaping CocktailsLoader.Result) {
+    private func loadDrinks(predicate: NSPredicate?, completion: @escaping CocktailsLoader.Result) {
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
             key: #keyPath(CoreDataDrink.idDrink),
             ascending: true)

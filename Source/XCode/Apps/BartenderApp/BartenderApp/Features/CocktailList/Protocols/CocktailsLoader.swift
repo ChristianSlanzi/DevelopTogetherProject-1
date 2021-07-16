@@ -11,6 +11,7 @@ import CocktailsApiService
 public protocol CocktailsLoader {
     typealias Result = (Swift.Result<[Drink], Error>) -> Void
     
+    func loadAllDrinks(completion: @escaping CocktailsLoader.Result)
     func load(query: String, completion: @escaping CocktailsLoader.Result)
     func loadDrinks(withIds: [String], completion: @escaping CocktailsLoader.Result)
     func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result)

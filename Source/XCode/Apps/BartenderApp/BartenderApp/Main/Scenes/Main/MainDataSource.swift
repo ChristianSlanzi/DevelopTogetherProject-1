@@ -21,7 +21,7 @@ class MainDataSource: CustomDataSource<Drink>, ViewModelProtocol {
     
     override func reloadData() {
                 
-        loader.load(query: "m") { (result) in
+        loader.loadAllDrinks() { (result) in
             print(result)
             
             switch result {
