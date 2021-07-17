@@ -23,7 +23,18 @@ public final class LocalCocktailsLoader {
 extension LocalCocktailsLoader: CocktailsLoader {
     
     public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
-        // TODO
+        // TODO: refactor
+        
+        var predArray = [NSPredicate]()
+        for item in ingredients {
+            predArray.append(NSPredicate(format: "ingredients CONTAINS[c] '\(item)'"))
+        }
+
+        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predArray)
+                        
+        loadDrinks(predicate: predicate) { result in
+            completion(result)
+        }
     }
     
     public func loadAllDrinks(completion: @escaping CocktailsLoader.Result) {

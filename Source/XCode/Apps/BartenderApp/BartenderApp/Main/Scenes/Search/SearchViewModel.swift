@@ -26,6 +26,8 @@ class SearchViewModel {
     func search(_ textToSearch: String) {
         print(textToSearch)
         
+        
+        //cocktailsLoader?.loadDrinksByIngredients([textToSearch], completion: { result in
         cocktailsLoader?.load(query: textToSearch, completion: { result in
             switch result {
             case let .success(cocktails):
