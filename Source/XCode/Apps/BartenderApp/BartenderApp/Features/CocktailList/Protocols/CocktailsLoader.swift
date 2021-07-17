@@ -15,4 +15,5 @@ public protocol CocktailsLoader {
     func load(query: String, completion: @escaping CocktailsLoader.Result)
     func loadDrinks(withIds: [String], completion: @escaping CocktailsLoader.Result)
     func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result)
+    func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result)
 }

@@ -15,7 +15,11 @@ public class RemoteCocktailsLoader: CocktailsLoader {
         self.service = service
     }
     
-    public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
+        // TODO
+    }
+    
+    public func loadAllDrinks(completion: @escaping CocktailsLoader.Result) {
         //TODO
         completion(.failure(CocktailsApiService.ServiceError.invalidData))
     }

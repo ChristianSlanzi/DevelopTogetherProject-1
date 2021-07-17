@@ -34,6 +34,10 @@ public final class CocktailsManager: CocktailsManaging {
     
     // drinks
     
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
+        cocktailsLoader.loadDrinksByIngredients(ingredients, completion: completion)
+    }
+    
     public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
         cocktailsLoader.loadAllDrinks(completion: completion)
     }

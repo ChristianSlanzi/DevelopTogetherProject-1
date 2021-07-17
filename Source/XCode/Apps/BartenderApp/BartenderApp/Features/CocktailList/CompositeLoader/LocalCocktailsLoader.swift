@@ -21,6 +21,11 @@ public final class LocalCocktailsLoader {
 }
 
 extension LocalCocktailsLoader: CocktailsLoader {
+    
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
+        // TODO
+    }
+    
     public func loadAllDrinks(completion: @escaping CocktailsLoader.Result) {
         loadDrinks(predicate: nil, completion: completion)
     }

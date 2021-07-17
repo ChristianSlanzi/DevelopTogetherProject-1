@@ -17,6 +17,10 @@ public class CompositeFallbackCocktailsLoader: CocktailsLoader {
         self.local = local
     }
     
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping (Result<[Drink], Error>) -> Void) {
+        //TODO
+    }
+    
     public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
         print("fetch all drinks remotely")
         remote.loadAllDrinks() { (result) in
