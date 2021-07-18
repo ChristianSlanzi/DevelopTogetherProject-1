@@ -23,7 +23,8 @@
 		24715F94268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */; };
 		24715F96268532230009278A /* CoreDataFavoriteDrinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F95268532230009278A /* CoreDataFavoriteDrinkStore.swift */; };
 		24715F98268533300009278A /* FavoriteDrinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24715F97268533300009278A /* FavoriteDrinkStore.swift */; };
-		24B7519F268E57FA00537FC8 /* LocalIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7519E268E57FA00537FC8 /* LocalIngredients.swift */; };
+		24D3225526A3215100DA9E71 /* CoreDataIngredient+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D3225426A3215100DA9E71 /* CoreDataIngredient+Fetchable.swift */; };
+		24D3225726A3216900DA9E71 /* LocalIngredient+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D3225626A3216900DA9E71 /* LocalIngredient+Mappable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		24715F95268532230009278A /* CoreDataFavoriteDrinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavoriteDrinkStore.swift; sourceTree = "<group>"; };
 		24715F97268533300009278A /* FavoriteDrinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDrinkStore.swift; sourceTree = "<group>"; };
 		24B7519E268E57FA00537FC8 /* LocalIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIngredients.swift; sourceTree = "<group>"; };
+		24D3225426A3215100DA9E71 /* CoreDataIngredient+Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataIngredient+Fetchable.swift"; sourceTree = "<group>"; };
+		24D3225626A3216900DA9E71 /* LocalIngredient+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalIngredient+Mappable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,7 @@
 		24715F6F268516970009278A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24D3225326A3210100DA9E71 /* Fetchable */,
 				24715F72268516E70009278A /* Mapping */,
 				24715F732685171F0009278A /* DrinkStore.xcdatamodeld */,
 			);
@@ -173,12 +177,21 @@
 			isa = PBXGroup;
 			children = (
 				24715F76268518230009278A /* LocalDrink+Mappable.swift */,
-				24715F78268519760009278A /* CoreDataDrink+Fetchable.swift */,
 				24715F8E268530280009278A /* LocalFavoriteDrink+Mappable.swift */,
-				24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */,
+				24D3225626A3216900DA9E71 /* LocalIngredient+Mappable.swift */,
 				24B7519E268E57FA00537FC8 /* LocalIngredients.swift */,
 			);
 			path = Mapping;
+			sourceTree = "<group>";
+		};
+		24D3225326A3210100DA9E71 /* Fetchable */ = {
+			isa = PBXGroup;
+			children = (
+				24715F78268519760009278A /* CoreDataDrink+Fetchable.swift */,
+				24715F93268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift */,
+				24D3225426A3215100DA9E71 /* CoreDataIngredient+Fetchable.swift */,
+			);
+			path = Fetchable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +308,12 @@
 				24715F752685171F0009278A /* DrinkStore.xcdatamodeld in Sources */,
 				24715F96268532230009278A /* CoreDataFavoriteDrinkStore.swift in Sources */,
 				24715F77268518230009278A /* LocalDrink+Mappable.swift in Sources */,
+				24D3225726A3216900DA9E71 /* LocalIngredient+Mappable.swift in Sources */,
 				24715F6E268515EE0009278A /* LocalDrink.swift in Sources */,
 				24715F8F268530280009278A /* LocalFavoriteDrink+Mappable.swift in Sources */,
+				24D3225526A3215100DA9E71 /* CoreDataIngredient+Fetchable.swift in Sources */,
 				24715F71268516A50009278A /* CoreDataDrinkStore.swift in Sources */,
 				24715F92268531250009278A /* LocalFavoriteDrink.swift in Sources */,
-				24B7519F268E57FA00537FC8 /* LocalIngredients.swift in Sources */,
 				24715F94268531C90009278A /* CoreDataFavoriteDrink+Fetchable.swift in Sources */,
 				24715F6C268515770009278A /* DrinkStore.swift in Sources */,
 				24715F98268533300009278A /* FavoriteDrinkStore.swift in Sources */,

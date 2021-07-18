@@ -17,6 +17,9 @@ public protocol DataStore {
     /// Clients are responsible to dispatch to appropriate threads, if needed.
     func create<T: Storable & MappableProtocol>(_ feed: [T], completion: @escaping CreationCompletion)
     
+    //updates or create if not found
+    func update<T>(_ item: T, predicate: NSPredicate?, completion: @escaping RetrievalCompletion<T>) where T : Storable & MappableProtocol
+    
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
     func retrieve<T: Storable & MappableProtocol>(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion<T>)

@@ -18,6 +18,7 @@ public typealias DeletionCompletion = (Error?) -> Void
 
 public protocol DrinkStore {
     func create(_ feed: [LocalDrink], completion: @escaping DataStore.CreationCompletion)
+    func update(_ item: LocalDrink, predicate: NSPredicate?, completion: @escaping RetrievalCompletion)
     func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion)
     func deleteAll(entity: LocalDrink.Type, completion: @escaping DeletionCompletion)
 }

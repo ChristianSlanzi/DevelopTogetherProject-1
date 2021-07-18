@@ -15,6 +15,10 @@ extension NullStore: DrinkStore {
         completion(.none)
     }
     
+    func update(_ item: LocalDrink, predicate: NSPredicate?, completion: @escaping RetrievalCompletion) {
+        completion(.empty)
+    }
+    
     func retrieve(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, completion: @escaping RetrievalCompletion) {
         completion(.empty)
     }

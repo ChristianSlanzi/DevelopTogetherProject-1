@@ -26,9 +26,9 @@ extension LocalCocktailsLoader: CocktailsLoader {
         // TODO: refactor
         
         var predArray = [NSPredicate]()
-        for item in ingredients {
-            predArray.append(NSPredicate(format: "ingredients CONTAINS[c] '\(item)'"))
-        }
+        //for item in ingredients {
+        predArray.append(NSPredicate(format: "ANY ingredients.name in %@",  ingredients))
+        //}
 
         let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predArray)
                         
@@ -102,14 +102,34 @@ extension LocalCocktailsLoader: CocktailsCache {
 //            guard let error = error else { return }
 //            print(error)
 //        })
-        store.create(drinks.toLocal(), completion: { (error) in
-            guard let error = error else {
-                completion(.success(()))
-                return
+        
+        
+//        store.create(drinks.toLocal(), completion: { (error) in
+//            guard let error = error else {
+//                completion(.success(()))
+//                return
+//            }
+//            print(error)
+//            completion(.failure(error))
+//        })
+        
+        _ = drinks.toLocal().map {
+            store.update($0, predicate: NSPredicate(format: "idDrink == \($0.idDrink)")) { result in
+                
+                switch result {
+                case .empty:
+                    print("empty update")
+                    break
+                case let .found(feed):
+                    print(feed)
+                    break
+                    
+                case let .failure(error):
+                    print(error)
+                    break
+                }
             }
-            print(error)
-            completion(.failure(error))
-        })
+        }
     }
 }
 

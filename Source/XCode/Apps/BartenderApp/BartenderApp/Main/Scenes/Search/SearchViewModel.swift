@@ -27,8 +27,8 @@ class SearchViewModel {
         print(textToSearch)
         
         
-        //cocktailsLoader?.loadDrinksByIngredients([textToSearch], completion: { result in
-        cocktailsLoader?.load(query: textToSearch, completion: { result in
+        cocktailsLoader?.loadDrinksByIngredients([textToSearch], completion: { result in
+        //cocktailsLoader?.load(query: textToSearch, completion: { result in
             switch result {
             case let .success(cocktails):
                 guard !cocktails.isEmpty else {

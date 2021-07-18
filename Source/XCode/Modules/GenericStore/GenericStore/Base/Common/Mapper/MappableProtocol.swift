@@ -11,7 +11,7 @@ public protocol MappableProtocol {
     associatedtype PersistenceType: Storable & FetchableProtocol
     
     // MARK: - Method
-    func mapToPersistenceObject(context: StorageContext) -> PersistenceType
+    func mapToPersistenceObject(_ object: PersistenceType?, context: StorageContext) -> PersistenceType
     static func mapFromPersistenceObject(_ object: PersistenceType) -> Self
     
 }

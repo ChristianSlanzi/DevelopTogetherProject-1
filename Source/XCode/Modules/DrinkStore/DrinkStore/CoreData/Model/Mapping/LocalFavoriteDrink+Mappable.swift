@@ -11,9 +11,8 @@ import GenericStore
 extension LocalFavoriteDrink: Storable {}
 
 extension LocalFavoriteDrink: MappableProtocol {
-    
-    public func mapToPersistenceObject(context: StorageContext) -> CoreDataFavoriteDrink {
-        let model = CoreDataFavoriteDrink(context: context as! NSManagedObjectContext)
+    public func mapToPersistenceObject(_ object: CoreDataFavoriteDrink?, context: StorageContext) -> CoreDataFavoriteDrink {
+        let model = object ?? CoreDataFavoriteDrink(context: context as! NSManagedObjectContext)
         model.idDrink = self.idDrink
         return model
     }

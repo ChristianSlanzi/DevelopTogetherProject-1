@@ -2,7 +2,6 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataDrink" representedClassName="CoreDataDrink" syncable="YES" codeGenerationType="class">
         <attribute name="idDrink" optional="YES" attributeType="String"/>
-        <attribute name="ingredients" optional="YES" attributeType="Transformable"/>
         <attribute name="strAlcoholic" optional="YES" attributeType="String"/>
         <attribute name="strCategory" optional="YES" attributeType="String"/>
         <attribute name="strDrink" optional="YES" attributeType="String"/>
@@ -11,6 +10,7 @@
         <attribute name="strIBA" optional="YES" attributeType="String"/>
         <attribute name="strImageSource" optional="YES" attributeType="String"/>
         <attribute name="strInstructions" optional="YES" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataIngredient" inverseName="drink" inverseEntity="CoreDataIngredient"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="idDrink"/>
@@ -25,8 +25,14 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="CoreDataIngredient" representedClassName="CoreDataIngredient" syncable="YES" codeGenerationType="class">
+        <attribute name="measure" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="drink" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataDrink" inverseName="ingredients" inverseEntity="CoreDataDrink"/>
+    </entity>
     <elements>
         <element name="CoreDataDrink" positionX="-63" positionY="-18" width="128" height="179"/>
         <element name="CoreDataFavoriteDrink" positionX="-54" positionY="18" width="128" height="44"/>
+        <element name="CoreDataIngredient" positionX="-54" positionY="54" width="128" height="74"/>
     </elements>
 </model>

@@ -36,13 +36,13 @@ open class CoreDataStore<T: Storable & MappableProtocol>: DataStore {
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
-    public func create<T>(_ feed: [T], completion: @escaping CreationCompletion) where T : Storable & MappableProtocol {
+    public func create<T>(_ feed: [T],  completion: @escaping CreationCompletion) where T : Storable & MappableProtocol {
         let context = self.context
         context.perform {
             do {
-                
+                                
                 let mappedFeed = feed.map {
-                    $0.mapToPersistenceObject(context: context)
+                    $0.mapToPersistenceObject(nil, context: context)
                 }
                 print(mappedFeed)
                 
@@ -51,6 +51,40 @@ open class CoreDataStore<T: Storable & MappableProtocol>: DataStore {
             } catch {
                 self.context.reset()
                 completion(.some(error))
+            }
+        }
+    }
+    
+    //updates or create if not found
+    public func update<T>(_ item: T, predicate: NSPredicate?, completion: @escaping RetrievalCompletion<T>) where T : Storable & MappableProtocol {
+        let context = self.context
+        context.perform {
+            
+            let request = T.PersistenceType.fetchRequest(predicate: predicate, sortDescriptors: nil) as! NSFetchRequest<NSFetchRequestResult>
+            
+            do {
+                
+                let dataFeed = try self.context.fetch(request )
+                if dataFeed.count > 0 {
+                    _ = dataFeed.compactMap {
+                        item.mapToPersistenceObject(($0 as! T.PersistenceType), context: context)
+                    }
+                    
+                    print(dataFeed)
+                
+                    try self.context.save()
+                    completion(.found(feed: [item]))
+                } else {
+                    
+                    _ = item.mapToPersistenceObject(nil, context: context)
+                    
+                    try self.context.save()
+                    completion(.empty)
+                }
+                
+            } catch {
+                self.context.reset()
+                completion(.failure(error))
             }
         }
     }

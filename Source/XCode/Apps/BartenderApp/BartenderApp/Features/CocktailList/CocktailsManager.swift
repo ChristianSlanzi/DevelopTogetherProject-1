@@ -119,8 +119,8 @@ public final class CocktailsManager: CocktailsManaging {
             case .found(feed: let feed):
                 self.cocktailsLoader.loadDrinks(withIds: feed.compactMap({ $0.idDrink})) { result in
                     switch result {
-                    case let .success(recipes):
-                        return completion(recipes)
+                    case let .success(items):
+                        return completion(items)
                     case .failure(_):
                         return completion([])
                     }
