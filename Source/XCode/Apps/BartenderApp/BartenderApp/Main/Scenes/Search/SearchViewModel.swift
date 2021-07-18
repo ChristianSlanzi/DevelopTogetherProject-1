@@ -39,6 +39,7 @@ class SearchViewModel {
                 
                 DispatchQueue.main.async {
                     //self.router.openRecipeList(recipes)
+                    self.router.showDrinkList(cocktails)
                 }
                 
             case let .failure(error):

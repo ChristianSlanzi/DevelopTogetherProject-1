@@ -19,6 +19,7 @@ extension BartenderAppDependencies: SearchViewControllerFactory {
         let viewModel = SearchViewModel(router: router)
         viewModel.cocktailsLoader = makeCompositeDrinkLoader()
         let viewController = SearchViewController(viewModel: viewModel)
+        router.root = viewController
         return viewController
     }
 }
