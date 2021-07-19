@@ -20,7 +20,6 @@ public protocol FavoriteManaging {
 public typealias CocktailsManaging = CocktailsLoader & FavoriteManaging //& DrinkCache
 
 public final class CocktailsManager: CocktailsManaging {
-    
     private let cocktailsLoader: CocktailsLoader
     private let store: FavoriteDrinkStore
     private let currentDate: () -> Date
@@ -34,6 +33,14 @@ public final class CocktailsManager: CocktailsManaging {
     }
     
     // drinks
+    
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
+        cocktailsLoader.loadDrinksByIngredients(ingredients, completion: completion)
+    }
+    
+    public func loadAllDrinks(completion: @escaping (Result<[Drink], Error>) -> Void) {
+        cocktailsLoader.loadAllDrinks(completion: completion)
+    }
     public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         cocktailsLoader.loadDrinksByFirstLetter(letter, completion: completion)
     }
@@ -112,8 +119,8 @@ public final class CocktailsManager: CocktailsManaging {
             case .found(feed: let feed):
                 self.cocktailsLoader.loadDrinks(withIds: feed.compactMap({ $0.idDrink})) { result in
                     switch result {
-                    case let .success(recipes):
-                        return completion(recipes)
+                    case let .success(items):
+                        return completion(items)
                     case .failure(_):
                         return completion([])
                     }

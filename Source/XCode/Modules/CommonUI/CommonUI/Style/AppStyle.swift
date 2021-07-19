@@ -26,10 +26,8 @@ public struct AppStyle {
     }
 }
 
+// default app style
 var appStyle: AppStyle = {
     let style = AppStyle()
-    
-    // default button style
-
     return style
 }()

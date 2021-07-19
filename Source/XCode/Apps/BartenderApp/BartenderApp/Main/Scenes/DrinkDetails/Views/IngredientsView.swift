@@ -24,12 +24,16 @@ class IngredientsView: CustomView {
     func setItems(_ items: [String]) {
         self.ingredients = items
         
+        clearEntries()
         for ingredient in ingredients {
             addEntry(title: ingredient)
         }
         stackView.layoutIfNeeded()
     }
     
+    private func clearEntries() {
+        stackView.removeAllArrangedSubviews()
+    }
     private func addEntry(title: String) {
         let newView = createEntry(title: title)
         stackView.addArrangedSubview(newView)

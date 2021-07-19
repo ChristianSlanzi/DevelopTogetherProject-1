@@ -18,6 +18,14 @@ public class GenericDecoder {
                 print(key, value)
             }
             
+            if response.statusCode == 400 {
+                return .failure(.badRequest)
+            }
+            
+            if response.statusCode == 401 {
+                return .failure(.notAuthorized)
+            }
+            
             if response.statusCode != 200 {
                 return .failure(.invalidData)
             }
@@ -29,7 +37,7 @@ public class GenericDecoder {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             
-            do {
+            do { 
                 let jsonStr = String(decoding: data, as: UTF8.self)
                 print(jsonStr)
                 let userData = try decoder.decode(T.self, from: data)

@@ -21,6 +21,26 @@ public final class LocalCocktailsLoader {
 }
 
 extension LocalCocktailsLoader: CocktailsLoader {
+    
+    public func loadDrinksByIngredients(_ ingredients: [String], completion: @escaping CocktailsLoader.Result) {
+        // TODO: refactor
+        
+        var predArray = [NSPredicate]()
+        //for item in ingredients {
+        predArray.append(NSPredicate(format: "ANY ingredients.name in %@",  ingredients))
+        //}
+
+        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: predArray)
+                        
+        loadDrinks(predicate: predicate) { result in
+            completion(result)
+        }
+    }
+    
+    public func loadAllDrinks(completion: @escaping CocktailsLoader.Result) {
+        loadDrinks(predicate: nil, completion: completion)
+    }
+    
     public func loadDrinksByFirstLetter(_ letter: Character, completion: @escaping CocktailsLoader.Result) {
         //TODO
         load(query: String(letter), completion: completion)
@@ -46,7 +66,7 @@ extension LocalCocktailsLoader: CocktailsLoader {
         loadDrinks(predicate: predicate, completion: completion)
     }
     
-    private func loadDrinks(predicate: NSPredicate, completion: @escaping CocktailsLoader.Result) {
+    private func loadDrinks(predicate: NSPredicate?, completion: @escaping CocktailsLoader.Result) {
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
             key: #keyPath(CoreDataDrink.idDrink),
             ascending: true)
@@ -82,14 +102,34 @@ extension LocalCocktailsLoader: CocktailsCache {
 //            guard let error = error else { return }
 //            print(error)
 //        })
-        store.create(drinks.toLocal(), completion: { (error) in
-            guard let error = error else {
-                completion(.success(()))
-                return
+        
+        
+//        store.create(drinks.toLocal(), completion: { (error) in
+//            guard let error = error else {
+//                completion(.success(()))
+//                return
+//            }
+//            print(error)
+//            completion(.failure(error))
+//        })
+        
+        _ = drinks.toLocal().map {
+            store.update($0, predicate: NSPredicate(format: "idDrink == \($0.idDrink)")) { result in
+                
+                switch result {
+                case .empty:
+                    print("empty update")
+                    break
+                case let .found(feed):
+                    print(feed)
+                    break
+                    
+                case let .failure(error):
+                    print(error)
+                    break
+                }
             }
-            print(error)
-            completion(.failure(error))
-        })
+        }
     }
 }
 

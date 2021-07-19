@@ -21,12 +21,12 @@ class MainDataSource: CustomDataSource<Drink>, ViewModelProtocol {
     
     override func reloadData() {
                 
-        loader.load(query: "m") { (result) in
+        loader.loadAllDrinks() { (result) in
             print(result)
             
             switch result {
             case let .success(drinksDTO):
-                //self.sections.append(CustomDataSource<Drink>.Section(title: "New Drinks", items: drinksDTO.compactMap({ Drink(name: $0.name, thumbnail: $0.strDrinkThumb, imageSource: $0.strImageSource) })))
+                self.sections.removeAll()
                 self.sections.append(CustomDataSource<Drink>.Section(title: "New Drinks", items: drinksDTO))
                 DispatchQueue.main.async {
                     self.view?.reload()

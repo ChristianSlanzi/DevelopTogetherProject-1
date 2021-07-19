@@ -15,8 +15,6 @@ class SearchViewModel {
     
     init(router: Routes) {
         self.router = router
-        
-        
     }
     
     public var recipeLoader: RecipeLoader?
