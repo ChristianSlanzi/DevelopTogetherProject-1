@@ -68,7 +68,7 @@ extension LocalCocktailsLoader: CocktailsLoader {
     
     private func loadDrinks(predicate: NSPredicate?, completion: @escaping CocktailsLoader.Result) {
         let recipeSortDescriptor: NSSortDescriptor = NSSortDescriptor(
-            key: #keyPath(CoreDataDrink.idDrink),
+            key: #keyPath(CoreDataDrink.strDrink),
             ascending: true)
         
         store.retrieve(predicate: predicate, sortDescriptors: [recipeSortDescriptor], completion: { (result: RetrieveDataResult<LocalDrink>) in
